@@ -22,7 +22,10 @@ export async function generateStaticParams(): Promise<
 
 export default async function DocPage({ params }: DocPageProps) {
   const slug = params?.slug?.join("/") || "";
-  const doc = allDocs.find((doc) => doc.slug === slug);
+  const doc = allDocs.find((doc) => {
+    // console.log({ slug: `/docs/${slug}`, params, doc: doc.slug });
+    return doc.slug === `/docs/${slug}`;
+  });
 
   if (!doc) {
     notFound();

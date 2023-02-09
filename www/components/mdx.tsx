@@ -1,4 +1,5 @@
 import { useMDXComponent } from "next-contentlayer/hooks";
+import { ComponentSource } from "@/components/componentSource";
 
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -9,6 +10,7 @@ const components = {
       {...props}
     />
   ),
+  ComponentSource,
 };
 
 interface MdxProps {
