@@ -39,7 +39,7 @@ export function Button(props: ButtonProps) {
       {...mergeProps(buttonProps, hoverProps, focusProps)}
       className={clsx(className, {
         [defaultClassName]: !isHovered && !isPressed,
-        [hoverClassName]: isHovered && !isPressed,
+        [hoverClassName]: isHovered,
         [activeClassName]: isPressed,
         [focusVisibleClassName]: isFocusVisible,
         [disabledClassName]: isDisabled,

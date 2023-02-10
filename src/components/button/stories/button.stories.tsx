@@ -1,11 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Button } from "../src/button";
+import { Button } from "../src/Button";
 
 export default {
-  /* 👇 The title prop is optional.
-   * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
-   * to learn how to generate automatic titles
-   */
   title: "Button",
   component: Button,
 } as ComponentMeta<typeof Button>;
@@ -13,6 +9,17 @@ export default {
 export const Default: ComponentStory<typeof Button> = (props) => (
   <Button {...props} />
 );
+
+Default.argTypes = {
+  children: { type: "string" },
+  className: { type: "string" },
+  defaultClassName: { type: "string" },
+  hoverClassName: { type: "string" },
+  focusVisibleClassName: { type: "string" },
+  activeClassName: { type: "string" },
+  disabledClassName: { type: "string" },
+  isDisabled: { type: "boolean" },
+};
 
 Default.args = {
   children: "Button",
