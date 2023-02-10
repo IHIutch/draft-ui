@@ -19,6 +19,7 @@ specifiers:
   react: ^18.2.0
   react-aria: ^3.22.0
   react-dom: 18.2.0
+  react-stately: ^3.20.0
   typescript: 4.9.5
 
 dependencies:
@@ -40,6 +41,7 @@ dependencies:
   react: 18.2.0
   react-aria: 3.22.0_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
+  react-stately: 3.20.0_react@18.2.0
   typescript: 4.9.5
 
 packages:
@@ -2515,6 +2517,16 @@ packages:
       '@react-stately/select': 3.3.4_react@18.2.0
       '@react-stately/utils': 3.5.2_react@18.2.0
       '@react-types/combobox': 3.5.5_react@18.2.0
+      '@react-types/shared': 3.16.0_react@18.2.0
+      '@swc/helpers': 0.4.14
+      react: 18.2.0
+    dev: false
+
+  /@react-stately/data/3.8.1_react@18.2.0:
+    resolution: {integrity: sha512-YSc45qfmt8uhg9KTGGDQ/xbAPPP6ty5itzWoWORYLEsorBNUj7mLF+q126nYcYX4B5Xf84w8EexqP8Y8nh2Gdg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
       '@react-types/shared': 3.16.0_react@18.2.0
       '@swc/helpers': 0.4.14
       react: 18.2.0
@@ -5934,7 +5946,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1_bluebird@3.7.2
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -10794,6 +10806,17 @@ packages:
         optional: true
     dev: false
 
+  /promise-inflight/1.0.1_bluebird@3.7.2:
+    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
+    peerDependencies:
+      bluebird: '*'
+    peerDependenciesMeta:
+      bluebird:
+        optional: true
+    dependencies:
+      bluebird: 3.7.2
+    dev: false
+
   /promise.allsettled/1.0.6:
     resolution: {integrity: sha512-22wJUOD3zswWFqgwjNHa1965LvqTX87WPu/lreY2KSd7SVcERfuZ4GfUaOnJNnvtoIv2yXT/W00YIGMetXtFXg==}
     engines: {node: '>= 0.4'}
@@ -11126,6 +11149,36 @@ packages:
       invariant: 2.2.4
       shallowequal: 1.1.0
       throttle-debounce: 3.0.1
+    dev: false
+
+  /react-stately/3.20.0_react@18.2.0:
+    resolution: {integrity: sha512-5011Pmn8d17d1kbl7ScnQw1z+tXKsmTwVsAqrTARdZdH6NBmVNHEMlybU1t3/3PfcVn5XoRYwWvCgeTNZtNb8w==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-stately/calendar': 3.0.5_react@18.2.0
+      '@react-stately/checkbox': 3.3.2_react@18.2.0
+      '@react-stately/collections': 3.5.1_react@18.2.0
+      '@react-stately/combobox': 3.3.1_react@18.2.0
+      '@react-stately/data': 3.8.1_react@18.2.0
+      '@react-stately/datepicker': 3.2.1_react@18.2.0
+      '@react-stately/dnd': 3.0.1_react@18.2.0
+      '@react-stately/list': 3.6.1_react@18.2.0
+      '@react-stately/menu': 3.4.4_react@18.2.0
+      '@react-stately/numberfield': 3.3.1_react@18.2.0
+      '@react-stately/overlays': 3.4.4_react@18.2.0
+      '@react-stately/radio': 3.6.2_react@18.2.0
+      '@react-stately/searchfield': 3.3.4_react@18.2.0
+      '@react-stately/select': 3.3.4_react@18.2.0
+      '@react-stately/selection': 3.11.2_react@18.2.0
+      '@react-stately/slider': 3.2.4_react@18.2.0
+      '@react-stately/table': 3.7.0_react@18.2.0
+      '@react-stately/tabs': 3.2.4_react@18.2.0
+      '@react-stately/toggle': 3.4.4_react@18.2.0
+      '@react-stately/tooltip': 3.2.4_react@18.2.0
+      '@react-stately/tree': 3.4.1_react@18.2.0
+      '@react-types/shared': 3.16.0_react@18.2.0
+      react: 18.2.0
     dev: false
 
   /react-syntax-highlighter/15.5.0_react@18.2.0:

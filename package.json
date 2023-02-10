@@ -25,6 +25,7 @@
     "react": "^18.2.0",
     "react-aria": "^3.22.0",
     "react-dom": "18.2.0",
+    "react-stately": "^3.20.0",
     "typescript": "4.9.5"
   }
 }
