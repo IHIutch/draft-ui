@@ -10,8 +10,6 @@ interface FormControlContextProps {
   isInvalid: boolean;
 }
 
-const FormControlContext = createContext({} as FormControlContextProps);
-
 interface FormControlProps extends AriaTextFieldProps {
   className?: string;
   defaultClassName?: string;
@@ -22,6 +20,8 @@ interface FormControlProps extends AriaTextFieldProps {
   children?: React.ReactNode;
   isInvalid?: boolean;
 }
+
+const FormControlContext = createContext({} as FormControlContextProps);
 
 function useFormControlContext() {
   const context = React.useContext(FormControlContext);

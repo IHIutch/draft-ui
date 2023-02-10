@@ -1,5 +1,5 @@
 {
-  "name": "draft-ui",
+  "name": "www",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,6 +19,8 @@
     "next": "13.1.6",
     "next-contentlayer": "^0.3.0",
     "react": "18.2.0",
+    "react-aria": "^3.22.0",
+    "react-docgen": "6.0.0-beta.5",
     "react-dom": "18.2.0",
     "typescript": "4.9.5"
   }
