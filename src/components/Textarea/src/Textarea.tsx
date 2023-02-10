@@ -19,14 +19,8 @@ interface TextareaProps extends AriaTextFieldProps {
 }
 
 export function Textarea(props: TextareaProps) {
-  const {
-    inputProps,
-    inputRef,
-    isInvalid,
-    isDisabled,
-    isReadOnly,
-    isRequired,
-  } = useFormControlContext();
+  const { inputProps, isInvalid, isDisabled, isReadOnly, isRequired } =
+    useFormControlContext();
 
   const {
     className = "",
@@ -44,7 +38,6 @@ export function Textarea(props: TextareaProps) {
 
   return (
     <textarea
-      ref={inputRef}
       {...mergeProps(inputProps, hoverProps, focusProps)}
       className={clsx(className, {
         [defaultClassName]: !isHovered,

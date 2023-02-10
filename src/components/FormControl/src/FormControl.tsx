@@ -1,13 +1,14 @@
-import { LabelAriaProps, useTextField } from "react-aria";
-import React, { createContext, HTMLProps, useMemo, useRef } from "react";
-import { AriaTextFieldProps } from "@react-types/textfield";
+import {
+  LabelAriaProps,
+  useTextField,
+  TextFieldAria,
+  AriaTextFieldOptions,
+} from "react-aria";
+import React, { createContext, useContext, useMemo, useRef } from "react";
 
-interface FormControlContextProps extends AriaTextFieldProps {
-  labelProps: any;
-  inputProps: any;
-  inputRef: any;
-  descriptionProps: any;
-  errorMessageProps: any;
+interface FormControlProps
+  extends TextFieldAria,
+    AriaTextFieldOptions<"input"> {
   isInvalid: boolean;
   children?: React.ReactNode;
 }
@@ -16,10 +17,16 @@ interface LabelProps extends LabelAriaProps {
   children?: React.ReactNode;
 }
 
-const FormControlContext = createContext({} as FormControlContextProps);
+const FormControlContext = createContext<FormControlProps>({
+  labelProps: {},
+  inputProps: {},
+  descriptionProps: {},
+  errorMessageProps: {},
+  isInvalid: false,
+});
 
 export function useFormControlContext() {
-  const context = React.useContext(FormControlContext);
+  const context = useContext(FormControlContext);
   if (!context) {
     throw new Error(
       `FormControl compound components cannot be rendered outside the FormControl component`
@@ -28,8 +35,8 @@ export function useFormControlContext() {
   return context;
 }
 
-export function FormControl(props: FormControlContextProps) {
-  const ref = useRef<HTMLInputElement>(null);
+export function FormControl(props: FormControlProps) {
+  const ref = useRef(null);
   const { labelProps, inputProps, descriptionProps, errorMessageProps } =
     useTextField(
       {
@@ -44,9 +51,11 @@ export function FormControl(props: FormControlContextProps) {
   const value = useMemo(
     () => ({
       isInvalid: props.isInvalid || false,
+      isReadOnly: props.isReadOnly || false,
+      isRequired: props.isRequired || false,
+      isDisabled: props.isDisabled || false,
       labelProps,
       inputProps,
-      inputRef: ref,
       descriptionProps,
       errorMessageProps,
     }),
@@ -55,7 +64,10 @@ export function FormControl(props: FormControlContextProps) {
       errorMessageProps,
       inputProps,
       labelProps,
+      props.isDisabled,
       props.isInvalid,
+      props.isReadOnly,
+      props.isRequired,
     ]
   );
 
@@ -71,17 +83,12 @@ export function FormLabel(props: LabelProps) {
   return <label {...labelProps} {...props} />;
 }
 
-// export function Input(props: FormInputProps) {
-//   const { inputProps, inputRef } = useFormControlContext();
-//   return <input {...inputProps} ref={inputRef} {...props} />;
-// }
-
-export function FormDescription(props: HTMLProps<HTMLDivElement>) {
+export function FormDescription(props: React.HTMLProps<HTMLDivElement>) {
   const { descriptionProps } = useFormControlContext();
   return <div {...descriptionProps} {...props} />;
 }
 
-export function FormErrorMessage(props: HTMLProps<HTMLDivElement>) {
+export function FormErrorMessage(props: React.HTMLProps<HTMLDivElement>) {
   const { errorMessageProps, isInvalid } = useFormControlContext();
   return isInvalid ? <div {...errorMessageProps} {...props} /> : null;
 }

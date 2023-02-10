@@ -14,14 +14,8 @@ interface InputProps extends AriaFieldProps {
 }
 
 export function Input(props: InputProps) {
-  const {
-    inputProps,
-    inputRef,
-    isInvalid,
-    isDisabled,
-    isReadOnly,
-    isRequired,
-  } = useFormControlContext();
+  const { inputProps, isInvalid, isDisabled, isReadOnly, isRequired } =
+    useFormControlContext();
 
   const {
     className = "",
@@ -39,7 +33,6 @@ export function Input(props: InputProps) {
 
   return (
     <input
-      ref={inputRef}
       {...mergeProps(inputProps, hoverProps, focusProps)}
       className={clsx(className, {
         [defaultClassName]: !isHovered,
