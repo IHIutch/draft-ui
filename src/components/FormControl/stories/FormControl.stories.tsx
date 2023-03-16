@@ -25,11 +25,18 @@ export const withInput: ComponentStory<typeof FormControl> = (props) => (
 withInput.argTypes = {
   isInvalid: { type: "boolean" },
   isDisabled: { type: "boolean" },
+  inputElementType: {
+    type: {
+      name: "enum",
+      value: ["input", "textarea"],
+    },
+  },
 };
 
 withInput.args = {
   isInvalid: false,
   isDisabled: false,
+  inputElementType: "textarea",
 };
 
 export const withTextarea: ComponentStory<typeof FormControl> = (props) => (
@@ -44,9 +51,16 @@ export const withTextarea: ComponentStory<typeof FormControl> = (props) => (
 withTextarea.argTypes = {
   isInvalid: { type: "boolean" },
   isDisabled: { type: "boolean" },
+  inputElementType: {
+    type: {
+      name: "enum",
+      value: ["input", "textarea"],
+    },
+  },
 };
 
 withTextarea.args = {
   isInvalid: false,
   isDisabled: false,
+  inputElementType: "textarea",
 };

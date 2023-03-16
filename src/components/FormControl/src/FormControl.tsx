@@ -6,10 +6,13 @@ import {
 } from "react-aria";
 import React, { createContext, useContext, useMemo, useRef } from "react";
 
-interface FormControlProps
+interface FormControlContextProps
   extends TextFieldAria,
     AriaTextFieldOptions<"input"> {
   isInvalid: boolean;
+  isReadOnly: boolean;
+  isRequired: boolean;
+  isDisabled: boolean;
   children?: React.ReactNode;
 }
 
@@ -17,16 +20,20 @@ interface LabelProps extends LabelAriaProps {
   children?: React.ReactNode;
 }
 
-const FormControlContext = createContext<FormControlProps>({
+const FormControlContext = createContext<FormControlContextProps>({
   labelProps: {},
   inputProps: {},
   descriptionProps: {},
   errorMessageProps: {},
   isInvalid: false,
+  isReadOnly: false,
+  isRequired: false,
+  isDisabled: false,
+  inputElementType: "input",
 });
 
-export function useFormControlContext() {
-  const context = useContext(FormControlContext);
+export function useFormControlContext({ inputElementType }) {
+  const context = useContext(FormControlContext({ inputElementType }));
   if (!context) {
     throw new Error(
       `FormControl compound components cannot be rendered outside the FormControl component`
@@ -35,46 +42,57 @@ export function useFormControlContext() {
   return context;
 }
 
-export function FormControl(props: FormControlProps) {
+function FormControlProvider({
+  children,
+  initialValue,
+}: {
+  children: any;
+  initialValue: FormControlContextProps;
+}) {
   const ref = useRef(null);
   const { labelProps, inputProps, descriptionProps, errorMessageProps } =
     useTextField(
       {
-        ...props,
-        label: props.label || "foo",
-        errorMessage: props.errorMessage || "foo",
-        description: props.description || "foo",
+        ...initialValue,
+        label: initialValue.label || "foo",
+        errorMessage: initialValue.errorMessage || "foo",
+        description: initialValue.description || "foo",
+        inputElementType: initialValue.inputElementType,
       },
       ref
     );
 
   const value = useMemo(
     () => ({
-      isInvalid: props.isInvalid || false,
-      isReadOnly: props.isReadOnly || false,
-      isRequired: props.isRequired || false,
-      isDisabled: props.isDisabled || false,
       labelProps,
       inputProps,
       descriptionProps,
       errorMessageProps,
     }),
-    [
-      descriptionProps,
-      errorMessageProps,
-      inputProps,
-      labelProps,
-      props.isDisabled,
-      props.isInvalid,
-      props.isReadOnly,
-      props.isRequired,
-    ]
+    [descriptionProps, errorMessageProps, inputProps, labelProps]
+  );
+  return (
+    <FormControlContext.Provider value={value}>
+      {children}
+    </FormControlContext.Provider>
+  );
+}
+
+export function FormControl(props: FormControlProps) {
+  const value = useMemo(
+    () => ({
+      isInvalid: props.isInvalid || false,
+      isReadOnly: props.isReadOnly || false,
+      isRequired: props.isRequired || false,
+      isDisabled: props.isDisabled || false,
+    }),
+    [props.isDisabled, props.isInvalid, props.isReadOnly, props.isRequired]
   );
 
   return (
-    <FormControlContext.Provider value={value}>
+    <FormControlProvider initialValue={value}>
       {props.children}
-    </FormControlContext.Provider>
+    </FormControlProvider>
   );
 }
 

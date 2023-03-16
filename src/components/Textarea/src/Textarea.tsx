@@ -20,7 +20,7 @@ interface TextareaProps extends AriaTextFieldProps {
 
 export function Textarea(props: TextareaProps) {
   const { inputProps, isInvalid, isDisabled, isReadOnly, isRequired } =
-    useFormControlContext();
+    useFormControlContext({ inputElementType: "textarea" });
 
   const {
     className = "",
