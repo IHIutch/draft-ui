@@ -19,19 +19,11 @@ Default.argTypes = {
     options: ["default", "destructive", "outline", "subtle", "ghost", "link"],
   },
   isDisabled: { type: "boolean" },
-  isHoveredClass: { type: "string" },
-  isPressedClass: { type: "string" },
-  isFocusVisibleClass: { type: "string" },
-  isDisabledClass: { type: "string" },
 };
 
 Default.args = {
   children: "Press Me",
   className: "",
-  variant: null,
+  variant: undefined,
   isDisabled: false,
-  isHoveredClass: "",
-  isPressedClass: "",
-  isFocusVisibleClass: "",
-  isDisabledClass: "",
 };

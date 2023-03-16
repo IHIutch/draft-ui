@@ -1,6 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { type ClassValue } from "class-variance-authority/dist/types";
-import clsx from "clsx";
 import { Button, ButtonProps } from "react-aria-components/src/Button";
 
 const buttonVariants = cva(
@@ -43,28 +42,13 @@ export interface _ButtonProps
   isDisabledClass: ClassValue;
 }
 
-const _Button = ({
-  className,
-  isHoveredClass,
-  isPressedClass,
-  isDisabledClass,
-  isFocusVisibleClass,
-  variant,
-  size,
-  ...props
-}: _ButtonProps) => {
+const _Button = ({ className, variant, size, ...props }: _ButtonProps) => {
   return (
     <Button
       className={buttonVariants({
         variant,
         size,
-        className: clsx(
-          className,
-          isHoveredClass,
-          isPressedClass,
-          isFocusVisibleClass,
-          isDisabledClass
-        ),
+        className,
       })}
       {...props}
     />
