@@ -1,6 +1,6 @@
 module.exports = {
   core: {
-    builder: "@storybook/builder-webpack5",
+    builder: "@storybook/builder-vite", // Using vite because webpack keeps breaking with react-aria-component import
     disableTelemetry: true,
   },
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],

@@ -13,21 +13,25 @@ export const Default: ComponentStory<typeof Button> = (props) => (
 Default.argTypes = {
   children: { type: "string" },
   className: { type: "string" },
-  defaultClassName: { type: "string" },
-  hoverClassName: { type: "string" },
-  focusVisibleClassName: { type: "string" },
-  activeClassName: { type: "string" },
-  disabledClassName: { type: "string" },
+  variant: {
+    type: "string",
+    control: "select",
+    options: ["default", "destructive", "outline", "subtle", "ghost", "link"],
+  },
   isDisabled: { type: "boolean" },
+  isHoveredClass: { type: "string" },
+  isPressedClass: { type: "string" },
+  isFocusVisibleClass: { type: "string" },
+  isDisabledClass: { type: "string" },
 };
 
 Default.args = {
-  children: "Button",
+  children: "Press Me",
   className: "",
-  defaultClassName: "",
-  hoverClassName: "",
-  focusVisibleClassName: "",
-  activeClassName: "",
-  disabledClassName: "",
+  variant: null,
   isDisabled: false,
+  isHoveredClass: "",
+  isPressedClass: "",
+  isFocusVisibleClass: "",
+  isDisabledClass: "",
 };
