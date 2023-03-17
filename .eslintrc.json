@@ -3,7 +3,6 @@
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
     "plugin:tailwindcss/recommended"
   ],
@@ -25,13 +24,12 @@
       "error",
       { "prefer": "type-imports", "fixStyle": "inline-type-imports" }
     ],
-    "tailwindcss/no-custom-classname": "off",
-    "@next/next/no-html-link-for-pages": "off"
+    "tailwindcss/no-custom-classname": "off"
   },
   "settings": {
     "react": {
       "version": "detect"
     }
-  },
-  "ignorePatterns": ["www"]
+  }
+  // "ignorePatterns": ["www"]
 }

@@ -1,5 +1,5 @@
 import { ComponentSource } from '@/components/componentSource'
-import { NpmCommands } from '@/types/unist'
+import { type NpmCommands } from '@/types/unist'
 import { clsx } from 'clsx'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 
@@ -19,7 +19,7 @@ const components = {
     __pnpmCommand__,
     __yarnCommand__,
     __withMeta__,
-    __src__,
+    // __src__,
     ...props
   }: React.HTMLAttributes<HTMLPreElement> & {
     __rawString__?: string

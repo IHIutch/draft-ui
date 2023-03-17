@@ -1,11 +1,11 @@
-import { allDocs } from "@/.contentlayer/generated";
-import Link from "next/link";
+import { allDocs } from '@/.contentlayer/generated'
+import Link from 'next/link'
 
 export default async function Home() {
   return (
     <div>
       <div>
-        <span className="font-medium text-lg">Links</span>
+        <span className="text-lg font-medium">Links</span>
       </div>
       <ul>
         {allDocs.map((doc, idx) => (
@@ -17,5 +17,5 @@ export default async function Home() {
         ))}
       </ul>
     </div>
-  );
+  )
 }

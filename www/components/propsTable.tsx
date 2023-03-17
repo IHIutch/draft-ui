@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 
 export default function PropsTable(props: any) {
   const formatProps = () => {
-    return props;
-  };
+    return props
+  }
 
-  return <div>{JSON.stringify(formatProps, null, 2)}</div>;
+  return <div>{JSON.stringify(formatProps, null, 2)}</div>
 }

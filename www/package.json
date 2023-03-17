@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore ."
   },
   "dependencies": {
     "@next/font": "13.1.6",

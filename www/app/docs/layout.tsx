@@ -4,7 +4,6 @@ import { allDocs } from '@/.contentlayer/generated'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useMemo } from 'react'
 
 interface DocsLayoutProps {
   children: React.ReactNode

@@ -2,7 +2,6 @@ import { allDocs } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 import '@/styles/mdx.css'
 import { Mdx } from '@/components/mdx'
-import Link from 'next/link'
 
 // import { getTableOfContents } from "@/lib/toc";
 
@@ -32,7 +31,7 @@ export default async function DocPage({ params }: DocPageProps) {
 
   return (
     <div className="relative py-6 lg:gap-10 lg:py-10 xl:grid xl:grid-cols-[1fr_300px]">
-      <div className="mx-auto w-full min-w-0 max-w-full prose">
+      <div className="prose mx-auto w-full min-w-0 max-w-full">
         <Mdx code={doc.body.code} />
       </div>
       <div className="hidden text-sm xl:block">
