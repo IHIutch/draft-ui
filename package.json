@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "lint:fix": "eslint --ext .ts,.tsx --fix",
+    "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore .",
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
     "@storybook/addon-a11y": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-storysource": "^6.5.16",
@@ -23,6 +24,7 @@
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-tailwindcss": "^3.10.1",
     "prettier": "^2.8.4",
     "react": "^18.2.0",
     "react-aria": "^3.22.0",
