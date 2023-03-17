@@ -13,15 +13,21 @@
     "@types/node": "18.13.0",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
+    "clsx": "^1.2.1",
     "contentlayer": "^0.3.0",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "next": "13.1.6",
     "next-contentlayer": "^0.3.0",
     "react": "18.2.0",
-    "react-aria": "^3.22.0",
+    "react-aria": "^3.23.1",
     "react-docgen": "6.0.0-beta.5",
     "react-dom": "18.2.0",
-    "typescript": "4.9.5"
+    "rehype-pretty-code": "^0.9.4",
+    "remark-code-import": "^1.1.1",
+    "shiki": "^0.14.1",
+    "typescript": "4.9.5",
+    "unist-builder": "^3.0.1",
+    "unist-util-visit": "^4.1.2"
   }
 }

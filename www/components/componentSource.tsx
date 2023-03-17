@@ -6,11 +6,11 @@ interface ComponentSourceProps extends React.HTMLAttributes<HTMLDivElement> {
   src: string;
 }
 
-export function ComponentSource({ children, className }: ComponentSourceProps) {
+export function ComponentSource({ children }: ComponentSourceProps) {
   return (
     <div>
-      Component Source
-      <pre className={className}>{children}</pre>
+      <h1 className="font-bold">Component Source</h1>
+      <pre>{children}</pre>
     </div>
   );
 }

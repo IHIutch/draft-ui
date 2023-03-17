@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
-
-import Link from "next/link";
-import { Mdx } from "@/components/mdx";
 import { allDocs } from "contentlayer/generated";
+
+import "@/styles/mdx.css";
+import Link from "next/link";
+
+import { Mdx } from "@/components/mdx";
 
 // import { getTableOfContents } from "@/lib/toc";
 
