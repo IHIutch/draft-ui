@@ -76,10 +76,7 @@ export default makeSource({
         rehypePrettyCode,
         {
           getHighlighter: async () => {
-            const theme = await loadTheme(
-              path.join(process.cwd(), 'lib/vscode-theme.json')
-            )
-            return await getHighlighter({ theme })
+            return await getHighlighter({ theme: 'material-theme-darker' })
           },
           onVisitLine(node: any) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty

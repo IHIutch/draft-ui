@@ -1,43 +1,38 @@
-import { notFound } from "next/navigation";
-import { allDocs } from "contentlayer/generated";
-
-import "@/styles/mdx.css";
-import Link from "next/link";
-
-import { Mdx } from "@/components/mdx";
+import { allDocs } from 'contentlayer/generated'
+import { notFound } from 'next/navigation'
+import '@/styles/mdx.css'
+import { Mdx } from '@/components/mdx'
+import Link from 'next/link'
 
 // import { getTableOfContents } from "@/lib/toc";
 
 interface DocPageProps {
   params: {
-    slug: string[];
-  };
+    slug: string[]
+  }
 }
 
 export async function generateStaticParams(): Promise<
-  DocPageProps["params"][]
+  DocPageProps['params'][]
 > {
   return allDocs.map((doc) => ({
-    slug: doc.slug.split("/"),
-  }));
+    slug: doc.slug.split('/'),
+  }))
 }
 
 export default async function DocPage({ params }: DocPageProps) {
-  const slug = params?.slug?.join("/") || "";
+  const slug = params?.slug?.join('/') || ''
   const doc = allDocs.find((doc) => {
-    // console.log({ slug: `/docs/${slug}`, params, doc: doc.slug });
-    return doc.slug === `/docs/${slug}`;
-  });
+    return doc.slug === `/docs/${slug}`
+  })
 
   if (!doc) {
-    notFound();
+    notFound()
   }
 
-  //   const toc = await getTableOfContents(doc.body.raw);
-
   return (
-    <main className="relative py-6 lg:gap-10 lg:py-10 xl:grid xl:grid-cols-[1fr_300px]">
-      <div className="mx-auto w-full min-w-0">
+    <div className="relative py-6 lg:gap-10 lg:py-10 xl:grid xl:grid-cols-[1fr_300px]">
+      <div className="mx-auto w-full min-w-0 max-w-full prose">
         <Mdx code={doc.body.code} />
       </div>
       <div className="hidden text-sm xl:block">
@@ -46,6 +41,6 @@ export default async function DocPage({ params }: DocPageProps) {
           {/* <DashboardTableOfContents toc={toc} /> */}
         </div>
       </div>
-    </main>
-  );
+    </div>
+  )
 }
