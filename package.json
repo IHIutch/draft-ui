@@ -22,6 +22,7 @@
     "react-aria-components": "https://gitpkg.now.sh/adobe/react-spectrum/packages/react-aria-components?main",
     "react-dom": "18.2.0",
     "react-stately": "^3.21.0",
+    "tailwindcss-animate": "^1.0.5",
     "typescript": "4.9.5",
     "vite": "^4.2.0"
   },
@@ -35,10 +36,10 @@
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.4",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-tailwindcss": "^3.10.1",
     "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
     "tailwindcss": "^3.2.7"
   }
 }
