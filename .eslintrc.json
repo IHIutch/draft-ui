@@ -30,5 +30,6 @@
     "react": {
       "version": "detect"
     }
-  }
+  },
+  "ignorePatterns": ["*.config.cjs"]
 }

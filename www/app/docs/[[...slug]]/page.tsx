@@ -15,15 +15,13 @@ export async function generateStaticParams(): Promise<
   DocPageProps['params'][]
 > {
   return allDocs.map((doc) => ({
-    slug: doc.slug.split('/'),
+    slug: doc.slugAsParams.split('/'),
   }))
 }
 
 export default async function DocPage({ params }: DocPageProps) {
   const slug = params?.slug?.join('/') || ''
-  const doc = allDocs.find((doc) => {
-    return doc.slug === `/docs/${slug}`
-  })
+  const doc = allDocs.find((doc) => doc.slugAsParams === slug)
 
   if (!doc) {
     notFound()
