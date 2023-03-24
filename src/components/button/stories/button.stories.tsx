@@ -21,7 +21,7 @@ Default.argTypes = {
   size: {
     type: 'string',
     control: 'select',
-    options: ['sm', 'md', 'lg'],
+    options: ['xs', 'sm', 'md', 'lg'],
   },
   isDisabled: { type: 'boolean' },
 }
