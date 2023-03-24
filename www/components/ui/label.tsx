@@ -3,7 +3,7 @@ import { type ClassValue } from 'class-variance-authority/dist/types'
 import { Label, type LabelProps } from 'react-aria-components/src/Label'
 
 export interface _LabelProps extends Omit<LabelProps, 'className'> {
-  className?: Pick<LabelProps, 'className'> & ClassValue
+  className?: ClassValue
 }
 
 const labelVariants = cva(

@@ -27,7 +27,7 @@ const buttonVariants = cva('bg-white rounded mx-auto', {
 export interface _ModalProps
   extends Omit<ModalOverlayProps, 'className'>,
     VariantProps<typeof buttonVariants> {
-  className?: Pick<ModalOverlayProps, 'className'> & ClassValue
+  className?: ClassValue
   children?: ReactNode
 }
 

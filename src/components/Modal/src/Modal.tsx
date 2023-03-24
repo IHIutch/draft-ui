@@ -28,8 +28,7 @@ const buttonVariants = cva('bg-white rounded mx-auto', {
 export interface _ModalProps
   extends Omit<ModalOverlayProps, 'className'>,
     VariantProps<typeof buttonVariants> {
-  className?: Pick<ModalOverlayProps, 'className'> & ClassValue
-  children?: ReactNode
+  className?: ClassValue
 }
 
 const _Modal = ({ className, size, ...props }: _ModalProps) => {
@@ -82,13 +81,13 @@ const _ModalOverlay = ({ className, ...props }: ModalOverlayProps) => {
 //   )
 // }
 
-function _ModalHeader({
+const _ModalHeader = ({
   className,
   ...props
 }: {
   className?: ClassValue
   children: ReactNode
-}) {
+}) => {
   return (
     <header
       {...props}
@@ -97,24 +96,31 @@ function _ModalHeader({
   )
 }
 
-function _ModalBody({
+const _ModalBody = ({
   className,
   ...props
 }: {
   className?: ClassValue
   children: ReactNode
-}) {
-  return <div {...props} className={clsx('py-2 px-6', className)} />
+}) => {
+  return (
+    <div {...props} className={clsx('mt-2 text-sm text-red-500', className)} />
+  )
 }
 
-function _ModalFooter({
+const _ModalFooter = ({
   className,
   ...props
 }: {
   className?: ClassValue
   children: ReactNode
-}) {
-  return <footer {...props} className={clsx('py-4 px-6', className)} />
+}) => {
+  return (
+    <div
+      {...props}
+      className={clsx('mt-2 text-sm text-slate-500', className)}
+    />
+  )
 }
 
 export {
