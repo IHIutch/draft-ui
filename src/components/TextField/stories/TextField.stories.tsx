@@ -1,8 +1,11 @@
 import { Input } from '../../Input/src/Input'
 import { Label } from '../../Label/src/Label'
+import {
+  TextField,
+  TextFieldDescription,
+  TextFieldErrorMessage,
+} from '../src/TextField'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { Text } from 'react-aria-components/src/Text'
-import { TextField } from 'react-aria-components/src/TextField'
 
 export default {
   title: 'TextField',
@@ -33,13 +36,13 @@ export const Default: ComponentStory<typeof TextField> = (props) => (
     <Label>Label</Label>
     <Input validationState={props.validationState} size="md" />
     {props.validationState === 'invalid' ? (
-      <Text slot="errorMessage" className="mt-2 text-sm text-red-500">
+      <TextFieldErrorMessage slot="errorMessage">
         This is an error message
-      </Text>
+      </TextFieldErrorMessage>
     ) : (
-      <Text slot="description" className="mt-2 text-sm text-slate-500">
+      <TextFieldDescription slot="description">
         This is a description
-      </Text>
+      </TextFieldDescription>
     )}
   </TextField>
 )
