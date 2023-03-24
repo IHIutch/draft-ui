@@ -20,7 +20,10 @@ Default.argTypes = {
   size: {
     type: 'string',
     control: 'select',
-    options: ['sm', 'md', 'lg'],
+    options: ['xs', 'sm', 'md', 'lg'],
+  },
+  placeholder: {
+    type: 'string',
   },
 }
 
@@ -28,4 +31,5 @@ Default.args = {
   className: '',
   validationState: 'valid',
   size: 'md',
+  placeholder: 'Placeholder...',
 }
