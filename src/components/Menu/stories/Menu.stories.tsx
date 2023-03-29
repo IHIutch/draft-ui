@@ -1,9 +1,12 @@
+import {
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  MenuSection,
+  MenuSeparator,
+} from '../src/Menu'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { Button } from 'react-aria-components/src/Button'
-import { Item, Section } from 'react-aria-components/src/Collection'
-import { Menu, MenuTrigger } from 'react-aria-components/src/Menu'
-import { Popover } from 'react-aria-components/src/Popover'
-import { Separator } from 'react-aria-components/src/Separator'
 
 export default {
   title: 'Menu',
@@ -12,26 +15,24 @@ export default {
 
 export const Default: ComponentStory<typeof Menu> = (props) => {
   return (
-    <MenuTrigger>
-      <Button aria-label="Menu">☰</Button>
-      <Popover>
-        <Menu>
-          <Section title={<span>Section 1</span>}>
-            <Item>Foo</Item>
-            <Item>Bar</Item>
-            <Item>Baz</Item>
-          </Section>
-          <Separator
-            style={{ borderTop: '1px solid gray', margin: '2px 5px' }}
-          />
-          <Section title={<span>Section 2</span>}>
-            <Item>Foo</Item>
-            <Item>Bar</Item>
-            <Item>Baz</Item>
-          </Section>
-        </Menu>
-      </Popover>
-    </MenuTrigger>
+    <Menu>
+      <MenuButton aria-label="Menu">☰</MenuButton>
+      <MenuList>
+        <MenuSection title={<span>Section 1</span>}>
+          <MenuItem>Foo</MenuItem>
+          <MenuItem>Bar</MenuItem>
+          <MenuItem>Baz</MenuItem>
+        </MenuSection>
+        <MenuSeparator
+          style={{ borderTop: '1px solid gray', margin: '2px 5px' }}
+        />
+        <MenuSection title={<span>Section 2</span>}>
+          <MenuItem>Foo</MenuItem>
+          <MenuItem>Bar</MenuItem>
+          <MenuItem>Baz</MenuItem>
+        </MenuSection>
+      </MenuList>
+    </Menu>
   )
 }
 
