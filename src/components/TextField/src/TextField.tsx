@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { type HTMLAttributes } from 'react'
+import { Text } from 'react-aria-components/src/Text'
 import {
   TextField,
   type TextFieldProps,
@@ -14,8 +15,10 @@ const _TextFieldDescription = ({
   ...props
 }: HTMLAttributes<HTMLElement>) => {
   return (
-    <div
+    <Text
       {...props}
+      elementType="div"
+      slot="description"
       className={clsx('mt-2 text-sm text-slate-500', className)}
     />
   )
@@ -26,7 +29,12 @@ const _TextFieldErrorMessage = ({
   ...props
 }: HTMLAttributes<HTMLElement>) => {
   return (
-    <div {...props} className={clsx('mt-2 text-sm text-red-500', className)} />
+    <Text
+      {...props}
+      elementType="div"
+      slot="errorMessage"
+      className={clsx('mt-2 text-sm text-red-500', className)}
+    />
   )
 }
 

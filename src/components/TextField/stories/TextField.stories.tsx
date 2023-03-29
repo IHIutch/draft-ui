@@ -36,12 +36,12 @@ export const Default: ComponentStory<typeof TextField> = (props) => (
     <Label>Label</Label>
     <Input validationState={props.validationState} size="md" />
     {props.validationState === 'invalid' ? (
-      <TextFieldErrorMessage slot="errorMessage">
-        This is an error message
+      <TextFieldErrorMessage>
+        <span>This is an error message</span>
       </TextFieldErrorMessage>
     ) : (
-      <TextFieldDescription slot="description">
-        This is a description
+      <TextFieldDescription>
+        <span>This is a description</span>
       </TextFieldDescription>
     )}
   </TextField>
