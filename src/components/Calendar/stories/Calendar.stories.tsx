@@ -20,9 +20,7 @@ export const Default: ComponentStory<typeof Calendar> = (props) => (
       <h3>Calendar Heading</h3>
       <Button slot="next">▶</Button>
     </CalendarHeader>
-    <CalendarGrid>
-      <CalendarCell />
-    </CalendarGrid>
+    <CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
   </Calendar>
 )
 
