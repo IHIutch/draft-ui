@@ -4,13 +4,13 @@ import {
   CalendarGrid,
   CalendarHeader,
 } from '../../Calendar/src/Calendar'
-import { Input } from '../../Input/src/Input'
+import { DateInput, DateSegment } from '../../DateField/src/DateField'
 import { Label } from '../../Label/src/Label'
+import { DatePickerContent } from '../src/DateRangePicker'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
 import { RangeCalendar } from 'react-aria-components/src/Calendar'
 import { DateRangePicker } from 'react-aria-components/src/DatePicker'
-import { Dialog } from 'react-aria-components/src/Dialog'
-import { Popover } from 'react-aria-components/src/Popover'
+import { Group } from 'react-aria-components/src/Group'
 
 export default {
   title: 'DateRangePicker',
@@ -19,24 +19,28 @@ export default {
 
 export const Default: ComponentStory<typeof DateRangePicker> = (props) => (
   <DateRangePicker>
-    <Label>Date Range</Label>
-    <div>
-      <Input />
+    <Label>Trip dates</Label>
+    <Group>
+      <DateInput slot="start">
+        {(segment) => <DateSegment segment={segment} />}
+      </DateInput>
+      <span aria-hidden="true">–</span>
+      <DateInput slot="end">
+        {(segment) => <DateSegment segment={segment} />}
+      </DateInput>
       <Button>▼</Button>
-    </div>
-    <Popover>
-      <Dialog>
-        <RangeCalendar>
-          <CalendarHeader>
-            <Button slot="previous">◀</Button>
-            {/* <Heading /> */}
-            <h3>Calendar Heading</h3>
-            <Button slot="next">▶</Button>
-          </CalendarHeader>
-          <CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
-        </RangeCalendar>
-      </Dialog>
-    </Popover>
+    </Group>
+    <DatePickerContent>
+      <RangeCalendar>
+        <CalendarHeader>
+          <Button slot="previous">◀</Button>
+          {/* <Heading /> */}
+          <h3>Calendar Heading</h3>
+          <Button slot="next">▶</Button>
+        </CalendarHeader>
+        <CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
+      </RangeCalendar>
+    </DatePickerContent>
   </DateRangePicker>
 )
 

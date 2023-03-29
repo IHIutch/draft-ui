@@ -5,12 +5,11 @@ import {
   CalendarGrid,
   CalendarHeader,
 } from '../../Calendar/src/Calendar'
-import { Input } from '../../Input/src/Input'
+import { DateInput, DateSegment } from '../../DateField/src/DateField'
 import { Label } from '../../Label/src/Label'
+import { DatePicker, DatePickerContent } from '../src/DatePicker'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { DatePicker } from 'react-aria-components/src/DatePicker'
-import { Dialog } from 'react-aria-components/src/Dialog'
-import { Popover } from 'react-aria-components/src/Popover'
+import { Group } from 'react-aria-components/src/Group'
 
 export default {
   title: 'DatePicker',
@@ -20,23 +19,21 @@ export default {
 export const Default: ComponentStory<typeof DatePicker> = (props) => (
   <DatePicker>
     <Label>Date</Label>
-    <div>
-      <Input />
+    <Group>
+      <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
       <Button>▼</Button>
-    </div>
-    <Popover>
-      <Dialog>
-        <Calendar>
-          <CalendarHeader>
-            <Button slot="previous">◀</Button>
-            {/* <Heading /> */}
-            <h3>Calendar Heading</h3>
-            <Button slot="next">▶</Button>
-          </CalendarHeader>
-          <CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
-        </Calendar>
-      </Dialog>
-    </Popover>
+    </Group>
+    <DatePickerContent>
+      <Calendar>
+        <CalendarHeader>
+          <Button slot="previous">◀</Button>
+          {/* <Heading /> */}
+          <h3>Calendar Heading</h3>
+          <Button slot="next">▶</Button>
+        </CalendarHeader>
+        <CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
+      </Calendar>
+    </DatePickerContent>
   </DatePicker>
 )
 
