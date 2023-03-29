@@ -7,11 +7,11 @@ import { Item } from 'react-aria-components/src/Collection'
 //   className?: ClassValue
 // }
 
-const _Breadcrumbs = (props: any) => {
+const _Breadcrumbs = (props) => {
   return <Breadcrumbs {...props} />
 }
 
-const _BreadcrumbItem = (props: any) => {
+const _BreadcrumbItem = (props) => {
   return <Item {...props} />
 }
 

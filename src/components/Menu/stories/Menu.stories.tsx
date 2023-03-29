@@ -16,7 +16,7 @@ export const Default: ComponentStory<typeof Menu> = (props) => {
       <Button aria-label="Menu">☰</Button>
       <Popover>
         <Menu>
-          <Section title={<span style={{ fontSize: '1.2em' }}>Section 1</span>}>
+          <Section title={<span>Section 1</span>}>
             <Item>Foo</Item>
             <Item>Bar</Item>
             <Item>Baz</Item>
@@ -24,7 +24,7 @@ export const Default: ComponentStory<typeof Menu> = (props) => {
           <Separator
             style={{ borderTop: '1px solid gray', margin: '2px 5px' }}
           />
-          <Section title={<span style={{ fontSize: '1.2em' }}>Section 2</span>}>
+          <Section title={<span>Section 2</span>}>
             <Item>Foo</Item>
             <Item>Bar</Item>
             <Item>Baz</Item>

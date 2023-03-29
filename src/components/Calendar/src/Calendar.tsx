@@ -7,23 +7,23 @@ import { Item } from 'react-aria-components/src/Collection'
 //   className?: ClassValue
 // }
 
-const _Calendar = (props: any) => {
+const _Calendar = (props) => {
   return <Calendar {...props} />
 }
 
-const _CalendarGrid = (props: any) => {
+const _CalendarGrid = (props) => {
   return <CalendarGrid {...props} />
 }
 
-const _CalendarCell = (props: any) => {
+const _CalendarCell = (props) => {
   return <Item {...props} />
 }
 
-const _CalendarHeader = (props: any) => {
+const _CalendarHeader = (props) => {
   return <header {...props} />
 }
 
-const _CalendarFooter = (props: any) => {
+const _CalendarFooter = (props) => {
   return <footer {...props} />
 }
 

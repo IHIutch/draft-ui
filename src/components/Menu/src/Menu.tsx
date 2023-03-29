@@ -10,11 +10,11 @@ import {
 //   className?: ClassValue
 // }
 
-const _Menu = (props: any) => {
+const _Menu = (props) => {
   return <div {...props} />
 }
 
-const _MenuItem = (props: any) => {
+const _MenuItem = (props) => {
   return <div {...props} />
 }
 
