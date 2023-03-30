@@ -55,14 +55,10 @@ export const Mobile: ComponentStory<typeof NumberField> = (props) => (
     maxValue={props.maxValue}
     step={props.step}
   >
-    <Group className="flex">
-      <Button slot="decrement" className="mr-1">
-        ▲
-      </Button>
+    <Group className="flex gap-1">
+      <Button slot="decrement">▲</Button>
       <Input />
-      <Button slot="increment" className="ml-1">
-        ▼
-      </Button>
+      <Button slot="increment">▼</Button>
     </Group>
   </NumberField>
 )
