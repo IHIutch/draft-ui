@@ -1,28 +1,28 @@
 import { Label } from '../../Label/src/Label'
-import { Meter } from '../src/Meter'
+import { ProgressBar } from '../src/ProgressBar'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
 
 export default {
-  title: 'Meter',
-  component: Meter,
-} as ComponentMeta<typeof Meter>
+  title: 'ProgressBar',
+  component: ProgressBar,
+} as ComponentMeta<typeof ProgressBar>
 
-export const Default: ComponentStory<typeof Meter> = (props) => (
-  <Meter
+export const Default: ComponentStory<typeof ProgressBar> = (props) => (
+  <ProgressBar
     value={props.value}
     minValue={props.minValue}
     maxValue={props.maxValue}
   >
     {({ percentage, valueText }) => (
       <>
-        <Label>Meter Label</Label>
+        <Label>Progress</Label>
         <span>{valueText}</span>
         <div>
           <div style={{ width: percentage + '%' }} />
         </div>
       </>
     )}
-  </Meter>
+  </ProgressBar>
 )
 
 Default.argTypes = {
