@@ -10,21 +10,28 @@ import {
   type ModalOverlayProps,
 } from 'react-aria-components/src/Modal'
 
-const buttonVariants = cva('bg-white rounded mx-auto', {
-  variants: {
-    size: {
-      full: 'w-full h-full',
-      xl: 'w-[36rem] my-16',
-      lg: 'w-[32rem] my-16',
-      md: 'w-[28rem] my-16',
-      sm: 'w-[24rem] my-16',
-      xs: 'w-[20rem] my-16',
+const buttonVariants = cva(
+  [
+    'bg-white rounded mx-auto outline-none',
+    'data-[entering]:animate-in data-[entering]:zoom-in-75',
+    // 'data-[exiting]:animate-out data-[exiting]:zoom-out-75 data-[exiting]:duration-1000', // This breaks the modal closing for some reason'
+  ],
+  {
+    variants: {
+      size: {
+        full: 'w-full h-full',
+        xl: 'w-[36rem] my-16',
+        lg: 'w-[32rem] my-16',
+        md: 'w-[28rem] my-16',
+        sm: 'w-[24rem] my-16',
+        xs: 'w-[20rem] my-16',
+      },
     },
-  },
-  defaultVariants: {
-    size: 'md',
-  },
-})
+    defaultVariants: {
+      size: 'md',
+    },
+  }
+)
 
 const _Modal = (props) => {
   return <DialogTrigger {...props} />
@@ -48,15 +55,11 @@ const _ModalContent = ({
     <Modal
       className={buttonVariants({
         size,
-        className: clsx(
-          'data-[entering]:animate-in data-[entering]:zoom-in-75',
-          // 'data-[exiting]:animate-out data-[exiting]:zoom-out-75 data-[exiting]:duration-1000', // This breaks the modal closing for some reason
-          className
-        ),
+        className,
       })}
       {...props}
     >
-      <Dialog>{children}</Dialog>
+      <Dialog className="outline-none">{children}</Dialog>
     </Modal>
   )
 }

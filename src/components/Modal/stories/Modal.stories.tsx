@@ -32,8 +32,19 @@ export const Default: ComponentStory<typeof ModalContent> = (props) => {
             </p>
           </ModalBody>
           <ModalFooter className="flex">
-            <Button className="ml-auto" onPress={() => setIsOpen(false)}>
-              Close Modal
+            <Button
+              autoFocus
+              className="ml-auto"
+              onPress={() => setIsOpen(false)}
+            >
+              Close
+            </Button>
+            <Button
+              className="ml-2"
+              variant="outline"
+              onPress={() => setIsOpen(false)}
+            >
+              Confirm
             </Button>
           </ModalFooter>
         </ModalContent>
