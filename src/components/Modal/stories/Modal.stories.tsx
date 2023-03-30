@@ -19,11 +19,11 @@ export const Default: ComponentStory<typeof ModalContent> = (props) => {
 
   return (
     <>
-      <Button onPress={() => setIsOpen(!isOpen)}>Open Modal</Button>
-      <ModalOverlay isOpen={isOpen}>
-        <ModalContent onOpenChange={setIsOpen} isOpen={isOpen} {...props}>
-          <ModalHeader>Hello</ModalHeader>
-          <ModalBody data-entering={undefined}>
+      <Button onPress={() => setIsOpen(true)}>Open Modal</Button>
+      <ModalOverlay isDismissable isOpen={isOpen} onOpenChange={setIsOpen}>
+        <ModalContent {...props}>
+          <ModalHeader>Modal Title</ModalHeader>
+          <ModalBody>
             <p>
               Sit nulla est ex deserunt exercitation anim occaecat. Nostrud
               ullamco deserunt aute id consequat veniam incididunt duis in sint

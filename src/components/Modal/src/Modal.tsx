@@ -1,10 +1,12 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import { type ClassValue } from 'class-variance-authority/dist/types'
 import { clsx } from 'clsx'
-import { type ReactNode } from 'react'
+import { type HTMLAttributes, type ReactNode } from 'react'
+import { Dialog, DialogTrigger } from 'react-aria-components/src/Dialog'
 import {
   Modal,
   ModalOverlay,
+  type ModalRenderProps,
   type ModalOverlayProps,
 } from 'react-aria-components/src/Modal'
 
@@ -20,38 +22,58 @@ const buttonVariants = cva('bg-white rounded mx-auto', {
     },
   },
   defaultVariants: {
-    // variant: 'solid',
     size: 'md',
   },
 })
 
-export interface _ModalProps
-  extends Omit<ModalOverlayProps, 'className'>,
-    VariantProps<typeof buttonVariants> {
-  className?: ClassValue
+const _Modal = (props) => {
+  return <DialogTrigger {...props} />
 }
 
-const _Modal = ({ className, size, ...props }: _ModalProps) => {
+export interface _ModalProps
+  extends ModalRenderProps,
+    Omit<ModalOverlayProps, 'className'>,
+    VariantProps<typeof buttonVariants> {
+  className?: ClassValue
+  children?: ReactNode
+}
+
+const _ModalContent = ({
+  className,
+  size,
+  children,
+  ...props
+}: _ModalProps) => {
   return (
     <Modal
       className={buttonVariants({
         size,
-        className,
+        className: clsx(
+          'data-[entering]:animate-in data-[entering]:zoom-in-75',
+          // 'data-[exiting]:animate-out data-[exiting]:zoom-out-75 data-[exiting]:duration-1000', // This breaks the modal closing for some reason
+          className
+        ),
       })}
       {...props}
-    />
+    >
+      <Dialog>{children}</Dialog>
+    </Modal>
   )
 }
 
-const _ModalOverlay = ({ className, ...props }: ModalOverlayProps) => {
+const _ModalOverlay = ({
+  isDismissable = true,
+  className,
+  ...props
+}: ModalOverlayProps) => {
   return (
     <ModalOverlay
+      isDismissable={isDismissable}
       className={clsx(
-        'fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-all',
-        // '[&_[data-entering]]:duration-1000',
-        '[&_[data-entering]]:animate-in [&_[data-entering]]:fade-in [&_[data-entering]]:zoom-in-75',
-        // '[&_[data-exiting]]:duration-1000',
-        '[&_[data-exiting]]:animate-out [&_[data-exiting]]:fade-out [&_[data-exiting]]:zoom-out-75',
+        'h-[var(--visual-viewport-height)]',
+        'fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-sm transition-all',
+        'data-[entering]:animate-in data-[entering]:fade-in',
+        'data-[exiting]:animate-out data-[exiting]:fade-out',
         className
       )}
       {...props}
@@ -59,35 +81,7 @@ const _ModalOverlay = ({ className, ...props }: ModalOverlayProps) => {
   )
 }
 
-// type PolymorphicAsProp<E extends ElementType> = {
-//   as?: E
-// }
-
-// type PolymorphicProps<E extends ElementType> = PropsWithChildren<
-//   ComponentPropsWithoutRef<E> & PolymorphicAsProp<E>
-// >
-
-// function _ModalHeader<E extends ElementType>({
-//   as: Component = 'header' as E,
-//   className,
-//   ...props
-// }: PolymorphicProps<E>) {
-//   const ComponentType = Component as keyof JSX.IntrinsicElements
-//   return (
-//     <ComponentType
-//       {...props}
-//       className={clsx('py-4 px-6 text-xl font-semibold', className)}
-//     />
-//   )
-// }
-
-const _ModalHeader = ({
-  className,
-  ...props
-}: {
-  className?: ClassValue
-  children: ReactNode
-}) => {
+const _ModalHeader = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
   return (
     <header
       {...props}
@@ -99,33 +93,18 @@ const _ModalHeader = ({
 const _ModalBody = ({
   className,
   ...props
-}: {
-  className?: ClassValue
-  children: ReactNode
-}) => {
-  return (
-    <div {...props} className={clsx('mt-2 text-sm text-red-500', className)} />
-  )
+}: HTMLAttributes<HTMLDivElement>) => {
+  return <div {...props} className={clsx('py-2 px-6', className)} />
 }
 
-const _ModalFooter = ({
-  className,
-  ...props
-}: {
-  className?: ClassValue
-  children: ReactNode
-}) => {
-  return (
-    <div
-      {...props}
-      className={clsx('mt-2 text-sm text-slate-500', className)}
-    />
-  )
+const _ModalFooter = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
+  return <footer {...props} className={clsx('py-4 px-6', className)} />
 }
 
 export {
+  _Modal as Modal,
+  _ModalContent as ModalContent,
   _ModalOverlay as ModalOverlay,
-  _Modal as ModalContent,
   _ModalHeader as ModalHeader,
   _ModalBody as ModalBody,
   _ModalFooter as ModalFooter,
