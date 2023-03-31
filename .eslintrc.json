@@ -29,6 +29,9 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "tailwindcss": {
+      "config": "./tailwind.config.cjs"
     }
   },
   "ignorePatterns": ["*.config.cjs"]
