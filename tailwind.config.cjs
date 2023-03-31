@@ -7,7 +7,7 @@ module.exports = {
   plugins: [require('tailwindcss-animate')],
   // safelist: [
   //   {
-  //     pattern: /react-aria-*/,
+  //     pattern: /react-aria-.+/,
   //   },
   // ],
 }
