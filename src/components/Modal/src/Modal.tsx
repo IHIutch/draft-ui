@@ -13,19 +13,19 @@ import {
 
 const buttonVariants = cva(
   [
-    'bg-white rounded mx-auto outline-none',
+    'mx-auto rounded bg-white outline-none',
     'data-[entering]:animate-in data-[entering]:zoom-in-75',
     // 'data-[exiting]:animate-out data-[exiting]:zoom-out-75 data-[exiting]:duration-1000', // This breaks the modal closing for some reason'
   ],
   {
     variants: {
       size: {
-        full: 'w-full h-full',
-        xl: 'w-[36rem] my-16',
-        lg: 'w-[32rem] my-16',
-        md: 'w-[28rem] my-16',
-        sm: 'w-[24rem] my-16',
-        xs: 'w-[20rem] my-16',
+        full: 'h-full w-full',
+        xl: 'my-16 w-[36rem]',
+        lg: 'my-16 w-[32rem]',
+        md: 'my-16 w-[28rem]',
+        sm: 'my-16 w-[24rem]',
+        xs: 'my-16 w-[20rem]',
       },
     },
     defaultVariants: {
@@ -89,7 +89,7 @@ const _ModalHeader = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
   return (
     <header
       {...props}
-      className={clsx('py-4 px-6 text-xl font-semibold', className)}
+      className={clsx('px-6 py-4 text-xl font-semibold', className)}
     />
   )
 }
@@ -98,11 +98,11 @@ const _ModalBody = ({
   className,
   ...props
 }: HTMLAttributes<HTMLDivElement>) => {
-  return <div {...props} className={clsx('py-2 px-6', className)} />
+  return <div {...props} className={clsx('px-6 py-2', className)} />
 }
 
 const _ModalFooter = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
-  return <footer {...props} className={clsx('py-4 px-6', className)} />
+  return <footer {...props} className={clsx('px-6 py-4', className)} />
 }
 
 export {

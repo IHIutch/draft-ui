@@ -1,4 +1,4 @@
-import { Button } from '../../Button/src/Button'
+import { Button } from '../../Button/src/button'
 import { Input } from '../../Input/src/Input'
 import { Label } from '../../Label/src/Label'
 import {

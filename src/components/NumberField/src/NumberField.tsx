@@ -15,7 +15,7 @@ const _NumberField = (props) => {
 const _NumberInputStepper = (props) => {
   return (
     <Group
-      className="absolute top-0 right-0 z-10 m-px flex h-[calc(100%-2px)] w-6 flex-col"
+      className="absolute right-0 top-0 z-10 m-px flex h-[calc(100%-2px)] w-6 flex-col"
       {...props}
     />
   )

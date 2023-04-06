@@ -1,4 +1,4 @@
-import { Button, type _ButtonProps } from '../../Button/src/Button'
+import { Button, type _ButtonProps } from '../../Button/src/button'
 import { type ClassValue } from 'class-variance-authority/dist/types'
 import { DatePicker, Dialog, Popover } from 'react-aria-components'
 

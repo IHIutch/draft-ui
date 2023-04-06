@@ -14,10 +14,10 @@ const inputVariants = cva(
         invalid: 'border-2 border-red-500',
       },
       size: {
-        lg: 'h-12 px-4 rounded-lg text-lg',
-        md: 'h-10 px-4 rounded-md text-md',
-        sm: 'h-8 px-3 rounded text-sm',
-        xs: 'h-6 px-2 rounded-sm text-xs',
+        lg: 'h-12 rounded-lg px-4 text-lg',
+        md: 'text-md h-10 rounded-md px-4',
+        sm: 'h-8 rounded px-3 text-sm',
+        xs: 'h-6 rounded-sm px-2 text-xs',
       },
     },
     defaultVariants: {
