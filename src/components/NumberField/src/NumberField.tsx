@@ -1,9 +1,7 @@
 import { Input } from '../../Input/src/Input'
 import { type ClassValue } from 'class-variance-authority/dist/types'
 import clsx from 'clsx'
-import { Button } from 'react-aria-components/src/Button'
-import { Group } from 'react-aria-components/src/Group'
-import { NumberField } from 'react-aria-components/src/NumberField'
+import { Button, Group, NumberField } from 'react-aria-components'
 
 // export interface _MenuProps
 //   extends VariantProps<typeof buttonVariants> {

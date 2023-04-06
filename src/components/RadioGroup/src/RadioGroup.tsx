@@ -1,9 +1,6 @@
 import clsx from 'clsx'
 import { type HTMLAttributes } from 'react'
-import {
-  RadioGroup,
-  type RadioGroupProps,
-} from 'react-aria-components/src/RadioGroup'
+import { RadioGroup, type RadioGroupProps } from 'react-aria-components'
 
 const _RadioGroup = (props: RadioGroupProps) => {
   return <RadioGroup className="group" {...props} />

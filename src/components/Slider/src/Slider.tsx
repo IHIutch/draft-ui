@@ -6,7 +6,7 @@ import {
   SliderThumb,
   SliderTrack,
   type SliderTrackProps,
-} from 'react-aria-components/src/Slider'
+} from 'react-aria-components'
 
 const _Slider = ({ className, ...props }) => {
   return <Slider {...props} className={clsx('group', className)} />

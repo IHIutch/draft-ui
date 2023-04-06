@@ -1,14 +1,15 @@
 import { Button, type _ButtonProps } from '../../Button/src/Button'
 import { type ClassValue } from 'class-variance-authority/dist/types'
-import { Item, Section } from 'react-aria-components/src/Collection'
 import {
   Menu,
   MenuTrigger,
   type MenuItemRenderProps,
   type MenuProps,
-} from 'react-aria-components/src/Menu'
-import { Popover } from 'react-aria-components/src/Popover'
-import { Separator } from 'react-aria-components/src/Separator'
+  Popover,
+  Item,
+  Section,
+  Separator,
+} from 'react-aria-components'
 
 // export interface _MenuProps
 //   extends VariantProps<typeof buttonVariants> {

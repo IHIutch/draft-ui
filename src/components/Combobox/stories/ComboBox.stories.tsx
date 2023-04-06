@@ -1,10 +1,9 @@
 import { Button } from '../../Button/src/Button'
 import { Input } from '../../Input/src/Input'
 import { Label } from '../../Label/src/Label'
-import { ComboBox, ComboBoxItem } from '../src/Combobox'
+import { ComboBox, ComboBoxItem } from '../src/ComboBox'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { ListBox } from 'react-aria-components/src/ListBox'
-import { Popover } from 'react-aria-components/src/Popover'
+import { ListBox, Popover } from 'react-aria-components'
 
 export default {
   title: 'ComboBox',

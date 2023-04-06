@@ -9,7 +9,7 @@ import { DateInput, DateSegment } from '../../DateField/src/DateField'
 import { Label } from '../../Label/src/Label'
 import { DatePicker, DatePickerContent } from '../src/DatePicker'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { Group } from 'react-aria-components/src/Group'
+import { Group } from 'react-aria-components'
 
 export default {
   title: 'DatePicker',

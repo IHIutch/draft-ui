@@ -5,7 +5,7 @@ import {
   CalendarHeader,
 } from '../../Calendar/src/Calendar'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { RangeCalendar } from 'react-aria-components/src/Calendar'
+import { RangeCalendar } from 'react-aria-components'
 
 export default {
   title: 'RangeCalendar',

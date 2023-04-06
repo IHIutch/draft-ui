@@ -1,10 +1,6 @@
 import clsx from 'clsx'
 import { type HTMLAttributes } from 'react'
-import { Text } from 'react-aria-components/src/Text'
-import {
-  TextField,
-  type TextFieldProps,
-} from 'react-aria-components/src/TextField'
+import { Text, TextField, type TextFieldProps } from 'react-aria-components'
 
 const _TextField = (props: TextFieldProps) => {
   return <TextField {...props} />

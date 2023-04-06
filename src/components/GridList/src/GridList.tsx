@@ -1,6 +1,5 @@
 import { type ClassValue } from 'class-variance-authority/dist/types'
-import { Item } from 'react-aria-components/src/Collection'
-import { GridList } from 'react-aria-components/src/GridList'
+import { GridList, Item } from 'react-aria-components'
 
 // export interface _MenuProps
 //   extends VariantProps<typeof buttonVariants> {

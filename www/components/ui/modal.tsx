@@ -6,7 +6,7 @@ import {
   Modal,
   ModalOverlay,
   type ModalOverlayProps,
-} from 'react-aria-components/src/Modal'
+} from 'react-aria-components'
 
 const buttonVariants = cva('bg-white rounded mx-auto', {
   variants: {

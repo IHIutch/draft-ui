@@ -1,7 +1,7 @@
 import { Label } from '../../Label/src/Label'
 import { Select, SelectButton, SelectContent, SelectItem } from '../src/Select'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { SelectValue } from 'react-aria-components/src/Select'
+import { SelectValue } from 'react-aria-components'
 
 export default {
   title: 'Select',

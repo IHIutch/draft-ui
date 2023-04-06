@@ -2,13 +2,14 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { type ClassValue } from 'class-variance-authority/dist/types'
 import { clsx } from 'clsx'
 import { type HTMLAttributes, type ReactNode } from 'react'
-import { Dialog, DialogTrigger } from 'react-aria-components/src/Dialog'
 import {
+  Dialog,
+  DialogTrigger,
   Modal,
   ModalOverlay,
-  type ModalRenderProps,
   type ModalOverlayProps,
-} from 'react-aria-components/src/Modal'
+  type ModalRenderProps,
+} from 'react-aria-components'
 
 const buttonVariants = cva(
   [

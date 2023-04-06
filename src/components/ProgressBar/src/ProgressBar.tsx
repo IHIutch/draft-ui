@@ -1,5 +1,5 @@
 import { type ClassValue } from 'class-variance-authority/dist/types'
-import { ProgressBar } from 'react-aria-components/src/ProgressBar'
+import { ProgressBar } from 'react-aria-components'
 
 const _ProgressBar = (props) => {
   return <ProgressBar {...props} />

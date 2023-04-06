@@ -1,6 +1,5 @@
 import { type ClassValue } from 'class-variance-authority/dist/types'
-import { Calendar, CalendarGrid } from 'react-aria-components/src/Calendar'
-import { Item } from 'react-aria-components/src/Collection'
+import { Calendar, CalendarGrid, Item } from 'react-aria-components'
 
 // export interface _MenuProps
 //   extends VariantProps<typeof buttonVariants> {

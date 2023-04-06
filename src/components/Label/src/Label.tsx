@@ -1,6 +1,6 @@
 import { type ClassValue } from 'class-variance-authority/dist/types'
 import clsx from 'clsx'
-import { Label, type LabelProps } from 'react-aria-components/src/Label'
+import { Label, type LabelProps } from 'react-aria-components'
 
 export interface _LabelProps extends Omit<LabelProps, 'className'> {
   className?: ClassValue

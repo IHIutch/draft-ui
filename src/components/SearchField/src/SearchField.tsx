@@ -2,7 +2,7 @@ import { Button, type _ButtonProps } from '../../Button/src/Button'
 import { Input, type _InputProps } from '../../Input/src/Input'
 import { type ClassValue } from 'class-variance-authority/dist/types'
 import clsx from 'clsx'
-import { SearchField } from 'react-aria-components/src/SearchField'
+import { SearchField } from 'react-aria-components'
 
 const _SearchField = (props) => {
   return <SearchField className="group" {...props} />

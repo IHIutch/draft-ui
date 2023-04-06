@@ -8,9 +8,9 @@ import { DateInput, DateSegment } from '../../DateField/src/DateField'
 import { Label } from '../../Label/src/Label'
 import { DatePickerContent } from '../src/DateRangePicker'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { RangeCalendar } from 'react-aria-components/src/Calendar'
-import { DateRangePicker } from 'react-aria-components/src/DatePicker'
-import { Group } from 'react-aria-components/src/Group'
+import { RangeCalendar } from 'react-aria-components'
+import { DateRangePicker } from 'react-aria-components'
+import { Group } from 'react-aria-components'
 
 export default {
   title: 'DateRangePicker',

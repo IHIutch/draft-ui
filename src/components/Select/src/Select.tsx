@@ -1,10 +1,7 @@
 import { Button, type _ButtonProps } from '../../Button/src/Button'
 import { type ClassValue } from 'class-variance-authority/dist/types'
 import { type ReactNode } from 'react'
-import { Item } from 'react-aria-components/src/Collection'
-import { ListBox } from 'react-aria-components/src/ListBox'
-import { Popover } from 'react-aria-components/src/Popover'
-import { Select } from 'react-aria-components/src/Select'
+import { Item, ListBox, Popover, Select } from 'react-aria-components'
 
 const _Select = (props) => {
   return <Select {...props} />

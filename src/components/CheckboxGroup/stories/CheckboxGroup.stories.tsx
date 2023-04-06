@@ -1,7 +1,7 @@
 import { Checkbox } from '../../Checkbox/src/Checkbox'
 import { Label } from '../../Label/src/Label'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { CheckboxGroup } from 'react-aria-components/src/Checkbox'
+import { CheckboxGroup } from 'react-aria-components'
 
 export default {
   title: 'CheckboxGroup',

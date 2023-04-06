@@ -9,7 +9,7 @@ import {
   NumberInputStepper,
 } from '../src/NumberField'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { Group } from 'react-aria-components/src/Group'
+import { Group } from 'react-aria-components'
 
 export default {
   title: 'NumberField',

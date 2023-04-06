@@ -1,6 +1,6 @@
 import { BreadcrumbItem, Breadcrumbs } from '../src/Breadcrumbs'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import { Link } from 'react-aria-components/src/Link'
+import { Link } from 'react-aria-components'
 
 export default {
   title: 'Breadcrumbs',

@@ -1,5 +1,5 @@
 import { type ClassValue } from 'class-variance-authority/dist/types'
-import { Checkbox } from 'react-aria-components/src/Checkbox'
+import { Checkbox } from 'react-aria-components'
 
 // export interface _MenuProps
 //   extends VariantProps<typeof buttonVariants> {

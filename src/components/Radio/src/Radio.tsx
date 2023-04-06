@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import { type ClassValue } from 'class-variance-authority/dist/types'
-import { Radio, type RadioProps } from 'react-aria-components/src/RadioGroup'
+import { Radio, type RadioProps } from 'react-aria-components'
 
 const radioVariants = cva('group flex flex-row items-center gap-2', {
   variants: {
