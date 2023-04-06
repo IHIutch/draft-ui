@@ -1,4 +1,4 @@
-import { Button, type _ButtonProps } from '../../Button/src/button'
+import { Button, type _ButtonProps } from '../../Button/src/Button'
 import { Input, type _InputProps } from '../../Input/src/Input'
 import { type ClassValue } from 'class-variance-authority/dist/types'
 import clsx from 'clsx'

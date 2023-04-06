@@ -1,4 +1,4 @@
-import { Button } from '../../Button/src/button'
+import { Button } from '../../Button/src/Button'
 import { Checkbox } from '../../Checkbox/src/Checkbox'
 import { GridList, GridListItem } from '../src/GridList'
 import { type ComponentStory, type ComponentMeta } from '@storybook/react'

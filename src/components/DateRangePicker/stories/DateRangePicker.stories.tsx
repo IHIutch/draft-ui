@@ -1,4 +1,4 @@
-import { Button } from '../../Button/src/button'
+import { Button } from '../../Button/src/Button'
 import {
   CalendarCell,
   CalendarGrid,
