@@ -1,0 +1,44 @@
+{
+  "name": "docs",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "@next/font": "13.1.6",
+    "clsx": "^1.2.1",
+    "contentlayer": "^0.3.0",
+    "next": "13.1.6",
+    "next-contentlayer": "^0.3.0",
+    "react": "18.2.0",
+    "react-aria-components": "1.0.0-alpha.2",
+    "react-docgen": "6.0.0-beta.5",
+    "react-dom": "18.2.0",
+    "react-stately": "^3.21.0",
+    "rehype-pretty-code": "^0.9.4",
+    "remark-code-import": "^1.1.1",
+    "shiki": "^0.14.1",
+    "typescript": "4.9.5",
+    "unist-builder": "^3.0.1",
+    "unist-util-visit": "^4.1.2",
+    "ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "18.13.0",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "autoprefixer": "^10.4.14",
+    "eslint": "8.33.0",
+    "eslint-config": "workspace:*",
+    "postcss": "^8.4.21",
+    "tailwind-config": "workspace:*",
+    "ts-config": "workspace:*"
+  }
+}

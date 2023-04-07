@@ -1,0 +1,8 @@
+{
+  "extends": "ts-config/react-library.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "noImplicitAny": false // TODO: Disable this once all components are typed
+  }
+}
