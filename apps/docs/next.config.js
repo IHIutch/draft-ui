@@ -18,6 +18,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  transpilePackages: ["ui"],
 }
 
 // export default withContentlayer(nextConfig);

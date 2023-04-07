@@ -4,8 +4,8 @@ import rehypePrettyCode from 'rehype-pretty-code'
 import { codeImport } from 'remark-code-import'
 import { getHighlighter } from 'shiki'
 import { visit } from 'unist-util-visit'
-import { rehypeComponent } from './src/lib/rehype-component'
-import { rehypeNpmCommand } from './src/lib/rehype-npm-command'
+import { rehypeComponent } from './lib/rehype-component'
+import { rehypeNpmCommand } from './lib/rehype-npm-command'
 
 // import fs from "fs";
 // import path from "path";
