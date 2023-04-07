@@ -1,14 +1,16 @@
 import { Button } from '../../Button/src/Button'
 import { Checkbox } from '../../Checkbox/src/Checkbox'
 import { GridList, GridListItem } from '../src/GridList'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof GridList> = {
   title: 'GridList',
   component: GridList,
-} as ComponentMeta<typeof GridList>
+}
 
-export const Default: ComponentStory<typeof GridList> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof GridList> = (props) => (
   <GridList aria-label="Favorite pokemon" selectionMode="multiple">
     <GridListItem textValue="Charizard">
       <Checkbox />

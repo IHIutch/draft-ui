@@ -1,13 +1,15 @@
 import { Label } from '../../Label/src/Label'
 import { DateField, DateInput, DateSegment } from '../src/DateField'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof DateField> = {
   title: 'DateField',
   component: DateField,
-} as ComponentMeta<typeof DateField>
+}
 
-export const Default: ComponentStory<typeof DateField> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof DateField> = (props) => (
   <DateField>
     <Label>Date Label</Label>
     <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>

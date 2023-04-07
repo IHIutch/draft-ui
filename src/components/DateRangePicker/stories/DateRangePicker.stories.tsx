@@ -7,17 +7,19 @@ import {
 import { DateInput, DateSegment } from '../../DateField/src/DateField'
 import { Label } from '../../Label/src/Label'
 import { DatePickerContent } from '../src/DateRangePicker'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 import { RangeCalendar } from 'react-aria-components'
 import { DateRangePicker } from 'react-aria-components'
 import { Group } from 'react-aria-components'
 
-export default {
+const meta: Meta<typeof DateField> = {
   title: 'DateRangePicker',
   component: DateRangePicker,
-} as ComponentMeta<typeof DateRangePicker>
+}
 
-export const Default: ComponentStory<typeof DateRangePicker> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof DateRangePicker> = (props) => (
   <DateRangePicker>
     <Label>Trip dates</Label>
     <Group>

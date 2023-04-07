@@ -8,15 +8,15 @@ import {
 import { DateInput, DateSegment } from '../../DateField/src/DateField'
 import { Label } from '../../Label/src/Label'
 import { DatePicker, DatePickerContent } from '../src/DatePicker'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 import { Group } from 'react-aria-components'
 
 export default {
   title: 'DatePicker',
   component: DatePicker,
-} as ComponentMeta<typeof DatePicker>
+} as Meta<typeof DatePicker>
 
-export const Default: ComponentStory<typeof DatePicker> = (props) => (
+export const Default: StoryObj<typeof DatePicker> = (props) => (
   <DatePicker>
     <Label>Date</Label>
     <Group>

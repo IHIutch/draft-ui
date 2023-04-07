@@ -1,14 +1,16 @@
 import { Label } from '../../Label/src/Label'
 import { Radio } from '../../Radio/src/Radio'
 import { RadioGroup, RadioGroupContent } from '../src/RadioGroup'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof RadioGroup> = {
   title: 'RadioGroup',
   component: RadioGroup,
-} as ComponentMeta<typeof RadioGroup>
+}
 
-export const Default: ComponentStory<typeof RadioGroup> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof RadioGroup> = (props) => (
   <RadioGroup orientation={props.orientation}>
     <Label>Favorite sports</Label>
     <RadioGroupContent>

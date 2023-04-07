@@ -2,15 +2,17 @@ import { Button } from '../../Button/src/Button'
 import { Input } from '../../Input/src/Input'
 import { Label } from '../../Label/src/Label'
 import { ComboBox, ComboBoxItem } from '../src/ComboBox'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 import { ListBox, Popover } from 'react-aria-components'
 
-export default {
+const meta: Meta<typeof ComboBox> = {
   title: 'ComboBox',
   component: ComboBox,
-} as ComponentMeta<typeof ComboBox>
+}
 
-export const Default: ComponentStory<typeof ComboBox> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof ComboBox> = (props) => (
   <ComboBox>
     <Label>Favorite Animal</Label>
     <div>

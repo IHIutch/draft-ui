@@ -1,14 +1,16 @@
 import { Checkbox } from '../../Checkbox/src/Checkbox'
 import { Label } from '../../Label/src/Label'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 import { CheckboxGroup } from 'react-aria-components'
 
-export default {
+const meta: Meta<typeof CheckboxGroup> = {
   title: 'CheckboxGroup',
   component: CheckboxGroup,
-} as ComponentMeta<typeof CheckboxGroup>
+}
 
-export const Default: ComponentStory<typeof CheckboxGroup> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof CheckboxGroup> = (props) => (
   <CheckboxGroup>
     <Label>Favorite sports</Label>
     <Checkbox value="soccer">

@@ -1,14 +1,14 @@
 import { Input } from '../src/Input'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof Input> = {
   title: 'Input',
   component: Input,
-} as ComponentMeta<typeof Input>
+}
 
-export const Default: ComponentStory<typeof Input> = (props) => (
-  <Input {...props} />
-)
+export default meta
+
+export const Default: StoryObj<typeof Input> = (props) => <Input {...props} />
 
 Default.argTypes = {
   className: { type: 'string' },

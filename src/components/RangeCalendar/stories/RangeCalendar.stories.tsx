@@ -4,15 +4,17 @@ import {
   CalendarGrid,
   CalendarHeader,
 } from '../../Calendar/src/Calendar'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 import { RangeCalendar } from 'react-aria-components'
 
-export default {
+const meta: Meta<typeof RangeCalendar> = {
   title: 'RangeCalendar',
   component: RangeCalendar,
-} as ComponentMeta<typeof RangeCalendar>
+}
 
-export const Default: ComponentStory<typeof RangeCalendar> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof RangeCalendar> = (props) => (
   <RangeCalendar aria-label="Trip dates">
     <CalendarHeader>
       <Button slot="previous">◀</Button>

@@ -1,13 +1,15 @@
 import { RadioGroup } from '../../RadioGroup/src/RadioGroup'
 import { Radio } from '../src/Radio'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof Radio> = {
   title: 'Radio',
   component: Radio,
-} as ComponentMeta<typeof Radio>
+}
 
-export const Default: ComponentStory<typeof Radio> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof Radio> = (props) => (
   <RadioGroup isDisabled={props.isDisabled}>
     <Radio size={props.size} value="cat">
       Cat

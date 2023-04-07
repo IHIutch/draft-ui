@@ -6,15 +6,17 @@ import {
   ModalHeader,
   ModalOverlay,
 } from '../src/Modal'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 import { useState } from 'react'
 
-export default {
+const meta: Meta<typeof ModalContent> = {
   title: 'Modal',
   component: ModalContent,
-} as ComponentMeta<typeof ModalContent>
+}
 
-export const Default: ComponentStory<typeof ModalContent> = (props) => {
+export default meta
+
+export const Default: StoryObj<typeof ModalContent> = (props) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (

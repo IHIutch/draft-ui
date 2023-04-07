@@ -5,14 +5,16 @@ import {
   CalendarGrid,
   CalendarHeader,
 } from '../src/Calendar'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof Calendar> = {
   title: 'Calendar',
   component: Calendar,
-} as ComponentMeta<typeof Calendar>
+}
 
-export const Default: ComponentStory<typeof Calendar> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof Calendar> = (props) => (
   <Calendar aria-label="Appointment date">
     <CalendarHeader>
       <Button slot="previous">◀</Button>

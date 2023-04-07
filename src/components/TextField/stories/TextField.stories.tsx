@@ -5,33 +5,16 @@ import {
   TextFieldDescription,
   TextFieldErrorMessage,
 } from '../src/TextField'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof TextField> = {
   title: 'TextField',
   component: TextField,
-  argTypes: {
-    className: { type: 'string' },
-    isDisabled: { type: 'boolean' },
-    isReadOnly: { type: 'boolean' },
-    isRequired: { type: 'boolean' },
-    validationState: {
-      type: 'string',
-      control: 'radio',
-      options: ['valid', 'invalid'],
-    },
-  },
-  args: {
-    className: '',
-    isDisabled: false,
-    isReadOnly: false,
-    isRequired: false,
-    validationState: 'valid',
-  },
-  subcomponents: { Label, Input },
-} as ComponentMeta<typeof TextField>
+}
 
-export const Default: ComponentStory<typeof TextField> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof TextField> = (props) => (
   <TextField {...props}>
     <Label>Label</Label>
     <Input validationState={props.validationState} size="md" />
@@ -46,3 +29,23 @@ export const Default: ComponentStory<typeof TextField> = (props) => (
     )}
   </TextField>
 )
+
+Default.argTypes = {
+  className: { type: 'string' },
+  isDisabled: { type: 'boolean' },
+  isReadOnly: { type: 'boolean' },
+  isRequired: { type: 'boolean' },
+  validationState: {
+    type: 'string',
+    control: 'radio',
+    options: ['valid', 'invalid'],
+  },
+}
+
+Default.args = {
+  className: '',
+  isDisabled: false,
+  isReadOnly: false,
+  isRequired: false,
+  validationState: 'valid',
+}

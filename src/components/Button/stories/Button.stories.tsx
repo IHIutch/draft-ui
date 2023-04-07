@@ -1,14 +1,14 @@
 import { Button } from '../src/Button'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof Button> = {
   title: 'Button',
   component: Button,
-} as ComponentMeta<typeof Button>
+}
 
-export const Default: ComponentStory<typeof Button> = (props) => (
-  <Button {...props} />
-)
+export default meta
+
+export const Default: StoryObj<typeof Button> = (props) => <Button {...props} />
 
 Default.argTypes = {
   children: { type: 'string' },

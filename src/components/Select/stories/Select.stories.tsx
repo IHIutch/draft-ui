@@ -1,14 +1,16 @@
 import { Label } from '../../Label/src/Label'
 import { Select, SelectButton, SelectContent, SelectItem } from '../src/Select'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 import { SelectValue } from 'react-aria-components'
 
-export default {
+const meta: Meta<typeof Select> = {
   title: 'Select',
   component: Select,
-} as ComponentMeta<typeof Select>
+}
 
-export const Default: ComponentStory<typeof Select> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof Select> = (props) => (
   <Select>
     <Label>Favorite Animal</Label>
     <SelectButton icon="▼" variant="outline">

@@ -8,15 +8,17 @@ import {
   NumberInput,
   NumberInputStepper,
 } from '../src/NumberField'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 import { Group } from 'react-aria-components'
 
-export default {
+const meta: Meta<typeof NumberField> = {
   title: 'NumberField',
   component: NumberField,
-} as ComponentMeta<typeof NumberField>
+}
 
-export const Default: ComponentStory<typeof NumberField> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof NumberField> = (props) => (
   <NumberField
     defaultValue={50}
     minValue={props.minValue}
@@ -48,7 +50,7 @@ Default.args = {
   step: 1,
 }
 
-export const Mobile: ComponentStory<typeof NumberField> = (props) => (
+export const Mobile: StoryObj<typeof NumberField> = (props) => (
   <NumberField
     defaultValue={50}
     minValue={props.minValue}

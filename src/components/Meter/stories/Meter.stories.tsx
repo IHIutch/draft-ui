@@ -1,13 +1,15 @@
 import { Label } from '../../Label/src/Label'
 import { Meter } from '../src/Meter'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof Meter> = {
   title: 'Meter',
   component: Meter,
-} as ComponentMeta<typeof Meter>
+}
 
-export const Default: ComponentStory<typeof Meter> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof Meter> = (props) => (
   <Meter
     value={props.value}
     minValue={props.minValue}

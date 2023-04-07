@@ -6,15 +6,16 @@ import {
   SliderThumb,
   SliderTrack,
 } from '../src/Slider'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import clsx from 'clsx'
+import { type StoryObj, type Meta } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof Slider> = {
   title: 'Slider',
   component: Slider,
-} as ComponentMeta<typeof Slider>
+}
 
-export const Default: ComponentStory<typeof Slider> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof Slider> = (props) => (
   <Slider defaultValue={30} orientation={props.orientation} className="h-32">
     <Label>Opacity</Label>
     <SliderTrack>

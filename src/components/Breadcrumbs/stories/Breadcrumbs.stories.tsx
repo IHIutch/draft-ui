@@ -1,13 +1,15 @@
 import { BreadcrumbItem, Breadcrumbs } from '../src/Breadcrumbs'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 import { Link } from 'react-aria-components'
 
-export default {
+const meta: Meta<typeof Breadcrumbs> = {
   title: 'Breadcrumbs',
   component: Breadcrumbs,
-} as ComponentMeta<typeof Breadcrumbs>
+}
 
-export const Default: ComponentStory<typeof Breadcrumbs> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof Breadcrumbs> = (props) => (
   <Breadcrumbs>
     <BreadcrumbItem>
       <Link>

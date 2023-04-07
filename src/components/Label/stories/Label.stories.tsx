@@ -1,14 +1,14 @@
 import { Label } from '../src/Label'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof Label> = {
   title: 'Label',
   component: Label,
-} as ComponentMeta<typeof Label>
+}
 
-export const Default: ComponentStory<typeof Label> = (props) => (
-  <Label {...props} />
-)
+export default meta
+
+export const Default: StoryObj<typeof Label> = (props) => <Label {...props} />
 
 Default.argTypes = {
   className: { type: 'string' },

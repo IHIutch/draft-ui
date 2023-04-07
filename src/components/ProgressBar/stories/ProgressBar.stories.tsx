@@ -1,13 +1,15 @@
 import { Label } from '../../Label/src/Label'
 import { ProgressBar } from '../src/ProgressBar'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof ProgressBar> = {
   title: 'ProgressBar',
   component: ProgressBar,
-} as ComponentMeta<typeof ProgressBar>
+}
 
-export const Default: ComponentStory<typeof ProgressBar> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof ProgressBar> = (props) => (
   <ProgressBar
     value={props.value}
     minValue={props.minValue}

@@ -6,14 +6,16 @@ import {
   MenuSection,
   MenuSeparator,
 } from '../src/Menu'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof Menu> = {
   title: 'Menu',
   component: Menu,
-} as ComponentMeta<typeof Menu>
+}
 
-export const Default: ComponentStory<typeof Menu> = (props) => {
+export default meta
+
+export const Default: StoryObj<typeof Menu> = (props) => {
   return (
     <Menu>
       <MenuButton aria-label="Menu">☰</MenuButton>

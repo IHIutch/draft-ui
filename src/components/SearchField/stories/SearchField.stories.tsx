@@ -4,14 +4,16 @@ import {
   SearchFieldClearButton,
   SearchFieldInput,
 } from '../src/SearchField'
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
+import { type StoryObj, type Meta } from '@storybook/react'
 
-export default {
+const meta: Meta<typeof SearchField> = {
   title: 'SearchField',
   component: SearchField,
-} as ComponentMeta<typeof SearchField>
+}
 
-export const Default: ComponentStory<typeof SearchField> = (props) => (
+export default meta
+
+export const Default: StoryObj<typeof SearchField> = (props) => (
   <SearchField>
     <Label>Search</Label>
     <div className="relative">
