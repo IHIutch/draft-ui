@@ -1,9 +1,9 @@
 import { type StoryObj, type Meta } from '@storybook/react'
 import { ListBox, Popover } from 'react-aria-components'
-import { Button } from 'ui'
-import { Input } from 'ui'
-import { Label } from 'ui'
-import { ComboBox, ComboBoxItem } from 'ui'
+import { Button } from 'ui/src'
+import { Input } from 'ui/src'
+import { Label } from 'ui/src'
+import { ComboBox, ComboBoxItem } from 'ui/src'
 
 const meta: Meta<typeof ComboBox> = {
   title: 'ComboBox',

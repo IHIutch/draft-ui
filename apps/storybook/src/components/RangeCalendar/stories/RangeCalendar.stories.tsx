@@ -1,5 +1,5 @@
-import { Button } from 'ui'
-import { CalendarCell, CalendarGrid, CalendarHeader } from 'ui'
+import { Button } from 'ui/src'
+import { CalendarCell, CalendarGrid, CalendarHeader } from 'ui/src'
 import { type StoryObj, type Meta } from '@storybook/react'
 import { RangeCalendar } from 'react-aria-components'
 

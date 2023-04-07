@@ -2,11 +2,11 @@ import { type StoryObj, type Meta } from '@storybook/react'
 import { RangeCalendar } from 'react-aria-components'
 import { DateRangePicker } from 'react-aria-components'
 import { Group } from 'react-aria-components'
-import { Button } from 'ui'
-import { CalendarCell, CalendarGrid, CalendarHeader } from 'ui'
-import { DateInput, DateSegment } from 'ui'
-import { Label } from 'ui'
-import { DatePickerContent } from 'ui'
+import { Button } from 'ui/src'
+import { CalendarCell, CalendarGrid, CalendarHeader } from 'ui/src'
+import { DateInput, DateSegment } from 'ui/src'
+import { Label } from 'ui/src'
+import { DatePickerContent } from 'ui/src'
 
 const meta: Meta<typeof DateRangePicker> = {
   title: 'DateRangePicker',
