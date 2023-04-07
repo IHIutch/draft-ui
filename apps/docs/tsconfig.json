@@ -6,12 +6,20 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".contentlayer/generated"
-],
-"exclude": ["node_modules"],
-"compilerOptions": { 
-  "baseUrl": ".",
-  "paths": {
-    "@/*": ["./*"],
-    "contentlayer/generated": ["./.contentlayer/generated"]
-  }}
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  }
 }

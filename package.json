@@ -1,20 +1,13 @@
 {
   "name": "draft-ui",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "start": "turbo run start",
-    "lint": "turbo run lint",
-    "clean": "turbo run clean"
+    "lint": "turbo run lint"
   },
   "devDependencies": {
     "eslint": "^8.37.0",
     "eslint-config-custom": "workspace:*",
     "turbo": "^1.8.8"
-  },
-  "dependencies": {}
+  }
 }
