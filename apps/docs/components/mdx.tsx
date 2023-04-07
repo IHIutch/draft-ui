@@ -32,7 +32,7 @@ const components = {
         <pre
           className={clsx(
             'not-prose',
-            'mt-6 mb-4 overflow-x-auto rounded-lg border border-slate-900 bg-slate-900 py-4 px-2 dark:border-slate-700 dark:bg-black',
+            'mb-4 mt-6 overflow-x-auto rounded-lg border border-slate-900 bg-slate-900 px-2 py-4 dark:border-slate-700 dark:bg-black',
             className
           )}
           {...props}
@@ -42,7 +42,7 @@ const components = {
             value={__rawString__}
             // src={__src__}
             className={clsx(
-              'absolute top-4 right-4 border-none text-slate-300 opacity-50 hover:bg-transparent hover:opacity-100',
+              'absolute right-4 top-4 border-none text-slate-300 opacity-50 hover:bg-transparent hover:opacity-100',
               __withMeta__ && 'top-20'
             )}
           />
@@ -55,7 +55,7 @@ const components = {
             //   __yarnCommand__,
             // }}
             className={clsx(
-              'absolute top-4 right-4 border-none text-slate-300 opacity-50 hover:bg-transparent hover:opacity-100',
+              'absolute right-4 top-4 border-none text-slate-300 opacity-50 hover:bg-transparent hover:opacity-100',
               __withMeta__ && 'top-20'
             )}
           />
@@ -66,7 +66,7 @@ const components = {
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code
       className={clsx(
-        'relative rounded bg-slate-100 py-[0.2rem] px-[0.3rem] font-mono text-sm font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400',
+        'relative rounded bg-slate-100 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400',
         className
       )}
       {...props}
