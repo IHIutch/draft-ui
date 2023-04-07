@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {
-    "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore .",
+    "lint": "eslint --ext .ts,.tsx .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

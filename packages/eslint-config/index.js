@@ -3,7 +3,7 @@ module.exports = {
   extends: [
     "next",
     "turbo",
-    "prettier",
+    "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:tailwindcss/recommended",
   ],
@@ -14,6 +14,7 @@ module.exports = {
   },
   plugins: ["@typescript-eslint/eslint-plugin", "eslint-plugin-storybook"],
   rules: {
+    "@next/next/no-html-link-for-pages": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/ban-ts-comment": "off",

@@ -1,5 +1,6 @@
-import { allDocs } from '@/.contentlayer/generated'
+
 import Link from 'next/link'
+import { allDocs } from 'contentlayer/generated'
 
 export default async function Home() {
   return (
