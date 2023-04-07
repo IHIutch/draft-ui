@@ -36,7 +36,7 @@
     "@types/react-dom": "18.0.10",
     "autoprefixer": "^10.4.14",
     "eslint": "8.33.0",
-    "eslint-config": "workspace:*",
+    "eslint-config-custom": "workspace:*",
     "postcss": "^8.4.21",
     "tailwind-config": "workspace:*",
     "ts-config": "workspace:*"

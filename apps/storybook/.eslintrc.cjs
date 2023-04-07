@@ -1,4 +1,5 @@
 module.exports = {
   root: true,
-  extends: ["eslint-config"],
+  extends: ["custom"],
+  plugins: ["eslint-plugin-storybook"],
 };

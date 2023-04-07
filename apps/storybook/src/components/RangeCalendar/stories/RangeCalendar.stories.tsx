@@ -1,14 +1,14 @@
-import { Button } from "ui";
-import { CalendarCell, CalendarGrid, CalendarHeader } from "ui";
-import { type StoryObj, type Meta } from "@storybook/react";
-import { RangeCalendar } from "react-aria-components";
+import { Button } from 'ui'
+import { CalendarCell, CalendarGrid, CalendarHeader } from 'ui'
+import { type StoryObj, type Meta } from '@storybook/react'
+import { RangeCalendar } from 'react-aria-components'
 
 const meta: Meta<typeof RangeCalendar> = {
-  title: "RangeCalendar",
+  title: 'RangeCalendar',
   component: RangeCalendar,
-};
+}
 
-export default meta;
+export default meta
 
 export const Default: StoryObj<typeof RangeCalendar> = (props) => (
   <RangeCalendar aria-label="Trip dates">
@@ -20,12 +20,12 @@ export const Default: StoryObj<typeof RangeCalendar> = (props) => (
     </CalendarHeader>
     <CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
   </RangeCalendar>
-);
+)
 
 Default.argTypes = {
-  className: { type: "string" },
-};
+  className: { type: 'string' },
+}
 
 Default.args = {
-  className: "",
-};
+  className: '',
+}

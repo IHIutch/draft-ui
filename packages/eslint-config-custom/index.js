@@ -12,7 +12,7 @@ module.exports = {
     ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
     sourceType: "module", // Allows for the use of imports
   },
-  plugins: ["@typescript-eslint/eslint-plugin", "eslint-plugin-storybook"],
+  plugins: ["@typescript-eslint/eslint-plugin"],
   rules: {
     "@next/next/no-html-link-for-pages": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -25,7 +25,7 @@ module.exports = {
       "error",
       {
         singleQuote: true,
-        semi: true,
+        semi: false,
       },
     ],
     "@typescript-eslint/consistent-type-imports": [

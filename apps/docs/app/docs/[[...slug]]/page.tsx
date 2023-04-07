@@ -1,6 +1,6 @@
 import { allDocs } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
-import "@/styles/mdx.css"
+import '@/styles/mdx.css'
 import { Mdx } from '@/components/mdx'
 
 // import { getTableOfContents } from "@/lib/toc";

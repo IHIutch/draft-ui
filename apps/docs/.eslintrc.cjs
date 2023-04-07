@@ -1,4 +1,7 @@
 module.exports = {
   root: true,
-  extends: ["eslint-config"],
+  extends: ["custom"],
+  rules: {
+    "@next/next/no-html-link-for-pages": "off",
+  }
 };

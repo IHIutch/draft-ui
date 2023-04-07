@@ -1,13 +1,13 @@
-import { type StoryObj, type Meta } from "@storybook/react";
-import { Label } from "ui";
-import { ProgressBar } from "ui";
+import { type StoryObj, type Meta } from '@storybook/react'
+import { Label } from 'ui'
+import { ProgressBar } from 'ui'
 
 const meta: Meta<typeof ProgressBar> = {
-  title: "ProgressBar",
+  title: 'ProgressBar',
   component: ProgressBar,
-};
+}
 
-export default meta;
+export default meta
 
 export const Default: StoryObj<typeof ProgressBar> = (props) => (
   <ProgressBar
@@ -20,21 +20,21 @@ export const Default: StoryObj<typeof ProgressBar> = (props) => (
         <Label>Progress</Label>
         <span>{valueText}</span>
         <div>
-          <div style={{ width: percentage + "%" }} />
+          <div style={{ width: percentage + '%' }} />
         </div>
       </>
     )}
   </ProgressBar>
-);
+)
 
 Default.argTypes = {
-  minValue: { type: "number" },
-  maxValue: { type: "number" },
-  value: { type: "number" },
-};
+  minValue: { type: 'number' },
+  maxValue: { type: 'number' },
+  value: { type: 'number' },
+}
 
 Default.args = {
   value: 100,
   minValue: 50,
   maxValue: 150,
-};
+}
