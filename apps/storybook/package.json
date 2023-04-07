@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint --ext .ts,.tsx .",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build": "storybook build"
   },
   "dependencies": {
     "@babel/preset-env": "^7.21.4",

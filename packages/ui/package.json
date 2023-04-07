@@ -8,7 +8,7 @@
   "types": "src/index.ts",
   "license": "MIT",
   "scripts": {
-    "build": "tsup",
+    "_build": "tsup",
     "dev": "tsup --watch",
     "check-types": "tsc --noEmit"
   },
