@@ -1,6 +1,6 @@
 import { type StoryObj, type Meta } from '@storybook/react'
 import { Link } from 'react-aria-components'
-import { BreadcrumbItem, Breadcrumbs } from 'ui/src'
+import { BreadcrumbItem, Breadcrumbs } from 'ui'
 
 const meta: Meta<typeof Breadcrumbs> = {
   title: 'Breadcrumbs',

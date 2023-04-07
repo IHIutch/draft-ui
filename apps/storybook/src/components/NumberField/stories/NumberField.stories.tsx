@@ -6,10 +6,10 @@ import {
   NumberIncrementStepper,
   NumberInput,
   NumberInputStepper,
-} from 'ui/src'
-import { Button } from 'ui/src'
-import { Input } from 'ui/src'
-import { Label } from 'ui/src'
+} from 'ui'
+import { Button } from 'ui'
+import { Input } from 'ui'
+import { Label } from 'ui'
 
 const meta: Meta<typeof NumberField> = {
   title: 'NumberField',

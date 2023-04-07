@@ -1,13 +1,13 @@
 import { type StoryObj, type Meta } from '@storybook/react'
 import { useState } from 'react'
-import { Button } from 'ui/src'
+import { Button } from 'ui'
 import {
   ModalBody,
   ModalContent,
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-} from 'ui/src'
+} from 'ui'
 
 const meta: Meta<typeof ModalContent> = {
   title: 'Modal',

@@ -1,7 +1,7 @@
 import { type StoryObj, type Meta } from '@storybook/react'
-import { Button } from 'ui/src'
-import { Checkbox } from 'ui/src'
-import { GridList, GridListItem } from 'ui/src'
+import { Button } from 'ui'
+import { Checkbox } from 'ui'
+import { GridList, GridListItem } from 'ui'
 
 const meta: Meta<typeof GridList> = {
   title: 'GridList',

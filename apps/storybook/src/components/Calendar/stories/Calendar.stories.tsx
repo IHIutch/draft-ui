@@ -1,6 +1,6 @@
 import { type StoryObj, type Meta } from '@storybook/react'
-import { Calendar, CalendarCell, CalendarGrid, CalendarHeader } from 'ui/src'
-import { Button } from 'ui/src'
+import { Calendar, CalendarCell, CalendarGrid, CalendarHeader } from 'ui'
+import { Button } from 'ui'
 
 const meta: Meta<typeof Calendar> = {
   title: 'Calendar',

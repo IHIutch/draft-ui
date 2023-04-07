@@ -1,6 +1,6 @@
 import { type StoryObj, type Meta } from "@storybook/react";
-import { Label } from "ui/src";
-import { ProgressBar } from "ui/src";
+import { Label } from "ui";
+import { ProgressBar } from "ui";
 
 const meta: Meta<typeof ProgressBar> = {
   title: "ProgressBar",

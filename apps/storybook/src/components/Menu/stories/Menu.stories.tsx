@@ -6,7 +6,7 @@ import {
   MenuList,
   MenuSection,
   MenuSeparator,
-} from 'ui/src'
+} from 'ui'
 
 const meta: Meta<typeof Menu> = {
   title: 'Menu',

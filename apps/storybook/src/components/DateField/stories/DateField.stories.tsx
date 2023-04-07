@@ -1,6 +1,6 @@
 import { type StoryObj, type Meta } from '@storybook/react'
-import { Label } from 'ui/src'
-import { DateField, DateInput, DateSegment } from 'ui/src'
+import { Label } from 'ui'
+import { DateField, DateInput, DateSegment } from 'ui'
 
 const meta: Meta<typeof DateField> = {
   title: 'DateField',

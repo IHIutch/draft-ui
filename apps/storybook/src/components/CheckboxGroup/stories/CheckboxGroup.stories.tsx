@@ -1,5 +1,5 @@
-import { Checkbox } from 'ui/src'
-import { Label } from 'ui/src'
+import { Checkbox } from 'ui'
+import { Label } from 'ui'
 import { type StoryObj, type Meta } from '@storybook/react'
 import { CheckboxGroup } from 'react-aria-components'
 

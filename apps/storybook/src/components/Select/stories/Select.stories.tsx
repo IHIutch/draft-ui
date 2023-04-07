@@ -1,6 +1,6 @@
 import { type StoryObj, type Meta } from '@storybook/react'
 import { SelectValue } from 'react-aria-components'
-import {Label,  Select, SelectButton, SelectContent, SelectItem } from 'ui/src'
+import { Label, Select, SelectButton, SelectContent, SelectItem } from 'ui'
 
 const meta: Meta<typeof Select> = {
   title: 'Select',
