@@ -25,4 +25,4 @@ export * from "./Tabs";
 // export * from "./Table";
 export * from "./TextField";
 // export * from "./ToggleButton";
-// export * from "./Tooltip";
+export * from "./Tooltip";
