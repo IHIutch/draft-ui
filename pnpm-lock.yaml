@@ -172,7 +172,7 @@ importers:
       eslint-config-custom: workspace:*
       postcss: ^8.4.21
       react: ^18.2.0
-      react-aria-components: 1.0.0-alpha.2
+      react-aria-components: 1.0.0-alpha.3
       tailwind-config: workspace:*
       ts-config: workspace:*
       tsup: ^6.7.0
@@ -180,7 +180,7 @@ importers:
     dependencies:
       class-variance-authority: 0.4.0_typescript@4.9.5
       clsx: 1.2.1
-      react-aria-components: 1.0.0-alpha.2_biqbaboplfbrettd7655fr4n2y
+      react-aria-components: 1.0.0-alpha.3_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       '@types/react': 18.0.27
       eslint: 8.37.0
@@ -9964,6 +9964,27 @@ packages:
 
   /react-aria-components/1.0.0-alpha.2_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-aaCuLS1I+jYIfTX6UxiXMP2XUC+H49EyslCtptozshy7JdRIAqK8QX7BiFsVDJ5pLsFBBZ7uZ7Vc9apDi0AKag==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@internationalized/date': 3.2.0
+      '@react-aria/focus': 3.12.0_react@18.2.0
+      '@react-aria/utils': 3.16.0_react@18.2.0
+      '@react-stately/table': 3.9.0_react@18.2.0
+      '@react-types/grid': 3.1.7_react@18.2.0
+      '@react-types/shared': 3.18.0_react@18.2.0
+      '@react-types/table': 3.6.0_react@18.2.0
+      '@swc/helpers': 0.4.14
+      react: 18.2.0
+      react-aria: 3.24.0_biqbaboplfbrettd7655fr4n2y
+      react-dom: 18.2.0_react@18.2.0
+      react-stately: 3.22.0_react@18.2.0
+      use-sync-external-store: 1.2.0_react@18.2.0
+    dev: false
+
+  /react-aria-components/1.0.0-alpha.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-rhakTyOPsTwk/ylCCcK38/y3yN2SXPWN2wPknNwDQ9wE+P/PQWIrc3WxOlhTFGltLC1/KXAAIvJrkPgPBFTE1g==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0

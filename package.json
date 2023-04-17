@@ -3,7 +3,8 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint"
+    "lint": "turbo run lint",
+    "storybook": "turbo run storybook"
   },
   "devDependencies": {
     "eslint": "^8.37.0",
