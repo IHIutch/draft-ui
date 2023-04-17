@@ -2,7 +2,7 @@ import { OverlayArrow, Tooltip, type TooltipProps, TooltipTrigger } from "react-
 
 
 const _TooltipTrigger = (props) => {
-  return <TooltipTrigger delay={0} closeDelay={0} {...props} />
+  return <TooltipTrigger delay={0} closeDelay={0} trigger="hover" {...props} />
 }
 
 const _Tooltip = ({ children, ...props }: TooltipProps) => {
