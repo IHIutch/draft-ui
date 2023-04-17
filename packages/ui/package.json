@@ -21,7 +21,7 @@
   "dependencies": {
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
-    "react-aria-components": "1.0.0-alpha.2"
+    "react-aria-components": "^1.0.0-alpha.3"
   },
   "devDependencies": {
     "@types/react": "18.0.27",

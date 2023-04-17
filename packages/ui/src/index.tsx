@@ -21,4 +21,8 @@ export * from "./RadioGroup";
 export * from "./SearchField";
 export * from "./Select";
 export * from "./Slider";
+export * from "./Tabs";
+// export * from "./Table";
 export * from "./TextField";
+// export * from "./ToggleButton";
+// export * from "./Tooltip";
