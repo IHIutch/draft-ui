@@ -1,5 +1,5 @@
 import { type StoryObj, type Meta } from '@storybook/react'
-import { Switch } from 'ui/src'
+import { Switch, SwitchIndicator } from 'ui/src'
 
 
 
@@ -12,6 +12,7 @@ export default meta
 
 export const Default: StoryObj<typeof Switch> = (props) => (
   <Switch>
+    <SwitchIndicator />
     Low power mode
   </Switch>
 )
