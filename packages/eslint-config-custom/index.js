@@ -3,8 +3,8 @@ module.exports = {
   extends: [
     'next',
     'turbo',
-    'plugin:prettier/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
     'plugin:tailwindcss/recommended',
   ],
   parserOptions: {
