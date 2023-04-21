@@ -1,4 +1,4 @@
-import { type StoryObj, type Meta } from '@storybook/react'
+import { type Meta, type StoryObj } from '@storybook/react'
 import { Link } from 'react-aria-components'
 import { BreadcrumbItem, Breadcrumbs } from 'ui/src'
 

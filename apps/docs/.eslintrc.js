@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
-  extends: ["custom"],
+  extends: ['custom'],
   rules: {
-    "@next/next/no-html-link-for-pages": "off",
-  }
-};
+    '@next/next/no-html-link-for-pages': 'off',
+  },
+}

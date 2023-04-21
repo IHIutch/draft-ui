@@ -8,15 +8,15 @@ import {
   type ModalOverlayProps,
 } from 'react-aria-components'
 
-const buttonVariants = cva('bg-white rounded mx-auto', {
+const buttonVariants = cva('mx-auto rounded bg-white', {
   variants: {
     size: {
-      full: 'w-full h-full',
-      xl: 'w-[36rem] my-16',
-      lg: 'w-[32rem] my-16',
-      md: 'w-[28rem] my-16',
-      sm: 'w-[24rem] my-16',
-      xs: 'w-[20rem] my-16',
+      full: 'h-full w-full',
+      xl: 'my-16 w-[36rem]',
+      lg: 'my-16 w-[32rem]',
+      md: 'my-16 w-[28rem]',
+      sm: 'my-16 w-[24rem]',
+      xs: 'my-16 w-[20rem]',
     },
   },
   defaultVariants: {
@@ -67,7 +67,7 @@ function _ModalHeader({
   return (
     <header
       {...props}
-      className={clsx('py-4 px-6 text-xl font-semibold', className)}
+      className={clsx('px-6 py-4 text-xl font-semibold', className)}
     />
   )
 }
@@ -79,7 +79,7 @@ function _ModalBody({
   className?: ClassValue
   children: ReactNode
 }) {
-  return <div {...props} className={clsx('py-2 px-6', className)} />
+  return <div {...props} className={clsx('px-6 py-2', className)} />
 }
 
 function _ModalFooter({
@@ -89,7 +89,7 @@ function _ModalFooter({
   className?: ClassValue
   children: ReactNode
 }) {
-  return <footer {...props} className={clsx('py-4 px-6', className)} />
+  return <footer {...props} className={clsx('px-6 py-4', className)} />
 }
 
 export {

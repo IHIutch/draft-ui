@@ -1,7 +1,6 @@
-import { Button } from 'ui/src'
-import { CalendarCell, CalendarGrid, CalendarHeader } from 'ui/src'
-import { type StoryObj, type Meta } from '@storybook/react'
+import { type Meta, type StoryObj } from '@storybook/react'
 import { RangeCalendar } from 'react-aria-components'
+import { Button, CalendarCell, CalendarGrid, CalendarHeader } from 'ui/src'
 
 const meta: Meta<typeof RangeCalendar> = {
   title: 'RangeCalendar',

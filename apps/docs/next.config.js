@@ -1,5 +1,6 @@
 // import { withContentlayer } from "next-contentlayer";
-const { withContentlayer } = require("next-contentlayer");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { withContentlayer } = require('next-contentlayer')
 
 // This could be an .mjs file, but there is an issue documented here: https://github.com/contentlayerdev/contentlayer/issues/129#issuecomment-1080416633
 
@@ -10,16 +11,16 @@ const nextConfig = {
     appDir: true,
     fontLoaders: [
       {
-        loader: "@next/font/google",
-        options: { subsets: ["latin"] },
+        loader: '@next/font/google',
+        options: { subsets: ['latin'] },
       },
     ],
   },
   typescript: {
     ignoreBuildErrors: true,
   },
-  transpilePackages: ["ui/src"],
-};
+  transpilePackages: ['ui/src'],
+}
 
 // export default withContentlayer(nextConfig);
-module.exports = withContentlayer(nextConfig);
+module.exports = withContentlayer(nextConfig)

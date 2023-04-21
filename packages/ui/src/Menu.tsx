@@ -1,15 +1,16 @@
-import { Button, type _ButtonProps } from "./Button";
-import { type ClassValue } from "class-variance-authority/dist/types";
+import { type ClassValue } from 'class-variance-authority/dist/types'
 import {
+  Item,
   Menu,
   MenuTrigger,
-  type MenuItemRenderProps,
-  type MenuProps,
   Popover,
-  Item,
   Section,
   Separator,
-} from "react-aria-components";
+  type MenuItemRenderProps,
+  type MenuProps,
+} from 'react-aria-components'
+
+import { Button, type _ButtonProps } from './Button'
 
 // export interface _MenuProps
 //   extends VariantProps<typeof buttonVariants> {
@@ -17,32 +18,32 @@ import {
 // }
 
 const _Menu = (props) => {
-  return <MenuTrigger {...props} />;
-};
+  return <MenuTrigger {...props} />
+}
 
 const _MenuButton = (props: _ButtonProps) => {
-  return <Button {...props} />;
-};
+  return <Button {...props} />
+}
 
 const _MenuList = (props) => {
   return (
     <Popover>
       <Menu {...props} />
     </Popover>
-  );
-};
+  )
+}
 
 const _MenuItem = (props) => {
-  return <Item {...props} />;
-};
+  return <Item {...props} />
+}
 
 const _MenuSection = (props) => {
-  return <Section {...props} />;
-};
+  return <Section {...props} />
+}
 
 const _MenuSeparator = (props) => {
-  return <Separator {...props} />;
-};
+  return <Separator {...props} />
+}
 
 export {
   _Menu as Menu,
@@ -51,4 +52,4 @@ export {
   _MenuSection as MenuSection,
   _MenuItem as MenuItem,
   _MenuSeparator as MenuSeparator,
-};
+}

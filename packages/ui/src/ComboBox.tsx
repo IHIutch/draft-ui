@@ -1,5 +1,5 @@
 import { type ClassValue } from 'class-variance-authority/dist/types'
-import { Item, ComboBox } from 'react-aria-components'
+import { ComboBox, Item } from 'react-aria-components'
 
 // export interface _MenuProps
 //   extends VariantProps<typeof buttonVariants> {

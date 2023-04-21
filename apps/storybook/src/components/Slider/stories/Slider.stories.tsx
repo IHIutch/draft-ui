@@ -1,6 +1,6 @@
-import { type StoryObj, type Meta } from '@storybook/react'
-import { Label } from 'ui/src'
+import { type Meta, type StoryObj } from '@storybook/react'
 import {
+  Label,
   Slider,
   SliderFilledTrack,
   SliderOutput,

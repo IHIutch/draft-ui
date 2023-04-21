@@ -1,7 +1,5 @@
-import { type StoryObj, type Meta } from '@storybook/react'
+import { type Meta, type StoryObj } from '@storybook/react'
 import { Switch, SwitchIndicator } from 'ui/src'
-
-
 
 const meta: Meta<typeof Switch> = {
   title: 'Switch',

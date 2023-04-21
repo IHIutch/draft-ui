@@ -1,7 +1,7 @@
-import { type StoryObj, type Meta } from '@storybook/react'
+import { type Meta, type StoryObj } from '@storybook/react'
 import { useState } from 'react'
-import { Button } from 'ui/src'
 import {
+  Button,
   ModalBody,
   ModalContent,
   ModalFooter,

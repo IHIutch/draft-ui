@@ -11,6 +11,7 @@
   "scripts": {
     "build": "tsup src/index.tsx --format cjs --dts --external react",
     "dev": "tsup src/index.tsx --format cjs --watch --dts --external react",
+    "lint": "eslint --ignore-path .gitignore .",
     "_build": "tsup",
     "_dev": "tsup --watch",
     "_check-types": "tsc --noEmit"
@@ -29,6 +30,7 @@
     "eslint-config-custom": "workspace:*",
     "postcss": "^8.4.21",
     "postcss-config": "workspace:*",
+    "prettier-config": "workspace:*",
     "react": "^18.2.0",
     "tailwind-config": "workspace:*",
     "ts-config": "workspace:*",

@@ -1,10 +1,17 @@
-import { type StoryObj, type Meta } from '@storybook/react'
+import { type Meta, type StoryObj } from '@storybook/react'
 import { Group } from 'react-aria-components'
-import { Button } from 'ui/src'
-import { Calendar, CalendarCell, CalendarGrid, CalendarHeader } from 'ui/src'
-import { DateInput, DateSegment } from 'ui/src'
-import { Label } from 'ui/src'
-import { DatePicker, DatePickerContent } from 'ui/src'
+import {
+  Button,
+  Calendar,
+  CalendarCell,
+  CalendarGrid,
+  CalendarHeader,
+  DateInput,
+  DatePicker,
+  DatePickerContent,
+  DateSegment,
+  Label,
+} from 'ui/src'
 
 const meta: Meta<typeof DatePicker> = {
   title: 'DatePicker',

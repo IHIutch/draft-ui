@@ -8,7 +8,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore ."
+    "lint": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
     "@next/font": "13.1.6",
@@ -24,10 +24,11 @@
     "rehype-pretty-code": "^0.9.4",
     "remark-code-import": "^1.1.1",
     "shiki": "^0.14.1",
+    "tailwindcss": "^3.2.7",
     "typescript": "4.9.5",
+    "ui": "workspace:*",
     "unist-builder": "^3.0.1",
-    "unist-util-visit": "^4.1.2",
-    "ui": "workspace:*"
+    "unist-util-visit": "^4.1.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",

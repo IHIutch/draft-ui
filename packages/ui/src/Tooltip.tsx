@@ -1,5 +1,9 @@
-import { OverlayArrow, Tooltip, type TooltipProps, TooltipTrigger } from "react-aria-components";
-
+import {
+  OverlayArrow,
+  Tooltip,
+  TooltipTrigger,
+  type TooltipProps,
+} from 'react-aria-components'
 
 const _TooltipTrigger = (props) => {
   return <TooltipTrigger delay={0} closeDelay={0} trigger="hover" {...props} />
@@ -14,11 +18,8 @@ const _Tooltip = ({ children, ...props }: TooltipProps) => {
         </svg>
       </OverlayArrow> */}
       {children}
-    </Tooltip>)
+    </Tooltip>
+  )
 }
 
-
-export {
-  _TooltipTrigger as TooltipTrigger,
-  _Tooltip as Tooltip
-}
+export { _TooltipTrigger as TooltipTrigger, _Tooltip as Tooltip }

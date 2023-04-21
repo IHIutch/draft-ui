@@ -1,6 +1,10 @@
-import { type StoryObj, type Meta } from '@storybook/react'
-import { Label } from 'ui/src'
-import { SearchField, SearchFieldClearButton, SearchFieldInput } from 'ui/src'
+import { type Meta, type StoryObj } from '@storybook/react'
+import {
+  Label,
+  SearchField,
+  SearchFieldClearButton,
+  SearchFieldInput,
+} from 'ui/src'
 
 const meta: Meta<typeof SearchField> = {
   title: 'SearchField',

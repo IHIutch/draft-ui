@@ -1,7 +1,5 @@
-import { type StoryObj, type Meta } from '@storybook/react'
+import { type Meta, type StoryObj } from '@storybook/react'
 import { Button, Tooltip, TooltipTrigger } from 'ui/src'
-
-
 
 const meta: Meta<typeof Tooltip> = {
   title: 'Tooltip',
@@ -13,9 +11,7 @@ export default meta
 export const Default: StoryObj<typeof Tooltip> = (props) => (
   <TooltipTrigger>
     <Button>Hover Me</Button>
-    <Tooltip>
-      Hello!
-    </Tooltip>
+    <Tooltip>Hello!</Tooltip>
   </TooltipTrigger>
 )
 

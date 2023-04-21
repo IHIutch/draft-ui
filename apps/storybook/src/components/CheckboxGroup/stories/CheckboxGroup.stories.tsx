@@ -1,7 +1,6 @@
-import { Checkbox } from 'ui/src'
-import { Label } from 'ui/src'
-import { type StoryObj, type Meta } from '@storybook/react'
+import { type Meta, type StoryObj } from '@storybook/react'
 import { CheckboxGroup } from 'react-aria-components'
+import { Checkbox, Label } from 'ui/src'
 
 const meta: Meta<typeof CheckboxGroup> = {
   title: 'CheckboxGroup',

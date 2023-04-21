@@ -1,15 +1,15 @@
-import { type StoryObj, type Meta } from '@storybook/react'
+import { type Meta, type StoryObj } from '@storybook/react'
 import { Group } from 'react-aria-components'
 import {
+  Button,
+  Input,
+  Label,
   NumberDecrementStepper,
   NumberField,
   NumberIncrementStepper,
   NumberInput,
   NumberInputStepper,
 } from 'ui/src'
-import { Button } from 'ui/src'
-import { Input } from 'ui/src'
-import { Label } from 'ui/src'
 
 const meta: Meta<typeof NumberField> = {
   title: 'NumberField',

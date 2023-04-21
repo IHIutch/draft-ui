@@ -9,6 +9,7 @@
   "devDependencies": {
     "eslint": "^8.38.0",
     "eslint-config-custom": "workspace:*",
+    "prettier-config": "workspace:*",
     "turbo": "^1.9.3"
   }
 }
