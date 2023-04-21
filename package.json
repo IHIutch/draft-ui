@@ -7,8 +7,8 @@
     "storybook": "turbo run storybook"
   },
   "devDependencies": {
-    "eslint": "^8.37.0",
+    "eslint": "^8.38.0",
     "eslint-config-custom": "workspace:*",
-    "turbo": "^1.8.8"
+    "turbo": "^1.9.3"
   }
 }
