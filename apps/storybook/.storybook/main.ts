@@ -1,16 +1,17 @@
-/** @type { import('@storybook/react-webpack5').StorybookConfig } */
-import type { StorybookConfig } from "@storybook/react-vite";
+/** @type { import('@storybook/react-vite').StorybookConfig } */
+import type { StorybookConfig } from '@storybook/react-vite'
 
 const config: StorybookConfig = {
-  framework: "@storybook/react-vite",
-  stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  framework: '@storybook/react-vite',
+  stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
-    "@storybook/addon-a11y",
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
+    '@storybook/addon-a11y',
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-styling',
   ],
   typescript: {
     reactDocgen: false,
   },
-};
-export default config;
+}
+export default config
