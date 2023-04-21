@@ -12,7 +12,7 @@ export default meta
 
 export const Default: StoryObj<typeof Tooltip> = (props) => (
   <TooltipTrigger>
-    Hover Me
+    <Button>Hover Me</Button>
     <Tooltip>
       Hello!
     </Tooltip>
