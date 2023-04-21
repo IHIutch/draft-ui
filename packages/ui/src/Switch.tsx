@@ -3,7 +3,7 @@ import { Switch } from "react-aria-components";
 
 const _Switch = ({ children, ...props }) => {
   return (
-    <Switch {...props} className="group flex items-center gap-2">
+    <Switch {...props} className="group flex items-center gap-2 font-medium">
       {children}
     </Switch>
   )
