@@ -19,11 +19,8 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
+    'prettier/prettier': 'error',
     '@typescript-eslint/no-explicit-any': 'off',
-    'prettier/prettier': [
-      'error',
-      require('prettier-config/prettier.config.cjs'),
-    ],
     '@typescript-eslint/consistent-type-imports': [
       'error',
       { prefer: 'type-imports', fixStyle: 'inline-type-imports' },
