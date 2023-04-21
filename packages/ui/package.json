@@ -28,6 +28,7 @@
     "eslint": "^8.37.0",
     "eslint-config-custom": "workspace:*",
     "postcss": "^8.4.21",
+    "postcss-config": "workspace:*",
     "react": "^18.2.0",
     "tailwind-config": "workspace:*",
     "ts-config": "workspace:*",

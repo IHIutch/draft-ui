@@ -13,13 +13,13 @@
     "@babel/preset-env": "^7.21.4",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.21.4",
-    "@storybook/addon-a11y": "^7.0.2",
-    "@storybook/addon-essentials": "^7.0.2",
-    "@storybook/addon-interactions": "^7.0.2",
-    "@storybook/addon-links": "^7.0.2",
-    "@storybook/blocks": "^7.0.2",
-    "@storybook/react": "^7.0.2",
-    "@storybook/react-vite": "^7.0.2",
+    "@storybook/addon-a11y": "^7.0.6",
+    "@storybook/addon-essentials": "^7.0.6",
+    "@storybook/addon-interactions": "^7.0.6",
+    "@storybook/addon-links": "^7.0.6",
+    "@storybook/blocks": "^7.0.6",
+    "@storybook/react": "^7.0.6",
+    "@storybook/react-vite": "^7.0.6",
     "@storybook/testing-library": "^0.0.14-next.2",
     "clsx": "^1.2.1",
     "eslint-plugin-storybook": "^0.6.11",
@@ -27,11 +27,12 @@
     "react": "^18.2.0",
     "react-aria-components": "1.0.0-alpha.2",
     "react-dom": "^18.2.0",
-    "storybook": "^7.0.2",
+    "storybook": "^7.0.6",
     "tailwindcss-animate": "^1.0.5",
+    "tailwindcss": "^3.2.7",
     "typescript": "4.9.5",
     "ui": "workspace:*",
-    "vite": "^4.2.1"
+    "vite": "^4.3.0"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
@@ -41,6 +42,7 @@
     "eslint": "^8.33.0",
     "eslint-config-custom": "workspace:*",
     "postcss": "^8.4.21",
+    "postcss-config": "workspace:*",
     "tailwind-config": "workspace:*",
     "ts-config": "workspace:*"
   }
