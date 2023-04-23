@@ -1,5 +1,12 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { DateField, DateInput, DateSegment, Label } from 'ui'
+import {
+  DateField,
+  DateInput,
+  DateSegment,
+  Label,
+  TextFieldDescription,
+  TextFieldErrorMessage,
+} from 'ui'
 
 const meta: Meta<typeof DateField> = {
   title: 'DateField',
@@ -9,12 +16,37 @@ const meta: Meta<typeof DateField> = {
 export default meta
 
 export const Default: StoryObj<typeof DateField> = (props) => (
-  <DateField>
+  <DateField {...props}>
     <Label>Date Label</Label>
-    <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+    <DateInput validationState={props.validationState}>
+      {(segment) => <DateSegment segment={segment} />}
+    </DateInput>
+    {props.validationState === 'invalid' ? (
+      <TextFieldErrorMessage>
+        <span>This is an error message</span>
+      </TextFieldErrorMessage>
+    ) : (
+      <TextFieldDescription>
+        <span>This is a description</span>
+      </TextFieldDescription>
+    )}
   </DateField>
 )
 
-Default.argTypes = {}
+Default.argTypes = {
+  isDisabled: { type: 'boolean' },
+  isReadOnly: { type: 'boolean' },
+  isRequired: { type: 'boolean' },
+  validationState: {
+    type: 'string',
+    control: 'radio',
+    options: ['valid', 'invalid'],
+  },
+}
 
-Default.args = {}
+Default.args = {
+  isDisabled: false,
+  isReadOnly: false,
+  isRequired: false,
+  validationState: 'valid',
+}

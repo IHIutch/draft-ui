@@ -1,7 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Group } from 'react-aria-components'
 import {
-  Button,
   Calendar,
   CalendarCell,
   CalendarGrid,
@@ -16,6 +15,7 @@ import {
   DatePicker,
   DatePickerContent,
   DateSegment,
+  IconButton,
   Label,
 } from 'ui'
 
@@ -31,7 +31,7 @@ export const Default: StoryObj<typeof DatePicker> = (props) => (
     <Label>Date</Label>
     <Group>
       <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
-      <Button>▼</Button>
+      <IconButton>▼</IconButton>
     </Group>
     <DatePickerContent>
       <Calendar {...props}>
