@@ -6,7 +6,7 @@ import {
   SliderOutput,
   SliderThumb,
   SliderTrack,
-} from 'ui/src'
+} from 'ui'
 
 const meta: Meta<typeof Slider> = {
   title: 'Slider',

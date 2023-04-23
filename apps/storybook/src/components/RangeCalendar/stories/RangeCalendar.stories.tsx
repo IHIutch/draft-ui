@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { RangeCalendar } from 'react-aria-components'
-import { Button, CalendarCell, CalendarGrid, CalendarHeader } from 'ui/src'
+import { Button, CalendarCell, CalendarGrid, CalendarHeader } from 'ui'
 
 const meta: Meta<typeof RangeCalendar> = {
   title: 'RangeCalendar',
@@ -21,10 +21,6 @@ export const Default: StoryObj<typeof RangeCalendar> = (props) => (
   </RangeCalendar>
 )
 
-Default.argTypes = {
-  className: { type: 'string' },
-}
+Default.argTypes = {}
 
-Default.args = {
-  className: '',
-}
+Default.args = {}

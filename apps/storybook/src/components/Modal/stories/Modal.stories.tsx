@@ -7,7 +7,7 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-} from 'ui/src'
+} from 'ui'
 
 const meta: Meta<typeof ModalContent> = {
   title: 'Modal',
@@ -56,7 +56,6 @@ export const Default: StoryObj<typeof ModalContent> = (props) => {
 }
 
 Default.argTypes = {
-  className: { type: 'string' },
   size: {
     type: 'string',
     control: 'select',
@@ -65,6 +64,5 @@ Default.argTypes = {
 }
 
 Default.args = {
-  className: '',
   size: 'md',
 }

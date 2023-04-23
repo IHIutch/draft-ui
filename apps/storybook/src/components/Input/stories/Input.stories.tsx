@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Input } from 'ui/src'
+import { Input } from 'ui'
 
 const meta: Meta<typeof Input> = {
   title: 'Input',
@@ -11,7 +11,6 @@ export default meta
 export const Default: StoryObj<typeof Input> = (props) => <Input {...props} />
 
 Default.argTypes = {
-  className: { type: 'string' },
   validationState: {
     type: 'string',
     control: 'radio',
@@ -28,7 +27,6 @@ Default.argTypes = {
 }
 
 Default.args = {
-  className: '',
   validationState: 'valid',
   size: 'md',
   placeholder: 'Placeholder...',

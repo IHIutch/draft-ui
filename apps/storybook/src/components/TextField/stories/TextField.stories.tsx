@@ -5,7 +5,7 @@ import {
   TextField,
   TextFieldDescription,
   TextFieldErrorMessage,
-} from 'ui/src'
+} from 'ui'
 
 const meta: Meta<typeof TextField> = {
   title: 'TextField',
@@ -31,7 +31,6 @@ export const Default: StoryObj<typeof TextField> = (props) => (
 )
 
 Default.argTypes = {
-  className: { type: 'string' },
   isDisabled: { type: 'boolean' },
   isReadOnly: { type: 'boolean' },
   isRequired: { type: 'boolean' },
@@ -43,7 +42,6 @@ Default.argTypes = {
 }
 
 Default.args = {
-  className: '',
   isDisabled: false,
   isReadOnly: false,
   isRequired: false,

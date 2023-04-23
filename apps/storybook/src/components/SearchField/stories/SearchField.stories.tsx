@@ -4,7 +4,7 @@ import {
   SearchField,
   SearchFieldClearButton,
   SearchFieldInput,
-} from 'ui/src'
+} from 'ui'
 
 const meta: Meta<typeof SearchField> = {
   title: 'SearchField',

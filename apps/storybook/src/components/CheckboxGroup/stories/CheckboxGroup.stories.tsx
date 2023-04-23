@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { CheckboxGroup } from 'react-aria-components'
-import { Checkbox, Label } from 'ui/src'
+import { Checkbox, Label } from 'ui'
 
 const meta: Meta<typeof CheckboxGroup> = {
   title: 'CheckboxGroup',
@@ -39,10 +39,6 @@ export const Default: StoryObj<typeof CheckboxGroup> = (props) => (
   </CheckboxGroup>
 )
 
-Default.argTypes = {
-  className: { type: 'string' },
-}
+Default.argTypes = {}
 
-Default.args = {
-  className: '',
-}
+Default.args = {}

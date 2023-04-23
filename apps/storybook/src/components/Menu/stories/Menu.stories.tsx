@@ -6,7 +6,7 @@ import {
   MenuList,
   MenuSection,
   MenuSeparator,
-} from 'ui/src'
+} from 'ui'
 
 const meta: Meta<typeof Menu> = {
   title: 'Menu',
@@ -38,10 +38,6 @@ export const Default: StoryObj<typeof Menu> = (props) => {
   )
 }
 
-Default.argTypes = {
-  className: { type: 'string' },
-}
+Default.argTypes = {}
 
-Default.args = {
-  className: '',
-}
+Default.args = {}

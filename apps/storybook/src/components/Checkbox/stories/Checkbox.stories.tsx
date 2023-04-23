@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Checkbox } from 'ui/src'
+import { Checkbox } from 'ui'
 
 const meta: Meta<typeof Checkbox> = {
   title: 'Checkbox',
@@ -12,10 +12,6 @@ export const Default: StoryObj<typeof Checkbox> = (props) => (
   <Checkbox>Unsubscribe</Checkbox>
 )
 
-Default.argTypes = {
-  className: { type: 'string' },
-}
+Default.argTypes = {}
 
-Default.args = {
-  className: '',
-}
+Default.args = {}

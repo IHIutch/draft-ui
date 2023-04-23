@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { Link } from 'react-aria-components'
-import { BreadcrumbItem, Breadcrumbs } from 'ui/src'
+import { BreadcrumbItem, Breadcrumbs } from 'ui'
 
 const meta: Meta<typeof Breadcrumbs> = {
   title: 'Breadcrumbs',
@@ -27,10 +27,6 @@ export const Default: StoryObj<typeof Breadcrumbs> = (props) => (
   </Breadcrumbs>
 )
 
-Default.argTypes = {
-  className: { type: 'string' },
-}
+Default.argTypes = {}
 
-Default.args = {
-  className: '',
-}
+Default.args = {}

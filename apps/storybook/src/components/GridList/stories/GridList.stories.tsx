@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Button, Checkbox, GridList, GridListItem } from 'ui/src'
+import { Button, Checkbox, GridList, GridListItem } from 'ui'
 
 const meta: Meta<typeof GridList> = {
   title: 'GridList',
@@ -33,10 +33,6 @@ export const Default: StoryObj<typeof GridList> = (props) => (
   </GridList>
 )
 
-Default.argTypes = {
-  className: { type: 'string' },
-}
+Default.argTypes = {}
 
-Default.args = {
-  className: '',
-}
+Default.args = {}

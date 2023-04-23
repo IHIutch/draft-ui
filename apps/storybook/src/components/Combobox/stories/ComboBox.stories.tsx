@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { ListBox, Popover } from 'react-aria-components'
-import { Button, ComboBox, ComboBoxItem, Input, Label } from 'ui/src'
+import { Button, ComboBox, ComboBoxItem, Input, Label } from 'ui'
 
 const meta: Meta<typeof ComboBox> = {
   title: 'ComboBox',
@@ -29,10 +29,6 @@ export const Default: StoryObj<typeof ComboBox> = (props) => (
   </ComboBox>
 )
 
-Default.argTypes = {
-  className: { type: 'string' },
-}
+Default.argTypes = {}
 
-Default.args = {
-  className: '',
-}
+Default.args = {}

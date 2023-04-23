@@ -9,7 +9,7 @@ import {
   NumberIncrementStepper,
   NumberInput,
   NumberInputStepper,
-} from 'ui/src'
+} from 'ui'
 
 const meta: Meta<typeof NumberField> = {
   title: 'NumberField',
@@ -37,14 +37,12 @@ export const Default: StoryObj<typeof NumberField> = (props) => (
 )
 
 Default.argTypes = {
-  className: { type: 'string' },
   minValue: { type: 'number' },
   maxValue: { type: 'number' },
   step: { type: 'number' },
 }
 
 Default.args = {
-  className: '',
   minValue: 0,
   maxValue: 100,
   step: 1,
@@ -66,14 +64,12 @@ export const Mobile: StoryObj<typeof NumberField> = (props) => (
 )
 
 Mobile.argTypes = {
-  className: { type: 'string' },
   minValue: { type: 'number' },
   maxValue: { type: 'number' },
   step: { type: 'number' },
 }
 
 Mobile.args = {
-  className: '',
   minValue: 0,
   maxValue: 100,
   step: 1,
