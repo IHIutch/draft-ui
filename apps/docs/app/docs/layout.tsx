@@ -26,7 +26,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
             </div>
             {/* <Navigation className="hidden lg:mt-10 lg:block" /> */}
             <nav className="hidden lg:mt-10 lg:block">
-              <h2 className="text-md font-semibold text-zinc-900 dark:text-white">
+              <h2 className="text-base font-semibold text-zinc-900 dark:text-white">
                 Components
               </h2>
               <div className="relative mt-3 pl-2">

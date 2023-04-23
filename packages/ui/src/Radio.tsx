@@ -6,7 +6,7 @@ const radioVariants = cva('group flex flex-row items-center gap-2', {
   variants: {
     size: {
       lg: 'text-lg',
-      md: 'text-md',
+      md: 'text-base',
       sm: 'text-sm',
     },
   },
