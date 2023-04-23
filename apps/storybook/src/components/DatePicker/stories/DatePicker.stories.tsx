@@ -5,13 +5,19 @@ import {
   Calendar,
   CalendarCell,
   CalendarGrid,
+  CalendarGridBody,
+  CalendarGridHeader,
   CalendarHeader,
+  CalendarHeaderCell,
+  CalendarHeading,
+  CalendarNextButton,
+  CalendarPrevButton,
   DateInput,
   DatePicker,
   DatePickerContent,
   DateSegment,
   Label,
-} from 'ui/src'
+} from 'ui'
 
 const meta: Meta<typeof DatePicker> = {
   title: 'DatePicker',
@@ -28,23 +34,25 @@ export const Default: StoryObj<typeof DatePicker> = (props) => (
       <Button>▼</Button>
     </Group>
     <DatePickerContent>
-      <Calendar>
+      <Calendar {...props}>
         <CalendarHeader>
-          <Button slot="previous">◀</Button>
-          {/* <Heading /> */}
-          <h3>Calendar Heading</h3>
-          <Button slot="next">▶</Button>
+          <CalendarPrevButton />
+          <CalendarHeading />
+          <CalendarNextButton />
         </CalendarHeader>
-        <CalendarGrid>{(date) => <CalendarCell date={date} />}</CalendarGrid>
+        <CalendarGrid>
+          <CalendarGridHeader>
+            {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+          </CalendarGridHeader>
+          <CalendarGridBody>
+            {(date) => <CalendarCell date={date} />}
+          </CalendarGridBody>
+        </CalendarGrid>
       </Calendar>
     </DatePickerContent>
   </DatePicker>
 )
 
-Default.argTypes = {
-  className: { type: 'string' },
-}
+Default.argTypes = {}
 
-Default.args = {
-  className: '',
-}
+Default.args = {}

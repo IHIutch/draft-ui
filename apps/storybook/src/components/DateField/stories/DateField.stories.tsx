@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { DateField, DateInput, DateSegment, Label } from 'ui/src'
+import { DateField, DateInput, DateSegment, Label } from 'ui'
 
 const meta: Meta<typeof DateField> = {
   title: 'DateField',
@@ -15,10 +15,6 @@ export const Default: StoryObj<typeof DateField> = (props) => (
   </DateField>
 )
 
-Default.argTypes = {
-  className: { type: 'string' },
-}
+Default.argTypes = {}
 
-Default.args = {
-  className: '',
-}
+Default.args = {}

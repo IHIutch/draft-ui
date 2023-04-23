@@ -105,6 +105,7 @@ importers:
       eslint: ^8.33.0
       eslint-config-custom: workspace:*
       eslint-plugin-storybook: ^0.6.11
+      lucide-react: ^0.176.0
       postcss: ^8.4.21
       postcss-config: workspace:*
       postcss-loader: ^7.2.4
@@ -136,6 +137,7 @@ importers:
       autoprefixer: 10.4.14_postcss@8.4.21
       clsx: 1.2.1
       eslint-plugin-storybook: 0.6.11_4vsywjlpuriuw3tl5oq6zy5a64
+      lucide-react: 0.176.0_react@18.2.0
       postcss-loader: 7.2.4_ak2nqrtvu44xb6ezosvuezbqom
       prop-types: 15.8.1
       react: 18.2.0
@@ -198,6 +200,7 @@ importers:
       clsx: ^1.2.1
       eslint: ^8.37.0
       eslint-config-custom: workspace:*
+      lucide-react: ^0.176.0
       postcss: ^8.4.21
       postcss-config: workspace:*
       react: ^18.2.0
@@ -209,6 +212,7 @@ importers:
     dependencies:
       class-variance-authority: 0.4.0_typescript@4.9.5
       clsx: 1.2.1
+      lucide-react: 0.176.0_react@18.2.0
       react-aria-components: 1.0.0-alpha.3_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       '@types/react': 18.0.27
@@ -9347,6 +9351,14 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+
+  /lucide-react/0.176.0_react@18.2.0:
+    resolution: {integrity: sha512-foy+PkZQ5/inC2W8zHddPUGrJ/t1bmVLPVtFytnfwUVGHMHkKbjTd26teEuRx0zYSE8xFyABiQiEy22xWUlHQw==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /lz-string/1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
