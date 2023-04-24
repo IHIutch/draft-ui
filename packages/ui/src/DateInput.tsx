@@ -81,7 +81,7 @@ const _DateSegment = (props) => {
     <DateSegment
       className={clsx(
         'flex items-center rounded px-1 focus:outline-none',
-        'data-[placeholder]:text-slate-400 data-[placeholder]:focus:text-black',
+        'data-[placeholder]:text-slate-500 data-[placeholder]:focus:text-black',
         'focus:bg-slate-100 focus:text-black',
         'data-[type=literal]:px-0'
       )}
