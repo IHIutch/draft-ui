@@ -1,7 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { DateRangePicker, Group, RangeCalendar } from 'react-aria-components'
+import { ChevronDown } from 'lucide-react'
 import {
-  Button,
   CalendarCell,
   CalendarGrid,
   CalendarGridBody,
@@ -12,9 +11,13 @@ import {
   CalendarNextButton,
   CalendarPrevButton,
   DateInput,
+  DateInputGroup,
   DatePickerContent,
+  DateRangePicker,
   DateSegment,
+  IconButton,
   Label,
+  RangeCalendar,
 } from 'ui'
 
 const meta: Meta<typeof DateRangePicker> = {
@@ -26,8 +29,8 @@ export default meta
 
 export const Default: StoryObj<typeof DateRangePicker> = (props) => (
   <DateRangePicker>
-    <Label>Trip dates</Label>
-    <Group>
+    <Label>Date Range</Label>
+    <DateInputGroup className="pr-1">
       <DateInput slot="start">
         {(segment) => <DateSegment segment={segment} />}
       </DateInput>
@@ -35,8 +38,10 @@ export const Default: StoryObj<typeof DateRangePicker> = (props) => (
       <DateInput slot="end">
         {(segment) => <DateSegment segment={segment} />}
       </DateInput>
-      <Button>▼</Button>
-    </Group>
+      <IconButton size="sm" variant="subtle" className="ml-auto shrink-0">
+        <ChevronDown size="1em" />
+      </IconButton>
+    </DateInputGroup>
     <DatePickerContent>
       <RangeCalendar>
         <CalendarHeader>

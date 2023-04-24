@@ -1,14 +1,16 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import { type ClassValue } from 'class-variance-authority/dist/types'
 import clsx from 'clsx'
+import { type ReactNode } from 'react'
 import {
   DateInput,
   DateSegment,
+  Group,
   type DateInputProps,
 } from 'react-aria-components'
 
 const dateInputVariants = cva(
-  'flex w-full border bg-transparent placeholder:text-slate-400 focus-within:ring-2 focus-within:ring-slate-400 focus-within:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:text-slate-50 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900',
+  'flex w-full items-center gap-2 border bg-transparent placeholder:text-slate-400 focus-within:ring-2 focus-within:ring-slate-400 focus-within:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:text-slate-50 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900',
   {
     variants: {
       validationState: {
@@ -29,30 +31,49 @@ const dateInputVariants = cva(
 )
 
 export interface _DateInputProps
-  extends Omit<DateInputProps, 'className'>,
-    VariantProps<typeof dateInputVariants> {
+  extends VariantProps<typeof dateInputVariants> {
   className?: ClassValue
+  children: ReactNode
 }
 
-const _DateInput = ({
+const _DateInputContent = ({
   className = '',
   validationState,
   size,
-  children,
   ...props
 }: _DateInputProps) => {
   return (
-    <DateInput
+    <div
       className={dateInputVariants({
         size,
         validationState,
         className,
       })}
       {...props}
-    >
-      {children}
-    </DateInput>
+    />
   )
+}
+
+const _DateInputGroup = ({
+  className = '',
+  validationState,
+  size,
+  ...props
+}: _DateInputProps) => {
+  return (
+    <Group
+      className={dateInputVariants({
+        size,
+        validationState,
+        className,
+      })}
+      {...props}
+    />
+  )
+}
+
+const _DateInput = (props: DateInputProps) => {
+  return <DateInput className="flex" {...props} />
 }
 
 const _DateSegment = (props) => {
@@ -69,4 +90,9 @@ const _DateSegment = (props) => {
   )
 }
 
-export { _DateInput as DateInput, _DateSegment as DateSegment }
+export {
+  _DateInputContent as DateInputContent,
+  _DateInputGroup as DateInputGroup,
+  _DateInput as DateInput,
+  _DateSegment as DateSegment,
+}

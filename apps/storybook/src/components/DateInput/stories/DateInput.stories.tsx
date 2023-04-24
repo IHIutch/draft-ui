@@ -1,18 +1,18 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { DateField, DateInput, DateSegment } from 'ui'
+import { DateField, DateInput, DateInputContent, DateSegment } from 'ui'
 
-const meta: Meta<typeof DateInput> = {
+const meta: Meta<typeof DateInputContent> = {
   title: 'DateInput',
-  component: DateInput,
+  component: DateInputContent,
 }
 
 export default meta
 
-export const Default: StoryObj<typeof DateInput> = (props) => (
+export const Default: StoryObj<typeof DateInputContent> = (props) => (
   <DateField>
-    <DateInput {...props}>
-      {(segment) => <DateSegment segment={segment} />}
-    </DateInput>
+    <DateInputContent {...props}>
+      <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+    </DateInputContent>
   </DateField>
 )
 

@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Group } from 'react-aria-components'
+import { ChevronDown } from 'lucide-react'
 import {
   Calendar,
   CalendarCell,
@@ -12,6 +12,7 @@ import {
   CalendarNextButton,
   CalendarPrevButton,
   DateInput,
+  DateInputGroup,
   DatePicker,
   DatePickerContent,
   DateSegment,
@@ -29,10 +30,12 @@ export default meta
 export const Default: StoryObj<typeof DatePicker> = (props) => (
   <DatePicker>
     <Label>Date</Label>
-    <Group>
+    <DateInputGroup className="pr-1">
       <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
-      <IconButton>▼</IconButton>
-    </Group>
+      <IconButton size="sm" variant="subtle" className="ml-auto shrink-0">
+        <ChevronDown size="1em" />
+      </IconButton>
+    </DateInputGroup>
     <DatePickerContent>
       <Calendar {...props}>
         <CalendarHeader>

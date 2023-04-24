@@ -8,9 +8,9 @@ import {
   CalendarGridHeader,
   CalendarHeaderCell,
   Heading,
+  RangeCalendar,
 } from 'react-aria-components'
 
-import { Button } from './Button'
 import { IconButton } from './IconButton'
 
 // export interface _MenuProps
@@ -19,7 +19,27 @@ import { IconButton } from './IconButton'
 // }
 
 const _Calendar = (props) => {
-  return <Calendar className="w-fit" {...props} />
+  return (
+    <Calendar
+      className={clsx(
+        'w-fit [&_td]:px-0',
+        '[&_td:not([aria-selected])+td[aria-selected]_div]:rounded [&_td:not([aria-selected])+td[aria-selected]_div]:bg-black [&_td:not([aria-selected])+td[aria-selected]_div]:text-white'
+      )}
+      {...props}
+    />
+  )
+}
+
+const _RangeCalendar = (props) => {
+  return (
+    <RangeCalendar
+      className={clsx(
+        'w-fit [&_td]:px-0',
+        '[&_td[aria-selected]:first-of-type_div]:rounded-s [&_td[aria-selected]:last-of-type_div]:rounded-e'
+      )}
+      {...props}
+    />
+  )
 }
 
 const _CalendarGrid = (props) => {
@@ -47,10 +67,12 @@ const _CalendarCell = (props) => {
   return (
     <CalendarCell
       className={clsx(
-        'focus-visible:ring-ring relative flex h-8 w-8 items-center justify-center rounded text-sm transition-colors hover:bg-slate-100 focus:ring-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
-        'data-[outside-month=true]:text-slate-300',
-        'data-[selected=true]:z-10 data-[selected=true]:bg-black data-[selected=true]:text-white',
-        'data-[disabled=true]:cursor-not-allowed data-[disabled=true]:hover:bg-white'
+        'focus-visible:ring-ring relative flex h-8 w-8 items-center justify-center text-sm transition-all hover:bg-slate-100 focus:ring-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
+        'data-[outside-month]:text-slate-300',
+        'data-[selected]:z-10 data-[selected]:bg-slate-200 [&:not([data-selected])]:rounded',
+        'data-[selected]:data-[selection-start]:rounded-s data-[selected]:data-[selection-start]:bg-black data-[selection-start]:text-white',
+        'data-[selected]:data-[selection-end]:rounded-e data-[selected]:data-[selection-end]:bg-black data-[selection-end]:text-white',
+        'data-[disabled]:cursor-not-allowed data-[disabled]:hover:bg-white'
       )}
       {...props}
     />
@@ -89,6 +111,7 @@ const _CalendarPrevButton = (props) => {
 
 export {
   _Calendar as Calendar,
+  _RangeCalendar as RangeCalendar,
   _CalendarGrid as CalendarGrid,
   _CalendarCell as CalendarCell,
   _CalendarHeading as CalendarHeading,

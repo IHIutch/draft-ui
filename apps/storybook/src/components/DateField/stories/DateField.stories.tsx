@@ -2,6 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import {
   DateField,
   DateInput,
+  DateInputContent,
   DateSegment,
   Label,
   TextFieldDescription,
@@ -18,9 +19,9 @@ export default meta
 export const Default: StoryObj<typeof DateField> = (props) => (
   <DateField {...props}>
     <Label>Date Label</Label>
-    <DateInput validationState={props.validationState}>
-      {(segment) => <DateSegment segment={segment} />}
-    </DateInput>
+    <DateInputContent validationState={props.validationState}>
+      <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+    </DateInputContent>
     {props.validationState === 'invalid' ? (
       <TextFieldErrorMessage>
         <span>This is an error message</span>

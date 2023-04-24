@@ -1,7 +1,10 @@
 import { type ClassValue } from 'class-variance-authority/dist/types'
-import { DatePicker, Dialog, Popover } from 'react-aria-components'
-
-import { Button, type _ButtonProps } from './Button'
+import {
+  DatePicker,
+  DateRangePicker,
+  Dialog,
+  Popover,
+} from 'react-aria-components'
 
 // export interface _MenuProps
 //   extends VariantProps<typeof buttonVariants> {
@@ -14,7 +17,7 @@ const _DatePicker = (props) => {
 
 const _DatePickerContent = (props) => {
   return (
-    <Popover>
+    <Popover className="rounded-lg border border-slate-200 p-3 shadow-md">
       <Dialog {...props} />
     </Popover>
   )
