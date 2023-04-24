@@ -4,7 +4,11 @@
   "extends": "./base.json",
   "compilerOptions": {
     "target": "es6",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "module": "esnext",
     "jsx": "preserve"
   }

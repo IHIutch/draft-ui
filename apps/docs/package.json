@@ -14,6 +14,7 @@
     "@next/font": "13.1.6",
     "clsx": "^1.2.1",
     "contentlayer": "^0.3.0",
+    "lucide-react": "^0.176.0",
     "next": "13.1.6",
     "next-contentlayer": "^0.3.0",
     "react": "18.2.0",
@@ -24,7 +25,6 @@
     "rehype-pretty-code": "^0.9.4",
     "remark-code-import": "^1.1.1",
     "shiki": "^0.14.1",
-    "tailwindcss": "^3.2.7",
     "typescript": "4.9.5",
     "ui": "workspace:*",
     "unist-builder": "^3.0.1",
@@ -41,6 +41,7 @@
     "postcss": "^8.4.21",
     "postcss-config": "workspace:*",
     "tailwind-config": "workspace:*",
+    "tailwindcss": "^3.3.1",
     "ts-config": "workspace:*"
   }
 }

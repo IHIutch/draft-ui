@@ -26,7 +26,6 @@
     "react": "^18.2.0",
     "tailwind-config": "workspace:*",
     "ts-config": "workspace:*",
-    "tsup": "^6.7.0",
     "typescript": "4.9.5"
   }
 }
