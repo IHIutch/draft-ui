@@ -2,7 +2,8 @@ import { type ClassValue } from 'class-variance-authority/dist/types'
 import clsx from 'clsx'
 import { SearchField } from 'react-aria-components'
 
-import { Button, type _ButtonProps } from './Button'
+import { type _ButtonProps } from './Button'
+import { IconButton } from './IconButton'
 import { Input, type _InputProps } from './Input'
 
 const _SearchField = (props) => {
@@ -23,10 +24,12 @@ const _SearchFieldInput = ({ className, ...props }: _InputProps) => {
 
 const _SearchFieldClearButton = ({ className, ...props }: _ButtonProps) => {
   return (
-    <Button
-      className={clsx('group-[&[data-empty]]:hidden', className)}
-      {...props}
-    />
+    <div className="absolute inset-y-0 right-0 flex items-center p-1">
+      <IconButton
+        className={clsx('group-[&[data-empty]]:hidden', className)}
+        {...props}
+      />
+    </div>
   )
 }
 

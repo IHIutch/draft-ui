@@ -1,4 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
+import { X } from 'lucide-react'
 import {
   Label,
   SearchField,
@@ -18,19 +19,13 @@ export const Default: StoryObj<typeof SearchField> = (props) => (
     <Label>Search</Label>
     <div className="relative">
       <SearchFieldInput className="pr-10" />
-      <div className="absolute inset-y-0 right-0 flex items-center p-1">
-        <SearchFieldClearButton variant="subtle" size="sm" className="w-8 !p-0">
-          ✕
-        </SearchFieldClearButton>
-      </div>
+      <SearchFieldClearButton variant="subtle" size="sm">
+        <X size="1em" />
+      </SearchFieldClearButton>
     </div>
   </SearchField>
 )
 
-Default.argTypes = {
-  //   value: { type: 'number' },
-}
+Default.argTypes = {}
 
-Default.args = {
-  //   value: 150,
-}
+Default.args = {}
