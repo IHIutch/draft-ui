@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Link } from 'react-aria-components'
+import { ChevronRight } from 'lucide-react'
 import { BreadcrumbItem, Breadcrumbs } from 'ui'
 
 const meta: Meta<typeof Breadcrumbs> = {
@@ -11,19 +11,13 @@ export default meta
 
 export const Default: StoryObj<typeof Breadcrumbs> = (props) => (
   <Breadcrumbs>
-    <BreadcrumbItem>
-      <Link>
-        <a href="/">Home</a>
-      </Link>
+    <BreadcrumbItem separator={<ChevronRight size="1rem" />}>
+      <a href="#">Home</a>
     </BreadcrumbItem>
-    <BreadcrumbItem>
-      <Link>
-        <a href="/react-aria">React Aria</a>
-      </Link>
+    <BreadcrumbItem separator={<ChevronRight size="1rem" />}>
+      <a href="#">React Aria</a>
     </BreadcrumbItem>
-    <BreadcrumbItem>
-      <Link>useBreadcrumbs</Link>
-    </BreadcrumbItem>
+    <BreadcrumbItem>useBreadcrumbs</BreadcrumbItem>
   </Breadcrumbs>
 )
 
