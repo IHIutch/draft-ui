@@ -30,6 +30,7 @@ importers:
       contentlayer: ^0.3.0
       eslint: 8.33.0
       eslint-config-custom: workspace:*
+      lucide-react: ^0.176.0
       next: 13.1.6
       next-contentlayer: ^0.3.0
       postcss: ^8.4.21
@@ -43,7 +44,7 @@ importers:
       remark-code-import: ^1.1.1
       shiki: ^0.14.1
       tailwind-config: workspace:*
-      tailwindcss: ^3.2.7
+      tailwindcss: ^3.3.1
       ts-config: workspace:*
       typescript: 4.9.5
       ui: workspace:*
@@ -53,6 +54,7 @@ importers:
       '@next/font': 13.1.6
       clsx: 1.2.1
       contentlayer: 0.3.1_esbuild@0.17.17
+      lucide-react: 0.176.0_react@18.2.0
       next: 13.1.6_z72xxk7vwlamvgqemvc4ptm4du
       next-contentlayer: 0.3.1_hrdxbzwzpeetz2xa7anxe3k53q
       react: 18.2.0
@@ -63,7 +65,6 @@ importers:
       rehype-pretty-code: 0.9.4_shiki@0.14.1
       remark-code-import: 1.1.1
       shiki: 0.14.1
-      tailwindcss: 3.3.1_postcss@8.4.21
       typescript: 4.9.5
       ui: link:../../packages/ui
       unist-builder: 3.0.1
@@ -79,6 +80,7 @@ importers:
       postcss: 8.4.21
       postcss-config: link:../../packages/postcss-config
       tailwind-config: link:../../packages/tailwind-config
+      tailwindcss: 3.3.1_postcss@8.4.21
       ts-config: link:../../packages/ts-config
 
   apps/storybook:
