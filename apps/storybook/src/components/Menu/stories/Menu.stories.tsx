@@ -1,9 +1,11 @@
 import { type Meta, type StoryObj } from '@storybook/react'
+import { ChevronDown } from 'lucide-react'
 import {
+  Button,
   Menu,
-  MenuButton,
+  MenuContent,
+  MenuHeader,
   MenuItem,
-  MenuList,
   MenuSection,
   MenuSeparator,
 } from 'ui'
@@ -15,25 +17,28 @@ const meta: Meta<typeof Menu> = {
 
 export default meta
 
-export const Default: StoryObj<typeof Menu> = (props) => {
+export const Default: StoryObj<typeof Menu> = () => {
   return (
     <Menu>
-      <MenuButton aria-label="Menu">☰</MenuButton>
-      <MenuList>
-        <MenuSection title={<span>Section 1</span>}>
+      <Button className="flex items-center gap-2">
+        <span>Menu</span>
+        <ChevronDown size="16" strokeWidth="3" />
+      </Button>
+      <MenuContent>
+        <MenuSection>
+          <MenuHeader>Styles</MenuHeader>
           <MenuItem>Foo</MenuItem>
           <MenuItem>Bar</MenuItem>
           <MenuItem>Baz</MenuItem>
         </MenuSection>
-        <MenuSeparator
-          style={{ borderTop: '1px solid gray', margin: '2px 5px' }}
-        />
-        <MenuSection title={<span>Section 2</span>}>
+        <MenuSeparator />
+        <MenuSection>
+          <MenuHeader>Align</MenuHeader>
           <MenuItem>Foo</MenuItem>
           <MenuItem>Bar</MenuItem>
           <MenuItem>Baz</MenuItem>
         </MenuSection>
-      </MenuList>
+      </MenuContent>
     </Menu>
   )
 }
