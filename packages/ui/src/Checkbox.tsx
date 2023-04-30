@@ -45,7 +45,7 @@ const checkboxInnerVariants = cva(
 )
 
 export interface _CheckboxProps
-  extends Omit<CheckboxProps, 'className' | 'children'>,
+  extends Omit<CheckboxProps, 'className'>,
     VariantProps<typeof checkboxVariants>,
     VariantProps<typeof checkboxInnerVariants> {
   className?: ClassValue
@@ -54,7 +54,6 @@ export interface _CheckboxProps
 
 const _Checkbox = ({ className, size, children, ...props }: _CheckboxProps) => {
   return (
-    // <div className="inline-flex">
     <Checkbox
       className={checkboxVariants({
         size,
@@ -75,10 +74,9 @@ const _Checkbox = ({ className, size, children, ...props }: _CheckboxProps) => {
             <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
           </svg>
         </div>
-        <div className="inline-flex">{children}</div>
+        <div className="group-[[data-disabled]]:opacity-40">{children}</div>
       </>
     </Checkbox>
-    // </div>
   )
 }
 
