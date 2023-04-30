@@ -26,7 +26,7 @@ const _SearchFieldClearButton = ({ className, ...props }: _ButtonProps) => {
   return (
     <div className="absolute inset-y-0 right-0 flex items-center p-1">
       <IconButton
-        className={clsx('group-[&[data-empty]]:hidden', className)}
+        className={clsx('group-[[data-empty]]:hidden', className)}
         {...props}
       />
     </div>

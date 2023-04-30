@@ -21,7 +21,7 @@ const radioVariants = cva(
 const radioInnerVariants = cva(
   [
     'flex items-center justify-center rounded-full border-2 border-slate-300',
-    'group-[&[data-selected=true]]:border-blue-500 group-[&[data-selected=true]]:bg-blue-500 group-[&[data-selected=true]]:text-white',
+    'group-[[data-selected=true]]:border-blue-500 group-[[data-selected=true]]:bg-blue-500 group-[[data-selected=true]]:text-white',
     'before:block before:h-1/2 before:w-1/2 before:rounded-full before:bg-white before:content-[""]',
   ],
   {

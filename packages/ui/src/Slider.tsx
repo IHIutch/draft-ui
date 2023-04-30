@@ -22,12 +22,12 @@ const _SliderTrack = (props: SliderTrackProps) => {
       {...props}
       className={clsx(
         'relative cursor-pointer',
-        'group-[&[data-orientation=vertical]]:h-full group-[&[data-orientation=vertical]]:w-6',
-        'group-[&[data-orientation=horizontal]]:h-6 group-[&[data-orientation=horizontal]]:w-full',
+        'group-[[data-orientation=vertical]]:h-full group-[[data-orientation=vertical]]:w-6',
+        'group-[[data-orientation=horizontal]]:h-6 group-[[data-orientation=horizontal]]:w-full',
         '',
         'before:absolute before:block before:rounded-full before:bg-slate-300',
-        'group-[&[data-orientation=vertical]]:before:left-1/2 group-[&[data-orientation=vertical]]:before:h-full group-[&[data-orientation=vertical]]:before:w-2 group-[&[data-orientation=vertical]]:before:-translate-x-1/2',
-        'group-[&[data-orientation=horizontal]]:before:top-1/2 group-[&[data-orientation=horizontal]]:before:h-2 group-[&[data-orientation=horizontal]]:before:w-full group-[&[data-orientation=horizontal]]:before:-translate-y-1/2'
+        'group-[[data-orientation=vertical]]:before:left-1/2 group-[[data-orientation=vertical]]:before:h-full group-[[data-orientation=vertical]]:before:w-2 group-[[data-orientation=vertical]]:before:-translate-x-1/2',
+        'group-[[data-orientation=horizontal]]:before:top-1/2 group-[[data-orientation=horizontal]]:before:h-2 group-[[data-orientation=horizontal]]:before:w-full group-[[data-orientation=horizontal]]:before:-translate-y-1/2'
       )}
     />
   )
@@ -39,15 +39,15 @@ const _SliderTrack = (props: SliderTrackProps) => {
 //       {...props}
 //       className={clsx(
 //         'relative cursor-pointer',
-//         'group-[&[data-orientation=vertical]]:h-full group-[&[data-orientation=vertical]]:w-6',
-//         'group-[&[data-orientation=horizontal]]:h-6 group-[&[data-orientation=horizontal]]:w-full'
+//         'group-[[data-orientation=vertical]]:h-full group-[[data-orientation=vertical]]:w-6',
+//         'group-[[data-orientation=horizontal]]:h-6 group-[[data-orientation=horizontal]]:w-full'
 //       )}
 //     >
 //       <div
 //         className={clsx(
 //           'absolute block rounded-full bg-slate-300',
-//           'group-[&[data-orientation=vertical]]:left-1/2 group-[&[data-orientation=vertical]]:h-full group-[&[data-orientation=vertical]]:w-2 group-[&[data-orientation=vertical]]:-translate-x-1/2',
-//           'group-[&[data-orientation=horizontal]]:top-1/2 group-[&[data-orientation=horizontal]]:h-2 group-[&[data-orientation=horizontal]]:w-full group-[&[data-orientation=horizontal]]:-translate-y-1/2'
+//           'group-[[data-orientation=vertical]]:left-1/2 group-[[data-orientation=vertical]]:h-full group-[[data-orientation=vertical]]:w-2 group-[[data-orientation=vertical]]:-translate-x-1/2',
+//           'group-[[data-orientation=horizontal]]:top-1/2 group-[[data-orientation=horizontal]]:h-2 group-[[data-orientation=horizontal]]:w-full group-[[data-orientation=horizontal]]:-translate-y-1/2'
 //         )}
 //       >
 //         {children}
@@ -67,8 +67,8 @@ const _SliderFilledTrack = ({
       {...props}
       className={clsx(
         'absolute h-2 rounded-full bg-blue-500',
-        'group-[&[data-orientation=vertical]]:bottom-0 group-[&[data-orientation=vertical]]:left-1/2 group-[&[data-orientation=vertical]]:h-full group-[&[data-orientation=vertical]]:w-2 group-[&[data-orientation=vertical]]:-translate-x-1/2',
-        'group-[&[data-orientation=horizontal]]:left-0 group-[&[data-orientation=horizontal]]:top-1/2 group-[&[data-orientation=horizontal]]:h-2 group-[&[data-orientation=horizontal]]:w-full group-[&[data-orientation=horizontal]]:-translate-y-1/2'
+        'group-[[data-orientation=vertical]]:bottom-0 group-[[data-orientation=vertical]]:left-1/2 group-[[data-orientation=vertical]]:h-full group-[[data-orientation=vertical]]:w-2 group-[[data-orientation=vertical]]:-translate-x-1/2',
+        'group-[[data-orientation=horizontal]]:left-0 group-[[data-orientation=horizontal]]:top-1/2 group-[[data-orientation=horizontal]]:h-2 group-[[data-orientation=horizontal]]:w-full group-[[data-orientation=horizontal]]:-translate-y-1/2'
       )}
       style={{
         [dir]: pctFilled + '%',
@@ -85,8 +85,8 @@ const _SliderThumb = (props) => {
         'flex h-6 w-6 cursor-pointer items-center justify-center rounded-full bg-white text-xs shadow',
         'data-[dragging]:outline-none data-[dragging]:ring-2 data-[dragging]:ring-slate-400 data-[dragging]:ring-offset-2',
         'data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-slate-400 data-[focus-visible]:ring-offset-2',
-        'group-[&[data-orientation=vertical]]:left-1/2',
-        'group-[&[data-orientation=horizontal]]:top-1/2'
+        'group-[[data-orientation=vertical]]:left-1/2',
+        'group-[[data-orientation=horizontal]]:top-1/2'
       )}
     />
   )
