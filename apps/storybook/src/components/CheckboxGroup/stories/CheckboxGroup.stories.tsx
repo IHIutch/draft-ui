@@ -1,6 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { CheckboxGroup } from 'react-aria-components'
-import { Checkbox, Label } from 'ui'
+import { Checkbox, CheckboxGroup, CheckboxGroupContent, Label } from 'ui'
 
 const meta: Meta<typeof CheckboxGroup> = {
   title: 'CheckboxGroup',
@@ -10,35 +9,26 @@ const meta: Meta<typeof CheckboxGroup> = {
 export default meta
 
 export const Default: StoryObj<typeof CheckboxGroup> = (props) => (
-  <CheckboxGroup>
+  <CheckboxGroup
+  // orientation={props.orientation} // Orientation not supported yet
+  >
     <Label>Favorite sports</Label>
-    <Checkbox value="soccer">
-      <div className="checkbox" aria-hidden="true">
-        <svg viewBox="0 0 18 18">
-          <polyline points="1 9 7 14 15 4" />
-        </svg>
-      </div>
-      Soccer
-    </Checkbox>
-    <Checkbox value="baseball">
-      <div className="checkbox" aria-hidden="true">
-        <svg viewBox="0 0 18 18">
-          <polyline points="1 9 7 14 15 4" />
-        </svg>
-      </div>
-      Baseball
-    </Checkbox>
-    <Checkbox value="basketball">
-      <div className="checkbox" aria-hidden="true">
-        <svg viewBox="0 0 18 18">
-          <polyline points="1 9 7 14 15 4" />
-        </svg>
-      </div>
-      Basketball
-    </Checkbox>
+    <CheckboxGroupContent>
+      <Checkbox value="soccer">Soccer</Checkbox>
+      <Checkbox value="baseball">Baseball</Checkbox>
+      <Checkbox value="basketball">Basketball</Checkbox>
+    </CheckboxGroupContent>
   </CheckboxGroup>
 )
 
-Default.argTypes = {}
+Default.argTypes = {
+  //   orientation: {
+  //     type: 'string',
+  //     control: 'radio',
+  //     options: ['vertical', 'horizontal'],
+  //   },
+}
 
-Default.args = {}
+Default.args = {
+  //   orientation: 'vertical',
+}

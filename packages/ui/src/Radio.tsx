@@ -2,24 +2,27 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { type ClassValue } from 'class-variance-authority/dist/types'
 import { Radio, type RadioProps } from 'react-aria-components'
 
-const radioVariants = cva('group flex flex-row items-center gap-2', {
-  variants: {
-    size: {
-      lg: 'text-lg',
-      md: 'text-base',
-      sm: 'text-sm',
+const radioVariants = cva(
+  'group flex cursor-pointer flex-row items-center gap-2',
+  {
+    variants: {
+      size: {
+        lg: 'text-lg',
+        md: 'text-base',
+        sm: 'text-sm',
+      },
     },
-  },
-  defaultVariants: {
-    size: 'md',
-  },
-})
+    defaultVariants: {
+      size: 'md',
+    },
+  }
+)
 
 const radioInnerVariants = cva(
   [
     'flex items-center justify-center rounded-full border-2 border-slate-300',
     'group-[&[data-selected=true]]:border-blue-500 group-[&[data-selected=true]]:bg-blue-500 group-[&[data-selected=true]]:text-white',
-    'before: before:block before:h-1/2 before:w-1/2 before:rounded-full before:bg-white before:content-[""]',
+    'before:block before:h-1/2 before:w-1/2 before:rounded-full before:bg-white before:content-[""]',
   ],
   {
     variants: {
@@ -52,7 +55,7 @@ const _Radio = ({ className, size, children, ...props }: _RadioProps) => {
       {...props}
     >
       <>
-        <div className={radioInnerVariants({ size })}></div>
+        <div className={radioInnerVariants({ size })} />
         {children}
       </>
     </Radio>
