@@ -25,7 +25,7 @@ const checkboxVariants = cva(
 
 const checkboxInnerVariants = cva(
   [
-    'flex items-center justify-center rounded border-2 border-slate-300 text-white transition-all',
+    'flex items-center justify-center rounded border-2 border-slate-300 bg-white text-white transition-colors',
     'group-[[data-selected=true]]:border-blue-500 group-[[data-selected=true]]:bg-blue-500',
     'group-[[data-disabled]]:cursor-not-allowed group-[[data-disabled]]:border-slate-100 group-[[data-disabled]]:bg-slate-100',
     'group-[[data-selected=true][data-disabled]]:border-slate-100 group-[[data-selected=true][data-disabled]]:bg-slate-100 group-[[data-selected=true][data-disabled]]:text-slate-400',
@@ -67,17 +67,15 @@ const _Checkbox = ({ className, size, children, ...props }: _CheckboxProps) => {
           <svg
             viewBox="0 0 12 10"
             className={clsx(
-              'hidden fill-none stroke-current stroke-2 opacity-0 transition-opacity',
-              'group-[[data-selected]]:block group-[[data-selected]]:opacity-100'
+              'fill-none stroke-current stroke-2 transition-all duration-300',
+              'group-[[data-selected]]:block',
+              '[stroke-dasharray:22] [stroke-dashoffset:66] group-[[data-selected]]:[stroke-dasharray:28]'
             )}
-            style={{ strokeDasharray: '44' }}
           >
             <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
           </svg>
         </div>
-        <div className="inline-flex group-[[data-disabled]]:opacity-40">
-          {children}
-        </div>
+        <div className="inline-flex">{children}</div>
       </>
     </Checkbox>
     // </div>
