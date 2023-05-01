@@ -68,9 +68,15 @@ const _MenuItem = ({ className, children, ...props }: _MenuItemProps) => {
       {({ selectionMode }) => (
         <>
           {selectionMode === 'single' ? (
-            <Circle className="h-2 w-2 fill-current group-[[aria-checked=false]]:invisible" />
+            <Circle
+              strokeWidth="3"
+              className="h-2 w-2 fill-current group-[[aria-checked=false]]:invisible"
+            />
           ) : selectionMode === 'multiple' ? (
-            <Check className="h-4 w-4 group-[[aria-checked=false]]:invisible" />
+            <Check
+              strokeWidth="3"
+              className="h-4 w-4 group-[[aria-checked=false]]:invisible"
+            />
           ) : null}
           {children}
         </>

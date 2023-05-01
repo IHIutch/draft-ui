@@ -33,7 +33,7 @@ export const Default: StoryObj<typeof DatePicker> = (props) => (
     <DateInputGroup className="pr-1">
       <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
       <IconButton size="sm" variant="subtle" className="ml-auto shrink-0">
-        <ChevronDown size="1em" />
+        <ChevronDown size="16" strokeWidth="3" />
       </IconButton>
     </DateInputGroup>
     <DatePickerContent>

@@ -1,6 +1,14 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { ListBox, Popover } from 'react-aria-components'
-import { Button, ComboBox, ComboBoxItem, Input, Label } from 'ui'
+import { ChevronDown } from 'lucide-react'
+import { Button, Input, Item, ListBox, Popover } from 'react-aria-components'
+import {
+  ComboBox,
+  ComboBoxButton,
+  ComboBoxContent,
+  ComboBoxInput,
+  ComboBoxItem,
+  Label,
+} from 'ui'
 
 const meta: Meta<typeof ComboBox> = {
   title: 'ComboBox',
@@ -12,20 +20,20 @@ export default meta
 export const Default: StoryObj<typeof ComboBox> = (props) => (
   <ComboBox>
     <Label>Favorite Animal</Label>
-    <div>
-      <Input />
-      <Button>▼</Button>
+    <div className="relative">
+      <ComboBoxInput />
+      <ComboBoxButton size="sm" variant="subtle" className="ml-auto shrink-0">
+        <ChevronDown size="16" strokeWidth="3" />
+      </ComboBoxButton>
     </div>
-    <Popover>
-      <ListBox>
-        <ComboBoxItem>Aardvark</ComboBoxItem>
-        <ComboBoxItem>Cat</ComboBoxItem>
-        <ComboBoxItem>Dog</ComboBoxItem>
-        <ComboBoxItem>Kangaroo</ComboBoxItem>
-        <ComboBoxItem>Panda</ComboBoxItem>
-        <ComboBoxItem>Snake</ComboBoxItem>
-      </ListBox>
-    </Popover>
+    <ComboBoxContent>
+      <ComboBoxItem textValue="Aardvark">Aardvark</ComboBoxItem>
+      <ComboBoxItem textValue="Cat">Cat</ComboBoxItem>
+      <ComboBoxItem textValue="Dog">Dog</ComboBoxItem>
+      <ComboBoxItem textValue="Kangaroo">Kangaroo</ComboBoxItem>
+      <ComboBoxItem textValue="Panda">Panda</ComboBoxItem>
+      <ComboBoxItem textValue="Snake">Snake</ComboBoxItem>
+    </ComboBoxContent>
   </ComboBox>
 )
 
