@@ -1,42 +1,67 @@
-import { type ClassValue } from 'class-variance-authority/dist/types'
-import { type ReactNode } from 'react'
-import { Item, ListBox, Popover, Select } from 'react-aria-components'
+import { Check } from 'lucide-react'
+import {
+  Item,
+  ListBox,
+  Popover,
+  Select,
+  SelectValue,
+} from 'react-aria-components'
 
-import { Button, type _ButtonProps } from './Button'
+import { cn } from '../lib/utils'
 
 const _Select = (props) => {
   return <Select {...props} />
 }
 
-export interface _SelectButtonProps extends _ButtonProps {
-  icon?: ReactNode
-  children?: ReactNode
-}
-
-const _SelectButton = ({ children, icon, ...props }: _SelectButtonProps) => {
+const _SelectContent = ({ className, popoverClassName, ...props }) => {
   return (
-    <Button className="flex gap-2" {...props}>
-      <span>{children}</span>
-      <span aria-hidden="true">{icon}</span>
-    </Button>
-  )
-}
-
-const _SelectContent = (props) => {
-  return (
-    <Popover>
-      <ListBox {...props} />
+    <Popover
+      className={cn(
+        'data-[entering]:animate-in data-[entering]:fade-in',
+        'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
+        'data-[placement=top]:slide-in-from-bottom-2',
+        'data-[placement=bottom]:slide-in-from-top-2',
+        'min-w-[--trigger-width] rounded-md border bg-white p-1 shadow',
+        popoverClassName
+      )}
+      {...props}
+    >
+      <ListBox className={cn('outline-none', className)} {...props} />
     </Popover>
   )
 }
 
-const _SelectItem = (props) => {
-  return <Item {...props} />
+const _SelectItem = ({ className, children, ...props }) => {
+  return (
+    <Item
+      className={cn(
+        'group',
+        'flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors',
+        'data-[focused]:bg-slate-100',
+        className
+      )}
+      {...props}
+    >
+      <Check
+        strokeWidth="3"
+        className="h-4 w-4 group-[[aria-selected=false]]:invisible"
+      />
+      {children}
+    </Item>
+  )
+}
+
+const _SelectValue = (props) => {
+  return (
+    <SelectValue {...props}>
+      {({ selectedText }) => (selectedText ? selectedText : 'Select an item')}
+    </SelectValue>
+  )
 }
 
 export {
   _Select as Select,
-  _SelectButton as SelectButton,
   _SelectContent as SelectContent,
   _SelectItem as SelectItem,
+  _SelectValue as SelectValue,
 }
