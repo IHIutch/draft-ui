@@ -14,8 +14,8 @@ import {
 const modalVariants = cva(
   [
     'fill-mode-forwards mx-auto w-full rounded bg-white outline-none',
-    'data-[entering]:animate-in data-[entering]:zoom-in-75',
-    'data-[exiting]:animate-in data-[exiting]:zoom-in-75 data-[exiting]:direction-reverse',
+    'data-[entering]:animate-in data-[entering]:zoom-in-95',
+    'data-[exiting]:animate-in data-[exiting]:zoom-in-95 data-[exiting]:direction-reverse',
   ],
   {
     variants: {
@@ -76,7 +76,7 @@ const _ModalOverlay = ({
       className={clsx(
         'fill-mode-forwards h-[--visual-viewport-height]',
         'fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-sm transition-all',
-        'data-[entering]:animate-in data-[entering]:fade-in',
+        'data-[entering]:animate-in data-[entering]:fade-in data-[entering]:duration-75',
         'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
         className
       )}
