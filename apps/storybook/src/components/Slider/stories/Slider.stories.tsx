@@ -22,12 +22,10 @@ export const Default: StoryObj<typeof Slider> = (props) => (
       {(state) => (
         <>
           <SliderFilledTrack
-            pctFilled={state.getValuePercent(state.values[0]) * 100}
+            percentage={state.getValuePercent(state.values[0]) * 100}
             orientation={state.orientation}
           />
-          <SliderThumb>
-            <SliderOutput />
-          </SliderThumb>
+          <SliderThumb />
         </>
       )}
     </SliderTrack>

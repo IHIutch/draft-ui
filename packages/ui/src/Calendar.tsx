@@ -96,7 +96,7 @@ const _CalendarFooter = (props) => {
 const _CalendarNextButton = (props) => {
   return (
     <IconButton variant="outline" size="xs" slot="next" {...props}>
-      <ChevronRight size="1em" />
+      <ChevronRight size="1em" strokeWidth="3" />
     </IconButton>
   )
 }
@@ -104,7 +104,7 @@ const _CalendarNextButton = (props) => {
 const _CalendarPrevButton = (props) => {
   return (
     <IconButton variant="outline" size="xs" slot="previous" {...props}>
-      <ChevronLeft size="1em" />
+      <ChevronLeft size="1em" strokeWidth="3" />
     </IconButton>
   )
 }

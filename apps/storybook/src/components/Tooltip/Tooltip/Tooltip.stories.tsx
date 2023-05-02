@@ -11,7 +11,9 @@ export default meta
 export const Default: StoryObj<typeof Tooltip> = (props) => (
   <div className="flex h-screen w-full items-center justify-center">
     <Tooltip>
-      <div>Hover Me</div>
+      <Button size="sm" variant="outline">
+        Hover Me
+      </Button>
       <TooltipContent placement={props.placement}>Hello!</TooltipContent>
     </Tooltip>
   </div>

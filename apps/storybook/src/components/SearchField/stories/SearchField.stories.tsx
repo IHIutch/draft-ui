@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { X } from 'lucide-react'
 import {
   Label,
   SearchField,
@@ -19,9 +18,7 @@ export const Default: StoryObj<typeof SearchField> = (props) => (
     <Label>Search</Label>
     <div className="relative">
       <SearchFieldInput className="pr-10" />
-      <SearchFieldClearButton variant="subtle" size="sm">
-        <X size="1em" />
-      </SearchFieldClearButton>
+      <SearchFieldClearButton variant="subtle" size="sm" />
     </div>
   </SearchField>
 )

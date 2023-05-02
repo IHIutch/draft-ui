@@ -1,7 +1,9 @@
 import { type Meta, type StoryObj } from '@storybook/react'
+import { ChevronDown, ChevronUp } from 'lucide-react'
 import { Group } from 'react-aria-components'
 import {
   Button,
+  IconButton,
   Input,
   Label,
   NumberDecrementStepper,
@@ -29,8 +31,12 @@ export const Default: StoryObj<typeof NumberField> = (props) => (
     <Group className="relative">
       <NumberInput />
       <NumberInputStepper>
-        <NumberIncrementStepper>▲</NumberIncrementStepper>
-        <NumberDecrementStepper>▼</NumberDecrementStepper>
+        <NumberIncrementStepper>
+          <ChevronUp size="16" strokeWidth="3" />
+        </NumberIncrementStepper>
+        <NumberDecrementStepper>
+          <ChevronDown size="16" strokeWidth="3" />
+        </NumberDecrementStepper>
       </NumberInputStepper>
     </Group>
   </NumberField>
@@ -56,9 +62,13 @@ export const Mobile: StoryObj<typeof NumberField> = (props) => (
     step={props.step}
   >
     <Group className="flex gap-1">
-      <Button slot="decrement">▲</Button>
+      <IconButton slot="decrement">
+        <ChevronUp size="16" strokeWidth="3" />
+      </IconButton>
       <Input />
-      <Button slot="increment">▼</Button>
+      <IconButton slot="increment">
+        <ChevronDown size="16" strokeWidth="3" />
+      </IconButton>
     </Group>
   </NumberField>
 )

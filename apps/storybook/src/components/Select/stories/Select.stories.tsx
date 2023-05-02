@@ -19,7 +19,7 @@ export default meta
 export const Default: StoryObj<typeof Select> = (props) => (
   <Select>
     <Label>Favorite Animal</Label>
-    <Button variant="outline" className="flex items-center gap-2">
+    <Button variant="outline" className="flex items-center gap-2 font-normal">
       <SelectValue />
       <ChevronDown size="16" strokeWidth="3" />
     </Button>

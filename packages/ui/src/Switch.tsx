@@ -15,7 +15,7 @@ const _SwitchIndicator = (props) => {
       {...props}
       className={clsx(
         'h-5 w-8 rounded-full bg-gray-300 p-0.5',
-        'transition-colors group-[[data-selected]]:bg-blue-500'
+        'transition-colors group-[[data-selected]]:bg-black'
       )}
     >
       <div
