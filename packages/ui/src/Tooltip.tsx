@@ -7,7 +7,7 @@ import {
 import { cn } from '../lib/utils'
 
 const _Tooltip = (props) => {
-  return <TooltipTrigger delay={0} closeDelay={0} trigger="hover" {...props} />
+  return <TooltipTrigger delay={0} closeDelay={0} {...props} />
 }
 
 const _TooltipContent = ({
