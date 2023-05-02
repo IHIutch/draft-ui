@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Button, Tooltip, TooltipTrigger } from 'ui'
+import { Button, Tooltip, TooltipContent } from 'ui'
 
 const meta: Meta<typeof Tooltip> = {
   title: 'Tooltip',
@@ -9,12 +9,45 @@ const meta: Meta<typeof Tooltip> = {
 export default meta
 
 export const Default: StoryObj<typeof Tooltip> = (props) => (
-  <TooltipTrigger>
-    <Button>Hover Me</Button>
-    <Tooltip>Hello!</Tooltip>
-  </TooltipTrigger>
+  <div className="flex h-screen w-full items-center justify-center">
+    <Tooltip>
+      <div>Hover Me</div>
+      <TooltipContent placement={props.placement}>Hello!</TooltipContent>
+    </Tooltip>
+  </div>
 )
 
-Default.argTypes = {}
+Default.argTypes = {
+  placement: {
+    type: 'string',
+    control: 'select',
+    options: [
+      'bottom',
+      'bottom left',
+      'bottom right',
+      'bottom start',
+      'bottom end',
+      'top',
+      'top left',
+      'top right',
+      'top start',
+      'top end',
+      'left',
+      'left top',
+      'left bottom',
+      'start',
+      'start top',
+      'start bottom',
+      'right',
+      'right top',
+      'right bottom',
+      'end',
+      'end top',
+      'end bottom',
+    ],
+  },
+}
 
-Default.args = {}
+Default.args = {
+  placement: 'bottom',
+}

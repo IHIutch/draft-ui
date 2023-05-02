@@ -1,25 +1,42 @@
 import {
-  OverlayArrow,
   Tooltip,
   TooltipTrigger,
   type TooltipProps,
 } from 'react-aria-components'
 
-const _TooltipTrigger = (props) => {
+import { cn } from '../lib/utils'
+
+const _Tooltip = (props) => {
   return <TooltipTrigger delay={0} closeDelay={0} trigger="hover" {...props} />
 }
 
-const _Tooltip = ({ children, ...props }: TooltipProps) => {
+const _TooltipContent = ({
+  className,
+  children,
+  placement,
+  ...props
+}: TooltipProps) => {
   return (
-    <Tooltip {...props}>
-      {/* <OverlayArrow>
-        <svg width={8} height={8}>
-          <path d="M0 0,L4 4,L8 0" />
-        </svg>
-      </OverlayArrow> */}
+    <Tooltip
+      placement={placement}
+      offset={4}
+      {...props}
+      className={cn(
+        [
+          'rounded-sm bg-slate-700 px-1 py-0.5 text-sm text-white',
+          'data-[entering]:animate-in data-[entering]:fade-in',
+          'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
+          'data-[placement=top]:slide-in-from-bottom-2',
+          'data-[placement=right]:slide-in-from-left-2',
+          'data-[placement=bottom]:slide-in-from-top-2',
+          'data-[placement=left]:slide-in-from-right-2',
+        ],
+        className
+      )}
+    >
       {children}
     </Tooltip>
   )
 }
 
-export { _TooltipTrigger as TooltipTrigger, _Tooltip as Tooltip }
+export { _Tooltip as Tooltip, _TooltipContent as TooltipContent }
