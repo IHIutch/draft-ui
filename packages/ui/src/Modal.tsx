@@ -1,3 +1,5 @@
+'use client'
+
 import { cva, type VariantProps } from 'class-variance-authority'
 import { type ClassValue } from 'class-variance-authority/dist/types'
 import { clsx } from 'clsx'

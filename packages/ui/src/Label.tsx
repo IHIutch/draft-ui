@@ -1,3 +1,5 @@
+'use client'
+
 import { type ClassValue } from 'class-variance-authority/dist/types'
 import clsx from 'clsx'
 import { Label, type LabelProps } from 'react-aria-components'

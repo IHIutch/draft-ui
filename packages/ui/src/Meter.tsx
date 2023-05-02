@@ -1,4 +1,5 @@
-import { type ClassValue } from 'class-variance-authority/dist/types'
+'use client'
+
 import { Meter } from 'react-aria-components'
 
 import { cn } from '../lib/utils'

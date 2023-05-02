@@ -1,3 +1,5 @@
+'use client'
+
 import clsx from 'clsx'
 import { type HTMLAttributes } from 'react'
 import { RadioGroup, type RadioGroupProps } from 'react-aria-components'

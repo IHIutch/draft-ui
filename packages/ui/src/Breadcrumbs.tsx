@@ -1,3 +1,5 @@
+'use client'
+
 import { Breadcrumbs, Item, Link } from 'react-aria-components'
 
 const _Breadcrumbs = (props: any) => {

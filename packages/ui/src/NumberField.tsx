@@ -1,4 +1,5 @@
-import { type ClassValue } from 'class-variance-authority/dist/types'
+'use client'
+
 import clsx from 'clsx'
 import { Button, Group, NumberField } from 'react-aria-components'
 

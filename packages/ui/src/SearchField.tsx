@@ -1,5 +1,5 @@
-import { type ClassValue } from 'class-variance-authority/dist/types'
-import clsx from 'clsx'
+'use client'
+
 import { Search, X } from 'lucide-react'
 import { SearchField } from 'react-aria-components'
 

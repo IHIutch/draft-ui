@@ -1,3 +1,5 @@
+'use client'
+
 // TODO: ToggleButton
 
 const _ToggleButton = () => {

@@ -1,3 +1,5 @@
+'use client'
+
 import { DateRangePicker, Dialog, Popover } from 'react-aria-components'
 
 import { cn } from '../lib/utils'

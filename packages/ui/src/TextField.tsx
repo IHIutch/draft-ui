@@ -1,3 +1,5 @@
+'use client'
+
 import clsx from 'clsx'
 import { type HTMLAttributes } from 'react'
 import { Text, TextField, type TextFieldProps } from 'react-aria-components'

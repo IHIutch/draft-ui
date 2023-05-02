@@ -1,3 +1,5 @@
+'use client'
+
 import clsx from 'clsx'
 import { type HTMLAttributes } from 'react'
 import { CheckboxGroup, type CheckboxGroupProps } from 'react-aria-components'

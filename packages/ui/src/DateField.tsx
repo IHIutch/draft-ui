@@ -1,3 +1,5 @@
+'use client'
+
 import { DateField } from 'react-aria-components'
 
 const _DateField = (props) => {

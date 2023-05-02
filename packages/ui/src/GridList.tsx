@@ -1,3 +1,5 @@
+'use client'
+
 import { GridList, Item } from 'react-aria-components'
 
 import { cn } from '../lib/utils'
