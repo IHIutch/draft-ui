@@ -1,6 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { ChevronDown } from 'lucide-react'
-import { Button, Input, Item, ListBox, Popover } from 'react-aria-components'
 import {
   ComboBox,
   ComboBoxButton,
