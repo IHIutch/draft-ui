@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Label, Meter } from 'ui'
+import { Label, Meter, MeterFilledTrack, MeterTrack } from 'ui'
 
 const meta: Meta<typeof Meter> = {
   title: 'Meter',
@@ -17,10 +17,9 @@ export const Default: StoryObj<typeof Meter> = (props) => (
     {({ percentage, valueText }) => (
       <>
         <Label>Meter Label</Label>
-        <span>{valueText}</span>
-        <div>
-          <div style={{ width: percentage + '%' }} />
-        </div>
+        <MeterTrack>
+          <MeterFilledTrack percentage={percentage} />
+        </MeterTrack>
       </>
     )}
   </Meter>

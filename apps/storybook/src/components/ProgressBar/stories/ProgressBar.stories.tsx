@@ -1,5 +1,10 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Label, ProgressBar } from 'ui'
+import {
+  Label,
+  ProgressBar,
+  ProgressBarFilledTrack,
+  ProgressBarTrack,
+} from 'ui'
 
 const meta: Meta<typeof ProgressBar> = {
   title: 'ProgressBar',
@@ -14,13 +19,12 @@ export const Default: StoryObj<typeof ProgressBar> = (props) => (
     minValue={props.minValue}
     maxValue={props.maxValue}
   >
-    {({ percentage, valueText }) => (
+    {({ percentage }) => (
       <>
         <Label>Progress</Label>
-        <span>{valueText}</span>
-        <div>
-          <div style={{ width: percentage + '%' }} />
-        </div>
+        <ProgressBarTrack>
+          <ProgressBarFilledTrack percentage={percentage} />
+        </ProgressBarTrack>
       </>
     )}
   </ProgressBar>
@@ -33,7 +37,7 @@ Default.argTypes = {
 }
 
 Default.args = {
-  value: 100,
-  minValue: 50,
-  maxValue: 150,
+  value: 75,
+  minValue: 0,
+  maxValue: 100,
 }
