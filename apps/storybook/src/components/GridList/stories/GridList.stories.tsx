@@ -1,5 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { Button, Checkbox, GridList, GridListItem } from 'ui'
+import { Info } from 'lucide-react'
+import { Button, Checkbox, GridList, GridListItem, IconButton } from 'ui'
 
 const meta: Meta<typeof GridList> = {
   title: 'GridList',
@@ -10,25 +11,45 @@ export default meta
 
 export const Default: StoryObj<typeof GridList> = (props) => (
   <GridList aria-label="Favorite pokemon" selectionMode="multiple">
-    <GridListItem textValue="Charizard">
+    <GridListItem
+      className="[&_[role=gridcell]]:flex [&_[role=gridcell]]:items-center"
+      textValue="Charizard"
+    >
       <Checkbox />
       Charizard
-      <Button aria-label="Info">ⓘ</Button>
+      <IconButton className="ml-2" size="sm" variant="subtle" aria-label="Info">
+        <Info size="1em" />
+      </IconButton>
     </GridListItem>
-    <GridListItem textValue="Blastoise">
+    <GridListItem
+      className="[&_[role=gridcell]]:flex [&_[role=gridcell]]:items-center"
+      textValue="Blastoise"
+    >
       <Checkbox />
       Blastoise
-      <Button aria-label="Info">ⓘ</Button>
+      <IconButton className="ml-2" size="sm" variant="subtle" aria-label="Info">
+        <Info size="1em" />
+      </IconButton>
     </GridListItem>
-    <GridListItem textValue="Venusaur">
+    <GridListItem
+      className="[&_[role=gridcell]]:flex [&_[role=gridcell]]:items-center"
+      textValue="Venusaur"
+    >
       <Checkbox />
       Venusaur
-      <Button aria-label="Info">ⓘ</Button>
+      <IconButton className="ml-2" size="sm" variant="subtle" aria-label="Info">
+        <Info size="1em" />
+      </IconButton>
     </GridListItem>
-    <GridListItem textValue="Pikachu">
+    <GridListItem
+      className="[&_[role=gridcell]]:flex [&_[role=gridcell]]:items-center"
+      textValue="Pikachu"
+    >
       <Checkbox />
       Pikachu
-      <Button aria-label="Info">ⓘ</Button>
+      <IconButton className="ml-2" size="sm" variant="subtle" aria-label="Info">
+        <Info size="1em" />
+      </IconButton>
     </GridListItem>
   </GridList>
 )
