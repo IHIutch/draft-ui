@@ -9,8 +9,8 @@ const meta: Meta<typeof Tabs> = {
 export default meta
 
 export const Default: StoryObj<typeof Tabs> = (props) => (
-  <Tabs>
-    <TabList aria-label="History of Ancient Rome">
+  <Tabs orientation={props.orientation}>
+    <TabList aria-label="History of Ancient Rome" disabledKeys={['Emp']}>
       <Tab id="FoR">Founding of Rome</Tab>
       <Tab id="MaR">Monarchy and Republic</Tab>
       <Tab id="Emp">Empire</Tab>
@@ -25,6 +25,14 @@ export const Default: StoryObj<typeof Tabs> = (props) => (
   </Tabs>
 )
 
-Default.argTypes = {}
+Default.argTypes = {
+  orientation: {
+    type: 'string',
+    control: 'radio',
+    options: ['vertical', 'horizontal'],
+  },
+}
 
-Default.args = {}
+Default.args = {
+  orientation: 'horizontal',
+}
