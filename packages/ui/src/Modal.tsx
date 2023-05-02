@@ -11,11 +11,11 @@ import {
   type ModalRenderProps,
 } from 'react-aria-components'
 
-const buttonVariants = cva(
+const modalVariants = cva(
   [
-    'mx-auto rounded bg-white outline-none',
+    'fill-mode-forwards mx-auto rounded bg-white outline-none',
     'data-[entering]:animate-in data-[entering]:zoom-in-75',
-    // 'data-[exiting]:animate-out data-[exiting]:zoom-out-75 data-[exiting]:duration-1000', // This breaks the modal closing for some reason'
+    'data-[exiting]:animate-in data-[exiting]:zoom-in-75 data-[exiting]:direction-reverse',
   ],
   {
     variants: {
@@ -41,7 +41,7 @@ const _Modal = (props) => {
 export interface _ModalProps
   extends ModalRenderProps,
     Omit<ModalOverlayProps, 'className'>,
-    VariantProps<typeof buttonVariants> {
+    VariantProps<typeof modalVariants> {
   className?: ClassValue
   children?: ReactNode
 }
@@ -54,7 +54,7 @@ const _ModalContent = ({
 }: _ModalProps) => {
   return (
     <Modal
-      className={buttonVariants({
+      className={modalVariants({
         size,
         className,
       })}
@@ -74,7 +74,7 @@ const _ModalOverlay = ({
     <ModalOverlay
       isDismissable={isDismissable}
       className={clsx(
-        'h-[var(--visual-viewport-height)]',
+        'fill-mode-forwards h-[--visual-viewport-height]',
         'fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-sm transition-all',
         'data-[entering]:animate-in data-[entering]:fade-in',
         'data-[exiting]:animate-out data-[exiting]:fade-out',

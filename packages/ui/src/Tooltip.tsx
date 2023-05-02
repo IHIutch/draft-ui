@@ -23,7 +23,7 @@ const _TooltipContent = ({
       {...props}
       className={cn(
         [
-          'rounded-sm bg-slate-700 px-1 py-0.5 text-sm text-white',
+          'fill-mode-forwards rounded-sm bg-slate-700 px-1 py-0.5 text-sm text-white',
           'data-[entering]:animate-in data-[entering]:fade-in',
           'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
           'data-[placement=top]:slide-in-from-bottom-2',

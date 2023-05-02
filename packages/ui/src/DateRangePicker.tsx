@@ -10,6 +10,7 @@ const _DateRangePickerContent = (props) => {
   return (
     <Popover
       className={cn(
+        'fill-mode-forwards',
         'data-[entering]:animate-in data-[entering]:fade-in',
         'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
         'data-[placement=top]:slide-in-from-bottom-2',
