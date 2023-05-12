@@ -19,7 +19,8 @@ const _SelectContent = ({ className, popoverClassName, ...props }) => {
   return (
     <Popover
       className={cn(
-        'fill-mode-forwards min-w-[--trigger-width] rounded-md border bg-white p-1 shadow',
+        'fill-mode-forwards',
+        'min-w-[--trigger-width] overflow-auto rounded-md border border-slate-200 bg-white p-1 shadow-md',
         'data-[entering]:animate-in data-[entering]:fade-in',
         'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
         'data-[placement=top]:slide-in-from-bottom-2',

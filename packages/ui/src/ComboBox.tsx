@@ -24,7 +24,7 @@ const _ComboBoxContent = ({ className, popoverClassName, ...props }) => {
   return (
     <Popover
       className={cn(
-        'w-[--trigger-width] rounded-md border bg-white p-1 shadow',
+        'w-[--trigger-width] overflow-auto rounded-md border border-slate-200 bg-white p-1 shadow',
         popoverClassName
       )}
       {...props}

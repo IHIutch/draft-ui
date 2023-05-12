@@ -40,11 +40,11 @@ const _MenuContent = <T extends object>({
     <Popover
       className={cn(
         'fill-mode-forwards',
+        'overflow-auto min-w-[150px] rounded-md border bg-white p-1 shadow',
         'data-[entering]:animate-in data-[entering]:fade-in',
         'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
         'data-[placement=top]:slide-in-from-bottom-2',
         'data-[placement=bottom]:slide-in-from-top-2',
-        'min-w-[150px] rounded-md border bg-white p-1 shadow',
         popoverClassName
       )}
       {...props}
@@ -110,7 +110,7 @@ export interface _MenuHeaderProps
 const _MenuHeader = ({ className, ...props }: _MenuHeaderProps) => {
   return (
     <Header
-      className={cn('px-2 py-1 text-sm font-semibold', className)}
+      className={cn('px-2 py-1 text-sm font-medium text-slate-500', className)}
       {...props}
     />
   )
