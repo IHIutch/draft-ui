@@ -1,5 +1,8 @@
 'use client'
 
+import { allDocs } from 'contentlayer/generated'
+import { ChevronDown } from 'lucide-react'
+import Link from 'next/link'
 import {
   Calendar,
   CalendarCell,
@@ -18,10 +21,7 @@ import {
   DateSegment,
   IconButton,
   Label,
-} from '@/../../packages/ui/src'
-import { allDocs } from 'contentlayer/generated'
-import { ChevronDown } from 'lucide-react'
-import Link from 'next/link'
+} from 'ui'
 
 export default function Home() {
   return (
