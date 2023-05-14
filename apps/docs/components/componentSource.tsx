@@ -1,8 +1,6 @@
-'use client'
+import { type HTMLAttributes } from 'react'
 
-import * as React from 'react'
-
-interface ComponentSourceProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ComponentSourceProps extends HTMLAttributes<HTMLDivElement> {
   src: string
 }
 
