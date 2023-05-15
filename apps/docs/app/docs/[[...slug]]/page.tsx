@@ -34,6 +34,7 @@ export default async function DocPage({ params }: DocPageProps) {
       <article className="my-12 flex grow">
         <div className="prose mx-auto">
           <h1>{doc.title}</h1>
+          <p className="lead">{doc.description}</p>
           <Mdx code={doc.body.code} />
         </div>
       </article>
