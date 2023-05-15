@@ -30,17 +30,23 @@ export default async function DocPage({ params }: DocPageProps) {
   }
 
   return (
-    <div className="relative py-6 lg:gap-10 lg:py-10 xl:grid xl:grid-cols-[1fr_300px]">
-      <div className="prose mx-auto w-full min-w-0 max-w-full">
-        <h1>{doc.title}</h1>
-        <Mdx code={doc.body.code} />
-      </div>
-      <div className="hidden text-sm xl:block">
-        <div className="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-10">
-          ...toc...
-          {/* <DashboardTableOfContents toc={toc} /> */}
+    <>
+      <article className="my-12 flex grow">
+        <div className="prose mx-auto">
+          <h1>{doc.title}</h1>
+          <Mdx code={doc.body.code} />
+        </div>
+      </article>
+      <div className="hidden shrink-0 pl-4 md:pl-8 lg:w-1/4 xl:block">
+        <div className="fixed top-0 h-screen pt-16">
+          <div className="h-full overflow-y-auto">
+            <div className="my-12 pr-4">
+              ...toc...
+              {/* <DashboardTableOfContents toc={toc} /> */}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
