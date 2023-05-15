@@ -14,7 +14,9 @@ interface DocsLayoutProps {
 
 export default function DocsLayout({ children }: DocsLayoutProps) {
   const pathname = usePathname()
-  const componentList = allDocs.filter((doc) => doc.component === true)
+  const componentList = allDocs
+    .filter((doc) => doc.component === true)
+    .sort((a, b) => a.title.localeCompare(b.title))
 
   return (
     <html lang="en" className="h-full">
