@@ -1,8 +1,7 @@
 'use client'
 
+import { cn } from '@/lib/utils'
 import { ProgressBar } from 'react-aria-components'
-
-import { cn } from '../lib/utils'
 
 const _ProgressBar = (props) => {
   return <ProgressBar {...props} />

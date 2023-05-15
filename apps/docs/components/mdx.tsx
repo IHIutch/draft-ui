@@ -1,7 +1,10 @@
-import { ComponentSource } from '@/components/componentSource'
+import ComponentExample from '@/components/componentExample'
+import ComponentSource from '@/components/componentSource'
 import { type NpmCommands } from '@/types/unist'
 import { clsx } from 'clsx'
 import { useMDXComponent } from 'next-contentlayer/hooks'
+
+import { examples } from './examples'
 
 const components = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -73,6 +76,8 @@ const components = {
     />
   ),
   ComponentSource,
+  ComponentExample,
+  ...examples,
 }
 
 interface MdxProps {

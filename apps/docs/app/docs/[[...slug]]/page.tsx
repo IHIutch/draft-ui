@@ -1,3 +1,5 @@
+'use client'
+
 import { allDocs } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 

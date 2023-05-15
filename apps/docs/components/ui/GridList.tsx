@@ -1,8 +1,7 @@
 'use client'
 
+import { cn } from '@/lib/utils'
 import { GridList, Item } from 'react-aria-components'
-
-import { cn } from '../lib/utils'
 
 // export interface _MenuProps
 //   extends VariantProps<typeof buttonVariants> {

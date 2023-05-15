@@ -4,7 +4,7 @@ interface ComponentSourceProps extends HTMLAttributes<HTMLDivElement> {
   src: string
 }
 
-export function ComponentSource({ children }: ComponentSourceProps) {
+export default function ComponentSource({ children }: ComponentSourceProps) {
   return (
     <div>
       <h2 className="font-bold">Component Source</h2>

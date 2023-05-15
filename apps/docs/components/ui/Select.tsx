@@ -1,5 +1,6 @@
 'use client'
 
+import { cn } from '@/lib/utils'
 import { Check } from 'lucide-react'
 import {
   Item,
@@ -8,8 +9,6 @@ import {
   Select,
   SelectValue,
 } from 'react-aria-components'
-
-import { cn } from '../lib/utils'
 
 const _Select = (props) => {
   return <Select {...props} />

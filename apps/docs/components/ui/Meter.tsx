@@ -1,8 +1,7 @@
 'use client'
 
+import { cn } from '@/lib/utils'
 import { Meter } from 'react-aria-components'
-
-import { cn } from '../lib/utils'
 
 const _Meter = (props) => {
   return <Meter {...props} />

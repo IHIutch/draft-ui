@@ -1,12 +1,11 @@
 'use client'
 
+import { cn } from '@/lib/utils'
 import {
   Tooltip,
   TooltipTrigger,
   type TooltipProps,
 } from 'react-aria-components'
-
-import { cn } from '../lib/utils'
 
 const _Tooltip = (props) => {
   return <TooltipTrigger delay={0} closeDelay={0} {...props} />
