@@ -11,6 +11,15 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   transpilePackages: ['ui'],
+  redirects() {
+    return [
+      {
+        source: '/docs/components',
+        destination: '/docs/components/breadcrumbs',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 // export default withContentlayer(nextConfig);
