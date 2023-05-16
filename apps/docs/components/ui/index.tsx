@@ -1,7 +1,3 @@
-'use client'
-
-import './styles.css'
-
 export * from './Breadcrumbs'
 export * from './Button'
 export * from './Calendar'

@@ -8,7 +8,7 @@ export default function ComponentSource({ children }: ComponentSourceProps) {
   return (
     <div>
       <h2 className="font-bold">Component Source</h2>
-      {children}
+      <pre>{children}</pre>
     </div>
   )
 }

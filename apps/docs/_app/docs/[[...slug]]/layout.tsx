@@ -1,9 +1,4 @@
-'use client'
-
 import Navigation from '@/components/navigation'
-
-import '@/styles/globals.css'
-
 import clsx from 'clsx'
 import { allDocs } from 'contentlayer/generated'
 import Link from 'next/link'

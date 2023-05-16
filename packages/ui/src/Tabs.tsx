@@ -1,5 +1,3 @@
-'use client'
-
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from 'react-aria-components'
 
 import { cn } from '../lib/utils'
