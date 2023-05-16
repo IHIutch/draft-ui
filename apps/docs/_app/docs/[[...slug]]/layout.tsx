@@ -1,4 +1,4 @@
-import Navigation from '@/components/navigation'
+import Navigation from '@/components/Navigation'
 import clsx from 'clsx'
 import { allDocs } from 'contentlayer/generated'
 import Link from 'next/link'

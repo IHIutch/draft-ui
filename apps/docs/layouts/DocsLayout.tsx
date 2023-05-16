@@ -1,4 +1,4 @@
-import Navigation from '@/components/navigation'
+import Navigation from '@/components/Navigation'
 import { getDocsMetadata } from '@/lib/utils'
 import clsx from 'clsx'
 import Link from 'next/link'
