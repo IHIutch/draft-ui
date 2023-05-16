@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils'
+import { Highlight, themes } from 'prism-react-renderer'
 import * as React from 'react'
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from 'ui'
 
@@ -45,9 +46,26 @@ export default function ComponentExample({
           </TabPanel>
           <TabPanel id="code">
             <div>
-              <pre className="w-full rounded-md [&_button]:hidden [&_pre]:my-0 [&_pre]:overflow-auto">
-                {Code}
-              </pre>
+              <Highlight theme={themes.nightOwl} code={Code} language="tsx">
+                {({
+                  // className,
+                  style,
+                  tokens,
+                  getLineProps,
+                  getTokenProps,
+                }) => (
+                  <pre style={style} className="my-0">
+                    {tokens.map((line, i) => (
+                      <div key={i} {...getLineProps({ line })}>
+                        {/* <span>{i + 1}</span> */}
+                        {line.map((token, key) => (
+                          <span key={key} {...getTokenProps({ token })} />
+                        ))}
+                      </div>
+                    ))}
+                  </pre>
+                )}
+              </Highlight>
             </div>
           </TabPanel>
         </TabPanels>
