@@ -1,5 +1,5 @@
+import { allDocs } from '@/.contentlayer/generated'
 import Navigation from '@/components/Navigation'
-import { getDocsMetadata } from '@/lib/utils'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -10,6 +10,9 @@ interface DocsLayoutProps {
 
 export default function DocsLayout({ children, ...props }: DocsLayoutProps) {
   const pathname = usePathname()
+  const componentList = allDocs
+    .filter((doc) => doc.component === true)
+    .sort((a, b) => a.title.localeCompare(b.title))
 
   return (
     <div className="container mx-auto flex h-full">
@@ -21,7 +24,7 @@ export default function DocsLayout({ children, ...props }: DocsLayoutProps) {
           </h2>
           <div className="relative mt-3">
             <ul role="list">
-              {/* {componentList.map((doc, idx) => (
+              {componentList.map((doc, idx) => (
                 <li key={idx}>
                   <Link
                     href={doc.slug || ''}
@@ -29,14 +32,14 @@ export default function DocsLayout({ children, ...props }: DocsLayoutProps) {
                     className={clsx(
                       'flex justify-between gap-2 py-1 pr-3 text-sm transition',
                       pathname === doc.slug
-                        ? 'text-zinc-900 dark:text-white'
+                        ? 'font-medium text-zinc-900 dark:text-white'
                         : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
                     )}
                   >
-                    <span className="truncate">{doc.frontmatter.title}</span>
+                    <span className="truncate">{doc.title}</span>
                   </Link>
                 </li>
-              ))} */}
+              ))}
             </ul>
           </div>
         </nav>
