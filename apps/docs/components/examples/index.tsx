@@ -1,11 +1,7 @@
 import { ButtonDefault } from './button/default'
 
-export const exampleComponents = {
+const examples = {
   ButtonDefault,
 }
 
-export const exampleTags = {
-  ButtonDefault: {
-    render: 'ButtonDefault',
-  },
-}
+export default examples

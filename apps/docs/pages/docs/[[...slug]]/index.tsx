@@ -1,35 +1,39 @@
-import { MarkdocContent } from '@/components/MarkdocContent'
+import { allDocs, type Doc } from '@/.contentlayer/generated'
+import { MdxContent } from '@/components/MdxContent'
 import DocsLayout from '@/layouts/DocsLayout'
-import { getDocContent, getDocsMetadata } from '@/lib/utils'
+import { type GetStaticPaths, type GetStaticProps } from 'next'
 
-export async function getStaticPaths() {
-  const slugs = getDocsMetadata()
+export const getStaticPaths: GetStaticPaths = () => {
+  const paths = allDocs.map((doc) => ({
+    params: { slug: doc.slugAsParams.split('/') },
+  }))
+
+  return { paths, fallback: false }
+}
+
+export const getStaticProps: GetStaticProps = ({ params }) => {
+  const slug = params?.slug?.join('/')
+  const doc = allDocs.find((doc) => doc.slugAsParams === slug)
+
+  if (!doc) {
+    return {
+      notFound: true,
+    }
+  }
+
   return {
-    paths: slugs.map((s) => s.slug),
-    fallback: 'blocking',
+    props: { doc },
   }
 }
 
-export async function getStaticProps({ params }) {
-  const slug = '/docs/' + params?.slug?.join('/')
-  const { content, frontmatter } = getDocContent(slug)
-  return {
-    props: {
-      content: JSON.stringify(content),
-      frontmatter: JSON.stringify(frontmatter),
-    },
-  }
-}
-
-export default function DocPage({ content, frontmatter }) {
-  const fm = JSON.parse(frontmatter)
+export default function DocPage({ doc }: { doc: Doc }) {
   return (
     <>
       <article className="my-12 flex grow">
         <div className="prose mx-auto">
-          <h1>{fm.title}</h1>
-          <p className="lead">{fm.description}</p>
-          <MarkdocContent content={JSON.parse(content)} />
+          <h1>{doc.title}</h1>
+          <p className="lead">{doc.description}</p>
+          <MdxContent code={doc.body.code} />
         </div>
       </article>
       <div className="hidden shrink-0 pl-4 md:pl-8 lg:w-1/4 xl:block">

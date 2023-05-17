@@ -6,22 +6,19 @@ import { Tab, TabList, TabPanel, TabPanels, Tabs } from 'ui'
 // import { Tab, TabList, TabPanel, TabPanels, Tabs } from 'ui' // Tabs aren't working with App dir or pages dir at the moment
 
 interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
-  extractClassname?: boolean
-  extractedClassNames?: string
   align?: 'center' | 'start' | 'end'
-  src?: string
 }
 
 export default function ComponentExample({
   children,
   className,
   align = 'center',
-  src: _,
   ...props
 }: ComponentExampleProps) {
-  const [Example, Code, ...Children] = React.Children.toArray(
-    children
-  ) as React.ReactElement[]
+  const [Example, Code] = React.Children.toArray(children) as [
+    React.ReactElement,
+    string
+  ]
 
   return (
     <div {...props}>
@@ -44,7 +41,7 @@ export default function ComponentExample({
               </div>
             </div>
           </TabPanel>
-          <TabPanel id="code">
+          <TabPanel id="code" className="px-0">
             <div>
               <Highlight theme={themes.nightOwl} code={Code} language="tsx">
                 {({

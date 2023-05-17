@@ -1,17 +1,18 @@
 import { Highlight, themes } from 'prism-react-renderer'
-import { type HTMLAttributes } from 'react'
 
-interface ComponentSourceProps extends HTMLAttributes<HTMLDivElement> {
-  src: string
-}
-
-export default function ComponentSource({ children }: ComponentSourceProps) {
+export default function ComponentSource({ children }: { children: string }) {
   return (
     <div>
       <h2 className="font-bold">Component Source</h2>
       <div>
         <Highlight theme={themes.nightOwl} code={children} language="tsx">
-          {({ className, style, tokens, getLineProps, getTokenProps }) => (
+          {({
+            // className,
+            style,
+            tokens,
+            getLineProps,
+            getTokenProps,
+          }) => (
             <pre style={style}>
               {tokens.map((line, i) => (
                 <div key={i} {...getLineProps({ line })}>

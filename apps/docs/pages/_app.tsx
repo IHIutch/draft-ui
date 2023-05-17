@@ -1,4 +1,3 @@
-import '@/styles/mdx.css'
 import '@/styles/globals.css'
 
 import { SSRProvider } from 'react-aria-components'
