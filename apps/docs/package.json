@@ -8,7 +8,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ignore-path .gitignore ."
+    "lint": "eslint --ignore-path .gitignore .",
+    "get-docs-metadata": "node getDocsMetadata.mjs"
   },
   "dependencies": {
     "@markdoc/markdoc": "^0.2.2",

@@ -1,5 +1,5 @@
 import Navigation from '@/components/navigation'
-import { getDocsMetadata } from '@/lib/utils'
+import docsMetadata from '@/data/docsMetadata.json'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -8,8 +8,9 @@ interface DocsLayoutProps {
   children: React.ReactNode
 }
 
-export default function DocsLayout({ children, ...props }: DocsLayoutProps) {
+export default function DocsLayout({ children }: DocsLayoutProps) {
   const pathname = usePathname()
+  const componentList = docsMetadata
 
   return (
     <div className="container mx-auto flex h-full">
@@ -21,7 +22,7 @@ export default function DocsLayout({ children, ...props }: DocsLayoutProps) {
           </h2>
           <div className="relative mt-3">
             <ul role="list">
-              {/* {componentList.map((doc, idx) => (
+              {componentList.map((doc, idx) => (
                 <li key={idx}>
                   <Link
                     href={doc.slug || ''}
@@ -29,14 +30,14 @@ export default function DocsLayout({ children, ...props }: DocsLayoutProps) {
                     className={clsx(
                       'flex justify-between gap-2 py-1 pr-3 text-sm transition',
                       pathname === doc.slug
-                        ? 'text-zinc-900 dark:text-white'
+                        ? 'font-semibold text-zinc-900 dark:text-white'
                         : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
                     )}
                   >
                     <span className="truncate">{doc.frontmatter.title}</span>
                   </Link>
                 </li>
-              ))} */}
+              ))}
             </ul>
           </div>
         </nav>

@@ -1,11 +1,12 @@
 import { MarkdocContent } from '@/components/MarkdocContent'
+import docsMetadata from '@/data/docsMetadata.json'
 import DocsLayout from '@/layouts/DocsLayout'
-import { getDocContent, getDocsMetadata } from '@/lib/utils'
+import { getDocContent } from '@/lib/utils'
 
 export async function getStaticPaths() {
-  const slugs = getDocsMetadata()
+  const docs = docsMetadata
   return {
-    paths: slugs.map((s) => s.slug),
+    paths: docs.map((s) => s.slug),
     fallback: 'blocking',
   }
 }
@@ -16,19 +17,18 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       content: JSON.stringify(content),
-      frontmatter: JSON.stringify(frontmatter),
+      frontmatter,
     },
   }
 }
 
 export default function DocPage({ content, frontmatter }) {
-  const fm = JSON.parse(frontmatter)
   return (
     <>
       <article className="my-12 flex grow">
         <div className="prose mx-auto">
-          <h1>{fm.title}</h1>
-          <p className="lead">{fm.description}</p>
+          <h1>{frontmatter.title}</h1>
+          <p className="lead">{frontmatter.description}</p>
           <MarkdocContent content={JSON.parse(content)} />
         </div>
       </article>

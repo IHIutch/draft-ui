@@ -1,0 +1,233 @@
+[
+  {
+    "slug": "/docs/components/breadcrumbs",
+    "frontmatter": {
+      "title": "Breadcrumbs",
+      "description": "Breadcrumbs display a heirarchy of links to the current page or resource in an application.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/button",
+    "frontmatter": {
+      "title": "Button",
+      "description": "A button allows a user to perform an action, with mouse, touch, and keyboard interactions.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/checkbox-group",
+    "frontmatter": {
+      "title": "Checkbox Group",
+      "description": "A checkbox group allows a user to select multiple items from a list of options.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/checkbox",
+    "frontmatter": {
+      "title": "Checkbox",
+      "description": "A checkbox allows a user to select multiple items from a list of individual items, or to mark one individual item as selected.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/combo-box",
+    "frontmatter": {
+      "title": "Combo Box",
+      "description": "A combo box combines a text input with a listbox, allowing users to filter a list of options to items matching a query.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/date-field",
+    "frontmatter": {
+      "title": "Date Field",
+      "description": "A date field allows users to enter and edit date and time values using a keyboard. Each part of a date value is displayed in an individually editable segment.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/date-picker",
+    "frontmatter": {
+      "title": "Date Picker",
+      "description": "A date picker combines a DateField and a Calendar popover to allow users to enter or select a date and time value.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/date-range-picker",
+    "frontmatter": {
+      "title": "Date Range Picker",
+      "description": "A date range picker combines two DateFields and a RangeCalendar popover to allow users to enter or select a date and time range.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/grid-list",
+    "frontmatter": {
+      "title": "Grid List",
+      "description": "A grid list displays a list of interactive items, with support for keyboard navigation, single or multiple selection, and row actions.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/icon-button",
+    "frontmatter": {
+      "title": "Icon Button",
+      "description": "Displays a form input field or a component that looks like an input field.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/input",
+    "frontmatter": {
+      "title": "Input",
+      "description": "Displays a form input field or a component that looks like an input field.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/label",
+    "frontmatter": {
+      "title": "Label",
+      "description": "Displays a form input field or a component that looks like an input field.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/menu",
+    "frontmatter": {
+      "title": "Menu",
+      "description": "A menu displays a list of actions or options that a user can choose.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/meter",
+    "frontmatter": {
+      "title": "Meter",
+      "description": "A meter represents a quantity within a known range, or a fractional value.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/modal",
+    "frontmatter": {
+      "title": "Modal",
+      "description": "A modal is an overlay element which blocks interaction with elements outside it.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/number-field",
+    "frontmatter": {
+      "title": "Number Field",
+      "description": "A number field allows a user to enter a number, and increment or decrement the value using stepper buttons.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/progress-bar",
+    "frontmatter": {
+      "title": "Progress Bar",
+      "description": "Progress bars show either determinate or indeterminate progress of an operation over time.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/radio-group",
+    "frontmatter": {
+      "title": "Radio Group",
+      "description": "A radio group allows a user to select a single item from a list of mutually exclusive options.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/radio",
+    "frontmatter": {
+      "title": "Radio",
+      "description": "Displays a form input field or a component that looks like an input field.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/search-field",
+    "frontmatter": {
+      "title": "Search Field",
+      "description": "A search field allows a user to enter and clear a search query.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/select",
+    "frontmatter": {
+      "title": "Select",
+      "description": "A select displays a collapsible list of options and allows a user to select one of them.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/slider",
+    "frontmatter": {
+      "title": "Slider",
+      "description": "A slider allows a user to select one or more values within a range.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/switch",
+    "frontmatter": {
+      "title": "Switch",
+      "description": "A text field allows a user to enter a plain text value with a keyboard.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/table",
+    "frontmatter": {
+      "title": "Table",
+      "description": "A table displays data in rows and columns and enables a user to navigate its contents via directional navigation keys, and optionally supports row selection and sorting.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/tabs",
+    "frontmatter": {
+      "title": "Tabs",
+      "description": "Tabs organize content into multiple sections and allow users to navigate between them.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/text-field",
+    "frontmatter": {
+      "title": "Text Field",
+      "description": "Displays a form input field or a component that looks like an input field.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/toggle-button",
+    "frontmatter": {
+      "title": "Toggle Button",
+      "description": "A toggle button allows a user to toggle a selection on or off, for example switching between two states or modes.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/components/tooltip",
+    "frontmatter": {
+      "title": "Tooltip",
+      "description": "A tooltip displays a description of an element on hover or focus.",
+      "component": true
+    }
+  },
+  {
+    "slug": "/docs/index",
+    "frontmatter": {
+      "title": "Introduction",
+      "description": "Re-usable components built using React Aria and Tailwind CSS."
+    }
+  }
+]

@@ -1,7 +1,5 @@
-import fs from 'fs'
-import path from 'path'
-
 import { exampleTags } from '@/components/examples'
+import heading from '@/markdoc/nodes/heading.markdoc'
 import ComponentExample from '@/markdoc/tags/ComponentExample.markdoc'
 import ComponentSource from '@/markdoc/tags/ComponentSource.markdoc'
 import Markdoc from '@markdoc/markdoc'
@@ -10,42 +8,6 @@ import * as matter from 'gray-matter'
 
 export function cn(...inputs: ClassValue[]) {
   return clsx(inputs)
-}
-
-interface DocsMetaData {
-  slug?: string
-  frontmatter?: any
-}
-
-export function getDocsMetadata() {
-  const contentDir = './content'
-  const fileMetadata: DocsMetaData[] = []
-
-  function traverseDirectory(currentPath: string) {
-    const files = fs.readdirSync(currentPath)
-
-    files.forEach((file) => {
-      const filePath = path.join(currentPath, file)
-      const stat = fs.statSync(filePath)
-
-      if (stat.isDirectory()) {
-        traverseDirectory(filePath) // Recursively traverse subdirectories
-      } else if (path.extname(filePath) === '.mdx') {
-        const { data: frontmatter } = matter.read(filePath)
-
-        const fileNameWithoutExt = filePath
-          .replace('.mdx', '')
-          .replace('content', '') // Remove file extension
-        fileMetadata.push({
-          slug: fileNameWithoutExt,
-          frontmatter,
-        }) // Add file path to the array
-      }
-    })
-  }
-
-  traverseDirectory(contentDir)
-  return fileMetadata
 }
 
 export function getDocContent(path: string) {
@@ -61,11 +23,38 @@ export function getDocContent(path: string) {
       ComponentSource,
       ...exampleTags,
     },
-    // nodes: {
-    //   heading,
-    // },
+    nodes: {
+      heading,
+    },
   })
-  // const headings = getHeadings(content)
+  const headings = getHeadings(content)
 
-  return { content, frontmatter, headings: [] }
+  return { content, frontmatter, headings }
+}
+
+export const getHeadings = (
+  node: any,
+  sections: { id: string; title: string; level: number }[] = []
+) => {
+  if (node?.name) {
+    // 'Heading' is defined in markdoc/node/heading.ts
+    if (node.name.match('Heading')) {
+      const title = node.children[0]
+
+      if (typeof title === 'string') {
+        sections.push({
+          ...node.attributes,
+          title,
+        })
+      }
+    }
+
+    if (node.children) {
+      for (const child of node.children) {
+        getHeadings(child, sections)
+      }
+    }
+  }
+
+  return sections
 }
