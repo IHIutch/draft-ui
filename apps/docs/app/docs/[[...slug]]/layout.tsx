@@ -1,23 +1,18 @@
-'use client'
-
-import Navigation from '@/components/navigation'
+import Navigation from '@/components/Navigation'
+import Sidebar from '@/components/Sidebar'
+import { getDocsMetadata } from '@/lib/server'
 
 import '@/styles/globals.css'
-
-import clsx from 'clsx'
-import { allDocs } from 'contentlayer/generated'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 interface DocsLayoutProps {
   children: React.ReactNode
 }
 
-export default function DocsLayout({ children }: DocsLayoutProps) {
-  const pathname = usePathname()
-  const componentList = allDocs
-    .filter((doc) => doc.component === true)
-    .sort((a, b) => a.title.localeCompare(b.title))
+export default async function DocsLayout({ children }: DocsLayoutProps) {
+  const docsMetadata = await getDocsMetadata()
+  const componentList = docsMetadata
+    .filter((doc) => doc.frontmatter.component === true)
+    .sort((a, b) => a.frontmatter.title.localeCompare(b.frontmatter.title))
 
   return (
     <div className="container mx-auto h-full">
@@ -28,24 +23,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
             Components
           </h2>
           <div className="relative mt-3">
-            <ul role="list">
-              {componentList.map((doc, idx) => (
-                <li key={idx}>
-                  <Link
-                    href={doc.slug}
-                    aria-current={pathname === doc.slug ? 'page' : undefined}
-                    className={clsx(
-                      'flex justify-between gap-2 py-1 pr-3 text-sm transition',
-                      pathname === doc.slug
-                        ? 'text-zinc-900 dark:text-white'
-                        : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
-                    )}
-                  >
-                    <span className="truncate">{doc.title}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <Sidebar componentList={componentList} />
           </div>
         </nav>
       </aside>

@@ -1,7 +1,7 @@
+import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@/components/ui/Tabs'
 import { cn } from '@/lib/utils'
+import { Highlight, themes } from 'prism-react-renderer'
 import * as React from 'react'
-
-// import { Tab, TabList, TabPanel, TabPanels, Tabs } from 'ui' // Tabs aren't working with App dir or pages dir at the moment
 
 interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
   extractClassname?: boolean
@@ -13,39 +13,61 @@ interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
 export default function ComponentExample({
   children,
   className,
-  // extractClassname,
-  // extractedClassNames,
   align = 'center',
-  src: _, // src is used to inject code snippet into {Code} section below
+  src: _,
   ...props
 }: ComponentExampleProps) {
-  const [Example, Code, ...Children] = React.Children.toArray(
+  const [Example, Code, ..._Children] = React.Children.toArray(
     children
   ) as React.ReactElement[]
-  console.log({ Example, Code, Children })
 
   return (
     <div {...props}>
-      <div>
-        <h4>Example</h4>
-        <div className="rounded-md border">
-          <div
-            className={cn('flex min-h-[350px] justify-center p-10', {
-              'items-center': align === 'center',
-              'items-start': align === 'start',
-              'items-end': align === 'end',
-            })}
-          >
-            {Example}
-          </div>
-        </div>
-      </div>
-      <div>
-        <h4>Code</h4>
-        <div className="w-full rounded-md [&_button]:hidden [&_pre]:my-0 [&_pre]:overflow-auto">
-          {Code}
-        </div>
-      </div>
+      <Tabs>
+        <TabList aria-label="History of Ancient Rome" disabledKeys={['Emp']}>
+          <Tab id="example">Example</Tab>
+          <Tab id="code">Code</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel id="example" className="px-0">
+            <div className="rounded-md border">
+              <div
+                className={cn('flex min-h-[350px] justify-center p-10', {
+                  'items-center': align === 'center',
+                  'items-start': align === 'start',
+                  'items-end': align === 'end',
+                })}
+              >
+                {Example}
+              </div>
+            </div>
+          </TabPanel>
+          <TabPanel id="code">
+            <div>
+              <Highlight theme={themes.nightOwl} code={Code} language="tsx">
+                {({
+                  // className,
+                  style,
+                  tokens,
+                  getLineProps,
+                  getTokenProps,
+                }) => (
+                  <pre style={style} className="my-0">
+                    {tokens.map((line, i) => (
+                      <div key={i} {...getLineProps({ line })}>
+                        {/* <span>{i + 1}</span> */}
+                        {line.map((token, key) => (
+                          <span key={key} {...getTokenProps({ token })} />
+                        ))}
+                      </div>
+                    ))}
+                  </pre>
+                )}
+              </Highlight>
+            </div>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
     </div>
   )
 }

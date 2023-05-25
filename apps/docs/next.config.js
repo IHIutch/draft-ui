@@ -1,16 +1,12 @@
-// import { withContentlayer } from "next-contentlayer";
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { withContentlayer } = require('next-contentlayer')
-
-// This could be an .mjs file, but there is an issue documented here: https://github.com/contentlayerdev/contentlayer/issues/129#issuecomment-1080416633
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    serverActions: true,
+  },
   reactStrictMode: true,
   typescript: {
     ignoreBuildErrors: true,
   },
-  transpilePackages: ['ui'],
   redirects() {
     return [
       {
@@ -20,7 +16,12 @@ const nextConfig = {
       },
     ]
   },
+  webpack: (config) => {
+    config.resolve.fallback = {
+      fs: false,
+    }
+    return config
+  },
 }
 
-// export default withContentlayer(nextConfig);
-module.exports = withContentlayer(nextConfig)
+module.exports = nextConfig
