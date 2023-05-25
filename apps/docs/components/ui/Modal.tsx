@@ -1,9 +1,10 @@
 'use client'
 
+import { type HTMLAttributes, type ReactNode } from 'react'
+
 import { cva, type VariantProps } from 'class-variance-authority'
 import { type ClassValue } from 'class-variance-authority/dist/types'
 import { clsx } from 'clsx'
-import { type HTMLAttributes, type ReactNode } from 'react'
 import {
   Dialog,
   DialogTrigger,
@@ -15,7 +16,7 @@ import {
 
 const modalVariants = cva(
   [
-    'fill-mode-forwards mx-auto w-full rounded bg-white outline-none',
+    'mx-auto w-full rounded bg-white outline-none fill-mode-forwards',
     'data-[entering]:animate-in data-[entering]:zoom-in-95',
     'data-[exiting]:animate-in data-[exiting]:zoom-in-95 data-[exiting]:direction-reverse',
   ],
@@ -76,7 +77,7 @@ const _ModalOverlay = ({
     <ModalOverlay
       isDismissable={isDismissable}
       className={clsx(
-        'fill-mode-forwards h-[--visual-viewport-height]',
+        'h-[--visual-viewport-height] fill-mode-forwards',
         'fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-sm transition-all',
         'data-[entering]:animate-in data-[entering]:fade-in data-[entering]:duration-75',
         'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',

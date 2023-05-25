@@ -1,8 +1,9 @@
 'use client'
 
-import { cn } from '@/lib/utils'
 import { Search, X } from 'lucide-react'
 import { SearchField } from 'react-aria-components'
+
+import { cn } from '@/lib/utils'
 
 import { type _ButtonProps } from './Button'
 import { IconButton } from './IconButton'

@@ -1,7 +1,8 @@
 'use client'
 
-import Markdoc, { type RenderableTreeNodes } from '@markdoc/markdoc'
 import React from 'react'
+
+import Markdoc, { type RenderableTreeNodes } from '@markdoc/markdoc'
 
 import ComponentExample from './ComponentExample'
 import ComponentSource from './ComponentSource'

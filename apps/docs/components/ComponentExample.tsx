@@ -1,7 +1,9 @@
+import * as React from 'react'
+
+import { Highlight, themes } from 'prism-react-renderer'
+
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@/components/ui/Tabs'
 import { cn } from '@/lib/utils'
-import { Highlight, themes } from 'prism-react-renderer'
-import * as React from 'react'
 
 interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
   extractClassname?: boolean

@@ -1,8 +1,9 @@
 'use client'
 
+import { type ReactNode } from 'react'
+
 import { cva, type VariantProps } from 'class-variance-authority'
 import { type ClassValue } from 'class-variance-authority/dist/types'
-import { type ReactNode } from 'react'
 import { Radio, type RadioProps } from 'react-aria-components'
 
 const radioVariants = cva(
@@ -27,7 +28,7 @@ const radioVariants = cva(
 const radioInnerVariants = cva(
   [
     'flex items-center justify-center rounded-full border-2 border-slate-300 bg-white transition-colors',
-    'before:block before:h-1/2 before:w-1/2 before:scale-0 before:rounded-full before:bg-white before:transition-transform before:duration-300 before:content-[""]',
+    'before:block before:h-1/2 before:w-1/2 before:scale-0 before:rounded-full before:bg-white before:transition-transform before:content-[""] before:duration-300',
     'group-[[data-selected=true]]:border-black group-[[data-selected=true]]:bg-black group-[[data-selected=true]]:text-white',
     'group-[[data-selected=true]]:before:scale-100',
     'group-[[data-disabled]]:border-slate-100 group-[[data-selected=true][data-disabled]]:border-slate-100 group-[[data-selected=true][data-disabled]]:bg-slate-100 group-[[data-selected=true][data-disabled]]:before:bg-slate-400',

@@ -3,12 +3,13 @@
 import fs from 'fs'
 import path from 'path'
 
+import matter from 'gray-matter'
+
 import { exampleTags } from '@/components/examples'
 import heading from '@/markdoc/nodes/heading.markdoc'
 import ComponentExample from '@/markdoc/tags/ComponentExample.markdoc'
 import ComponentSource from '@/markdoc/tags/ComponentSource.markdoc'
 import Markdoc from '@markdoc/markdoc'
-import matter from 'gray-matter'
 
 export async function getDocContent(path: string) {
   const contentDir = './content' + path

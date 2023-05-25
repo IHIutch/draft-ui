@@ -1,9 +1,9 @@
 'use client'
 
-import { cn } from '@/lib/utils'
+import React from 'react'
+
 import { type ClassValue } from 'clsx'
 import { Check, Circle } from 'lucide-react'
-import React from 'react'
 import {
   Header,
   Item,
@@ -18,6 +18,8 @@ import {
   type PopoverProps,
   type SectionProps,
 } from 'react-aria-components'
+
+import { cn } from '@/lib/utils'
 
 const _Menu = (props: MenuTriggerProps) => {
   return <MenuTrigger {...props} />

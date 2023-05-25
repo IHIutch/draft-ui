@@ -1,8 +1,9 @@
 'use client'
 
+import { createElement, useState, type ReactNode } from 'react'
+
 import clsx from 'clsx'
 import { Link as LinkIcon } from 'lucide-react'
-import { createElement, useState, type ReactNode } from 'react'
 
 export default function Heading({
   id,

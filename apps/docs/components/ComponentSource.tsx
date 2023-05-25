@@ -1,5 +1,6 @@
-import { Highlight, themes } from 'prism-react-renderer'
 import { type HTMLAttributes } from 'react'
+
+import { Highlight, themes } from 'prism-react-renderer'
 
 interface ComponentSourceProps extends HTMLAttributes<HTMLDivElement> {
   src: string
