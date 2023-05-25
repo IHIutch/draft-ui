@@ -4,7 +4,16 @@ module.exports = {
   semi: false,
   singleQuote: true,
   //
-  importOrder: ['^@core/(.*)$', '^@server/(.*)$', '^@ui/(.*)$', '^[./]'],
+  importOrder: [
+    '^react$',
+    '<THIRD_PARTY_MODULES>',
+    '',
+    '^[@/]',
+    '^[./]',
+    '',
+    '^(?!.*[.]css$)[./].*$',
+    '.css$',
+  ],
   importOrderBuiltinModulesToTop: true,
   importOrderCaseInsensitive: true,
   importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],

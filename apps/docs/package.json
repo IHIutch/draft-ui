@@ -11,25 +11,20 @@
     "lint": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@docsearch/react": "^3.4.0",
     "@markdoc/markdoc": "^0.3.0",
     "clsx": "^1.2.1",
-    "contentlayer": "^0.3.2",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.202.0",
     "next": "13.4.2",
-    "next-contentlayer": "^0.3.2",
     "prism-react-renderer": "^2.0.4",
     "react": "18.2.0",
     "react-aria-components": "1.0.0-alpha.4",
-    "react-docgen": "6.0.0-beta.5",
     "react-dom": "18.2.0",
     "react-stately": "^3.21.0",
     "rehype-pretty-code": "^0.9.5",
-    "remark-code-import": "^1.2.0",
-    "shiki": "^0.14.2",
     "typescript": "4.9.5",
-    "ui": "workspace:*",
-    "unist-builder": "^3.0.1",
-    "unist-util-visit": "^4.1.2"
+    "ui": "workspace:*"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
