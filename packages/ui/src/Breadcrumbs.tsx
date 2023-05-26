@@ -1,11 +1,28 @@
 'use client'
 
-import { Breadcrumbs, Item, Link } from 'react-aria-components'
+import { type ClassValue } from 'clsx'
+import {
+  Breadcrumbs,
+  Item,
+  Link,
+  type BreadcrumbsProps,
+} from 'react-aria-components'
 
-const _Breadcrumbs = (props: any) => {
+import { cn } from '../lib/utils'
+
+export interface _BreadcrumbsProps<T>
+  extends Omit<BreadcrumbsProps<T>, 'className'> {
+  value?: T
+  className?: ClassValue
+}
+
+const _Breadcrumbs = <T extends object>({
+  className,
+  ...props
+}: _BreadcrumbsProps<T>) => {
   return (
     <Breadcrumbs
-      className="[&_ol]:flex [&_ol]:flex-wrap [&_ol]:gap-1"
+      className={cn(className, '[&_ol]:flex [&_ol]:flex-wrap [&_ol]:gap-1')}
       {...props}
     />
   )
