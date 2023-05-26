@@ -1,27 +1,53 @@
 'use client'
 
+import { type ClassValue } from 'clsx'
 import { Check } from 'lucide-react'
-import { ComboBox, Item, ListBox, Popover } from 'react-aria-components'
+import {
+  ComboBox,
+  Item,
+  ListBox,
+  Popover,
+  type ComboBoxProps,
+  type ItemProps,
+  type ListBoxProps,
+  type PopoverProps,
+} from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
-import { IconButton } from './IconButton'
-import { Input } from './Input'
+import { IconButton, type _IconButtonProps } from './IconButton'
+import { Input, type _InputProps } from './Input'
 
-// export interface _MenuProps
-//   extends VariantProps<typeof buttonVariants> {
-//   className?: ClassValue
-// }
-
-const _ComboBox = (props) => {
-  return <ComboBox className="group" {...props} />
+export interface _ComboBoxProps<T extends object>
+  extends Omit<ComboBoxProps<T>, 'className'> {
+  value?: T
+  className?: ClassValue
 }
 
-const _ComboBoxInput = ({ className, ...props }) => {
-  return <Input className={cn('', className)} {...props} />
+const _ComboBox = <T extends object>({
+  className,
+  ...props
+}: _ComboBoxProps<T>) => {
+  return <ComboBox className={cn('group', className)} {...props} />
 }
 
-const _ComboBoxContent = ({ className, popoverClassName, ...props }) => {
+const _ComboBoxInput = ({ className, ...props }: _InputProps) => {
+  return <Input className={className} {...props} />
+}
+
+export interface _ComboBoxContentProps<T>
+  extends Omit<PopoverProps, 'children' | 'style' | 'className'>,
+    Omit<ListBoxProps<T>, 'style' | 'className'> {
+  value?: T
+  className?: ClassValue
+  popoverClassName?: ClassValue
+}
+
+const _ComboBoxContent = <T extends object>({
+  className,
+  popoverClassName,
+  ...props
+}: _ComboBoxContentProps<T>) => {
   return (
     <Popover
       className={cn(
@@ -35,7 +61,7 @@ const _ComboBoxContent = ({ className, popoverClassName, ...props }) => {
   )
 }
 
-const _ComboBoxButton = ({ className, ...props }) => {
+const _ComboBoxButton = ({ className, ...props }: _IconButtonProps) => {
   return (
     <div className="absolute inset-y-0 right-0 flex items-center p-1">
       <IconButton
@@ -46,7 +72,15 @@ const _ComboBoxButton = ({ className, ...props }) => {
   )
 }
 
-const _ComboBoxItem = ({ className, children, ...props }) => {
+export interface _ComboBoxItemProps extends Omit<ItemProps, 'className'> {
+  className?: ClassValue
+}
+
+const _ComboBoxItem = ({
+  className,
+  children,
+  ...props
+}: _ComboBoxItemProps) => {
   return (
     <Item
       className={cn(
@@ -57,11 +91,13 @@ const _ComboBoxItem = ({ className, children, ...props }) => {
       )}
       {...props}
     >
-      <Check
-        strokeWidth="3"
-        className="h-4 w-4 group-[[aria-selected=false]]:invisible"
-      />
-      {children}
+      <>
+        <Check
+          strokeWidth="3"
+          className="h-4 w-4 group-[[aria-selected=false]]:invisible"
+        />
+        {children}
+      </>
     </Item>
   )
 }
