@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 
 import CopyClipboardButton from './CopyClipboardButton'
 
-// chlidren contains raw code string injected from ComponentExmaple.markdoc.ts
+// chlidren contains raw code string injected from ComponentExample.markdoc.ts
 interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
   align?: 'center' | 'start' | 'end'
 }
