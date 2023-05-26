@@ -27,8 +27,8 @@ const _CheckboxGroupContent = (props: HTMLAttributes<HTMLDivElement>) => {
     <div
       className={clsx(
         'flex flex-col gap-2',
-        'group-[[aria-orientation=horizontal]]:flex-row group-[[aria-orientation=horizontal]]:gap-6',
-        'group-[[aria-orientation=vertical]]:flex-col group-[[aria-orientation=vertical]]:gap-2'
+        'group-[[data-orientation=horizontal]]:flex-row group-[[data-orientation=horizontal]]:gap-6',
+        'group-[[data-orientation=vertical]]:flex-col group-[[data-orientation=vertical]]:gap-2'
       )}
       {...props}
     />

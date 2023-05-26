@@ -1,6 +1,7 @@
 import { BreadcrumbsDefault } from './breadcrumbs/default'
 import { ButtonDefault } from './button/default'
 import { CheckboxDefault } from './checkbox/default'
+import { CheckboxGroupDefault } from './checkboxGroup/default'
 
 export const exampleComponents = {
   // Breadcrumbs
@@ -9,6 +10,8 @@ export const exampleComponents = {
   ButtonDefault,
   // Checkbox
   CheckboxDefault,
+  // CheckboxGroup
+  CheckboxGroupDefault,
 }
 
 // Auto map example components to markdoc tags
