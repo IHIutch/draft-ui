@@ -1,27 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Copy } from 'lucide-react'
 
-import { IconButton } from './ui'
+import { IconButton, Tooltip, TooltipContent } from './ui'
 
 export default function CopyClipboardButton({ text }: { text: string }) {
+  const [isOpen, setOpen] = useState(false)
+
   const handleCopyToClipboard = () => {
-    // setIsToolTipVisible(true)
+    setOpen(true)
     navigator.clipboard.writeText(text)
 
-    // setTimeout(() => {
-    //   setIsToolTipVisible(false)
-    // }, 800)
+    setTimeout(() => {
+      setOpen(false)
+    }, 800)
   }
   return (
-    <IconButton
-      aria-label="Copy component source code"
-      onPress={handleCopyToClipboard}
-      variant="link"
-      size="xs"
-      className="text-white"
-    >
-      <Copy size="1em" />
-    </IconButton>
+    <Tooltip isOpen={isOpen}>
+      <TooltipContent>Code copied!</TooltipContent>
+      <IconButton
+        aria-label="Copy component source code"
+        onPress={handleCopyToClipboard}
+        variant="link"
+        size="xs"
+        className="text-white"
+      >
+        <Copy size="1em" />
+      </IconButton>
+    </Tooltip>
   )
 }
