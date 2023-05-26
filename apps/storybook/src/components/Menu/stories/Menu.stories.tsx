@@ -28,7 +28,7 @@ export const Default: StoryObj<typeof MenuContent> = (props) => {
     <Menu>
       <Button className="flex items-center gap-2">
         <span>Menu</span>
-        <ChevronDown size="16" strokeWidth="3" />
+        <ChevronDown size="1em" strokeWidth="3" />
       </Button>
       <MenuContent
         selectionMode={props.selectionMode}

@@ -22,7 +22,7 @@ export const Default: StoryObj<typeof Select> = (props) => (
     <Label>Favorite Animal</Label>
     <Button variant="outline" className="flex items-center gap-2 font-normal">
       <SelectValue />
-      <ChevronDown size="16" strokeWidth="3" />
+      <ChevronDown size="1em" strokeWidth="3" />
     </Button>
     <SelectContent>
       <SelectItem textValue="Aardvark">Aardvark</SelectItem>
