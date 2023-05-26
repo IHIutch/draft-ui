@@ -3,6 +3,7 @@ import { ButtonDefault } from './button/default'
 import { CheckboxDefault } from './checkbox/default'
 import { CheckboxGroupDefault } from './checkboxGroup/default'
 import { ComboBoxDefault } from './comboBox/default'
+import { DateFieldDefault } from './dateField/default'
 
 export const exampleComponents = {
   // Breadcrumbs
@@ -13,8 +14,10 @@ export const exampleComponents = {
   CheckboxDefault,
   // CheckboxGroup
   CheckboxGroupDefault,
-  // CheckboxGroup
+  // ComboBox
   ComboBoxDefault,
+  // DateField
+  DateFieldDefault,
 }
 
 // Auto map example components to markdoc tags

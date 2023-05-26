@@ -1,8 +1,12 @@
 'use client'
 
-import { DateField } from 'react-aria-components'
+import {
+  DateField,
+  type DateFieldProps,
+  type DateValue,
+} from 'react-aria-components'
 
-const _DateField = (props) => {
+const _DateField = <T extends DateValue>(props: DateFieldProps<T>) => {
   return <DateField {...props} />
 }
 
