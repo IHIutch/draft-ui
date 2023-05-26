@@ -16,7 +16,7 @@ import {
 
 const modalVariants = cva(
   [
-    'mx-auto w-full rounded bg-white outline-none fill-mode-forwards',
+    'fill-mode-forwards mx-auto w-full rounded bg-white outline-none',
     'data-[entering]:animate-in data-[entering]:zoom-in-95',
     'data-[exiting]:animate-in data-[exiting]:zoom-in-95 data-[exiting]:direction-reverse',
   ],
@@ -77,7 +77,7 @@ const _ModalOverlay = ({
     <ModalOverlay
       isDismissable={isDismissable}
       className={clsx(
-        'h-[--visual-viewport-height] fill-mode-forwards',
+        'fill-mode-forwards h-[--visual-viewport-height]',
         'fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-sm transition-all',
         'data-[entering]:animate-in data-[entering]:fade-in data-[entering]:duration-75',
         'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
