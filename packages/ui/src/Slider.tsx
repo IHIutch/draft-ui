@@ -9,7 +9,7 @@ import {
   type SliderTrackProps,
 } from 'react-aria-components'
 
-import { cn } from '../lib/utils'
+import { cn } from '@/lib/utils'
 
 const _Slider = ({ className, ...props }) => {
   return <Slider {...props} className={cn('group', className)} />

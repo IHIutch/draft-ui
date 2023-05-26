@@ -19,7 +19,7 @@ import {
   type SectionProps,
 } from 'react-aria-components'
 
-import { cn } from '../lib/utils'
+import { cn } from '@/lib/utils'
 
 const _Menu = (props: MenuTriggerProps) => {
   return <MenuTrigger {...props} />

@@ -2,7 +2,7 @@
 
 import { DatePicker, Dialog, Popover } from 'react-aria-components'
 
-import { cn } from '../lib/utils'
+import { cn } from '@/lib/utils'
 
 const _DatePicker = (props) => {
   return <DatePicker {...props} />

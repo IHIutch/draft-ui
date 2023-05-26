@@ -3,7 +3,8 @@
 import { Check } from 'lucide-react'
 import { ComboBox, Item, ListBox, Popover } from 'react-aria-components'
 
-import { cn } from '../lib/utils'
+import { cn } from '@/lib/utils'
+
 import { IconButton } from './IconButton'
 import { Input } from './Input'
 

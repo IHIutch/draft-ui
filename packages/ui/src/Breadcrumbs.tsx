@@ -8,7 +8,7 @@ import {
   type BreadcrumbsProps,
 } from 'react-aria-components'
 
-import { cn } from '../lib/utils'
+import { cn } from '@/lib/utils'
 
 export interface _BreadcrumbsProps<T>
   extends Omit<BreadcrumbsProps<T>, 'className'> {

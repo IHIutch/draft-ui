@@ -2,7 +2,7 @@
 
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from 'react-aria-components'
 
-import { cn } from '../lib/utils'
+import { cn } from '@/lib/utils'
 
 const _Tabs = ({ className, ...props }) => {
   return (
