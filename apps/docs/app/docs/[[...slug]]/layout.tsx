@@ -11,7 +11,7 @@ interface DocsLayoutProps {
 export default async function DocsLayout({ children }: DocsLayoutProps) {
   const docsMetadata = await getDocsMetadata()
   const componentList = docsMetadata
-    .filter((doc) => doc.frontmatter.component === true)
+    .filter((doc) => doc.frontmatter.isComponent === true)
     .sort((a, b) => a.frontmatter.title.localeCompare(b.frontmatter.title))
 
   return (

@@ -65,7 +65,7 @@ export interface ComponentMetadataProps {
   frontmatter: {
     title: string
     description: string
-    component: string
+    isComponent: boolean
   }
 }
 
