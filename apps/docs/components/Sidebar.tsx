@@ -23,7 +23,7 @@ export default function Sidebar({
             className={cn(
               'flex justify-between gap-2 py-1 pr-3 text-sm transition',
               pathname === comp.slug
-                ? 'text-zinc-900 dark:text-white'
+                ? 'font-semibold text-zinc-900 dark:text-white'
                 : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
             )}
           >

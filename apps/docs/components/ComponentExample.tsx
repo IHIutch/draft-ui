@@ -5,26 +5,23 @@ import { Highlight, themes } from 'prism-react-renderer'
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@/components/ui/Tabs'
 import { cn } from '@/lib/utils'
 
+import CopyClipboardButton from './CopyClipboardButton'
+
+// chlidren contains raw code string injected from ComponentExmaple.markdoc.ts
 interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
-  extractClassname?: boolean
-  extractedClassNames?: string
   align?: 'center' | 'start' | 'end'
-  src?: string
 }
 
 export default function ComponentExample({
   children,
-  className,
   align = 'center',
-  src: _,
-  ...props
 }: ComponentExampleProps) {
-  const [Example, Code, ..._Children] = React.Children.toArray(
+  const [Example, Code] = React.Children.toArray(
     children
   ) as React.ReactElement[]
 
   return (
-    <div {...props}>
+    <div>
       <Tabs>
         <TabList aria-label="History of Ancient Rome" disabledKeys={['Emp']}>
           <Tab id="example">Example</Tab>
@@ -45,8 +42,15 @@ export default function ComponentExample({
             </div>
           </TabPanel>
           <TabPanel id="code">
-            <div>
-              <Highlight theme={themes.nightOwl} code={Code} language="tsx">
+            <div className="relative">
+              <div className="absolute right-2 top-2 z-10">
+                <CopyClipboardButton text={String(Code)} />
+              </div>
+              <Highlight
+                theme={themes.nightOwl}
+                code={String(Code)}
+                language="tsx"
+              >
                 {({
                   // className,
                   style,
