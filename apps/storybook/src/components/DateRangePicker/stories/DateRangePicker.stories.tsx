@@ -1,4 +1,3 @@
-import { type Meta, type StoryObj } from '@storybook/react'
 import { ChevronDown } from 'lucide-react'
 import {
   CalendarCell,
@@ -19,6 +18,8 @@ import {
   Label,
   RangeCalendar,
 } from 'ui'
+
+import { type Meta, type StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof DateRangePicker> = {
   title: 'DateRangePicker',

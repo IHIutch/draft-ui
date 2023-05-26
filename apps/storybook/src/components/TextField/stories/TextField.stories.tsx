@@ -1,4 +1,3 @@
-import { type Meta, type StoryObj } from '@storybook/react'
 import {
   Input,
   Label,
@@ -6,6 +5,8 @@ import {
   TextFieldDescription,
   TextFieldErrorMessage,
 } from 'ui'
+
+import { type Meta, type StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof TextField> = {
   title: 'TextField',

@@ -1,4 +1,3 @@
-import { type Meta, type StoryObj } from '@storybook/react'
 import { ChevronDown } from 'lucide-react'
 import {
   ComboBox,
@@ -8,6 +7,8 @@ import {
   ComboBoxItem,
   Label,
 } from 'ui'
+
+import { type Meta, type StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof ComboBox> = {
   title: 'ComboBox',

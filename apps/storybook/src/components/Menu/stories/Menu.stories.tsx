@@ -1,6 +1,6 @@
-import { type Meta, type StoryObj } from '@storybook/react'
-import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
+
+import { ChevronDown } from 'lucide-react'
 import { type Selection } from 'react-aria-components'
 import {
   Button,
@@ -11,6 +11,8 @@ import {
   MenuSection,
   MenuSeparator,
 } from 'ui'
+
+import { type Meta, type StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Menu> = {
   title: 'Menu',

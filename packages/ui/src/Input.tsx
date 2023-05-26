@@ -1,8 +1,9 @@
 'use client'
 
+import { type InputHTMLAttributes } from 'react'
+
 import { cva, type VariantProps } from 'class-variance-authority'
 import { type ClassValue } from 'class-variance-authority/dist/types'
-import { type InputHTMLAttributes } from 'react'
 import { Input } from 'react-aria-components'
 
 const inputVariants = cva(

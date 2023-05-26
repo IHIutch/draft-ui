@@ -1,4 +1,3 @@
-import { type Meta, type StoryObj } from '@storybook/react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { Group } from 'react-aria-components'
 import {
@@ -12,6 +11,8 @@ import {
   NumberInput,
   NumberInputStepper,
 } from 'ui'
+
+import { type Meta, type StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof NumberField> = {
   title: 'NumberField',

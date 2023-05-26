@@ -1,8 +1,9 @@
 'use client'
 
+import React from 'react'
+
 import { type ClassValue } from 'clsx'
 import { Check, Circle } from 'lucide-react'
-import React from 'react'
 import {
   Header,
   Item,

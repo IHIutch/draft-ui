@@ -1,6 +1,7 @@
-import { type Meta, type StoryObj } from '@storybook/react'
 import { Info } from 'lucide-react'
 import { Button, Checkbox, GridList, GridListItem, IconButton } from 'ui'
+
+import { type Meta, type StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof GridList> = {
   title: 'GridList',

@@ -1,6 +1,7 @@
-import { type Meta, type StoryObj } from '@storybook/react'
 import { AlertCircle } from 'lucide-react'
 import { IconButton } from 'ui'
+
+import { type Meta, type StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof IconButton> = {
   title: 'IconButton',
