@@ -65,7 +65,7 @@ export interface ComponentMetadataProps {
   frontmatter: {
     title: string
     description: string
-    component: boolean
+    component: string
   }
 }
 
@@ -97,8 +97,6 @@ export async function getDocsMetadata() {
   }
 
   traverseDirectory(contentDir)
-
-  console.log({ fileMetadata })
 
   return fileMetadata
 }

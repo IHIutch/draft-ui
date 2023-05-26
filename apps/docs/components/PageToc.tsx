@@ -12,24 +12,31 @@ export default function PageToc({
   const activeHeading = useActiveHeading(headings.map((h) => h.id))
 
   return (
-    <ul>
-      {headings.map((h, idx) => (
-        <li key={idx} className={cn('mt-0 pt-2')}>
-          <a
-            href={'#' + h.id}
-            className={cn(
-              'inline-block no-underline transition-colors hover:text-foreground',
-              h.id === activeHeading
-                ? 'font-medium text-foreground'
-                : 'text-muted-foreground',
-              h.level === 3 && 'pl-3'
-            )}
-          >
-            {h.title}
-          </a>
-        </li>
-      ))}
-    </ul>
+    <div>
+      <div className="mb-3">
+        <span className="text-base font-semibold text-zinc-900 dark:text-white">
+          On This Page
+        </span>
+      </div>
+      <ul>
+        {headings.map((h, idx) => (
+          <li key={idx}>
+            <a
+              href={'#' + h.id}
+              className={cn(
+                'inline-block no-underline transition text-sm py-1',
+                h.id === activeHeading
+                  ? 'text-zinc-900 dark:text-white'
+                  : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white',
+                h.level === 3 && 'pl-3'
+              )}
+            >
+              {h.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 

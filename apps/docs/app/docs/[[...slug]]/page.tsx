@@ -1,7 +1,5 @@
 import { notFound } from 'next/navigation'
 
-import '@/styles/mdx.css'
-
 import { MarkdocContent } from '@/components/MarkdocContent'
 import PageToc from '@/components/PageToc'
 import { getDocContent, getDocsMetadata } from '@/lib/server'
@@ -46,13 +44,6 @@ export default async function DocPage({ params }: DocPageProps) {
         <div className="fixed top-0 h-screen pt-16">
           <div className="h-full overflow-y-auto">
             <div className="my-12 pr-4">
-              {/* <ul>
-                {headings.map((h, id) => (
-                  <li key={id}>
-                    <a href={'#' + h.id}>{h.title}</a>
-                  </li>
-                ))}
-              </ul> */}
               <PageToc headings={headings} />
             </div>
           </div>

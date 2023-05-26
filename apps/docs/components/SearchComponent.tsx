@@ -35,7 +35,6 @@ export default function SearchComponent() {
           hitComponent={Hit}
           transformItems={(items) => {
             return items.map((item, index) => {
-              // console.log({ item })
               const a = document.createElement('a')
               a.href = item.url
 
