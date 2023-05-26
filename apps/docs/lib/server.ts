@@ -98,5 +98,7 @@ export async function getDocsMetadata() {
 
   traverseDirectory(contentDir)
 
+  console.log({ fileMetadata })
+
   return fileMetadata
 }
