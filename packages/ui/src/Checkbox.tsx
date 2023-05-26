@@ -4,8 +4,9 @@ import { type ReactNode } from 'react'
 
 import { cva, type VariantProps } from 'class-variance-authority'
 import { type ClassValue } from 'class-variance-authority/dist/types'
-import clsx from 'clsx'
 import { Checkbox, type CheckboxProps } from 'react-aria-components'
+
+import { cn } from '@/lib/utils'
 
 const checkboxVariants = cva(
   [
@@ -68,7 +69,7 @@ const _Checkbox = ({ className, size, children, ...props }: _CheckboxProps) => {
         <div className={checkboxInnerVariants({ size })}>
           <svg
             viewBox="0 0 12 10"
-            className={clsx(
+            className={cn(
               'fill-none stroke-current stroke-2 transition-all duration-300',
               'group-[[data-selected]]:block',
               '[stroke-dasharray:22] [stroke-dashoffset:66] group-[[data-selected]]:[stroke-dasharray:28]'

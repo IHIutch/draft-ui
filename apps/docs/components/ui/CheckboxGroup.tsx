@@ -2,8 +2,9 @@
 
 import { type HTMLAttributes } from 'react'
 
-import clsx from 'clsx'
 import { CheckboxGroup, type CheckboxGroupProps } from 'react-aria-components'
+
+import { cn } from '@/lib/utils'
 
 interface _CheckboxGroupProps extends CheckboxGroupProps {
   orientation?: 'horizontal' | 'vertical'
@@ -25,7 +26,7 @@ const _CheckboxGroup = ({
 const _CheckboxGroupContent = (props: HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className={clsx(
+      className={cn(
         'flex flex-col gap-2',
         'group-[[data-orientation=horizontal]]:flex-row group-[[data-orientation=horizontal]]:gap-6',
         'group-[[data-orientation=vertical]]:flex-col group-[[data-orientation=vertical]]:gap-2'
