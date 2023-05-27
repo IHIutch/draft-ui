@@ -3,7 +3,6 @@
 import { type ReactNode } from 'react'
 
 import { cva, type VariantProps } from 'class-variance-authority'
-import { type ClassValue } from 'class-variance-authority/dist/types'
 import { Radio, type RadioProps } from 'react-aria-components'
 
 const radioVariants = cva(
@@ -51,7 +50,7 @@ export interface _RadioProps
   extends Omit<RadioProps, 'className'>,
     VariantProps<typeof radioVariants>,
     VariantProps<typeof radioInnerVariants> {
-  className?: ClassValue
+  className?: string
   children?: ReactNode
 }
 

@@ -1,6 +1,5 @@
 'use client'
 
-import { type ClassValue } from 'clsx'
 import { Check, Circle } from 'lucide-react'
 import {
   Header,
@@ -25,8 +24,9 @@ const _Menu = (props: MenuTriggerProps) => {
 export interface _MenuContentProps<T>
   extends Omit<PopoverProps, 'children' | 'style' | 'className'>,
     Omit<MenuProps<T>, 'className'> {
-  className?: ClassValue
-  popoverClassName?: ClassValue
+  value?: T
+  className?: string
+  popoverClassName?: string
 }
 
 const _MenuContent = <T extends object>({
@@ -53,7 +53,7 @@ const _MenuContent = <T extends object>({
 }
 
 export interface _MenuItemProps extends Omit<ItemProps, 'className'> {
-  className?: ClassValue
+  className?: string
 }
 
 const _MenuItem = ({ className, children, ...props }: _MenuItemProps) => {
@@ -89,7 +89,7 @@ const _MenuItem = ({ className, children, ...props }: _MenuItemProps) => {
 export interface _MenuSectionProps<T>
   extends Omit<SectionProps<T>, 'className'> {
   value?: T
-  className?: ClassValue
+  className?: string
 }
 
 const _MenuSection = <T extends object>({
@@ -102,7 +102,7 @@ const _MenuSection = <T extends object>({
 export interface _MenuHeaderProps
   extends Omit<React.HTMLAttributes<HTMLElement>, 'className'>,
     React.RefAttributes<HTMLElement> {
-  className?: ClassValue
+  className?: string
 }
 
 const _MenuHeader = ({ className, ...props }: _MenuHeaderProps) => {

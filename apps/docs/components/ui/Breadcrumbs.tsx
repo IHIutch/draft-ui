@@ -1,6 +1,5 @@
 'use client'
 
-import { type ClassValue } from 'clsx'
 import {
   Breadcrumbs,
   Item,
@@ -13,7 +12,7 @@ import { cn } from '@/lib/utils'
 export interface _BreadcrumbsProps<T>
   extends Omit<BreadcrumbsProps<T>, 'className'> {
   value?: T
-  className?: ClassValue
+  className?: string
 }
 
 const _Breadcrumbs = <T extends object>({

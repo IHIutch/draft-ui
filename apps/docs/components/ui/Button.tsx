@@ -1,7 +1,6 @@
 'use client'
 
 import { cva, type VariantProps } from 'class-variance-authority'
-import { type ClassValue } from 'class-variance-authority/dist/types'
 import { Button, type ButtonProps } from 'react-aria-components'
 
 const buttonVariants = cva(
@@ -38,7 +37,7 @@ const buttonVariants = cva(
 export interface _ButtonProps
   extends Omit<ButtonProps, 'className'>,
     VariantProps<typeof buttonVariants> {
-  className?: ClassValue
+  className?: string
 }
 
 const _Button = ({ className, variant, size, ...props }: _ButtonProps) => {

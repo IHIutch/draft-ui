@@ -3,8 +3,6 @@
 import { type HTMLAttributes, type ReactNode } from 'react'
 
 import { cva, type VariantProps } from 'class-variance-authority'
-import { type ClassValue } from 'class-variance-authority/dist/types'
-import { clsx } from 'clsx'
 import {
   Dialog,
   DialogTrigger,
@@ -13,6 +11,8 @@ import {
   type ModalOverlayProps,
   type ModalRenderProps,
 } from 'react-aria-components'
+
+import { cn } from '@/lib/utils'
 
 const modalVariants = cva(
   [
@@ -45,7 +45,7 @@ export interface _ModalProps
   extends ModalRenderProps,
     Omit<ModalOverlayProps, 'className'>,
     VariantProps<typeof modalVariants> {
-  className?: ClassValue
+  className?: string
   children?: ReactNode
 }
 
@@ -76,7 +76,7 @@ const _ModalOverlay = ({
   return (
     <ModalOverlay
       isDismissable={isDismissable}
-      className={clsx(
+      className={cn(
         'fill-mode-forwards h-[--visual-viewport-height]',
         'fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-sm transition-all',
         'data-[entering]:animate-in data-[entering]:fade-in data-[entering]:duration-75',
@@ -92,7 +92,7 @@ const _ModalHeader = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
   return (
     <header
       {...props}
-      className={clsx('px-6 py-4 text-xl font-semibold', className)}
+      className={cn('px-6 py-4 text-xl font-semibold', className)}
     />
   )
 }
@@ -101,11 +101,11 @@ const _ModalBody = ({
   className,
   ...props
 }: HTMLAttributes<HTMLDivElement>) => {
-  return <div {...props} className={clsx('px-6 py-2', className)} />
+  return <div {...props} className={cn('px-6 py-2', className)} />
 }
 
 const _ModalFooter = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
-  return <footer {...props} className={clsx('px-6 py-4', className)} />
+  return <footer {...props} className={cn('px-6 py-4', className)} />
 }
 
 export {

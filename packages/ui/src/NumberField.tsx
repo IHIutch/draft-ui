@@ -1,13 +1,14 @@
 'use client'
 
-import clsx from 'clsx'
 import { Button, Group, NumberField } from 'react-aria-components'
+
+import { cn } from '@/lib/utils'
 
 import { Input } from './Input'
 
 // export interface _MenuProps
 //   extends VariantProps<typeof buttonVariants> {
-//   className?: ClassValue
+//   className?: string
 // }
 
 const _NumberField = (props) => {
@@ -31,7 +32,7 @@ const _NumberIncrementStepper = (props) => {
   return (
     <Button
       slot="increment"
-      className={clsx(
+      className={cn(
         'flex flex-1 select-none items-center justify-center border-l border-slate-300 leading-none',
         'rounded-tr-md',
         'transition-colors duration-100 data-[pressed]:bg-slate-100'
@@ -45,7 +46,7 @@ const _NumberDecrementStepper = (props) => {
   return (
     <Button
       slot="decrement"
-      className={clsx(
+      className={cn(
         'flex flex-1 select-none items-center justify-center border-l border-slate-300 leading-none',
         'rounded-br-md border-t',
         'transition-colors duration-100 data-[pressed]:bg-slate-100'

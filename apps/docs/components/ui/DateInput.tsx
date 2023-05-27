@@ -3,14 +3,15 @@
 import { type ReactNode } from 'react'
 
 import { cva, type VariantProps } from 'class-variance-authority'
-import { type ClassValue } from 'class-variance-authority/dist/types'
-import clsx from 'clsx'
 import {
   DateInput,
   DateSegment,
   Group,
   type DateInputProps,
+  type DateSegmentProps,
 } from 'react-aria-components'
+
+import { cn } from '@/lib/utils'
 
 const dateInputVariants = cva(
   [
@@ -38,7 +39,7 @@ const dateInputVariants = cva(
 
 export interface _DateInputProps
   extends VariantProps<typeof dateInputVariants> {
-  className?: ClassValue
+  className?: string
   children: ReactNode
 }
 
@@ -78,18 +79,19 @@ const _DateInputGroup = ({
   )
 }
 
-const _DateInput = (props: DateInputProps) => {
-  return <DateInput className="flex" {...props} />
+const _DateInput = ({ className, ...props }: DateInputProps) => {
+  return <DateInput className={cn('flex', className)} {...props} />
 }
 
-const _DateSegment = (props) => {
+const _DateSegment = ({ className, ...props }: DateSegmentProps) => {
   return (
     <DateSegment
-      className={clsx(
+      className={cn(
         'flex items-center rounded px-1 focus:outline-none',
         'data-[placeholder]:text-slate-500 data-[placeholder]:focus:text-black',
         'focus:bg-slate-100 focus:text-black',
-        'data-[type=literal]:px-0'
+        'data-[type=literal]:px-0',
+        className
       )}
       {...props}
     />

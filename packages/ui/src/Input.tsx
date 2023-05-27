@@ -3,7 +3,6 @@
 import { type InputHTMLAttributes } from 'react'
 
 import { cva, type VariantProps } from 'class-variance-authority'
-import { type ClassValue } from 'class-variance-authority/dist/types'
 import { Input } from 'react-aria-components'
 
 const inputVariants = cva(
@@ -32,7 +31,7 @@ export type InputProps = InputHTMLAttributes<HTMLInputElement>
 export interface _InputProps
   extends Omit<InputProps, 'className' | 'size'>,
     VariantProps<typeof inputVariants> {
-  className?: ClassValue
+  className?: string
 }
 
 const _Input = ({

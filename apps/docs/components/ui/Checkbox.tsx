@@ -3,7 +3,6 @@
 import { type ReactNode } from 'react'
 
 import { cva, type VariantProps } from 'class-variance-authority'
-import { type ClassValue } from 'class-variance-authority/dist/types'
 import { Checkbox, type CheckboxProps } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
@@ -52,7 +51,7 @@ export interface _CheckboxProps
   extends Omit<CheckboxProps, 'className'>,
     VariantProps<typeof checkboxVariants>,
     VariantProps<typeof checkboxInnerVariants> {
-  className?: ClassValue
+  className?: string
   children?: ReactNode
 }
 

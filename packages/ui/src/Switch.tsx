@@ -1,7 +1,8 @@
 'use client'
 
-import clsx from 'clsx'
 import { Switch } from 'react-aria-components'
+
+import { cn } from '@/lib/utils'
 
 const _Switch = ({ children, ...props }) => {
   return (
@@ -15,13 +16,13 @@ const _SwitchIndicator = (props) => {
   return (
     <div
       {...props}
-      className={clsx(
+      className={cn(
         'h-5 w-8 rounded-full bg-gray-300 p-0.5',
         'transition-colors group-[[data-selected]]:bg-black'
       )}
     >
       <div
-        className={clsx(
+        className={cn(
           'h-4 w-4 rounded-full bg-white',
           'transition-transform group-[[data-selected]]:translate-x-3'
         )}

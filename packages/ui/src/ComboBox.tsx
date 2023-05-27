@@ -20,7 +20,7 @@ import { Input, type _InputProps } from './Input'
 
 export interface _ComboBoxProps<T extends object>
   extends Omit<ComboBoxProps<T>, 'className'> {
-  className?: ClassValue
+  className?: string
 }
 
 const _ComboBox = <T extends object>({
@@ -38,8 +38,8 @@ export interface _ComboBoxContentProps<T>
   extends Omit<PopoverProps, 'children' | 'style' | 'className'>,
     Omit<ListBoxProps<T>, 'style' | 'className'> {
   value?: T
-  className?: ClassValue
-  popoverClassName?: ClassValue
+  className?: string
+  popoverclassName?: string
 }
 
 const _ComboBoxContent = <T extends object>({
@@ -72,7 +72,7 @@ const _ComboBoxButton = ({ className, ...props }: _IconButtonProps) => {
 }
 
 export interface _ComboBoxItemProps extends Omit<ItemProps, 'className'> {
-  className?: ClassValue
+  className?: string
 }
 
 const _ComboBoxItem = ({

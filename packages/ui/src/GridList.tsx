@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 
 // export interface _MenuProps
 //   extends VariantProps<typeof buttonVariants> {
-//   className?: ClassValue
+//   className?: string
 // }
 
 const _GridList = ({ className, ...props }) => {
