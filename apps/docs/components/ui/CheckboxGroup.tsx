@@ -17,7 +17,7 @@ const _CheckboxGroup = ({
   return (
     <CheckboxGroup
       data-orientation={orientation}
-      className="flex flex-col"
+      className="group"
       {...props}
     />
   )
@@ -27,7 +27,7 @@ const _CheckboxGroupContent = (props: HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
       className={cn(
-        'flex flex-col gap-2',
+        'flex',
         'group-[[data-orientation=horizontal]]:flex-row group-[[data-orientation=horizontal]]:gap-6',
         'group-[[data-orientation=vertical]]:flex-col group-[[data-orientation=vertical]]:gap-2'
       )}
