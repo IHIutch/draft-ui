@@ -23,7 +23,7 @@ export const Default: StoryObj<typeof ComboBox> = (props) => (
     <div className="relative">
       <ComboBoxInput />
       <ComboBoxButton size="sm" variant="subtle" className="ml-auto shrink-0">
-        <ChevronDown size="1em" strokeWidth="3" />
+        <ChevronDown size="16" strokeWidth="3" />
       </ComboBoxButton>
     </div>
     <ComboBoxContent>
