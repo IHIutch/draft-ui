@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { ChevronRight } from 'lucide-react'
 
 import { BreadcrumbItem, Breadcrumbs } from '@/components/ui'

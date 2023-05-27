@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Checkbox, CheckboxGroup, CheckboxGroupContent } from '@/components/ui'
 
 export function CheckboxGroupDefault() {
