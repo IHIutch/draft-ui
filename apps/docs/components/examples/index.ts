@@ -4,6 +4,7 @@ import { CheckboxDefault } from './checkbox/default'
 import { CheckboxGroupDefault } from './checkboxGroup/default'
 import { ComboBoxDefault } from './comboBox/default'
 import { DateFieldDefault } from './dateField/default'
+import { DatePickerDefault } from './datePicker/default'
 
 export const exampleComponents = {
   // Breadcrumbs
@@ -18,6 +19,8 @@ export const exampleComponents = {
   ComboBoxDefault,
   // DateField
   DateFieldDefault,
+  // DatePicker
+  DatePickerDefault,
 }
 
 // Auto map example components to markdoc tags
