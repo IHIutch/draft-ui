@@ -20,7 +20,6 @@ import { Input, type _InputProps } from './Input'
 
 export interface _ComboBoxProps<T extends object>
   extends Omit<ComboBoxProps<T>, 'className'> {
-  value?: T
   className?: ClassValue
 }
 

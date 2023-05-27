@@ -25,7 +25,6 @@ const _Menu = (props: MenuTriggerProps) => {
 export interface _MenuContentProps<T>
   extends Omit<PopoverProps, 'children' | 'style' | 'className'>,
     Omit<MenuProps<T>, 'className'> {
-  value?: T
   className?: ClassValue
   popoverClassName?: ClassValue
 }
