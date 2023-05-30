@@ -8,8 +8,8 @@ import {
   DialogTrigger,
   Modal,
   ModalOverlay,
+  type DialogTriggerProps,
   type ModalOverlayProps,
-  type ModalRenderProps,
 } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
@@ -37,13 +37,12 @@ const modalVariants = cva(
   }
 )
 
-const _Modal = (props) => {
+const _Modal = (props: DialogTriggerProps) => {
   return <DialogTrigger {...props} />
 }
 
-export interface _ModalProps
-  extends ModalRenderProps,
-    Omit<ModalOverlayProps, 'className'>,
+export interface _ModalContentProps
+  extends Omit<ModalOverlayProps, 'className'>,
     VariantProps<typeof modalVariants> {
   className?: string
   children?: ReactNode
@@ -54,7 +53,7 @@ const _ModalContent = ({
   size,
   children,
   ...props
-}: _ModalProps) => {
+}: _ModalContentProps) => {
   return (
     <Modal
       className={modalVariants({
@@ -91,8 +90,8 @@ const _ModalOverlay = ({
 const _ModalHeader = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
   return (
     <header
-      {...props}
       className={cn('px-6 py-4 text-xl font-semibold', className)}
+      {...props}
     />
   )
 }
@@ -101,11 +100,11 @@ const _ModalBody = ({
   className,
   ...props
 }: HTMLAttributes<HTMLDivElement>) => {
-  return <div {...props} className={cn('px-6 py-2', className)} />
+  return <div className={cn('px-6 py-2', className)} {...props} />
 }
 
 const _ModalFooter = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
-  return <footer {...props} className={cn('px-6 py-4', className)} />
+  return <footer className={cn('px-6 py-4', className)} {...props} />
 }
 
 export {
