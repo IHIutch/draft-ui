@@ -17,11 +17,11 @@ const _MeterTrack = ({
 }: HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      {...props}
       className={cn(
         'h-2 w-full overflow-hidden rounded bg-slate-200',
         className
       )}
+      {...props}
     >
       {children}
     </div>
@@ -42,9 +42,9 @@ const _MeterFilledTrack = ({
     <>children</>
   ) : (
     <div
-      {...props}
       className={cn('h-full bg-black', className)}
       style={{ width: percentage + '%' }}
+      {...props}
     />
   )
 }

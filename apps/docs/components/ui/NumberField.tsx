@@ -1,55 +1,67 @@
 'use client'
 
-import { Button, Group, NumberField } from 'react-aria-components'
+import {
+  Button,
+  Group,
+  NumberField,
+  type GroupProps,
+  type NumberFieldProps,
+} from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
-import { Input } from './Input'
+import { type _ButtonProps } from './Button'
+import { Input, type _InputProps } from './Input'
 
 // export interface _MenuProps
 //   extends VariantProps<typeof buttonVariants> {
 //   className?: string
 // }
 
-const _NumberField = (props) => {
+const _NumberField = (props: NumberFieldProps) => {
   return <NumberField {...props} />
 }
 
-const _NumberInputStepper = (props) => {
+const _NumberInputStepper = ({ className, ...props }: GroupProps) => {
   return (
     <Group
-      className="absolute right-0 top-0 z-10 m-px flex h-[calc(100%-2px)] w-6 flex-col"
-      {...props}
-    />
-  )
-}
-
-const _NumberInput = (props) => {
-  return <Input className="pr-6" {...props} />
-}
-
-const _NumberIncrementStepper = (props) => {
-  return (
-    <Button
-      slot="increment"
       className={cn(
-        'flex flex-1 select-none items-center justify-center border-l border-slate-300 leading-none',
-        'rounded-tr-md',
-        'transition-colors duration-100 data-[pressed]:bg-slate-100'
+        'absolute right-0 top-0 z-10 m-px flex h-[calc(100%-2px)] w-6 flex-col',
+        className
       )}
       {...props}
     />
   )
 }
 
-const _NumberDecrementStepper = (props) => {
+const _NumberInput = ({ className, ...props }: _InputProps) => {
+  return <Input className={cn('pr-6', className)} {...props} />
+}
+
+const _NumberIncrementStepper = ({ className, ...props }: _ButtonProps) => {
+  return (
+    <Button
+      slot="increment"
+      className={cn(
+        'flex flex-1 select-none items-center justify-center border-l border-slate-300 leading-none',
+        'rounded-tr-md',
+        'transition-colors duration-100 data-[pressed]:bg-slate-100',
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+const _NumberDecrementStepper = ({ className, ...props }: _ButtonProps) => {
   return (
     <Button
       slot="decrement"
       className={cn(
         'flex flex-1 select-none items-center justify-center border-l border-slate-300 leading-none',
         'rounded-br-md border-t',
-        'transition-colors duration-100 data-[pressed]:bg-slate-100'
+        'transition-colors duration-100 data-[pressed]:bg-slate-100',
+        className
       )}
       {...props}
     />

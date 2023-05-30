@@ -1,33 +1,48 @@
 'use client'
 
-import { ProgressBar } from 'react-aria-components'
+import { type HTMLAttributes } from 'react'
+
+import { ProgressBar, type ProgressBarProps } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
-const _ProgressBar = (props) => {
-  return <ProgressBar {...props} />
+const _ProgressBar = ({ className, ...props }: ProgressBarProps) => {
+  return <ProgressBar className={cn('w-full', className)} {...props} />
 }
 
-const _ProgressBarTrack = ({ className, children, ...props }) => {
+const _ProgressBarTrack = ({
+  className,
+  children,
+  ...props
+}: HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      {...props}
       className={cn(
         'h-2 w-full overflow-hidden rounded bg-slate-200',
         className
       )}
+      {...props}
     >
       {children}
     </div>
   )
 }
 
-const _ProgressBarFilledTrack = ({ className, percentage, ...props }) => {
+export interface _ProgressBarFilledTrackProps
+  extends HTMLAttributes<HTMLDivElement> {
+  percentage: number | undefined
+}
+
+const _ProgressBarFilledTrack = ({
+  className,
+  percentage = 0,
+  ...props
+}: _ProgressBarFilledTrackProps) => {
   return (
     <div
-      {...props}
       className={cn('h-full bg-black', className)}
       style={{ width: percentage + '%' }}
+      {...props}
     />
   )
 }
