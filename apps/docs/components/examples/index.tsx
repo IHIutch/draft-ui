@@ -8,6 +8,7 @@ import { DatePickerDefault } from './datePicker/default'
 import { IconButtonDefault } from './iconButton/default'
 import { InputDefault } from './input/default'
 import { LabelDefault } from './label/default'
+import { MenuDefault } from './menu/default'
 
 export const exampleComponents = {
   // Breadcrumbs
@@ -30,6 +31,8 @@ export const exampleComponents = {
   InputDefault,
   // Label
   LabelDefault,
+  // Menu
+  MenuDefault,
 }
 
 // Auto map example components to markdoc tags
