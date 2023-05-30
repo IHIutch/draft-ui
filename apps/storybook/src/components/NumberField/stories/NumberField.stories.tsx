@@ -63,11 +63,11 @@ export const Mobile: StoryObj<typeof NumberField> = (props) => (
     step={props.step}
   >
     <Group className="flex gap-1">
-      <IconButton slot="decrement">
-        <ChevronUp size="1em" strokeWidth="3" />
+      <IconButton className="shrink-0" slot="decrement">
+        <ChevronUp size="16" strokeWidth="3" />
       </IconButton>
       <Input />
-      <IconButton slot="increment">
+      <IconButton className="shrink-0" slot="increment">
         <ChevronDown size="16" strokeWidth="3" />
       </IconButton>
     </Group>
