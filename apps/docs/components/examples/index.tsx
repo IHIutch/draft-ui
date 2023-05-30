@@ -9,6 +9,7 @@ import { IconButtonDefault } from './iconButton/default'
 import { InputDefault } from './input/default'
 import { LabelDefault } from './label/default'
 import { MenuDefault } from './menu/default'
+import { MeterDefault } from './meter/default'
 
 export const exampleComponents = {
   // Breadcrumbs
@@ -33,6 +34,8 @@ export const exampleComponents = {
   LabelDefault,
   // Menu
   MenuDefault,
+  // Meter
+  MeterDefault,
 }
 
 // Auto map example components to markdoc tags

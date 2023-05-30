@@ -1,14 +1,20 @@
 'use client'
 
-import { Meter } from 'react-aria-components'
+import { type HTMLAttributes } from 'react'
+
+import { Meter, type MeterProps } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
-const _Meter = (props) => {
-  return <Meter {...props} />
+const _Meter = ({ className, ...props }: MeterProps) => {
+  return <Meter className={cn('w-full', className)} {...props} />
 }
 
-const _MeterTrack = ({ className, children, ...props }) => {
+const _MeterTrack = ({
+  className,
+  children,
+  ...props
+}: HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
       {...props}
@@ -22,8 +28,19 @@ const _MeterTrack = ({ className, children, ...props }) => {
   )
 }
 
-const _MeterFilledTrack = ({ className, percentage, ...props }) => {
-  return (
+export interface _MeterFilledTrackProps extends HTMLAttributes<HTMLDivElement> {
+  percentage: number
+}
+
+const _MeterFilledTrack = ({
+  className,
+  children,
+  percentage,
+  ...props
+}: _MeterFilledTrackProps) => {
+  return children ? (
+    <>children</>
+  ) : (
     <div
       {...props}
       className={cn('h-full bg-black', className)}
