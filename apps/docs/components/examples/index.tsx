@@ -14,6 +14,7 @@ import { ModalDefault } from './modal/default'
 import { NumberInputDefault } from './numberInput/default'
 import { NumberInputMobile } from './numberInput/mobile'
 import { ProgressBarDefault } from './progressbar/default'
+import { RadioDefault } from './radio/default'
 
 export const exampleComponents = {
   // Breadcrumbs
@@ -47,6 +48,8 @@ export const exampleComponents = {
   NumberInputMobile,
   // ProgressBar
   ProgressBarDefault,
+  // Radio
+  RadioDefault,
 }
 
 // Auto map example components to markdoc tags
