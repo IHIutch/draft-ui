@@ -6,6 +6,7 @@ import { ComboBoxDefault } from './comboBox/default'
 import { DateFieldDefault } from './dateField/default'
 import { DatePickerDefault } from './datePicker/default'
 import { IconButtonDefault } from './iconButton/default'
+import { InputDefault } from './input/default'
 
 export const exampleComponents = {
   // Breadcrumbs
@@ -24,6 +25,8 @@ export const exampleComponents = {
   DatePickerDefault,
   // IconButton
   IconButtonDefault,
+  // Input
+  InputDefault,
 }
 
 // Auto map example components to markdoc tags
