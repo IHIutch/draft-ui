@@ -1,22 +1,25 @@
 'use client'
 
-import { GridList, Item } from 'react-aria-components'
+import {
+  GridList,
+  Item,
+  type GridListProps,
+  type ItemProps,
+} from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
-// export interface _MenuProps
-//   extends VariantProps<typeof buttonVariants> {
-//   className?: string
-// }
-
-const _GridList = ({ className, ...props }) => {
+const _GridList = <T extends object>({
+  className,
+  ...props
+}: GridListProps<T>) => {
   return (
-    <GridList {...props} className={cn('flex flex-col gap-2', className)} />
+    <GridList className={cn('flex flex-col gap-2', className)} {...props} />
   )
 }
 
-const _GridListItem = ({ className, ...props }) => {
-  return <Item {...props} className={cn('', className)} />
+const _GridListItem = (props: ItemProps) => {
+  return <Item {...props} />
 }
 
 export { _GridList as GridList, _GridListItem as GridListItem }

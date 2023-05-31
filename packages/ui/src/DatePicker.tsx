@@ -30,7 +30,6 @@ export interface _DatePickerContentProps<T>
 }
 
 const _DatePickerContent = <T extends object>({
-  className,
   popoverClassName,
   ...props
 }: _DatePickerContentProps<T>) => {
@@ -46,7 +45,7 @@ const _DatePickerContent = <T extends object>({
         popoverClassName
       )}
     >
-      <Dialog className={className} {...props} />
+      <Dialog {...props} />
     </Popover>
   )
 }

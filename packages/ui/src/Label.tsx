@@ -4,11 +4,7 @@ import { Label, type LabelProps } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
-export interface _LabelProps extends Omit<LabelProps, 'className'> {
-  className?: string
-}
-
-const _Label = ({ className, ...props }: _LabelProps) => {
+const _Label = ({ className, ...props }: LabelProps) => {
   return (
     <Label
       className={cn(

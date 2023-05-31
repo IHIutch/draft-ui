@@ -1,6 +1,5 @@
 'use client'
 
-import { type ClassValue } from 'clsx'
 import { Check } from 'lucide-react'
 import {
   ComboBox,
@@ -39,7 +38,7 @@ export interface _ComboBoxContentProps<T>
     Omit<ListBoxProps<T>, 'style' | 'className'> {
   value?: T
   className?: string
-  popoverclassName?: string
+  popoverClassName?: string
 }
 
 const _ComboBoxContent = <T extends object>({

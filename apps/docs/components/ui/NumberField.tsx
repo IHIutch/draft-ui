@@ -13,11 +13,6 @@ import { cn } from '@/lib/utils'
 import { type _ButtonProps } from './Button'
 import { Input, type _InputProps } from './Input'
 
-// export interface _MenuProps
-//   extends VariantProps<typeof buttonVariants> {
-//   className?: string
-// }
-
 const _NumberField = (props: NumberFieldProps) => {
   return <NumberField {...props} />
 }

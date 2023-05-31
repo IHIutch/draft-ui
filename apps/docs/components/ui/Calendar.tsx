@@ -2,7 +2,6 @@
 
 import { type HTMLAttributes } from 'react'
 
-import clsx, { type ClassValue } from 'clsx'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import {
   Calendar,
@@ -54,10 +53,13 @@ export interface _RangeCalendarProps<T extends DateValue>
   className?: string
 }
 
-const _RangeCalendar = ({ className, ...props }: _RangeCalendarProps<T>) => {
+const _RangeCalendar = <T extends DateValue>({
+  className,
+  ...props
+}: _RangeCalendarProps<T>) => {
   return (
     <RangeCalendar
-      className={clsx(
+      className={cn(
         'w-fit [&_td]:px-0',
         '[&_td[aria-selected]:first-of-type_div]:rounded-s [&_td[aria-selected]:last-of-type_div]:rounded-e',
         className
@@ -126,11 +128,8 @@ const _CalendarHeader = ({
   )
 }
 
-const _CalendarFooter = ({
-  className,
-  ...props
-}: HTMLAttributes<HTMLDivElement>) => {
-  return <footer className={className} {...props} />
+const _CalendarFooter = (props: HTMLAttributes<HTMLDivElement>) => {
+  return <footer {...props} />
 }
 
 const _CalendarNextButton = ({ className, ...props }: _IconButtonProps) => {

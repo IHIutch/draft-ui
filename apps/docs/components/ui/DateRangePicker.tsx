@@ -1,6 +1,12 @@
 'use client'
 
-import { DateRangePicker, Dialog, Popover } from 'react-aria-components'
+import {
+  DateRangePicker,
+  Dialog,
+  Popover,
+  type DialogProps,
+  type PopoverProps,
+} from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
@@ -8,7 +14,17 @@ const _DateRangePicker = (props) => {
   return <DateRangePicker {...props} />
 }
 
-const _DateRangePickerContent = (props) => {
+export interface _DateRangePickerContentProps<T>
+  extends Omit<PopoverProps, 'children' | 'style' | 'className'>,
+    Omit<DialogProps, 'className'> {
+  value?: T
+  className: string
+  popoverClassName?: string
+}
+
+const _DateRangePickerContent = <T extends object>(
+  props: _DateRangePickerContentProps<T>
+) => {
   return (
     <Popover
       className={cn(
@@ -20,7 +36,7 @@ const _DateRangePickerContent = (props) => {
         'data-[placement=bottom]:slide-in-from-top-2'
       )}
     >
-      <Dialog className={cn('')} {...props} />
+      <Dialog {...props} />
     </Popover>
   )
 }

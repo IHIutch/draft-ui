@@ -79,7 +79,7 @@ const _TabPanels = <T extends object>(props: TabPanelsProps<T>) => {
 }
 
 const _TabPanel = ({ className, ...props }: TabPanelProps) => {
-  return <TabPanel {...props} className={cn('p-4', className)} />
+  return <TabPanel className={cn('p-4', className)} {...props} />
 }
 
 export {
