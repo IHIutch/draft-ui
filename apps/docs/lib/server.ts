@@ -66,6 +66,8 @@ export interface ComponentMetadataProps {
     title: string
     description: string
     isComponent: boolean
+    isWip: boolean
+    isComing: boolean
   }
 }
 
