@@ -27,6 +27,7 @@ import { TabsDefault } from './tabs/default'
 import { TabsVertical } from './tabs/vertical'
 import { TextFieldDefault } from './textField/default'
 import { TextFieldWithErrorText } from './textField/withErrorText'
+import { TooltipDefault } from './tooltip/default'
 
 export const exampleComponents = {
   // Breadcrumbs
@@ -81,6 +82,8 @@ export const exampleComponents = {
   // TextField
   TextFieldDefault,
   TextFieldWithErrorText,
+  // Tooltip
+  TooltipDefault,
 }
 
 // Auto map example components to markdoc tags
