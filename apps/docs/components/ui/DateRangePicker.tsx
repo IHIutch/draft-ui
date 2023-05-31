@@ -14,17 +14,17 @@ const _DateRangePicker = (props) => {
   return <DateRangePicker {...props} />
 }
 
-export interface _DateRangePickerContentProps<T>
-  extends Omit<PopoverProps, 'children' | 'style' | 'className'>,
-    Omit<DialogProps, 'className'> {
-  value?: T
-  className: string
+export interface _DateRangePickerContentProps
+  extends Omit<PopoverProps, 'children' | 'style'>,
+    DialogProps {
+  className?: string
   popoverClassName?: string
 }
 
-const _DateRangePickerContent = <T extends object>(
-  props: _DateRangePickerContentProps<T>
-) => {
+const _DateRangePickerContent = ({
+  popoverClassName,
+  ...props
+}: _DateRangePickerContentProps) => {
   return (
     <Popover
       className={cn(
@@ -33,7 +33,8 @@ const _DateRangePickerContent = <T extends object>(
         'data-[entering]:animate-in data-[entering]:fade-in',
         'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
         'data-[placement=top]:slide-in-from-bottom-2',
-        'data-[placement=bottom]:slide-in-from-top-2'
+        'data-[placement=bottom]:slide-in-from-top-2',
+        popoverClassName
       )}
     >
       <Dialog {...props} />

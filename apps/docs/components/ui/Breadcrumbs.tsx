@@ -1,18 +1,19 @@
 'use client'
 
+import { type ReactNode } from 'react'
+
 import {
   Breadcrumbs,
   Item,
   Link,
   type BreadcrumbsProps,
+  type ItemProps,
 } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
-export interface _BreadcrumbsProps<T>
-  extends Omit<BreadcrumbsProps<T>, 'className'> {
+export interface _BreadcrumbsProps<T> extends BreadcrumbsProps<T> {
   value?: T
-  className?: string
 }
 
 const _Breadcrumbs = <T extends object>({
@@ -27,7 +28,16 @@ const _Breadcrumbs = <T extends object>({
   )
 }
 
-const _BreadcrumbItem = ({ separator, children, ...props }: any) => {
+export interface _BreadcrumbItemProps extends ItemProps {
+  separator?: ReactNode
+  children?: ReactNode
+}
+
+const _BreadcrumbItem = ({
+  separator,
+  children,
+  ...props
+}: _BreadcrumbItemProps) => {
   return (
     <Item className="flex items-center gap-1" {...props}>
       <Link className="text-slate-500 aria-[current=page]:text-black [&:not([aria-current=page])]:hover:underline">

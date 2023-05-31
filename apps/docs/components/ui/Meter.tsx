@@ -34,13 +34,10 @@ export interface _MeterFilledTrackProps extends HTMLAttributes<HTMLDivElement> {
 
 const _MeterFilledTrack = ({
   className,
-  children,
   percentage,
   ...props
 }: _MeterFilledTrackProps) => {
-  return children ? (
-    <>children</>
-  ) : (
+  return (
     <div
       className={cn('h-full bg-black', className)}
       style={{ width: percentage + '%' }}

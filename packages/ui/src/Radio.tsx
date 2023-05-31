@@ -47,7 +47,7 @@ const radioInnerVariants = cva(
 )
 
 export interface _RadioProps
-  extends Omit<RadioProps, 'className'>,
+  extends RadioProps,
     VariantProps<typeof radioVariants>,
     VariantProps<typeof radioInnerVariants> {
   className?: string

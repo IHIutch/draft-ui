@@ -27,15 +27,10 @@ import { cn } from '@/lib/utils'
 
 import { IconButton, type _IconButtonProps } from './IconButton'
 
-export interface _CalendarProps<T extends DateValue>
-  extends Omit<CalendarProps<T>, 'className'> {
-  className?: string
-}
-
 const _Calendar = <T extends DateValue>({
   className,
   ...props
-}: _CalendarProps<T>) => {
+}: CalendarProps<T>) => {
   return (
     <Calendar
       className={cn(
@@ -48,15 +43,10 @@ const _Calendar = <T extends DateValue>({
   )
 }
 
-export interface _RangeCalendarProps<T extends DateValue>
-  extends Omit<RangeCalendarProps<T>, 'className'> {
-  className?: string
-}
-
 const _RangeCalendar = <T extends DateValue>({
   className,
   ...props
-}: _RangeCalendarProps<T>) => {
+}: RangeCalendarProps<T>) => {
   return (
     <RangeCalendar
       className={cn(

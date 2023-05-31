@@ -20,7 +20,7 @@ export default function Sidebar({
           {comp.frontmatter.isComing ? (
             <div
               className={cn(
-                'flex justify-between gap-2 py-1 pr-3 text-sm transition cursor-not-allowed text-zinc-400 dark:text-zinc-400 dark:hover:text-white'
+                'flex items-center justify-between gap-2 py-1 pr-3 text-sm transition cursor-not-allowed text-zinc-400 dark:text-zinc-400 dark:hover:text-white'
               )}
             >
               <span className="truncate">{comp.frontmatter.title}</span>
@@ -35,7 +35,7 @@ export default function Sidebar({
               href={comp.slug}
               aria-current={pathname === comp.slug ? 'page' : undefined}
               className={cn(
-                'flex justify-between gap-2 py-1 pr-3 text-sm transition',
+                'flex items-centers justify-between gap-2 py-1 pr-3 text-sm transition',
                 pathname === comp.slug
                   ? 'font-semibold text-zinc-900 dark:text-white'
                   : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'

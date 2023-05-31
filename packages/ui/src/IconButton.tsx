@@ -35,7 +35,7 @@ const iconButtonVariants = cva(
 )
 
 export interface _IconButtonProps
-  extends Omit<ButtonProps, 'className'>,
+  extends ButtonProps,
     VariantProps<typeof iconButtonVariants> {
   className?: string
   'aria-label': string

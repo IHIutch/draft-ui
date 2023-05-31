@@ -1,5 +1,7 @@
 'use client'
 
+import { type HTMLAttributes } from 'react'
+
 import { Check, Circle } from 'lucide-react'
 import {
   Header,
@@ -14,6 +16,7 @@ import {
   type MenuTriggerProps,
   type PopoverProps,
   type SectionProps,
+  type SeparatorProps,
 } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
@@ -22,9 +25,8 @@ const _Menu = (props: MenuTriggerProps) => {
   return <MenuTrigger {...props} />
 }
 export interface _MenuContentProps<T>
-  extends Omit<PopoverProps, 'children' | 'style' | 'className'>,
-    Omit<MenuProps<T>, 'className'> {
-  value?: T
+  extends Omit<PopoverProps, 'children' | 'style'>,
+    MenuProps<T> {
   className?: string
   popoverClassName?: string
 }
@@ -52,11 +54,7 @@ const _MenuContent = <T extends object>({
   )
 }
 
-export interface _MenuItemProps extends Omit<ItemProps, 'className'> {
-  className?: string
-}
-
-const _MenuItem = ({ className, children, ...props }: _MenuItemProps) => {
+const _MenuItem = ({ className, children, ...props }: ItemProps) => {
   return (
     <Item
       className={cn(
@@ -70,11 +68,13 @@ const _MenuItem = ({ className, children, ...props }: _MenuItemProps) => {
         <>
           {selectionMode === 'single' ? (
             <Circle
+              aria-hidden="true"
               strokeWidth="3"
               className="h-2 w-2 fill-current group-[[aria-checked=false]]:invisible"
             />
           ) : selectionMode === 'multiple' ? (
             <Check
+              aria-hidden="true"
               strokeWidth="3"
               className="h-4 w-4 group-[[aria-checked=false]]:invisible"
             />
@@ -86,26 +86,11 @@ const _MenuItem = ({ className, children, ...props }: _MenuItemProps) => {
   )
 }
 
-export interface _MenuSectionProps<T>
-  extends Omit<SectionProps<T>, 'className'> {
-  value?: T
-  className?: string
+const _MenuSection = <T extends object>(props: SectionProps<T>) => {
+  return <Section {...props} />
 }
 
-const _MenuSection = <T extends object>({
-  className,
-  ...props
-}: _MenuSectionProps<T>) => {
-  return <Section className={cn('', className)} {...props} />
-}
-
-export interface _MenuHeaderProps
-  extends Omit<React.HTMLAttributes<HTMLElement>, 'className'>,
-    React.RefAttributes<HTMLElement> {
-  className?: string
-}
-
-const _MenuHeader = ({ className, ...props }: _MenuHeaderProps) => {
+const _MenuHeader = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
   return (
     <Header
       className={cn('px-2 py-1 text-sm font-medium text-slate-500', className)}
@@ -114,7 +99,7 @@ const _MenuHeader = ({ className, ...props }: _MenuHeaderProps) => {
   )
 }
 
-const _MenuSeparator = ({ className, ...props }: { className?: string }) => {
+const _MenuSeparator = ({ className, ...props }: SeparatorProps) => {
   return (
     <Separator className={cn('-mx-1 my-1 border-t', className)} {...props} />
   )

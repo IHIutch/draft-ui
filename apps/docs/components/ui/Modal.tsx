@@ -42,7 +42,7 @@ const _Modal = (props: DialogTriggerProps) => {
 }
 
 export interface _ModalContentProps
-  extends Omit<ModalOverlayProps, 'className'>,
+  extends ModalOverlayProps,
     VariantProps<typeof modalVariants> {
   className?: string
   children?: ReactNode

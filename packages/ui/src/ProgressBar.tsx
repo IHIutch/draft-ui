@@ -30,7 +30,7 @@ const _ProgressBarTrack = ({
 
 export interface _ProgressBarFilledTrackProps
   extends HTMLAttributes<HTMLDivElement> {
-  percentage: number | undefined
+  percentage?: number
 }
 
 const _ProgressBarFilledTrack = ({

@@ -48,7 +48,7 @@ const checkboxInnerVariants = cva(
 )
 
 export interface _CheckboxProps
-  extends Omit<CheckboxProps, 'className'>,
+  extends CheckboxProps,
     VariantProps<typeof checkboxVariants>,
     VariantProps<typeof checkboxInnerVariants> {
   className?: string

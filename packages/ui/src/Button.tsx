@@ -35,7 +35,7 @@ const buttonVariants = cva(
 )
 
 export interface _ButtonProps
-  extends Omit<ButtonProps, 'className'>,
+  extends ButtonProps,
     VariantProps<typeof buttonVariants> {
   className?: string
 }

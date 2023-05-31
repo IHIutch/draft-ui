@@ -17,27 +17,20 @@ import { cn } from '@/lib/utils'
 import { IconButton, type _IconButtonProps } from './IconButton'
 import { Input, type _InputProps } from './Input'
 
-export interface _ComboBoxProps<T extends object>
-  extends Omit<ComboBoxProps<T>, 'className'> {
-  className?: string
-}
-
 const _ComboBox = <T extends object>({
   className,
   ...props
-}: _ComboBoxProps<T>) => {
+}: ComboBoxProps<T>) => {
   return <ComboBox className={cn('group', className)} {...props} />
 }
 
-const _ComboBoxInput = ({ className, ...props }: _InputProps) => {
-  return <Input className={className} {...props} />
+const _ComboBoxInput = (props: _InputProps) => {
+  return <Input {...props} />
 }
 
 export interface _ComboBoxContentProps<T>
   extends Omit<PopoverProps, 'children' | 'style' | 'className'>,
-    Omit<ListBoxProps<T>, 'style' | 'className'> {
-  value?: T
-  className?: string
+    Omit<ListBoxProps<T>, 'style'> {
   popoverClassName?: string
 }
 
@@ -70,15 +63,7 @@ const _ComboBoxButton = ({ className, ...props }: _IconButtonProps) => {
   )
 }
 
-export interface _ComboBoxItemProps extends Omit<ItemProps, 'className'> {
-  className?: string
-}
-
-const _ComboBoxItem = ({
-  className,
-  children,
-  ...props
-}: _ComboBoxItemProps) => {
+const _ComboBoxItem = ({ className, children, ...props }: ItemProps) => {
   return (
     <Item
       className={cn(
@@ -91,6 +76,7 @@ const _ComboBoxItem = ({
     >
       <>
         <Check
+          aria-hidden="true"
           strokeWidth="3"
           className="h-4 w-4 group-[[aria-selected=false]]:invisible"
         />

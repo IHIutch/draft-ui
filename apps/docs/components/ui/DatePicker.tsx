@@ -12,27 +12,21 @@ import {
 
 import { cn } from '@/lib/utils'
 
-export interface _DatePickerProps<T extends DateValue>
-  extends Omit<DatePickerProps<T>, 'className'> {
-  className?: string
-}
-
 const _DatePicker = <T extends DateValue>(props: DatePickerProps<T>) => {
   return <DatePicker {...props} />
 }
 
-export interface _DatePickerContentProps<T>
-  extends Omit<PopoverProps, 'children' | 'style' | 'className'>,
-    Omit<DialogProps, 'className'> {
-  value?: T
+export interface _DatePickerContentProps
+  extends Omit<PopoverProps, 'children' | 'style'>,
+    DialogProps {
   className?: string
   popoverClassName?: string
 }
 
-const _DatePickerContent = <T extends object>({
+const _DatePickerContent = ({
   popoverClassName,
   ...props
-}: _DatePickerContentProps<T>) => {
+}: _DatePickerContentProps) => {
   return (
     <Popover
       className={cn(

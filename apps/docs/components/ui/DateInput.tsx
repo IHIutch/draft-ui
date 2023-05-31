@@ -44,7 +44,7 @@ export interface _DateInputProps
 }
 
 const _DateInputContent = ({
-  className = '',
+  className,
   validationState,
   size,
   ...props
@@ -62,7 +62,7 @@ const _DateInputContent = ({
 }
 
 const _DateInputGroup = ({
-  className = '',
+  className,
   validationState,
   size,
   ...props

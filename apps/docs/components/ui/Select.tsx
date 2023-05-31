@@ -21,7 +21,7 @@ const _Select = <T extends object>({ className, ...props }: SelectProps<T>) => {
 }
 
 export interface _SelectContentProps<T>
-  extends Omit<PopoverProps, 'children' | 'style' | 'className'>,
+  extends Omit<PopoverProps, 'children' | 'style'>,
     Omit<ListBoxProps<T>, 'style'> {
   className?: string
   popoverClassName?: string
@@ -63,6 +63,7 @@ const _SelectItem = ({ className, children, ...props }: ItemProps) => {
     >
       <>
         <Check
+          aria-hidden="true"
           strokeWidth="3"
           className="h-4 w-4 group-[[aria-selected=false]]:invisible"
         />

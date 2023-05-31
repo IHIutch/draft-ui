@@ -1,9 +1,7 @@
 'use client'
 
-import { type InputHTMLAttributes } from 'react'
-
 import { cva, type VariantProps } from 'class-variance-authority'
-import { Input } from 'react-aria-components'
+import { Input, type InputProps } from 'react-aria-components'
 
 const inputVariants = cva(
   'flex w-full border bg-transparent placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:text-slate-50 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900',
@@ -26,16 +24,14 @@ const inputVariants = cva(
   }
 )
 
-export type InputProps = InputHTMLAttributes<HTMLInputElement>
-
 export interface _InputProps
-  extends Omit<InputProps, 'className' | 'size'>,
+  extends Omit<InputProps, 'size'>,
     VariantProps<typeof inputVariants> {
   className?: string
 }
 
 const _Input = ({
-  className = '',
+  className,
   validationState,
   size,
   ...props
