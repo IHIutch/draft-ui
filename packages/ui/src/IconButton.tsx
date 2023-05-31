@@ -59,4 +59,4 @@ const _IconButton = ({
   )
 }
 
-export { _IconButton as IconButton }
+export { _IconButton as IconButton, iconButtonVariants }

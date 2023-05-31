@@ -53,4 +53,4 @@ const _Button = ({ className, variant, size, ...props }: _ButtonProps) => {
   )
 }
 
-export { _Button as Button }
+export { _Button as Button, buttonVariants }
