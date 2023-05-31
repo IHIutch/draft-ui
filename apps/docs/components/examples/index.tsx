@@ -19,6 +19,7 @@ import { RadioGroupDefault } from './radioGroup/default'
 import { SearchFieldDefault } from './searchField/default'
 import { SearchFieldWithClearButton } from './searchField/withClearButton'
 import { SearchFieldWithLabel } from './searchField/withLabel'
+import { SelectDefault } from './select/default'
 
 export const exampleComponents = {
   // Breadcrumbs
@@ -60,6 +61,8 @@ export const exampleComponents = {
   SearchFieldDefault,
   SearchFieldWithLabel,
   SearchFieldWithClearButton,
+  // Select
+  SelectDefault,
 }
 
 // Auto map example components to markdoc tags

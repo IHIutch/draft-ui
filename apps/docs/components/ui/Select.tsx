@@ -7,15 +7,31 @@ import {
   Popover,
   Select,
   SelectValue,
+  type ItemProps,
+  type ListBoxProps,
+  type PopoverProps,
+  type SelectProps,
+  type SelectValueProps,
 } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
-const _Select = (props) => {
-  return <Select {...props} />
+const _Select = <T extends object>({ className, ...props }: SelectProps<T>) => {
+  return <Select className={cn('w-full', className)} {...props} />
 }
 
-const _SelectContent = ({ className, popoverClassName, ...props }) => {
+export interface _SelectContentProps<T>
+  extends Omit<PopoverProps, 'children' | 'style' | 'className'>,
+    Omit<ListBoxProps<T>, 'style'> {
+  className?: string
+  popoverClassName?: string
+}
+
+const _SelectContent = <T extends object>({
+  className,
+  popoverClassName,
+  ...props
+}: _SelectContentProps<T>) => {
   return (
     <Popover
       className={cn(
@@ -34,7 +50,7 @@ const _SelectContent = ({ className, popoverClassName, ...props }) => {
   )
 }
 
-const _SelectItem = ({ className, children, ...props }) => {
+const _SelectItem = ({ className, children, ...props }: ItemProps) => {
   return (
     <Item
       className={cn(
@@ -45,16 +61,18 @@ const _SelectItem = ({ className, children, ...props }) => {
       )}
       {...props}
     >
-      <Check
-        strokeWidth="3"
-        className="h-4 w-4 group-[[aria-selected=false]]:invisible"
-      />
-      {children}
+      <>
+        <Check
+          strokeWidth="3"
+          className="h-4 w-4 group-[[aria-selected=false]]:invisible"
+        />
+        {children}
+      </>
     </Item>
   )
 }
 
-const _SelectValue = (props) => {
+const _SelectValue = <T extends object>(props: SelectValueProps<T>) => {
   return (
     <SelectValue {...props}>
       {({ selectedText }) => (selectedText ? selectedText : 'Select an item')}
