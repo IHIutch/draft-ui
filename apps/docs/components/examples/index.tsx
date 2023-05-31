@@ -16,6 +16,9 @@ import { NumberInputMobile } from './numberInput/mobile'
 import { ProgressBarDefault } from './progressbar/default'
 import { RadioDefault } from './radio/default'
 import { RadioGroupDefault } from './radioGroup/default'
+import { SearchFieldDefault } from './searchField/default'
+import { SearchFieldWithClearButton } from './searchField/withClearButton'
+import { SearchFieldWithLabel } from './searchField/withLabel'
 
 export const exampleComponents = {
   // Breadcrumbs
@@ -53,6 +56,10 @@ export const exampleComponents = {
   RadioDefault,
   // Radio
   RadioGroupDefault,
+  // SearchField
+  SearchFieldDefault,
+  SearchFieldWithLabel,
+  SearchFieldWithClearButton,
 }
 
 // Auto map example components to markdoc tags

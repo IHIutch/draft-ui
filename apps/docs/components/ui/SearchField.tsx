@@ -1,7 +1,7 @@
 'use client'
 
 import { Search, X } from 'lucide-react'
-import { SearchField } from 'react-aria-components'
+import { SearchField, type SearchFieldProps } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
@@ -9,15 +9,15 @@ import { type _ButtonProps } from './Button'
 import { IconButton } from './IconButton'
 import { Input, type _InputProps } from './Input'
 
-const _SearchField = (props) => {
-  return <SearchField className="group" {...props} />
+const _SearchField = ({ className, ...props }: SearchFieldProps) => {
+  return <SearchField className={cn('group w-full', className)} {...props} />
 }
 
 const _SearchFieldInput = ({ className, ...props }: _InputProps) => {
   return (
-    <div>
+    <div className="relative">
       <div className="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-500">
-        <Search size="20" />
+        <Search size="18" />
       </div>
       <Input
         className={cn(
