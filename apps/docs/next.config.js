@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverActions: true,
-  },
   reactStrictMode: true,
+  transpilePackages: ['ui'],
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -21,6 +19,9 @@ const nextConfig = {
       fs: false,
     }
     return config
+  },
+  experimental: {
+    serverActions: true,
   },
 }
 

@@ -1,5 +1,12 @@
 {
   "extends": "ts-config/base.json",
-  "include": ["."],
-  "exclude": ["node_modules"]
+  "include": [
+    "."
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+  }
 }

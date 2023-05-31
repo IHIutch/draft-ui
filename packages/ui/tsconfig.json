@@ -9,7 +9,6 @@
     "node_modules"
   ],
   "compilerOptions": {
-    "noImplicitAny": false, // TODO: Disable this once all components are typed
     "paths": {
       "@/*": [
         "./*"

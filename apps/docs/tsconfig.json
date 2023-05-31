@@ -1,30 +1,36 @@
 {
   "extends": "ts-config/nextjs.json",
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".contentlayer/generated"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "contentlayer/generated": [
-        "./.contentlayer/generated"
-      ]
-    },
     "plugins": [
       {
         "name": "next"
       }
     ],
+    "paths": {
+      // "ui": [
+      //   "./../../packages/ui/src" // Not sure why I need this but VSCode wont intellisense correctly without it in this project
+      // ],
+      "@/components/ui": [
+        "./../../packages/ui/src" // Mock importing as local components
+      ],
+      "@/*": [
+        "./*"
+      ]
+    },
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "isolatedModules": true,
     "strictNullChecks": true
-  }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
