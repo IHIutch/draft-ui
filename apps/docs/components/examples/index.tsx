@@ -22,6 +22,7 @@ import { SearchFieldWithLabel } from './searchField/withLabel'
 import { SelectDefault } from './select/default'
 import { SliderDefault } from './slider/default'
 import { SliderVertical } from './slider/vertical'
+import { SwitchDefault } from './switch/default'
 
 export const exampleComponents = {
   // Breadcrumbs
@@ -68,6 +69,8 @@ export const exampleComponents = {
   // Slider
   SliderDefault,
   SliderVertical,
+  // Slider
+  SwitchDefault,
 }
 
 // Auto map example components to markdoc tags

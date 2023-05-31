@@ -1,25 +1,27 @@
 'use client'
 
-import { Switch } from 'react-aria-components'
+import { type HTMLAttributes } from 'react'
+
+import { Switch, type SwitchProps } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
-const _Switch = ({ children, ...props }) => {
+const _Switch = ({ children, ...props }: SwitchProps) => {
   return (
-    <Switch {...props} className="group flex items-center gap-2 font-medium">
+    <Switch className="group flex items-center gap-2 font-medium" {...props}>
       {children}
     </Switch>
   )
 }
 
-const _SwitchIndicator = (props) => {
+const _SwitchIndicator = (props: HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      {...props}
       className={cn(
         'h-5 w-8 rounded-full bg-gray-300 p-0.5',
         'transition-colors group-[[data-selected]]:bg-black'
       )}
+      {...props}
     >
       <div
         className={cn(
