@@ -23,6 +23,8 @@ import { SelectDefault } from './select/default'
 import { SliderDefault } from './slider/default'
 import { SliderVertical } from './slider/vertical'
 import { SwitchDefault } from './switch/default'
+import { TabsDefault } from './tabs/default'
+import { TabsVertical } from './tabs/vertical'
 
 export const exampleComponents = {
   // Breadcrumbs
@@ -71,6 +73,9 @@ export const exampleComponents = {
   SliderVertical,
   // Slider
   SwitchDefault,
+  // Tabs
+  TabsDefault,
+  TabsVertical,
 }
 
 // Auto map example components to markdoc tags
