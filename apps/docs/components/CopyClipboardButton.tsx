@@ -1,8 +1,7 @@
 import { useState } from 'react'
 
 import { Copy } from 'lucide-react'
-
-import { IconButton, Tooltip, TooltipContent } from './ui'
+import { IconButton, Tooltip, TooltipContent } from 'ui'
 
 export default function CopyClipboardButton({ text }: { text: string }) {
   const [isOpen, setOpen] = useState(false)

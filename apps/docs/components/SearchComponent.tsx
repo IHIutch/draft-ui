@@ -10,7 +10,7 @@ import { DocSearchModal } from '@docsearch/react'
 
 import '@docsearch/css/dist/style.css'
 
-import { Button } from './ui'
+import { Button } from 'ui'
 
 export default function SearchComponent() {
   const [isOpen, setIsOpen] = useState(false)

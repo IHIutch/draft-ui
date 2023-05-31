@@ -2,11 +2,11 @@
 
 import { Github } from 'lucide-react'
 import Link from 'next/link'
+import { iconButtonVariants } from 'ui'
 
 import { cn } from '@/lib/utils'
 
 import SearchComponent from './SearchComponent'
-import { iconButtonVariants } from './ui'
 
 export default function Navigation() {
   return (
