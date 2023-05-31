@@ -17,6 +17,7 @@
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.202.0",
     "next": "13.4.2",
+    "next-themes": "^0.2.1",
     "prism-react-renderer": "^2.0.4",
     "react": "18.2.0",
     "react-aria-components": "1.0.0-alpha.4",

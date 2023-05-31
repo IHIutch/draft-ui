@@ -6,6 +6,7 @@ import { iconButtonVariants } from 'ui'
 
 import { cn } from '@/lib/utils'
 
+import { ModeToggle } from './ModeToggle'
 import SearchComponent from './SearchComponent'
 
 export default function Navigation() {
@@ -26,14 +27,23 @@ export default function Navigation() {
           <SearchComponent />
         </div>
         <div className="ml-auto">
-          <Link
-            className={cn(iconButtonVariants({ size: 'sm', variant: 'ghost' }))}
-            href="https://github.com/IHIutch/draft-ui"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Github size="20" aria-label="Link to GitHub repository" />
-          </Link>
+          <div className="flex gap-2">
+            <div>
+              <Link
+                className={cn(
+                  iconButtonVariants({ size: 'sm', variant: 'ghost' })
+                )}
+                href="https://github.com/IHIutch/draft-ui"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Github size="20" aria-label="Link to GitHub repository" />
+              </Link>
+            </div>
+            <div>
+              <ModeToggle />
+            </div>
+          </div>
         </div>
       </div>
     </div>

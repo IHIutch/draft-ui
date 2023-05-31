@@ -4,6 +4,8 @@ import '@/styles/globals.css'
 
 import { SSRProvider } from 'react-aria-components'
 
+import { ThemeProvider } from '../components/ThemeProvider'
+
 interface DocsLayoutProps {
   children: React.ReactNode
 }
@@ -17,7 +19,9 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
     */}
       <head />
       <body className="h-full">
-        <SSRProvider>{children}</SSRProvider>
+        <SSRProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </SSRProvider>
       </body>
     </html>
   )

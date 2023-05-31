@@ -59,7 +59,7 @@ const _MenuItem = ({ className, children, ...props }: ItemProps) => {
     <Item
       className={cn(
         'group',
-        'flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors hover:bg-slate-100 focus:bg-slate-100',
+        'cursor-pointer flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors hover:bg-slate-100 focus:bg-slate-100',
         className
       )}
       {...props}
