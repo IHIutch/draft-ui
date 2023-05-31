@@ -25,6 +25,8 @@ import { SliderVertical } from './slider/vertical'
 import { SwitchDefault } from './switch/default'
 import { TabsDefault } from './tabs/default'
 import { TabsVertical } from './tabs/vertical'
+import { TextFieldDefault } from './textField/default'
+import { TextFieldWithErrorText } from './textField/withErrorText'
 
 export const exampleComponents = {
   // Breadcrumbs
@@ -76,6 +78,9 @@ export const exampleComponents = {
   // Tabs
   TabsDefault,
   TabsVertical,
+  // TextField
+  TextFieldDefault,
+  TextFieldWithErrorText,
 }
 
 // Auto map example components to markdoc tags
