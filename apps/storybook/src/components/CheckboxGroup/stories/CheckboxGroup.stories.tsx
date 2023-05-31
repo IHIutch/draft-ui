@@ -9,25 +9,25 @@ const meta: Meta<typeof CheckboxGroup> = {
 
 export default meta
 
-export const Default: StoryObj<typeof CheckboxGroup> = (props) => (
-  <CheckboxGroup orientation={props.orientation}>
-    <Label>Favorite sports</Label>
-    <CheckboxGroupContent>
-      <Checkbox value="soccer">Soccer</Checkbox>
-      <Checkbox value="baseball">Baseball</Checkbox>
-      <Checkbox value="basketball">Basketball</Checkbox>
-    </CheckboxGroupContent>
-  </CheckboxGroup>
-)
-
-Default.argTypes = {
-  orientation: {
-    type: 'string',
-    control: 'radio',
-    options: ['vertical', 'horizontal'],
+export const Default: StoryObj<typeof CheckboxGroup> = {
+  argTypes: {
+    orientation: {
+      type: 'string',
+      control: 'radio',
+      options: ['vertical', 'horizontal'],
+    },
   },
-}
-
-Default.args = {
-  orientation: 'vertical',
+  args: {
+    orientation: 'vertical',
+  },
+  render: (props) => (
+    <CheckboxGroup orientation={props.orientation}>
+      <Label>Favorite sports</Label>
+      <CheckboxGroupContent>
+        <Checkbox value="soccer">Soccer</Checkbox>
+        <Checkbox value="baseball">Baseball</Checkbox>
+        <Checkbox value="basketball">Basketball</Checkbox>
+      </CheckboxGroupContent>
+    </CheckboxGroup>
+  ),
 }

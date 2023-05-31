@@ -9,31 +9,31 @@ const meta: Meta<typeof Tabs> = {
 
 export default meta
 
-export const Default: StoryObj<typeof Tabs> = (props) => (
-  <Tabs orientation={props.orientation}>
-    <TabList aria-label="History of Ancient Rome" disabledKeys={['Emp']}>
-      <Tab id="FoR">Founding of Rome</Tab>
-      <Tab id="MaR">Monarchy and Republic</Tab>
-      <Tab id="Emp">Empire</Tab>
-    </TabList>
-    <TabPanels>
-      <TabPanel id="FoR">
-        Arma virumque cano, Troiae qui primus ab oris.
-      </TabPanel>
-      <TabPanel id="MaR">Senatus Populusque Romanus.</TabPanel>
-      <TabPanel id="Emp">Alea jacta est.</TabPanel>
-    </TabPanels>
-  </Tabs>
-)
-
-Default.argTypes = {
-  orientation: {
-    type: 'string',
-    control: 'radio',
-    options: ['vertical', 'horizontal'],
+export const Default: StoryObj<typeof Tabs> = {
+  argTypes: {
+    orientation: {
+      type: 'string',
+      control: 'radio',
+      options: ['vertical', 'horizontal'],
+    },
   },
-}
-
-Default.args = {
-  orientation: 'horizontal',
+  args: {
+    orientation: 'horizontal',
+  },
+  render: (props) => (
+    <Tabs orientation={props.orientation}>
+      <TabList aria-label="History of Ancient Rome" disabledKeys={['Emp']}>
+        <Tab id="FoR">Founding of Rome</Tab>
+        <Tab id="MaR">Monarchy and Republic</Tab>
+        <Tab id="Emp">Empire</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel id="FoR">
+          Arma virumque cano, Troiae qui primus ab oris.
+        </TabPanel>
+        <TabPanel id="MaR">Senatus Populusque Romanus.</TabPanel>
+        <TabPanel id="Emp">Alea jacta est.</TabPanel>
+      </TabPanels>
+    </Tabs>
+  ),
 }

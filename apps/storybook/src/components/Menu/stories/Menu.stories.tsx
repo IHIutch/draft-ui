@@ -10,6 +10,7 @@ import {
   MenuItem,
   MenuSection,
   MenuSeparator,
+  type _MenuContentProps,
 } from 'ui'
 
 import { type Meta, type StoryObj } from '@storybook/react'
@@ -21,7 +22,21 @@ const meta: Meta<typeof Menu> = {
 
 export default meta
 
-export const Default: StoryObj<typeof MenuContent> = (props) => {
+export const Default: StoryObj<typeof MenuContent> = {
+  argTypes: {
+    selectionMode: {
+      type: 'string',
+      control: 'radio',
+      options: ['none', 'single', 'multiple'],
+    },
+  },
+  args: {
+    selectionMode: 'none',
+  },
+  render: (props) => <MenuStory {...props} />,
+}
+
+const MenuStory = <T extends object>(props: _MenuContentProps<T>) => {
   const [selected, setSelected] = useState<Selection>(new Set(['foo1']))
 
   return (
@@ -51,16 +66,4 @@ export const Default: StoryObj<typeof MenuContent> = (props) => {
       </MenuContent>
     </Menu>
   )
-}
-
-Default.argTypes = {
-  selectionMode: {
-    type: 'string',
-    control: 'radio',
-    options: ['none', 'single', 'multiple'],
-  },
-}
-
-Default.args = {
-  selectionMode: 'none',
 }

@@ -9,26 +9,26 @@ const meta: Meta<typeof Input> = {
 
 export default meta
 
-export const Default: StoryObj<typeof Input> = (props) => <Input {...props} />
-
-Default.argTypes = {
-  validationState: {
-    type: 'string',
-    control: 'radio',
-    options: ['valid', 'invalid'],
+export const Default: StoryObj<typeof Input> = {
+  argTypes: {
+    validationState: {
+      type: 'string',
+      control: 'radio',
+      options: ['valid', 'invalid'],
+    },
+    size: {
+      type: 'string',
+      control: 'select',
+      options: ['xs', 'sm', 'md', 'lg'],
+    },
+    placeholder: {
+      type: 'string',
+    },
   },
-  size: {
-    type: 'string',
-    control: 'select',
-    options: ['xs', 'sm', 'md', 'lg'],
+  args: {
+    validationState: 'valid',
+    size: 'md',
+    placeholder: 'Placeholder...',
   },
-  placeholder: {
-    type: 'string',
-  },
-}
-
-Default.args = {
-  validationState: 'valid',
-  size: 'md',
-  placeholder: 'Placeholder...',
+  render: (props) => <Input {...props} />,
 }

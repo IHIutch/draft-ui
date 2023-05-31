@@ -20,24 +20,24 @@ const meta: Meta<typeof RangeCalendar> = {
 
 export default meta
 
-export const Default: StoryObj<typeof RangeCalendar> = (props) => (
-  <RangeCalendar aria-label="Trip dates">
-    <CalendarHeader>
-      <CalendarPrevButton />
-      <CalendarHeading />
-      <CalendarNextButton />
-    </CalendarHeader>
-    <CalendarGrid>
-      <CalendarGridHeader>
-        {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
-      </CalendarGridHeader>
-      <CalendarGridBody>
-        {(date) => <CalendarCell date={date} />}
-      </CalendarGridBody>
-    </CalendarGrid>
-  </RangeCalendar>
-)
-
-Default.argTypes = {}
-
-Default.args = {}
+export const Default: StoryObj<typeof RangeCalendar> = {
+  argTypes: {},
+  args: {},
+  render: (props) => (
+    <RangeCalendar {...props} aria-label="Trip dates">
+      <CalendarHeader>
+        <CalendarPrevButton />
+        <CalendarHeading />
+        <CalendarNextButton />
+      </CalendarHeader>
+      <CalendarGrid>
+        <CalendarGridHeader>
+          {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+        </CalendarGridHeader>
+        <CalendarGridBody>
+          {(date) => <CalendarCell date={date} />}
+        </CalendarGridBody>
+      </CalendarGrid>
+    </RangeCalendar>
+  ),
+}

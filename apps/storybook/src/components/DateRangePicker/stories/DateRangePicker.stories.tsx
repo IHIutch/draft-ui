@@ -28,41 +28,41 @@ const meta: Meta<typeof DateRangePicker> = {
 
 export default meta
 
-export const Default: StoryObj<typeof DateRangePicker> = (props) => (
-  <DateRangePicker>
-    <Label>Date Range</Label>
-    <DateInputGroup className="pr-1">
-      <DateInput slot="start">
-        {(segment) => <DateSegment segment={segment} />}
-      </DateInput>
-      <span aria-hidden="true">–</span>
-      <DateInput slot="end">
-        {(segment) => <DateSegment segment={segment} />}
-      </DateInput>
-      <IconButton size="sm" variant="subtle" className="ml-auto shrink-0">
-        <ChevronDown size="16" strokeWidth="3" />
-      </IconButton>
-    </DateInputGroup>
-    <DatePickerContent>
-      <RangeCalendar>
-        <CalendarHeader>
-          <CalendarPrevButton />
-          <CalendarHeading />
-          <CalendarNextButton />
-        </CalendarHeader>
-        <CalendarGrid>
-          <CalendarGridHeader>
-            {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
-          </CalendarGridHeader>
-          <CalendarGridBody>
-            {(date) => <CalendarCell date={date} />}
-          </CalendarGridBody>
-        </CalendarGrid>
-      </RangeCalendar>
-    </DatePickerContent>
-  </DateRangePicker>
-)
-
-Default.argTypes = {}
-
-Default.args = {}
+export const Default: StoryObj<typeof DateRangePicker> = {
+  argTypes: {},
+  args: {},
+  render: (props) => (
+    <DateRangePicker {...props}>
+      <Label>Date Range</Label>
+      <DateInputGroup className="pr-1">
+        <DateInput slot="start">
+          {(segment) => <DateSegment segment={segment} />}
+        </DateInput>
+        <span aria-hidden="true">–</span>
+        <DateInput slot="end">
+          {(segment) => <DateSegment segment={segment} />}
+        </DateInput>
+        <IconButton size="sm" variant="subtle" className="ml-auto shrink-0">
+          <ChevronDown size="16" strokeWidth="3" />
+        </IconButton>
+      </DateInputGroup>
+      <DatePickerContent>
+        <RangeCalendar>
+          <CalendarHeader>
+            <CalendarPrevButton />
+            <CalendarHeading />
+            <CalendarNextButton />
+          </CalendarHeader>
+          <CalendarGrid>
+            <CalendarGridHeader>
+              {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+            </CalendarGridHeader>
+            <CalendarGridBody>
+              {(date) => <CalendarCell date={date} />}
+            </CalendarGridBody>
+          </CalendarGrid>
+        </RangeCalendar>
+      </DatePickerContent>
+    </DateRangePicker>
+  ),
+}

@@ -17,38 +17,38 @@ const meta: Meta<typeof DateField> = {
 
 export default meta
 
-export const Default: StoryObj<typeof DateField> = (props) => (
-  <DateField {...props}>
-    <Label>Date Label</Label>
-    <DateInputContent validationState={props.validationState}>
-      <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
-    </DateInputContent>
-    {props.validationState === 'invalid' ? (
-      <TextFieldErrorMessage>
-        <span>This is an error message</span>
-      </TextFieldErrorMessage>
-    ) : (
-      <TextFieldDescription>
-        <span>This is a description</span>
-      </TextFieldDescription>
-    )}
-  </DateField>
-)
-
-Default.argTypes = {
-  isDisabled: { type: 'boolean' },
-  isReadOnly: { type: 'boolean' },
-  isRequired: { type: 'boolean' },
-  validationState: {
-    type: 'string',
-    control: 'radio',
-    options: ['valid', 'invalid'],
+export const Default: StoryObj<typeof DateField> = {
+  argTypes: {
+    isDisabled: { type: 'boolean' },
+    isReadOnly: { type: 'boolean' },
+    isRequired: { type: 'boolean' },
+    validationState: {
+      type: 'string',
+      control: 'radio',
+      options: ['valid', 'invalid'],
+    },
   },
-}
-
-Default.args = {
-  isDisabled: false,
-  isReadOnly: false,
-  isRequired: false,
-  validationState: 'valid',
+  args: {
+    isDisabled: false,
+    isReadOnly: false,
+    isRequired: false,
+    validationState: 'valid',
+  },
+  render: (props) => (
+    <DateField {...props}>
+      <Label>Date Label</Label>
+      <DateInputContent validationState={props.validationState}>
+        <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+      </DateInputContent>
+      {props.validationState === 'invalid' ? (
+        <TextFieldErrorMessage>
+          <span>This is an error message</span>
+        </TextFieldErrorMessage>
+      ) : (
+        <TextFieldDescription>
+          <span>This is a description</span>
+        </TextFieldDescription>
+      )}
+    </DateField>
+  ),
 }

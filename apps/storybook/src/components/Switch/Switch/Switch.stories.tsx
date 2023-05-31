@@ -9,13 +9,13 @@ const meta: Meta<typeof Switch> = {
 
 export default meta
 
-export const Default: StoryObj<typeof Switch> = (props) => (
-  <Switch {...props}>
-    <SwitchIndicator />
-    Low power mode
-  </Switch>
-)
-
-Default.argTypes = {}
-
-Default.args = {}
+export const Default: StoryObj<typeof Switch> = {
+  argTypes: {},
+  args: {},
+  render: (props) => (
+    <Switch {...props}>
+      <SwitchIndicator />
+      Low power mode
+    </Switch>
+  ),
+}

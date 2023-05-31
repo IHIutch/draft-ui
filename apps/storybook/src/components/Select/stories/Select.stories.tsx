@@ -17,24 +17,24 @@ const meta: Meta<typeof Select> = {
 
 export default meta
 
-export const Default: StoryObj<typeof Select> = (props) => (
-  <Select>
-    <Label>Favorite Animal</Label>
-    <Button variant="outline" className="flex items-center gap-2 font-normal">
-      <SelectValue />
-      <ChevronDown size="16" strokeWidth="3" />
-    </Button>
-    <SelectContent>
-      <SelectItem textValue="Aardvark">Aardvark</SelectItem>
-      <SelectItem textValue="Cat">Cat</SelectItem>
-      <SelectItem textValue="Dog">Dog</SelectItem>
-      <SelectItem textValue="Kangaroo">Kangaroo</SelectItem>
-      <SelectItem textValue="Panda">Panda</SelectItem>
-      <SelectItem textValue="Snake">Snake</SelectItem>
-    </SelectContent>
-  </Select>
-)
-
-Default.argTypes = {}
-
-Default.args = {}
+export const Default: StoryObj<typeof Select> = {
+  argTypes: {},
+  args: {},
+  render: (props) => (
+    <Select {...props}>
+      <Label>Favorite Animal</Label>
+      <Button variant="outline" className="flex items-center gap-2 font-normal">
+        <SelectValue />
+        <ChevronDown size="16" strokeWidth="3" />
+      </Button>
+      <SelectContent>
+        <SelectItem textValue="Aardvark">Aardvark</SelectItem>
+        <SelectItem textValue="Cat">Cat</SelectItem>
+        <SelectItem textValue="Dog">Dog</SelectItem>
+        <SelectItem textValue="Kangaroo">Kangaroo</SelectItem>
+        <SelectItem textValue="Panda">Panda</SelectItem>
+        <SelectItem textValue="Snake">Snake</SelectItem>
+      </SelectContent>
+    </Select>
+  ),
+}

@@ -7,6 +7,7 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  type _ModalContentProps,
 } from 'ui'
 
 import { type Meta, type StoryObj } from '@storybook/react'
@@ -18,7 +19,21 @@ const meta: Meta<typeof ModalContent> = {
 
 export default meta
 
-export const Default: StoryObj<typeof ModalContent> = (props) => {
+export const Default: StoryObj<typeof ModalContent> = {
+  argTypes: {
+    size: {
+      type: 'string',
+      control: 'select',
+      options: ['xs', 'sm', 'md', 'lg', 'xl', 'full'],
+    },
+  },
+  args: {
+    size: 'md',
+  },
+  render: (props) => <ModalStory {...props} />,
+}
+
+const ModalStory = (props: _ModalContentProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -55,16 +70,4 @@ export const Default: StoryObj<typeof ModalContent> = (props) => {
       </ModalOverlay>
     </>
   )
-}
-
-Default.argTypes = {
-  size: {
-    type: 'string',
-    control: 'select',
-    options: ['xs', 'sm', 'md', 'lg', 'xl', 'full'],
-  },
-}
-
-Default.args = {
-  size: 'md',
 }

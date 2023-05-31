@@ -9,27 +9,25 @@ const meta: Meta<typeof Button> = {
 
 export default meta
 
-export const Default: StoryObj<typeof Button> = (props) => <Button {...props} />
-
-Default.argTypes = {
-  children: { type: 'string' },
-
-  variant: {
-    type: 'string',
-    control: 'select',
-    options: ['solid', 'destructive', 'outline', 'subtle', 'ghost', 'link'],
+export const Default: StoryObj<typeof Button> = {
+  argTypes: {
+    children: { type: 'string' },
+    variant: {
+      type: 'string',
+      control: 'select',
+      options: ['solid', 'destructive', 'outline', 'subtle', 'ghost', 'link'],
+    },
+    size: {
+      type: 'string',
+      control: 'select',
+      options: ['xs', 'sm', 'md', 'lg'],
+    },
+    isDisabled: { type: 'boolean' },
   },
-  size: {
-    type: 'string',
-    control: 'select',
-    options: ['xs', 'sm', 'md', 'lg'],
+  args: {
+    children: 'Press Me',
+    variant: undefined,
+    isDisabled: false,
   },
-  isDisabled: { type: 'boolean' },
-}
-
-Default.args = {
-  children: 'Press Me',
-
-  variant: undefined,
-  isDisabled: false,
+  render: (props) => <Button {...props} />,
 }

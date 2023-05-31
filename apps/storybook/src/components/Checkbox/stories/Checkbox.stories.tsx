@@ -9,27 +9,27 @@ const meta: Meta<typeof Checkbox> = {
 
 export default meta
 
-export const Default: StoryObj<typeof Checkbox> = (props) => (
-  <CheckboxGroup isDisabled={props.isDisabled}>
-    <Checkbox size={props.size} value="cat">
-      Cat
-    </Checkbox>
-    <Checkbox size={props.size} value="dog">
-      Dog
-    </Checkbox>
-  </CheckboxGroup>
-)
-
-Default.argTypes = {
-  size: {
-    type: 'string',
-    control: 'radio',
-    options: ['sm', 'md', 'lg'],
+export const Default: StoryObj<typeof Checkbox> = {
+  argTypes: {
+    size: {
+      type: 'string',
+      control: 'radio',
+      options: ['sm', 'md', 'lg'],
+    },
+    isDisabled: { type: 'boolean' },
   },
-  isDisabled: { type: 'boolean' },
-}
-
-Default.args = {
-  size: 'md',
-  isDisabled: false,
+  args: {
+    size: 'md',
+    isDisabled: false,
+  },
+  render: (props) => (
+    <CheckboxGroup isDisabled={props.isDisabled}>
+      <Checkbox size={props.size} value="cat">
+        Cat
+      </Checkbox>
+      <Checkbox size={props.size} value="dog">
+        Dog
+      </Checkbox>
+    </CheckboxGroup>
+  ),
 }

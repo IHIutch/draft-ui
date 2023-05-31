@@ -9,12 +9,12 @@ const meta: Meta<typeof Label> = {
 
 export default meta
 
-export const Default: StoryObj<typeof Label> = (props) => <Label {...props} />
-
-Default.argTypes = {
-  children: { type: 'string' },
-}
-
-Default.args = {
-  children: 'Label',
+export const Default: StoryObj<typeof Label> = {
+  argTypes: {
+    children: { type: 'string' },
+  },
+  args: {
+    children: 'Label',
+  },
+  render: (props) => <Label {...props} />,
 }

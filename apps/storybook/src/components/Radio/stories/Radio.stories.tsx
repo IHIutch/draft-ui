@@ -9,27 +9,27 @@ const meta: Meta<typeof Radio> = {
 
 export default meta
 
-export const Default: StoryObj<typeof Radio> = (props) => (
-  <RadioGroup isDisabled={props.isDisabled}>
-    <Radio size={props.size} value="cat">
-      Cat
-    </Radio>
-    <Radio size={props.size} value="dog">
-      Dog
-    </Radio>
-  </RadioGroup>
-)
-
-Default.argTypes = {
-  size: {
-    type: 'string',
-    control: 'radio',
-    options: ['sm', 'md', 'lg'],
+export const Default: StoryObj<typeof Radio> = {
+  argTypes: {
+    size: {
+      type: 'string',
+      control: 'radio',
+      options: ['sm', 'md', 'lg'],
+    },
+    isDisabled: { type: 'boolean' },
   },
-  isDisabled: { type: 'boolean' },
-}
-
-Default.args = {
-  size: 'md',
-  isDisabled: false,
+  args: {
+    size: 'md',
+    isDisabled: false,
+  },
+  render: (props) => (
+    <RadioGroup isDisabled={props.isDisabled}>
+      <Radio size={props.size} value="cat">
+        Cat
+      </Radio>
+      <Radio size={props.size} value="dog">
+        Dog
+      </Radio>
+    </RadioGroup>
+  ),
 }
