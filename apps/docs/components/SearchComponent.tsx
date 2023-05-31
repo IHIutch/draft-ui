@@ -10,20 +10,19 @@ import { DocSearchModal } from '@docsearch/react'
 
 import '@docsearch/css/dist/style.css'
 
+import { Button } from './ui'
+
 export default function SearchComponent() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div className="h-full w-full">
-      <button
-        className="h-full w-full rounded-lg border bg-gray-100 px-4 py-2 text-left text-gray-500 transition-colors"
-        onClick={() => setIsOpen(true)}
-      >
-        <div className="flex items-center">
+      <Button size="sm" variant="outline" onPress={() => setIsOpen(true)}>
+        <div className="flex items-center text-slate-600">
           <Search className="h-4 w-4" />
-          <span className="ml-2">Search the docs...</span>
+          <span className="ml-2 font-normal">Search the docs...</span>
         </div>
-      </button>
+      </Button>
       {isOpen ? (
         <DocSearchModal
           initialScrollY={window.scrollY}
