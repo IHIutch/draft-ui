@@ -1,6 +1,6 @@
 'use client'
 
-import { Github } from 'lucide-react'
+import { GithubIcon } from 'lucide-react'
 import Link from 'next/link'
 import { iconButtonVariants } from 'ui'
 
@@ -36,8 +36,9 @@ export default function Navigation() {
                 href="https://github.com/IHIutch/draft-ui"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Link to GitHub repository"
               >
-                <Github size="20" aria-label="Link to GitHub repository" />
+                <GithubIcon size="20" aria-hidden="true" />
               </Link>
             </div>
             <div>
