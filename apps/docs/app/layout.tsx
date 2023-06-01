@@ -20,7 +20,9 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
       <head />
       <body className="h-full">
         <SSRProvider>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            {children}
+          </ThemeProvider>
         </SSRProvider>
       </body>
     </html>
