@@ -5,6 +5,7 @@ import '@/styles/globals.css'
 import { SSRProvider } from 'react-aria-components'
 
 import Analytics from '@/components/Analytics'
+import Fathom from '@/components/FathomAnalytics'
 import ThemeProvider from '@/components/ThemeProvider'
 
 interface DocsLayoutProps {
@@ -26,6 +27,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
           </ThemeProvider>
         </SSRProvider>
         <Analytics />
+        <Fathom />
       </body>
     </html>
   )
