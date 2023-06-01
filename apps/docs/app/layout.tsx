@@ -2,10 +2,9 @@
 
 import '@/styles/globals.css'
 
-import Script from 'next/script'
 import { SSRProvider } from 'react-aria-components'
 
-import Fathom from '@/components/FathomAnalytics'
+import Analytics from '@/components/Analytics'
 import ThemeProvider from '@/components/ThemeProvider'
 
 interface DocsLayoutProps {
@@ -26,12 +25,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
             {children}
           </ThemeProvider>
         </SSRProvider>
-        <Script
-          src="https://cdn.usefathom.com/script.js"
-          data-site="ERIJKXRN"
-          data-included-domains="draft-ui.vercel.app"
-          defer
-        />
+        <Analytics />
       </body>
     </html>
   )
