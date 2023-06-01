@@ -2,6 +2,7 @@
 
 import '@/styles/globals.css'
 
+import Script from 'next/script'
 import { SSRProvider } from 'react-aria-components'
 
 import Fathom from '@/components/FathomAnalytics'
@@ -20,12 +21,17 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
     */}
       <head />
       <body className="h-full">
-        <Fathom />
         <SSRProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
           </ThemeProvider>
         </SSRProvider>
+        <Script
+          src="https://cdn.usefathom.com/script.js"
+          data-site="ERIJKXRN"
+          data-included-domains="draft-ui.vercel.app"
+          defer
+        />
       </body>
     </html>
   )
