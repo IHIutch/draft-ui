@@ -51,11 +51,13 @@ const _DateInputContent = ({
 }: _DateInputProps) => {
   return (
     <div
-      className={dateInputVariants({
-        size,
-        validationState,
-        className,
-      })}
+      className={cn(
+        dateInputVariants({
+          size,
+          validationState,
+          className,
+        })
+      )}
       {...props}
     />
   )
@@ -69,11 +71,13 @@ const _DateInputGroup = ({
 }: _DateInputProps) => {
   return (
     <Group
-      className={dateInputVariants({
-        size,
-        validationState,
-        className,
-      })}
+      className={cn(
+        dateInputVariants({
+          size,
+          validationState,
+          className,
+        })
+      )}
       {...props}
     />
   )

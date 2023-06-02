@@ -3,6 +3,8 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import { Button, type ButtonProps } from 'react-aria-components'
 
+import { cn } from '@/lib/utils'
+
 const iconButtonVariants = cva(
   'inline-flex items-center justify-center font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900 dark:data-[state=open]:bg-slate-800',
   {
@@ -49,11 +51,13 @@ const _IconButton = ({
 }: _IconButtonProps) => {
   return (
     <Button
-      className={iconButtonVariants({
-        variant,
-        size,
-        className,
-      })}
+      className={cn(
+        iconButtonVariants({
+          variant,
+          size,
+          className,
+        })
+      )}
       {...props}
     />
   )

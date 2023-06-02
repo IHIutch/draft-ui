@@ -56,10 +56,12 @@ const _ModalContent = ({
 }: _ModalContentProps) => {
   return (
     <Modal
-      className={modalVariants({
-        size,
-        className,
-      })}
+      className={cn(
+        modalVariants({
+          size,
+          className,
+        })
+      )}
       {...props}
     >
       <Dialog className="outline-none">{children}</Dialog>

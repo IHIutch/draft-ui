@@ -15,7 +15,8 @@
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
     "lucide-react": "^0.176.0",
-    "react-aria-components": "1.0.0-alpha.4"
+    "react-aria-components": "1.0.0-alpha.4",
+    "tailwind-merge": "^1.13.0"
   },
   "devDependencies": {
     "@types/react": "18.0.27",

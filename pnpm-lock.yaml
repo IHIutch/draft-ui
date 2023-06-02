@@ -70,6 +70,9 @@ importers:
       rehype-pretty-code:
         specifier: ^0.9.5
         version: 0.9.5(shiki@0.14.2)
+      tailwind-merge:
+        specifier: ^1.13.0
+        version: 1.13.0
       typescript:
         specifier: 4.9.5
         version: 4.9.5
@@ -299,6 +302,9 @@ importers:
       react-aria-components:
         specifier: 1.0.0-alpha.4
         version: 1.0.0-alpha.4(react-dom@18.2.0)(react@18.2.0)
+      tailwind-merge:
+        specifier: ^1.13.0
+        version: 1.13.0
     devDependencies:
       '@types/react':
         specifier: 18.0.27
@@ -11813,6 +11819,10 @@ packages:
       '@pkgr/utils': 2.4.0
       tslib: 2.5.0
     dev: true
+
+  /tailwind-merge@1.13.0:
+    resolution: {integrity: sha512-mUTmDbcU+IhOvJ0c42eLQ/nRkvolTqfpVaVQRSxfJAv9TabS6Y2zW/1wKpKLdKzyL3Gh8j6NTLl6MWNmvOM6kA==}
+    dev: false
 
   /tailwindcss-animate@1.0.5(tailwindcss@3.3.1):
     resolution: {integrity: sha512-UU3qrOJ4lFQABY+MVADmBm+0KW3xZyhMdRvejwtXqYOL7YjHYxmuREFAZdmVG5LPe5E9CAst846SLC4j5I3dcw==}

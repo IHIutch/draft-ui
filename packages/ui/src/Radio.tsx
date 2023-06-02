@@ -5,6 +5,8 @@ import { type ReactNode } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { Radio, type RadioProps } from 'react-aria-components'
 
+import { cn } from '@/lib/utils'
+
 const radioVariants = cva(
   [
     'group flex cursor-pointer flex-row items-center gap-2',
@@ -57,14 +59,16 @@ export interface _RadioProps
 const _Radio = ({ className, size, children, ...props }: _RadioProps) => {
   return (
     <Radio
-      className={radioVariants({
-        size,
-        className,
-      })}
+      className={cn(
+        radioVariants({
+          size,
+          className,
+        })
+      )}
       {...props}
     >
       <>
-        <div className={radioInnerVariants({ size })} />
+        <div className={cn(radioInnerVariants({ size }))} />
         <div className="group-[[data-disabled]]:opacity-40">{children}</div>
       </>
     </Radio>

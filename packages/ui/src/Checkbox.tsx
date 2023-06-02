@@ -58,14 +58,16 @@ export interface _CheckboxProps
 const _Checkbox = ({ className, size, children, ...props }: _CheckboxProps) => {
   return (
     <Checkbox
-      className={checkboxVariants({
-        size,
-        className,
-      })}
+      className={cn(
+        checkboxVariants({
+          size,
+          className,
+        })
+      )}
       {...props}
     >
       <>
-        <div className={checkboxInnerVariants({ size })}>
+        <div className={cn(checkboxInnerVariants({ size }))}>
           <svg
             viewBox="0 0 12 10"
             className={cn(
