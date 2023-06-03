@@ -12,17 +12,13 @@ import {
 
 import { cn } from '@/lib/utils'
 
-export interface _BreadcrumbsProps<T> extends BreadcrumbsProps<T> {
-  value?: T
-}
-
 const _Breadcrumbs = <T extends object>({
   className,
   ...props
-}: _BreadcrumbsProps<T>) => {
+}: BreadcrumbsProps<T>) => {
   return (
     <Breadcrumbs
-      className={cn(className, '[&_ol]:flex [&_ol]:flex-wrap [&_ol]:gap-1')}
+      className={cn('[&_ol]:flex [&_ol]:flex-wrap [&_ol]:gap-1', className)}
       {...props}
     />
   )
