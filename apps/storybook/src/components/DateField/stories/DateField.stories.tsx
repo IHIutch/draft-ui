@@ -1,7 +1,7 @@
 import {
   DateField,
   DateInput,
-  DateInputContent,
+  DateInputGroup,
   DateSegment,
   Label,
   TextFieldDescription,
@@ -37,17 +37,13 @@ export const Default: StoryObj<typeof DateField> = {
   render: (props) => (
     <DateField {...props}>
       <Label>Date Label</Label>
-      <DateInputContent validationState={props.validationState}>
+      <DateInputGroup validationState={props.validationState}>
         <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
-      </DateInputContent>
+      </DateInputGroup>
       {props.validationState === 'invalid' ? (
-        <TextFieldErrorMessage>
-          <span>This is an error message</span>
-        </TextFieldErrorMessage>
+        <TextFieldErrorMessage>This is an error message</TextFieldErrorMessage>
       ) : (
-        <TextFieldDescription>
-          <span>This is a description</span>
-        </TextFieldDescription>
+        <TextFieldDescription>This is a description</TextFieldDescription>
       )}
     </DateField>
   ),

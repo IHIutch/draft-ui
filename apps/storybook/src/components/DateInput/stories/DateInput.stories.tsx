@@ -1,15 +1,15 @@
-import { DateField, DateInput, DateInputContent, DateSegment } from 'ui'
+import { DateField, DateInput, DateInputGroup, DateSegment } from 'ui'
 
 import { type Meta, type StoryObj } from '@storybook/react'
 
-const meta: Meta<typeof DateInputContent> = {
+const meta: Meta<typeof DateInputGroup> = {
   title: 'DateInput',
-  component: DateInputContent,
+  component: DateInputGroup,
 }
 
 export default meta
 
-export const Default: StoryObj<typeof DateInputContent> = {
+export const Default: StoryObj<typeof DateInputGroup> = {
   argTypes: {
     validationState: {
       type: 'string',
@@ -28,9 +28,9 @@ export const Default: StoryObj<typeof DateInputContent> = {
   },
   render: (props) => (
     <DateField>
-      <DateInputContent {...props}>
+      <DateInputGroup {...props}>
         <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
-      </DateInputContent>
+      </DateInputGroup>
     </DateField>
   ),
 }

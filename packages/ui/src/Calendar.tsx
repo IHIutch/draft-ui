@@ -122,29 +122,17 @@ const _CalendarFooter = (props: HTMLAttributes<HTMLDivElement>) => {
   return <footer {...props} />
 }
 
-const _CalendarNextButton = ({ className, ...props }: _IconButtonProps) => {
+const _CalendarNextButton = (props: _IconButtonProps) => {
   return (
-    <IconButton
-      className={className}
-      variant="outline"
-      size="xs"
-      slot="next"
-      {...props}
-    >
+    <IconButton variant="outline" size="xs" slot="next" {...props}>
       <ChevronRight size="1em" strokeWidth="3" />
     </IconButton>
   )
 }
 
-const _CalendarPrevButton = ({ className, ...props }: _IconButtonProps) => {
+const _CalendarPrevButton = (props: _IconButtonProps) => {
   return (
-    <IconButton
-      className={className}
-      variant="outline"
-      size="xs"
-      slot="previous"
-      {...props}
-    >
+    <IconButton variant="outline" size="xs" slot="previous" {...props}>
       <ChevronLeft size="1em" strokeWidth="3" />
     </IconButton>
   )

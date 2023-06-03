@@ -38,7 +38,9 @@ export const Default: StoryObj<typeof DateRangePicker> = {
         <DateInput slot="start">
           {(segment) => <DateSegment segment={segment} />}
         </DateInput>
-        <span aria-hidden="true">–</span>
+        <span aria-hidden="true" className="px-2">
+          –
+        </span>
         <DateInput slot="end">
           {(segment) => <DateSegment segment={segment} />}
         </DateInput>

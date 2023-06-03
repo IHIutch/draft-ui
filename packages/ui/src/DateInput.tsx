@@ -1,22 +1,27 @@
 'use client'
 
-import { type ReactNode } from 'react'
-
 import { cva, type VariantProps } from 'class-variance-authority'
 import {
+  DateField,
   DateInput,
   DateSegment,
   Group,
+  type DateFieldProps,
   type DateInputProps,
   type DateSegmentProps,
+  type DateValue,
+  type GroupProps,
 } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
-const dateInputVariants = cva(
+import { IconButton, type _IconButtonProps } from './IconButton'
+
+const dateInputGroupVariants = cva(
   [
     'inline-flex', // Using .inline-flex here, as opposed to .flex appears to fix this issue https://github.com/adobe/react-spectrum/issues/3164
-    'w-full items-center gap-2 border bg-transparent placeholder:text-slate-400 focus-within:ring-2 focus-within:ring-slate-400 focus-within:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:text-slate-50 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900',
+    'w-full items-center border bg-transparent placeholder:text-slate-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:text-slate-50 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900',
+    'data-[focus-visible]:ring-2 data-[focus-visible]:ring-slate-400 data-[focus-visible]:ring-offset-2',
   ],
   {
     variants: {
@@ -37,30 +42,10 @@ const dateInputVariants = cva(
   }
 )
 
-export interface _DateInputProps
-  extends VariantProps<typeof dateInputVariants> {
+export interface _DateInputGroupProps
+  extends GroupProps,
+    VariantProps<typeof dateInputGroupVariants> {
   className?: string
-  children: ReactNode
-}
-
-const _DateInputContent = ({
-  className,
-  validationState,
-  size,
-  ...props
-}: _DateInputProps) => {
-  return (
-    <div
-      className={cn(
-        dateInputVariants({
-          size,
-          validationState,
-          className,
-        })
-      )}
-      {...props}
-    />
-  )
 }
 
 const _DateInputGroup = ({
@@ -68,11 +53,11 @@ const _DateInputGroup = ({
   validationState,
   size,
   ...props
-}: _DateInputProps) => {
+}: _DateInputGroupProps) => {
   return (
     <Group
       className={cn(
-        dateInputVariants({
+        dateInputGroupVariants({
           size,
           validationState,
           className,
@@ -83,8 +68,23 @@ const _DateInputGroup = ({
   )
 }
 
+const _DateField = <T extends DateValue>(props: DateFieldProps<T>) => {
+  return <DateField {...props} />
+}
+
 const _DateInput = ({ className, ...props }: DateInputProps) => {
-  return <DateInput className={cn('flex', className)} {...props} />
+  return <DateInput className={cn('flex gap-1', className)} {...props} />
+}
+
+const _DatePickerButton = ({ className, ...props }: _IconButtonProps) => {
+  return (
+    <div className="absolute inset-y-0 right-0 flex items-center p-1">
+      <IconButton
+        className={cn('group-[[data-empty]]:hidden', className)}
+        {...props}
+      />
+    </div>
+  )
 }
 
 const _DateSegment = ({ className, ...props }: DateSegmentProps) => {
@@ -103,8 +103,9 @@ const _DateSegment = ({ className, ...props }: DateSegmentProps) => {
 }
 
 export {
-  _DateInputContent as DateInputContent,
+  _DateField as DateField,
   _DateInputGroup as DateInputGroup,
   _DateInput as DateInput,
+  _DatePickerButton as DatePickerButton,
   _DateSegment as DateSegment,
 }
