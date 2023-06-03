@@ -2,6 +2,7 @@
 
 import '@/styles/globals.css'
 
+import { Inter } from 'next/font/google'
 import { SSRProvider } from 'react-aria-components'
 
 import Analytics from '@/components/Analytics'
@@ -12,6 +13,11 @@ interface DocsLayoutProps {
   children: React.ReactNode
 }
 
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+})
+
 export default function DocsLayout({ children }: DocsLayoutProps) {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
@@ -20,7 +26,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
       head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
     */}
       <head />
-      <body className="h-full">
+      <body className={`h-full ${inter.className}`}>
         <SSRProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
