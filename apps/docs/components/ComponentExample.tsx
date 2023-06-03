@@ -29,7 +29,7 @@ export default function ComponentExample({
         </TabList>
         <TabPanels>
           <TabPanel id="example" className="px-0">
-            <div className="rounded-md border">
+            <div className="not-prose rounded-md border">
               <div
                 className={cn('flex min-h-[350px] justify-center p-10', {
                   'items-center': align === 'center',
