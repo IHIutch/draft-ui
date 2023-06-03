@@ -4,9 +4,7 @@ export function TextFieldWithErrorText() {
   return (
     <TextField>
       <Input size="md" />
-      <TextFieldErrorMessage>
-        <span>This is an error message</span>
-      </TextFieldErrorMessage>
+      <TextFieldErrorMessage>This is an error message</TextFieldErrorMessage>
     </TextField>
   )
 }

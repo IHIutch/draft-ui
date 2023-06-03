@@ -37,13 +37,9 @@ export const Default: StoryObj<typeof TextField> = {
       <Label>Label</Label>
       <Input validationState={props.validationState} size="md" />
       {props.validationState === 'invalid' ? (
-        <TextFieldErrorMessage>
-          <span>This is an error message</span>
-        </TextFieldErrorMessage>
+        <TextFieldErrorMessage>This is an error message</TextFieldErrorMessage>
       ) : (
-        <TextFieldDescription>
-          <span>This is a description</span>
-        </TextFieldDescription>
+        <TextFieldDescription>This is a description</TextFieldDescription>
       )}
     </TextField>
   ),
