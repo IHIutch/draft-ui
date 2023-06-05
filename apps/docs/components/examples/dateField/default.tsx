@@ -1,16 +1,9 @@
-import {
-  DateField,
-  DateInput,
-  DateInputContent,
-  DateSegment,
-} from '@/components/ui'
+import { DateField, DateInput, DateSegment } from '@/components/ui'
 
 export function DateFieldDefault() {
   return (
     <DateField className="w-56">
-      <DateInputContent>
-        <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
-      </DateInputContent>
+      <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
     </DateField>
   )
 }
