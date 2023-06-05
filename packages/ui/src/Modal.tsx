@@ -64,7 +64,9 @@ const _ModalContent = ({
       )}
       {...props}
     >
-      <Dialog className="outline-none">{children}</Dialog>
+      <Dialog className="relative flex flex-col outline-none">
+        {children}
+      </Dialog>
     </Modal>
   )
 }
@@ -92,7 +94,7 @@ const _ModalOverlay = ({
 const _ModalHeader = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
   return (
     <header
-      className={cn('px-6 py-4 text-xl font-semibold', className)}
+      className={cn('px-6 py-4 shrink-0 text-xl font-semibold', className)}
       {...props}
     />
   )
@@ -102,7 +104,7 @@ const _ModalBody = ({
   className,
   ...props
 }: HTMLAttributes<HTMLDivElement>) => {
-  return <div className={cn('px-6 py-2', className)} {...props} />
+  return <div className={cn('px-6 py-2 flex-1', className)} {...props} />
 }
 
 const _ModalFooter = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
