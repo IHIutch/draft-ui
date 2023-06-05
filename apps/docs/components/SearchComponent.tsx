@@ -16,7 +16,7 @@ export default function SearchComponent() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="h-full w-full">
+    <div>
       <Button size="sm" variant="outline" onPress={() => setIsOpen(true)}>
         <div className="flex items-center text-slate-600">
           <Search className="h-4 w-4" />

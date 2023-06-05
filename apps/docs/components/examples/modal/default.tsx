@@ -29,11 +29,7 @@ export function ModalDefault() {
             </p>
           </ModalBody>
           <ModalFooter className="flex">
-            <Button
-              autoFocus
-              className="ml-auto"
-              onPress={() => setIsOpen(false)}
-            >
+            <Button className="ml-auto" onPress={() => setIsOpen(false)}>
               Close
             </Button>
             <Button
