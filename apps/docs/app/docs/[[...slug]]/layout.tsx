@@ -2,8 +2,6 @@ import Navigation from '@/components/Navigation'
 import NavItems from '@/components/NavItems'
 import { getDocsMetadata } from '@/lib/server'
 
-import '@/styles/globals.css'
-
 interface DocsLayoutProps {
   children: React.ReactNode
 }
