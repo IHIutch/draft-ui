@@ -17,11 +17,14 @@ export default function SearchComponent() {
 
   return (
     <div>
-      <Button size="sm" variant="outline" onPress={() => setIsOpen(true)}>
-        <div className="flex items-center text-slate-600">
-          <Search className="h-4 w-4" />
-          <span className="ml-2 font-normal">Search the docs...</span>
-        </div>
+      <Button
+        size="sm"
+        variant="outline"
+        onPress={() => setIsOpen(true)}
+        className="flex items-center text-slate-600 md:w-72"
+      >
+        <Search className="h-4 w-4" />
+        <span className="ml-2 font-normal">Search the docs...</span>
       </Button>
       {isOpen ? (
         <DocSearchModal

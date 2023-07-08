@@ -1,5 +1,5 @@
+import LinkList from '@/components/LinkList'
 import Navigation from '@/components/Navigation'
-import NavItems from '@/components/NavItems'
 import { getDocsMetadata } from '@/lib/server'
 
 interface DocsLayoutProps {
@@ -12,16 +12,45 @@ export default async function DocsLayout({ children }: DocsLayoutProps) {
     .filter((doc) => doc.frontmatter.isComponent === true)
     .sort((a, b) => a.frontmatter.title.localeCompare(b.frontmatter.title))
 
+  const gettingStartedLinks = [
+    {
+      slug: '/getting-started',
+      label: 'Getting Started',
+    },
+    {
+      slug: '/installation',
+      label: 'Installation',
+    },
+    {
+      slug: '/about',
+      label: 'About',
+    },
+    {
+      slug: '/changelog',
+      label: 'Changelog',
+    },
+  ]
+
   return (
     <div className="container mx-auto h-full px-4">
       <Navigation componentList={componentList} />
       <aside className="fixed top-0 hidden h-full shrink-0 border-r pt-14 md:w-56 lg:block">
         <nav className="h-full overflow-y-auto py-10">
-          <h2 className="text-base font-semibold text-zinc-900 dark:text-white">
-            Components
-          </h2>
-          <div className="relative mt-3 pr-3">
-            <NavItems componentList={componentList} />
+          <div className="mb-4">
+            <h4 className="text-base font-semibold text-zinc-900 dark:text-white">
+              Getting Started
+            </h4>
+            <div className="mt-3 pr-3">
+              <LinkList list={gettingStartedLinks} />
+            </div>
+          </div>
+          <div>
+            <h4 className="text-base font-semibold text-zinc-900 dark:text-white">
+              Components
+            </h4>
+            <div className="mt-3 pr-3">
+              <LinkList list={componentList} />
+            </div>
           </div>
         </nav>
       </aside>

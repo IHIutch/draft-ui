@@ -1,9 +1,6 @@
 'use client'
 
-import { createElement, useState, type ReactNode } from 'react'
-
-import clsx from 'clsx'
-import { Link as LinkIcon } from 'lucide-react'
+import { createElement, type ReactNode } from 'react'
 
 export default function Heading({
   id,
@@ -14,22 +11,11 @@ export default function Heading({
   level: number
   children: ReactNode
 }) {
-  const [isToolTipVisible, setIsToolTipVisible] = useState(false)
   const headingEl = createElement(
     `h${level}`,
     { id, className: 'mt-0 scroll-mt-24' },
     children
   )
-  const copyLinkToClipboard = () => {
-    setIsToolTipVisible(true)
-    navigator.clipboard.writeText(
-      `${window.location.origin}${window.location.pathname}#${id}`
-    )
-
-    setTimeout(() => {
-      setIsToolTipVisible(false)
-    }, 800)
-  }
 
   return (
     <div className="mt-[2em]">

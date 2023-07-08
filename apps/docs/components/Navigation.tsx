@@ -17,8 +17,8 @@ import {
 import { type ComponentMetadataProps } from '@/lib/server'
 import { cn } from '@/lib/utils'
 
+import LinkList from './LinkList'
 import { ModeToggle } from './ModeToggle'
-import NavItems from './NavItems'
 import SearchComponent from './SearchComponent'
 
 export default function Navigation({
@@ -27,6 +27,25 @@ export default function Navigation({
   componentList: ComponentMetadataProps[]
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const gettingStartedLinks = [
+    {
+      slug: '/getting-started',
+      label: 'Getting Started',
+    },
+    {
+      slug: '/installation',
+      label: 'Installation',
+    },
+    {
+      slug: '/about',
+      label: 'About',
+    },
+    {
+      slug: '/changelog',
+      label: 'Changelog',
+    },
+  ]
 
   return (
     <div className="fixed inset-x-0 top-0 z-10 h-14 border-b bg-white shadow-sm">
@@ -41,18 +60,21 @@ export default function Navigation({
         </Link>
         {/* Desktop Nav */}
         <div className="hidden grow items-center lg:flex">
-          <div className="ml-14">
-            <Link href="/docs/components" className="font-semibold">
+          <div className="ml-14 flex items-center gap-8">
+            <Link href="/docs/getting-started" className="text-sm font-medium">
+              Getting Started
+            </Link>
+            <Link href="/docs/components" className="text-sm font-medium">
               Components
             </Link>
-          </div>
-          <div className="pl-4">
-            <SearchComponent />
           </div>
           <div className="ml-auto">
             <div className="flex gap-2">
               <div>
-                <Link
+                <SearchComponent />
+              </div>
+              <div>
+                <a
                   className={cn(
                     iconButtonVariants({ size: 'sm', variant: 'ghost' })
                   )}
@@ -62,7 +84,7 @@ export default function Navigation({
                   aria-label="Link to GitHub repository"
                 >
                   <GithubIcon size="20" aria-hidden="true" />
-                </Link>
+                </a>
               </div>
               <div>
                 <ModeToggle />
@@ -77,7 +99,7 @@ export default function Navigation({
           </div>
           <div className="flex items-center gap-1">
             <div>
-              <Link
+              <a
                 className={cn(
                   iconButtonVariants({ size: 'sm', variant: 'ghost' })
                 )}
@@ -87,7 +109,7 @@ export default function Navigation({
                 aria-label="Link to GitHub repository"
               >
                 <GithubIcon size="20" aria-hidden="true" />
-              </Link>
+              </a>
             </div>
             <div>
               <ModeToggle />
@@ -119,11 +141,21 @@ export default function Navigation({
                     <XIcon size="1em" />
                   </IconButton>
                   <ModalBody>
-                    <h2 className="text-base font-semibold text-zinc-900 dark:text-white">
-                      Components
-                    </h2>
-                    <div className="mt-3 pb-6">
-                      <NavItems componentList={componentList} />
+                    <div className="mb-4">
+                      <h4 className="text-base font-semibold text-zinc-900 dark:text-white">
+                        Getting Started
+                      </h4>
+                      <div className="mt-3 pr-3">
+                        <LinkList list={gettingStartedLinks} />
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-base font-semibold text-zinc-900 dark:text-white">
+                        Components
+                      </h4>
+                      <div className="mt-3 pr-3">
+                        <LinkList list={componentList} />
+                      </div>
                     </div>
                   </ModalBody>
                 </ModalContent>
