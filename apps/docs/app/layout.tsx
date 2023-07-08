@@ -3,7 +3,6 @@
 import '@/styles/globals.css'
 
 import { Inter } from 'next/font/google'
-import { SSRProvider } from 'react-aria-components'
 
 import Analytics from '@/components/Analytics'
 import Fathom from '@/components/FathomAnalytics'
@@ -27,11 +26,9 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
     */}
       <head />
       <body className={`h-full ${inter.className}`}>
-        <SSRProvider>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            {children}
-          </ThemeProvider>
-        </SSRProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
         <Analytics />
         <Fathom />
       </body>
