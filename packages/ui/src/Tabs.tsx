@@ -4,11 +4,9 @@ import {
   Tab,
   TabList,
   TabPanel,
-  TabPanels,
   Tabs,
   type TabListProps,
   type TabPanelProps,
-  type TabPanelsProps,
   type TabProps,
   type TabsProps,
 } from 'react-aria-components'
@@ -74,10 +72,6 @@ const _Tab = ({ className, ...props }: TabProps) => {
   )
 }
 
-const _TabPanels = <T extends object>(props: TabPanelsProps<T>) => {
-  return <TabPanels {...props} />
-}
-
 const _TabPanel = ({ className, ...props }: TabPanelProps) => {
   return <TabPanel className={cn('p-4', className)} {...props} />
 }
@@ -86,6 +80,5 @@ export {
   _Tabs as Tabs,
   _TabList as TabList,
   _Tab as Tab,
-  _TabPanels as TabPanels,
   _TabPanel as TabPanel,
 }

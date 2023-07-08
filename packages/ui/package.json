@@ -12,11 +12,11 @@
     "react": "^18.2.0"
   },
   "dependencies": {
-    "class-variance-authority": "^0.4.0",
+    "class-variance-authority": "^0.6.1",
     "clsx": "^1.2.1",
-    "lucide-react": "^0.176.0",
-    "react-aria-components": "1.0.0-alpha.4",
-    "tailwind-merge": "^1.13.0"
+    "lucide-react": "^0.259.0",
+    "react-aria-components": "1.0.0-alpha.5",
+    "tailwind-merge": "^1.13.2"
   },
   "devDependencies": {
     "@types/react": "18.0.27",
