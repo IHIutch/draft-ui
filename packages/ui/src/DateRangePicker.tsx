@@ -4,13 +4,17 @@ import {
   DateRangePicker,
   Dialog,
   Popover,
+  type DateRangePickerProps,
+  type DateValue,
   type DialogProps,
   type PopoverProps,
 } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
-const _DateRangePicker = (props) => {
+const _DateRangePicker = <T extends DateValue>(
+  props: DateRangePickerProps<T>
+) => {
   return <DateRangePicker {...props} />
 }
 

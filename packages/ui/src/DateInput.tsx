@@ -15,8 +15,6 @@ import {
 
 import { cn } from '@/lib/utils'
 
-import { IconButton, type _IconButtonProps } from './IconButton'
-
 const dateInputGroupVariants = cva(
   [
     'inline-flex', // Using .inline-flex here, as opposed to .flex appears to fix this issue https://github.com/adobe/react-spectrum/issues/3164
@@ -76,17 +74,6 @@ const _DateInput = ({ className, ...props }: DateInputProps) => {
   return <DateInput className={cn('flex gap-1', className)} {...props} />
 }
 
-const _DatePickerButton = ({ className, ...props }: _IconButtonProps) => {
-  return (
-    <div className="absolute inset-y-0 right-0 flex items-center p-1">
-      <IconButton
-        className={cn('group-[[data-empty]]:hidden', className)}
-        {...props}
-      />
-    </div>
-  )
-}
-
 const _DateSegment = ({ className, ...props }: DateSegmentProps) => {
   return (
     <DateSegment
@@ -106,6 +93,5 @@ export {
   _DateField as DateField,
   _DateInputGroup as DateInputGroup,
   _DateInput as DateInput,
-  _DatePickerButton as DatePickerButton,
   _DateSegment as DateSegment,
 }
