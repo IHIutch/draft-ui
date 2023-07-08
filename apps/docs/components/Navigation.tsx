@@ -3,6 +3,7 @@
 import { useState } from 'react'
 
 import { GithubIcon, MenuIcon, XIcon } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import {
   IconButton,
@@ -30,8 +31,13 @@ export default function Navigation({
   return (
     <div className="fixed inset-x-0 top-0 z-10 h-14 border-b bg-white shadow-sm">
       <div className="mx-auto flex h-full w-full items-center px-4">
-        <Link href="/" aria-label="Home" className="font-semibold">
-          Draft UI
+        <Link
+          href="/"
+          aria-label="Home"
+          className="flex items-center gap-2 font-semibold"
+        >
+          <Image src="/draft_ui.svg" alt="" width={30} height={30} />
+          <span>Draft UI</span>
         </Link>
         {/* Desktop Nav */}
         <div className="hidden grow items-center lg:flex">
