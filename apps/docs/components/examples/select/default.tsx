@@ -10,7 +10,7 @@ import {
 
 export function SelectDefault() {
   return (
-    <Select>
+    <Select className="w-full">
       <Button
         variant="outline"
         className="flex w-full items-center justify-between gap-2 font-normal"

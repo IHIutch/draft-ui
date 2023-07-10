@@ -10,7 +10,7 @@ import {
 
 export function ComboBoxDefault() {
   return (
-    <ComboBox>
+    <ComboBox defaultSelectedKey="1" className="w-full">
       <div className="relative">
         <ComboBoxInput />
         <ComboBoxButton size="sm" variant="subtle" className="ml-auto shrink-0">
@@ -18,12 +18,24 @@ export function ComboBoxDefault() {
         </ComboBoxButton>
       </div>
       <ComboBoxContent>
-        <ComboBoxItem textValue="Aardvark">Aardvark</ComboBoxItem>
-        <ComboBoxItem textValue="Cat">Cat</ComboBoxItem>
-        <ComboBoxItem textValue="Dog">Dog</ComboBoxItem>
-        <ComboBoxItem textValue="Kangaroo">Kangaroo</ComboBoxItem>
-        <ComboBoxItem textValue="Panda">Panda</ComboBoxItem>
-        <ComboBoxItem textValue="Snake">Snake</ComboBoxItem>
+        <ComboBoxItem id="1" textValue="Aardvark">
+          Aardvark
+        </ComboBoxItem>
+        <ComboBoxItem id="2" textValue="Cat">
+          Cat
+        </ComboBoxItem>
+        <ComboBoxItem id="3" textValue="Dog">
+          Dog
+        </ComboBoxItem>
+        <ComboBoxItem id="4" textValue="Kangaroo">
+          Kangaroo
+        </ComboBoxItem>
+        <ComboBoxItem id="5" textValue="Panda">
+          Panda
+        </ComboBoxItem>
+        <ComboBoxItem id="6" textValue="Snake">
+          Snake
+        </ComboBoxItem>
       </ComboBoxContent>
     </ComboBox>
   )

@@ -14,19 +14,19 @@ export default async function DocsLayout({ children }: DocsLayoutProps) {
 
   const gettingStartedLinks = [
     {
-      slug: '/getting-started',
-      label: 'Getting Started',
+      slug: '/docs/introduction',
+      label: 'Introduction',
     },
     {
-      slug: '/installation',
+      slug: '/docs/installation',
       label: 'Installation',
     },
     {
-      slug: '/about',
+      slug: '/docs/about',
       label: 'About',
     },
     {
-      slug: '/changelog',
+      slug: '/docs/changelog',
       label: 'Changelog',
     },
   ]

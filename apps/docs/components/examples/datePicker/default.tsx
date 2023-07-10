@@ -21,7 +21,7 @@ import {
 
 export function DatePickerDefault() {
   return (
-    <DatePicker className="w-56">
+    <DatePicker className="w-full">
       <DateInputGroup className="pr-1">
         <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
         <IconButton size="sm" variant="subtle" className="ml-auto shrink-0">

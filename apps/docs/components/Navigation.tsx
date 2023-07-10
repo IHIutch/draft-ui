@@ -30,19 +30,19 @@ export default function Navigation({
 
   const gettingStartedLinks = [
     {
-      slug: '/getting-started',
-      label: 'Getting Started',
+      slug: '/docs/introduction',
+      label: 'Introduction',
     },
     {
-      slug: '/installation',
+      slug: '/docs/installation',
       label: 'Installation',
     },
     {
-      slug: '/about',
+      slug: '/docs/about',
       label: 'About',
     },
     {
-      slug: '/changelog',
+      slug: '/docs/changelog',
       label: 'Changelog',
     },
   ]
@@ -61,7 +61,7 @@ export default function Navigation({
         {/* Desktop Nav */}
         <div className="hidden grow items-center lg:flex">
           <div className="ml-14 flex items-center gap-8">
-            <Link href="/docs/getting-started" className="text-sm font-medium">
+            <Link href="/getting-started" className="text-sm font-medium">
               Getting Started
             </Link>
             <Link href="/docs/components" className="text-sm font-medium">

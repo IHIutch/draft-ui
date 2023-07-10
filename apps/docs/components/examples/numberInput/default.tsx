@@ -13,7 +13,12 @@ import {
 
 export function NumberInputDefault() {
   return (
-    <NumberField defaultValue={50} minValue={0} maxValue={100}>
+    <NumberField
+      defaultValue={50}
+      minValue={0}
+      maxValue={100}
+      className="w-full"
+    >
       <Group className="relative">
         <NumberInput />
         <NumberInputStepper>

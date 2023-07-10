@@ -15,6 +15,11 @@ const nextConfig = {
         destination: '/docs/components/breadcrumbs',
         permanent: true,
       },
+      {
+        source: '/getting-started',
+        destination: '/docs/introduction',
+        permanent: true,
+      },
     ]
   },
   webpack: (config) => {

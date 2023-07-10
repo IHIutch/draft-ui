@@ -21,7 +21,7 @@ export default function SearchComponent() {
         size="sm"
         variant="outline"
         onPress={() => setIsOpen(true)}
-        className="flex items-center text-slate-600 md:w-72"
+        className="flex items-center justify-start text-slate-600 md:w-72"
       >
         <Search className="h-4 w-4" />
         <span className="ml-2 font-normal">Search the docs...</span>
