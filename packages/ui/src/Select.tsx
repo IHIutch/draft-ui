@@ -17,7 +17,7 @@ import {
 import { cn } from '@/lib/utils'
 
 const _Select = <T extends object>({ className, ...props }: SelectProps<T>) => {
-  return <Select className={cn('w-full', className)} {...props} />
+  return <Select className={className} {...props} />
 }
 
 export interface _SelectContentProps<T>
