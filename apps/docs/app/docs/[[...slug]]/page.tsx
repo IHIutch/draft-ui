@@ -34,7 +34,7 @@ export default async function DocPage({ params }: DocPageProps) {
   return (
     <>
       <article className="my-12 w-full">
-        <div className="prose mx-auto">
+        <div className="prose prose-slate mx-auto">
           <h1>{frontmatter.title}</h1>
           <p className="lead">{frontmatter.description}</p>
           <MarkdocContent content={JSON.parse(JSON.stringify(content))} />
