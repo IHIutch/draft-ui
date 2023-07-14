@@ -86,9 +86,9 @@ export default function Navigation({
                   <GithubIcon size="20" aria-hidden="true" />
                 </a>
               </div>
-              <div>
+              {/* <div>
                 <ModeToggle />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -111,9 +111,9 @@ export default function Navigation({
                 <GithubIcon size="20" aria-hidden="true" />
               </a>
             </div>
-            <div>
+            {/* <div>
               <ModeToggle />
-            </div>
+            </div> */}
             <div>
               <IconButton
                 aria-label="Open Navigation Menu"
