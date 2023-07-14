@@ -14,17 +14,17 @@ export default async function Home() {
       <Navigation componentList={componentList} />
       <div className="container mx-auto px-4 pb-8 pt-20">
         <div className="mx-auto max-w-[1024px] text-center">
-          <h1 className="text-7xl font-extrabold">
+          <h1 className="text-5xl font-extrabold md:text-7xl">
             Accessibility doesn&apos;t <br className="hidden lg:inline" /> have
             to be hard
           </h1>
-          <div className="mx-auto mt-12 max-w-[768px] text-2xl ">
-            <p className="leading-normal text-slate-600">
+          <div className="mx-auto mt-12 max-w-[768px]">
+            <p className="text-lg leading-normal text-slate-600 md:text-2xl">
               Draft UI is a collection of simply designed React components
               focused on making web accessibility as easy as copy & paste.
             </p>
             <CtaSection />
-            <p className="mt-32 text-base text-slate-600">
+            <p className="mt-32 text-sm text-slate-600 md:text-base">
               Built with{' '}
               <a
                 href="https://react-spectrum.adobe.com/react-aria/react-aria-components.html"
@@ -51,7 +51,7 @@ export default async function Home() {
         <div className="container mx-auto px-4">
           <div>
             <div className="mx-auto text-center">
-              <h2 className="text-center text-5xl font-extrabold">
+              <h2 className="text-center text-4xl font-extrabold md:text-5xl">
                 25+ Accessible Components
               </h2>
               {/* <p className="mt-4 text-xl text-slate-700">
@@ -64,8 +64,8 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <footer className="container mx-auto flex justify-between px-4 py-8">
-        <p className="text-sm text-slate-600">
+      <footer className="container mx-auto justify-between px-4 py-8 text-center md:flex md:text-left">
+        <p className="mb-4 text-sm text-slate-600 md:mb-0">
           Built with{' '}
           <a
             href="https://react-spectrum.adobe.com/react-aria/react-aria-components.html"
