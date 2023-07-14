@@ -4,8 +4,8 @@ export default function About() {
   return (
     <div className="my-12 w-full">
       <div className="prose prose-slate mx-auto">
-        <h1>About</h1>
-        <p className="lead">
+        <h1 className="mb-4">About</h1>
+        <p className="lead mt-4">
           The purpose of Draft UI is to make building accessible applications
           faster and easier than ever
         </p>
