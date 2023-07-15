@@ -15,7 +15,9 @@ export async function getDocContent(path: string) {
     `${contentDir}.mdx`
   )
 
-  const ast = Markdoc.parse(fileContent)
+  const tokenizer = new Markdoc.Tokenizer({ allowComments: true })
+  const tokens = tokenizer.tokenize(fileContent)
+  const ast = Markdoc.parse(tokens)
   const content = Markdoc.transform(ast, {
     tags: {
       ComponentExample,
