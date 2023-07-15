@@ -5,6 +5,7 @@ import { CheckboxGroupDefault } from './checkboxGroup/default'
 import { ComboBoxDefault } from './comboBox/default'
 import { DateFieldDefault } from './dateField/default'
 import { DatePickerDefault } from './datePicker/default'
+import { DateRangePickerDefault } from './dateRangePicker/default'
 import { IconButtonDefault } from './iconButton/default'
 import { InputDefault } from './input/default'
 import { LabelDefault } from './label/default'
@@ -44,6 +45,8 @@ export const exampleComponents = {
   DateFieldDefault,
   // DatePicker
   DatePickerDefault,
+  // DateRangePicker
+  DateRangePickerDefault,
   // IconButton
   IconButtonDefault,
   // Input
