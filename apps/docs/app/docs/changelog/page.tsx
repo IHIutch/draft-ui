@@ -21,6 +21,11 @@ export default function Changelog() {
               Docs updated; content pages are live including installation
               instructions
             </li>
+            <li>Components and the rest of the site support dark mode.</li>
+            <li>
+              Tabs now use <code>--border-width</code> variable to avoid issues
+              with nested tabs
+            </li>
           </ul>
         </div>
       </div>
