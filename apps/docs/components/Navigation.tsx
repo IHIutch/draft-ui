@@ -1,10 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { GithubIcon, MenuIcon, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import {
   IconButton,
   iconButtonVariants,
@@ -26,7 +27,12 @@ export default function Navigation({
 }: {
   componentList: ComponentMetadataProps[]
 }) {
+  const pathname = usePathname()
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  useEffect(() => {
+    setIsModalOpen(false)
+  }, [pathname])
 
   const gettingStartedLinks = [
     {
@@ -93,8 +99,8 @@ export default function Navigation({
           </div>
         </div>
         {/* Mobile Nav */}
-        <div className="flex grow lg:hidden">
-          <div className="flex grow justify-center">
+        <div className="flex grow justify-end lg:hidden">
+          <div className="flex md:grow md:justify-center">
             <SearchComponent />
           </div>
           <div className="flex items-center gap-1">
