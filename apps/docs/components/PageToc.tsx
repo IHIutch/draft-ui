@@ -14,7 +14,7 @@ export default function PageToc({
   return (
     <div>
       <div className="mb-3">
-        <span className="text-base font-semibold text-zinc-900 dark:text-white">
+        <span className="text-base font-semibold text-slate-900 dark:text-white">
           On This Page
         </span>
       </div>
@@ -26,8 +26,8 @@ export default function PageToc({
               className={cn(
                 'inline-block no-underline transition text-sm py-1',
                 h.id === activeHeading
-                  ? 'text-zinc-900 dark:text-white'
-                  : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white',
+                  ? 'text-slate-900 dark:text-white'
+                  : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white',
                 h.level === 3 && 'pl-3'
               )}
             >

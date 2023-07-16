@@ -19,18 +19,18 @@ export default async function Home() {
             to be hard
           </h1>
           <div className="mx-auto mt-12 max-w-[768px]">
-            <p className="text-lg leading-normal text-slate-600 md:text-2xl">
+            <p className="text-lg leading-normal text-slate-600 dark:text-slate-400 md:text-2xl">
               Draft UI is a collection of simply designed React components
               focused on making web accessibility as easy as copy & paste.
             </p>
             <CtaSection />
-            <p className="mt-32 text-sm text-slate-600 md:text-base">
+            <p className="mt-32 text-sm text-slate-600 dark:text-slate-400 md:text-base">
               Built with{' '}
               <a
                 href="https://react-spectrum.adobe.com/react-aria/react-aria-components.html"
                 target="_blank"
                 rel="noopener"
-                className="font-medium text-black underline"
+                className="font-medium text-black underline dark:text-white"
               >
                 React Aria Components
               </a>{' '}
@@ -39,7 +39,7 @@ export default async function Home() {
                 href="https://tailwindcss.com/"
                 target="_blank"
                 rel="noopener"
-                className="font-medium text-black underline"
+                className="font-medium text-black underline dark:text-white"
               >
                 Tailwind CSS
               </a>
@@ -47,16 +47,13 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-slate-50 py-24">
+      <div className="bg-slate-50 py-24 dark:border-y dark:border-slate-800 dark:bg-slate-900">
         <div className="container mx-auto px-4">
           <div>
             <div className="mx-auto text-center">
               <h2 className="text-center text-4xl font-extrabold md:text-5xl">
                 25+ Accessible Components
               </h2>
-              {/* <p className="mt-4 text-xl text-slate-700">
-                Ready to copy and paste
-              </p> */}
             </div>
           </div>
           <div className="mt-12">
@@ -65,13 +62,13 @@ export default async function Home() {
         </div>
       </div>
       <footer className="container mx-auto justify-between px-4 py-8 text-center md:flex md:text-left">
-        <p className="mb-4 text-sm text-slate-600 md:mb-0">
+        <p className="mb-4 text-sm text-slate-600 dark:text-slate-400 md:mb-0">
           Built with{' '}
           <a
             href="https://react-spectrum.adobe.com/react-aria/react-aria-components.html"
             target="_blank"
             rel="noopener"
-            className="font-medium text-black underline"
+            className="font-medium text-black underline dark:text-white"
           >
             React Aria Components
           </a>{' '}
@@ -80,18 +77,18 @@ export default async function Home() {
             href="https://tailwindcss.com/"
             target="_blank"
             rel="noopener"
-            className="font-medium text-black underline"
+            className="font-medium text-black underline dark:text-white"
           >
             Tailwind CSS
           </a>
         </p>
-        <p className="text-sm text-slate-600">
+        <p className="text-sm text-slate-600 dark:text-slate-400">
           Powered by{' '}
           <a
             href="https://vercel.com/"
             target="_blank"
             rel="noopener"
-            className="font-medium text-black underline"
+            className="font-medium text-black underline dark:text-white"
           >
             Vercel
           </a>

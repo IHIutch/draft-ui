@@ -18,7 +18,7 @@ const _MeterTrack = ({
   return (
     <div
       className={cn(
-        'h-2 w-full overflow-hidden rounded bg-slate-200',
+        'h-2 w-full overflow-hidden rounded bg-slate-200 dark:bg-slate-700',
         className
       )}
       {...props}
@@ -39,7 +39,7 @@ const _MeterFilledTrack = ({
 }: _MeterFilledTrackProps) => {
   return (
     <div
-      className={cn('h-full bg-black', className)}
+      className={cn('h-full bg-black dark:bg-white', className)}
       style={{ width: percentage + '%' }}
       {...props}
     />

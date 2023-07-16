@@ -16,16 +16,23 @@ const _Tooltip = (props: TooltipTriggerComponentProps) => {
 const _TooltipContent = ({ className, children, ...props }: TooltipProps) => {
   return (
     <Tooltip
-      offset={4}
+      offset={6}
       className={cn(
         [
-          'fill-mode-forwards rounded-sm bg-slate-700 px-1 py-0.5 text-sm text-white',
+          'fill-mode-forwards',
+          'rounded-sm bg-slate-700 dark:bg-slate-300 px-1 py-0.5 text-sm text-white dark:text-black',
+          // Entering
           'data-[entering]:animate-in data-[entering]:fade-in',
+          // Exiting
           'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
-          'data-[placement=top]:slide-in-from-bottom-2',
-          'data-[placement=right]:slide-in-from-left-2',
-          'data-[placement=bottom]:slide-in-from-top-2',
-          'data-[placement=left]:slide-in-from-right-2',
+          // Top
+          'data-[placement=top]:slide-in-from-bottom-1',
+          // Right
+          'data-[placement=right]:slide-in-from-left-1',
+          // Bottom
+          'data-[placement=bottom]:slide-in-from-top-1',
+          // Left
+          'data-[placement=left]:slide-in-from-right-1',
         ],
         className
       )}

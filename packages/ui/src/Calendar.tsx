@@ -34,8 +34,9 @@ const _Calendar = <T extends DateValue>({
   return (
     <Calendar
       className={cn(
-        'w-fit [&_td]:px-0',
-        '[&_td:not([aria-selected])+td[aria-selected]_div]:rounded [&_td:not([aria-selected])+td[aria-selected]_div]:bg-black [&_td:not([aria-selected])+td[aria-selected]_div]:text-white',
+        'w-fit [&_td]:px-0 [&_td:not([aria-selected])+td[aria-selected]_div]:rounded',
+        '[&_td:not([aria-selected])+td[aria-selected]_div]:bg-black [&_td:not([aria-selected])+td[aria-selected]_div]:text-white',
+        'dark:[&_td:not([aria-selected])+td[aria-selected]_div]:bg-white dark:[&_td:not([aria-selected])+td[aria-selected]_div]:text-black',
         className
       )}
       {...props}
@@ -51,7 +52,10 @@ const _RangeCalendar = <T extends DateValue>({
     <RangeCalendar
       className={cn(
         'w-fit [&_td]:px-0',
-        '[&_td[aria-selected]:first-of-type_div]:rounded-s [&_td[aria-selected]:last-of-type_div]:rounded-e',
+        // First date of week
+        '[&_td[aria-selected]:first-of-type_div]:rounded-s',
+        // Last date of week
+        '[&_td[aria-selected]:last-of-type_div]:rounded-e',
         className
       )}
       {...props}
@@ -73,7 +77,10 @@ const _CalendarHeaderCell = ({
 }: CalendarHeaderCellProps) => {
   return (
     <CalendarHeaderCell
-      className={cn('h-8 w-8 text-sm font-medium text-slate-500', className)}
+      className={cn(
+        'h-8 w-10 text-sm font-medium text-slate-500 dark:text-slate-400',
+        className
+      )}
       {...props}
     />
   )
@@ -89,12 +96,21 @@ const _CalendarCell = ({ className, ...props }: CalendarCellProps) => {
   return (
     <CalendarCell
       className={cn(
-        'focus-visible:ring-ring relative flex h-8 w-8 items-center justify-center text-sm transition-all hover:bg-slate-100 focus:ring-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
-        'data-[outside-month]:text-slate-300',
-        'data-[selected]:z-10 data-[selected]:bg-slate-200 [&:not([data-selected])]:rounded',
-        'data-[selected]:data-[selection-start]:rounded-s data-[selected]:data-[selection-start]:bg-black data-[selection-start]:text-white',
-        'data-[selected]:data-[selection-end]:rounded-e data-[selected]:data-[selection-end]:bg-black data-[selection-end]:text-white',
-        'data-[disabled]:cursor-not-allowed data-[disabled]:hover:bg-white',
+        'text-black dark:text-white relative flex h-10 w-10 items-center justify-center text-sm transition-all',
+        // Hover
+        'hover:bg-slate-100 dark:hover:bg-slate-600',
+        // Focus Visible
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900',
+        // Date Outside Current Month
+        'data-[outside-month]:text-slate-300 dark:data-[outside-month]:text-slate-600',
+        // Selected
+        'data-[selected]:z-10 data-[selected]:bg-slate-100 dark:data-[selected]:bg-slate-700 [&:not([data-selected])]:rounded',
+        // Selection Start
+        'data-[selected]:data-[selection-start]:rounded-s data-[selected]:data-[selection-start]:bg-black dark:data-[selected]:data-[selection-start]:bg-white data-[selection-start]:text-white dark:data-[selection-start]:text-black',
+        // Selection End
+        'data-[selected]:data-[selection-end]:rounded-e data-[selected]:data-[selection-end]:bg-black dark:data-[selected]:data-[selection-end]:bg-white data-[selection-end]:text-white dark:data-[selection-end]:text-black',
+        // Disabled
+        'data-[disabled]:cursor-not-allowed data-[disabled]:hover:!bg-transparent',
         className
       )}
       {...props}
@@ -124,16 +140,16 @@ const _CalendarFooter = (props: HTMLAttributes<HTMLDivElement>) => {
 
 const _CalendarNextButton = (props: _IconButtonProps) => {
   return (
-    <IconButton variant="outline" size="xs" slot="next" {...props}>
-      <ChevronRight size="1em" strokeWidth="3" />
+    <IconButton variant="outline" size="sm" slot="next" {...props}>
+      <ChevronRight size="16" strokeWidth="3" />
     </IconButton>
   )
 }
 
 const _CalendarPrevButton = (props: _IconButtonProps) => {
   return (
-    <IconButton variant="outline" size="xs" slot="previous" {...props}>
-      <ChevronLeft size="1em" strokeWidth="3" />
+    <IconButton variant="outline" size="sm" slot="previous" {...props}>
+      <ChevronLeft size="16" strokeWidth="3" />
     </IconButton>
   )
 }

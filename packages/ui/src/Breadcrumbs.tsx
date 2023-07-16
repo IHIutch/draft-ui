@@ -36,10 +36,14 @@ const _BreadcrumbItem = ({
 }: _BreadcrumbItemProps) => {
   return (
     <Item className="flex items-center gap-1" {...props}>
-      <Link className="text-slate-500 aria-[current=page]:text-black [&:not([aria-current=page])]:hover:underline">
+      <Link className="text-slate-500 aria-[current=page]:text-black dark:text-slate-400 dark:aria-[current=page]:text-white [&:not([aria-current=page])]:hover:underline">
         {children}
       </Link>
-      {separator ? <div aria-hidden="true">{separator}</div> : null}
+      {separator ? (
+        <div aria-hidden="true" className="text-slate-600 dark:text-slate-500">
+          {separator}
+        </div>
+      ) : null}
     </Item>
   )
 }

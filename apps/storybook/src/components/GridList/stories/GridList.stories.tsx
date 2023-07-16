@@ -1,5 +1,5 @@
 import { Info } from 'lucide-react'
-import { Button, Checkbox, GridList, GridListItem, IconButton } from 'ui'
+import { Checkbox, GridList, GridListItem, IconButton } from 'ui'
 
 import { type Meta, type StoryObj } from '@storybook/react'
 

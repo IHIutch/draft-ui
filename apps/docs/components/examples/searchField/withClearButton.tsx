@@ -12,7 +12,7 @@ export function SearchFieldWithClearButton() {
       <div className="relative">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-500"
+          className="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-500 dark:text-slate-400"
         >
           <Search size="18" />
         </div>

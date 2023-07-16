@@ -23,7 +23,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
       head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
     */}
       <head />
-      <body className={`h-full ${inter.className}`}>
+      <body className={`h-full dark:bg-slate-900 ${inter.className}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>

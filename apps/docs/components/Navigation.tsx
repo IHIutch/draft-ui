@@ -48,7 +48,7 @@ export default function Navigation({
   ]
 
   return (
-    <div className="fixed inset-x-0 top-0 z-10 h-14 border-b bg-white shadow-sm">
+    <div className="light:shadow-sm fixed inset-x-0 top-0 z-10 h-14 border-b bg-white dark:border-b dark:border-slate-800 dark:bg-slate-900">
       <div className="mx-auto flex h-full w-full items-center px-4">
         <Link
           href="/"
@@ -86,9 +86,9 @@ export default function Navigation({
                   <GithubIcon size="20" aria-hidden="true" />
                 </a>
               </div>
-              {/* <div>
+              <div>
                 <ModeToggle />
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
@@ -111,9 +111,9 @@ export default function Navigation({
                 <GithubIcon size="20" aria-hidden="true" />
               </a>
             </div>
-            {/* <div>
+            <div>
               <ModeToggle />
-            </div> */}
+            </div>
             <div>
               <IconButton
                 aria-label="Open Navigation Menu"
@@ -142,7 +142,7 @@ export default function Navigation({
                   </IconButton>
                   <ModalBody>
                     <div className="mb-4">
-                      <h4 className="text-base font-semibold text-zinc-900 dark:text-white">
+                      <h4 className="text-base font-semibold text-slate-900 dark:text-white">
                         Getting Started
                       </h4>
                       <div className="mt-3 pr-3">
@@ -150,7 +150,7 @@ export default function Navigation({
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-base font-semibold text-zinc-900 dark:text-white">
+                      <h4 className="text-base font-semibold text-slate-900 dark:text-white">
                         Components
                       </h4>
                       <div className="mt-3 pr-3">

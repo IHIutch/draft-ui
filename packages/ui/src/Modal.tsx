@@ -16,8 +16,11 @@ import { cn } from '@/lib/utils'
 
 const modalVariants = cva(
   [
-    'fill-mode-forwards mx-auto w-full rounded bg-white outline-none',
+    'fill-mode-forwards',
+    'mx-auto w-full rounded bg-white outline-none dark:bg-slate-800',
+    // Entering
     'data-[entering]:animate-in data-[entering]:zoom-in-95',
+    // Exiting
     'data-[exiting]:animate-in data-[exiting]:zoom-in-95 data-[exiting]:direction-reverse',
   ],
   {

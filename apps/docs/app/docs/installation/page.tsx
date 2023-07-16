@@ -28,7 +28,7 @@ export function cn(...inputs: ClassValue[]) {
 
   return (
     <div className="my-12 w-full">
-      <div className="prose prose-slate mx-auto">
+      <div className="prose prose-slate dark:prose-invert mx-auto">
         <h1 className="mb-4">Installation</h1>
         <p className="lead mt-4">
           Here&apos;s everything you need to get started

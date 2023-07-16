@@ -18,8 +18,13 @@ import { cn } from '@/lib/utils'
 const dateInputGroupVariants = cva(
   [
     'inline-flex', // Using .inline-flex here, as opposed to .flex appears to fix this issue https://github.com/adobe/react-spectrum/issues/3164
-    'w-full items-center border bg-transparent placeholder:text-slate-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:text-slate-50 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900',
-    'data-[focus-visible]:ring-2 data-[focus-visible]:ring-slate-400 data-[focus-visible]:ring-offset-2',
+    'w-full items-center border bg-transparent placeholder:text-slate-400 dark:border-slate-700 dark:text-slate-50',
+    // Focus
+    'focus:outline-none',
+    // Focus-visible
+    'data-[focus-visible]:ring-2 data-[focus-visible]:ring-slate-400 data-[focus-visible]:ring-offset-2 dark:data-[focus-visible]:ring-slate-400 dark:data-[focus-visible]:ring-offset-slate-900',
+    // Disabled
+    'disabled:cursor-not-allowed disabled:opacity-50',
   ],
   {
     variants: {
@@ -79,8 +84,11 @@ const _DateSegment = ({ className, ...props }: DateSegmentProps) => {
     <DateSegment
       className={cn(
         'flex items-center rounded px-1 focus:outline-none',
-        'data-[placeholder]:text-slate-500 data-[placeholder]:focus:text-black',
-        'focus:bg-slate-100 focus:text-black',
+        // Placeholder
+        'data-[placeholder]:text-slate-500 data-[placeholder]:focus:text-black dark:data-[placeholder]:focus:text-white',
+        // Focus
+        'focus:bg-slate-100 focus:text-black dark:focus:bg-slate-700 dark:focus:text-white',
+        // Date Separator
         'data-[type=literal]:px-0',
         className
       )}

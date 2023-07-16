@@ -28,11 +28,19 @@ const radioVariants = cva(
 
 const radioInnerVariants = cva(
   [
-    'flex items-center justify-center rounded-full border-2 border-slate-300 bg-white transition-colors',
-    'before:block before:h-1/2 before:w-1/2 before:scale-0 before:rounded-full before:bg-white before:transition-transform before:duration-300 before:content-[""]',
-    'group-[[data-selected=true]]:border-black group-[[data-selected=true]]:bg-black group-[[data-selected=true]]:text-white',
+    'flex items-center justify-center rounded-full border-2 border-slate-300 transition-colors dark:border-slate-600',
+    // ::before
+    'before:block before:h-1/2 before:w-1/2 before:scale-0 before:rounded-full before:bg-white before:transition-transform before:duration-300 before:content-[""] dark:before:bg-black',
+    // Selected
+    'group-[[data-selected=true]]:border-black group-[[data-selected=true]]:bg-black group-[[data-selected=true]]:text-white dark:group-[[data-selected=true]]:border-white dark:group-[[data-selected=true]]:bg-white dark:group-[[data-selected=true]]:text-black',
+    // ::before Selected
     'group-[[data-selected=true]]:before:scale-100',
-    'group-[[data-disabled]]:border-slate-100 group-[[data-selected=true][data-disabled]]:border-slate-100 group-[[data-selected=true][data-disabled]]:bg-slate-100 group-[[data-selected=true][data-disabled]]:before:bg-slate-400',
+    // Focused
+    'group-[[data-focused]]:ring-2 group-[[data-focused]]:ring-slate-400 group-[[data-focused]]:ring-offset-2 dark:group-[[data-focused]]:ring-slate-400 dark:group-[[data-focused]]:ring-offset-slate-900',
+    // Disabled
+    'group-[[data-disabled]]:border-slate-100',
+    // Selected & Disabled
+    'group-[[data-selected=true][data-disabled]]:border-slate-100 group-[[data-selected=true][data-disabled]]:bg-slate-100 group-[[data-selected=true][data-disabled]]:before:bg-slate-400',
   ],
   {
     variants: {

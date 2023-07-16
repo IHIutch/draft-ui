@@ -34,7 +34,7 @@ const _SliderTrack = ({ className, ...props }: SliderTrackProps) => {
         // Horizontal
         'group-[[data-orientation=horizontal]]/slider:h-6 group-[[data-orientation=horizontal]]/slider:w-full',
         // ::before
-        'before:absolute before:block before:rounded-full before:bg-slate-200',
+        'before:absolute before:block before:rounded-full before:bg-slate-200 dark:before:bg-slate-700',
         // ::before Vertical
         'group-[[data-orientation=vertical]]/slider:before:left-1/2 group-[[data-orientation=vertical]]/slider:before:h-full group-[[data-orientation=vertical]]/slider:before:w-2 group-[[data-orientation=vertical]]/slider:before:-translate-x-1/2',
         // ::before Horizontal
@@ -62,7 +62,7 @@ const _SliderFilledTrack = ({
   return (
     <div
       className={cn(
-        'absolute h-2 rounded-full bg-black',
+        'absolute h-2 rounded-full bg-black dark:bg-white',
         // Vertical
         'group-[[data-orientation=vertical]]/slider:bottom-0 group-[[data-orientation=vertical]]/slider:left-1/2 group-[[data-orientation=vertical]]/slider:h-full group-[[data-orientation=vertical]]/slider:w-2 group-[[data-orientation=vertical]]/slider:-translate-x-1/2',
         // Horizontal
@@ -81,11 +81,11 @@ const _SliderThumb = ({ className, ...props }: SliderThumbProps) => {
   return (
     <SliderThumb
       className={cn(
-        'flex h-6 w-6 cursor-pointer items-center justify-center rounded-full bg-white text-xs shadow',
+        'flex h-6 w-6 cursor-pointer items-center justify-center rounded-full bg-white text-xs border-2 border-black dark:border-white dark:bg-slate-900',
         // Dragging
-        'data-[dragging]:outline-none data-[dragging]:ring-2 data-[dragging]:ring-slate-400',
+        'data-[dragging]:outline-none data-[dragging]:ring-2 data-[dragging]:ring-slate-400 data-[dragging]:ring-offset-2 dark:data-[dragging]:ring-offset-slate-900',
         // Focus Visible
-        'data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-slate-400',
+        'data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-slate-400 data-[focus-visible]:ring-offset-2 dark:data-[focus-visible]:ring-offset-slate-900',
         // Vertical
         'group-[[data-orientation=vertical]]/slider:left-1/2',
         // Horizontal

@@ -2,10 +2,10 @@ import { Tab, TabList, TabPanel, Tabs } from '@/components/ui'
 
 export function TabsVertical() {
   return (
-    <Tabs orientation="vertical">
+    <Tabs orientation="vertical" className="w-full">
       <TabList aria-label="History of Ancient Rome">
         <Tab id="FoR">Founding of Rome</Tab>
-        <Tab id="MaR">Monarchy and Republic</Tab>
+        <Tab id="MaR">Monarchy and</Tab>
         <Tab id="Emp">Empire</Tab>
       </TabList>
       <TabPanel id="FoR">

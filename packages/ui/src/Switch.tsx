@@ -18,15 +18,19 @@ const _SwitchIndicator = (props: HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
       className={cn(
-        'h-5 w-8 rounded-full bg-gray-300 p-0.5',
-        'transition-colors group-[[data-selected]]:bg-black'
+        'h-5 w-8 rounded-full bg-gray-300 dark:bg-slate-700 p-0.5 transition-colors',
+        // Focused
+        'group-[[data-focused]]:ring-2 group-[[data-focused]]:ring-slate-400 group-[[data-focused]]:ring-offset-2 dark:group-[[data-focused]]:ring-slate-400 dark:group-[[data-focused]]:ring-offset-slate-900',
+        // Selected
+        'group-[[data-selected]]:bg-black dark:group-[[data-selected]]:bg-slate-400'
       )}
       {...props}
     >
       <div
         className={cn(
-          'h-4 w-4 rounded-full bg-white',
-          'transition-transform group-[[data-selected]]:translate-x-3'
+          'h-4 w-4 rounded-full bg-white dark:bg-white transition-transform',
+          // Selected
+          'group-[[data-selected]]:translate-x-3'
         )}
       />
     </div>

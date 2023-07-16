@@ -36,10 +36,14 @@ const _SelectContent = <T extends object>({
     <Popover
       className={cn(
         'fill-mode-forwards',
-        'min-w-[--trigger-width] overflow-auto rounded-md border border-slate-200 bg-white p-1 shadow-md',
+        'min-w-[--trigger-width] overflow-auto rounded-md border border-slate-200 bg-white p-1 shadow-md dark:border-slate-700 dark:bg-slate-800',
+        // Entering
         'data-[entering]:animate-in data-[entering]:fade-in',
+        // Exiting
         'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
+        // Top
         'data-[placement=top]:slide-in-from-bottom-2',
+        // Bottom
         'data-[placement=bottom]:slide-in-from-top-2',
         popoverClassName
       )}
@@ -55,8 +59,8 @@ const _SelectItem = ({ className, children, ...props }: ItemProps) => {
     <Item
       className={cn(
         'group',
-        'flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors',
-        'data-[focused]:bg-slate-100',
+        'flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors cursor-pointer',
+        'data-[focused]:bg-slate-100 dark:data-[focused]:bg-slate-700',
         className
       )}
       {...props}

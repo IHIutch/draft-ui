@@ -42,7 +42,8 @@ const _ComboBoxContent = <T extends object>({
   return (
     <Popover
       className={cn(
-        'w-[--trigger-width] overflow-auto rounded-md border border-slate-200 bg-white p-1 shadow',
+        'fill-mode-forwards',
+        'w-[--trigger-width] overflow-auto rounded-md border border-slate-200 bg-white p-1 shadow-md dark:border-slate-700 dark:bg-slate-800',
         popoverClassName
       )}
       {...props}
@@ -68,8 +69,8 @@ const _ComboBoxItem = ({ className, children, ...props }: ItemProps) => {
     <Item
       className={cn(
         'group',
-        'flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors',
-        'data-[focused]:bg-slate-100',
+        'flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors cursor-pointer',
+        'data-[focused]:bg-slate-100 dark:data-[focused]:bg-slate-700',
         className
       )}
       {...props}

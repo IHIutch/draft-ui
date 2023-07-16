@@ -8,12 +8,12 @@ import { IconButton, Input, NumberField } from '@/components/ui'
 export function NumberInputMobile() {
   return (
     <NumberField defaultValue={50} minValue={0} maxValue={100}>
-      <Group className="flex gap-1">
-        <IconButton className="shrink-0" slot="decrement">
+      <Group className="flex gap-2">
+        <IconButton variant="subtle" className="shrink-0" slot="decrement">
           <ChevronUp size="16" strokeWidth="3" />
         </IconButton>
         <Input />
-        <IconButton className="shrink-0" slot="increment">
+        <IconButton variant="subtle" className="shrink-0" slot="increment">
           <ChevronDown size="16" strokeWidth="3" />
         </IconButton>
       </Group>

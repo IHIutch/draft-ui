@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils'
 const checkboxVariants = cva(
   [
     'group inline-flex cursor-pointer items-center gap-2',
+    // Disabled
     'data-[disabled]:cursor-not-allowed',
   ],
   {
@@ -28,9 +29,14 @@ const checkboxVariants = cva(
 
 const checkboxInnerVariants = cva(
   [
-    'flex items-center justify-center rounded border-2 border-slate-300 bg-white text-white transition-colors',
-    'group-[[data-selected=true]]:border-black group-[[data-selected=true]]:bg-black',
+    'flex items-center justify-center rounded border-2 border-slate-300 text-white transition-colors dark:border-slate-600 dark:text-black',
+    // Focused
+    'group-[[data-focused]]:ring-2 group-[[data-focused]]:ring-slate-400 group-[[data-focused]]:ring-offset-2 dark:group-[[data-focused]]:ring-slate-400 dark:group-[[data-focused]]:ring-offset-slate-900',
+    // Selected
+    'group-[[data-selected=true]]:border-black group-[[data-selected=true]]:bg-black dark:group-[[data-selected=true]]:border-white dark:group-[[data-selected=true]]:bg-white',
+    // Disabled
     'group-[[data-disabled]]:cursor-not-allowed group-[[data-disabled]]:border-slate-100 group-[[data-disabled]]:bg-slate-100',
+    // Selected & Disabled
     'group-[[data-selected=true][data-disabled]]:border-slate-100 group-[[data-selected=true][data-disabled]]:bg-slate-100 group-[[data-selected=true][data-disabled]]:text-slate-400',
   ],
   {

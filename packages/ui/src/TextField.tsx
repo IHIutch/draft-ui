@@ -18,7 +18,10 @@ const _TextFieldDescription = ({ className, ...props }: TextProps) => {
     <Text
       elementType="div"
       slot="description"
-      className={cn('mt-2 text-sm text-slate-500', className)}
+      className={cn(
+        'mt-2 text-sm text-slate-500 dark:text-slate-400',
+        className
+      )}
       {...props}
     />
   )
@@ -29,7 +32,7 @@ const _TextFieldErrorMessage = ({ className, ...props }: TextProps) => {
     <Text
       elementType="div"
       slot="errorMessage"
-      className={cn('mt-2 text-sm text-red-500', className)}
+      className={cn('mt-2 text-sm text-red-500 dark:text-red-400', className)}
       {...props}
     />
   )

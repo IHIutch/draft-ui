@@ -40,10 +40,15 @@ const _MenuContent = <T extends object>({
     <Popover
       className={cn(
         'fill-mode-forwards',
-        'overflow-auto min-w-[150px] rounded-md border bg-white p-1 shadow',
+        // Base
+        'overflow-auto min-w-[150px] rounded-md border bg-white dark:bg-slate-800 dark:border-slate-700 p-1 shadow',
+        // Entering
         'data-[entering]:animate-in data-[entering]:fade-in',
+        // Exiting
         'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
+        // Top
         'data-[placement=top]:slide-in-from-bottom-2',
+        // Bottom
         'data-[placement=bottom]:slide-in-from-top-2',
         popoverClassName
       )}
@@ -59,7 +64,7 @@ const _MenuItem = ({ className, children, ...props }: ItemProps) => {
     <Item
       className={cn(
         'group',
-        'cursor-pointer flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors hover:bg-slate-100 focus:bg-slate-100',
+        'text-black dark:text-white cursor-pointer flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors hover:bg-slate-100 dark:hover:bg-slate-700 focus:bg-slate-100 dark:dark:focus:bg-slate-700',
         className
       )}
       {...props}
@@ -93,7 +98,10 @@ const _MenuSection = <T extends object>(props: SectionProps<T>) => {
 const _MenuHeader = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
   return (
     <Header
-      className={cn('px-2 py-1 text-sm font-medium text-slate-500', className)}
+      className={cn(
+        'px-2 py-1 text-sm font-medium text-slate-500 dark:text-slate-400',
+        className
+      )}
       {...props}
     />
   )
@@ -101,7 +109,10 @@ const _MenuHeader = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
 
 const _MenuSeparator = ({ className, ...props }: SeparatorProps) => {
   return (
-    <Separator className={cn('-mx-1 my-1 border-t', className)} {...props} />
+    <Separator
+      className={cn('-mx-1 my-1 border-t dark:border-slate-700', className)}
+      {...props}
+    />
   )
 }
 

@@ -38,9 +38,9 @@ const _NumberIncrementStepper = ({ className, ...props }: _ButtonProps) => {
     <Button
       slot="increment"
       className={cn(
-        'flex flex-1 select-none items-center justify-center border-l border-slate-300 leading-none',
+        'flex flex-1 select-none items-center justify-center border-l border-slate-300 dark:border-slate-700 leading-none',
+        'transition-colors duration-100 data-[pressed]:bg-slate-100 dark:data-[pressed]:bg-slate-700',
         'rounded-tr-md',
-        'transition-colors duration-100 data-[pressed]:bg-slate-100',
         className
       )}
       {...props}
@@ -53,9 +53,9 @@ const _NumberDecrementStepper = ({ className, ...props }: _ButtonProps) => {
     <Button
       slot="decrement"
       className={cn(
-        'flex flex-1 select-none items-center justify-center border-l border-slate-300 leading-none',
+        'flex flex-1 select-none items-center justify-center border-l border-slate-300 dark:border-slate-700 leading-none',
+        'transition-colors duration-100 data-[pressed]:bg-slate-100 dark:data-[pressed]:bg-slate-700',
         'rounded-br-md border-t',
-        'transition-colors duration-100 data-[pressed]:bg-slate-100',
         className
       )}
       {...props}

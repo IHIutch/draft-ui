@@ -31,10 +31,10 @@ export default function LinkList({ list }: { list: LinkListItemProps[] }) {
             className={cn(
               'flex items-center justify-between gap-2 py-1 text-sm transition ',
               pathname === link.slug
-                ? 'font-semibold  dark:text-white text-zinc-900'
-                : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white',
+                ? 'font-medium  dark:text-white text-slate-900'
+                : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white',
               link?.frontmatter?.isComing &&
-                'cursor-not-allowed text-zinc-400 hover:text-zinc-400'
+                'cursor-not-allowed text-slate-400 hover:text-slate-400 dark:text-slate-600 dark:hover:text-slate-600'
             )}
           >
             <span className="truncate">
@@ -42,11 +42,11 @@ export default function LinkList({ list }: { list: LinkListItemProps[] }) {
             </span>
 
             {link?.frontmatter?.isComing ? (
-              <span className="rounded bg-black px-1 text-xs font-medium text-white">
+              <span className="rounded bg-black px-1 text-xs font-medium text-white dark:bg-slate-400 dark:text-slate-900">
                 Coming Soon
               </span>
             ) : link?.frontmatter?.isWip ? (
-              <span className="rounded bg-slate-200 px-1 text-xs font-medium text-slate-700">
+              <span className="rounded bg-slate-200 px-1 text-xs font-medium text-slate-700 dark:bg-slate-700 dark:text-white">
                 WIP
               </span>
             ) : null}
