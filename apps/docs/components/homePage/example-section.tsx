@@ -7,7 +7,7 @@ import { CheckboxGroupDefault } from '../examples/checkboxGroup/default'
 import { ComboBoxDefault } from '../examples/comboBox/default'
 import { DatePickerDefault } from '../examples/datePicker/default'
 import { ModalDefault } from '../examples/modal/default'
-import { NumberInputDefault } from '../examples/numberInput/default'
+import { NumberInputMobile } from '../examples/numberInput/mobile'
 import { SelectDefault } from '../examples/select/default'
 import { SliderDefault } from '../examples/slider/default'
 import { SwitchDefault } from '../examples/switch/default'
@@ -28,7 +28,7 @@ export default function ExampleSection() {
       <div className="flex items-center justify-center rounded-md border bg-white p-4 dark:border-slate-700 dark:bg-slate-800 md:col-span-1">
         <CheckboxGroupDefault />
       </div>
-      <div className="flex items-center justify-center rounded-md border bg-white p-4 dark:border-slate-700 dark:bg-slate-800 md:col-span-2">
+      <div className="flex items-center justify-center overflow-x-auto rounded-md border bg-white p-4 dark:border-slate-700 dark:bg-slate-800 md:col-span-2">
         <TabsDefault />
       </div>
       <div className="flex items-center justify-center rounded-md border bg-white p-4 dark:border-slate-700 dark:bg-slate-800 md:col-span-1">
@@ -44,7 +44,7 @@ export default function ExampleSection() {
         <ComboBoxDefault />
       </div>
       <div className="flex items-center justify-center rounded-md border bg-white p-4 dark:border-slate-700 dark:bg-slate-800 md:col-span-1">
-        <NumberInputDefault />
+        <NumberInputMobile />
       </div>
     </div>
   )

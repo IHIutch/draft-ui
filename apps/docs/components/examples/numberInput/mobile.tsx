@@ -7,7 +7,12 @@ import { IconButton, Input, NumberField } from '@/components/ui'
 
 export function NumberInputMobile() {
   return (
-    <NumberField defaultValue={50} minValue={0} maxValue={100}>
+    <NumberField
+      defaultValue={50}
+      minValue={0}
+      maxValue={100}
+      className="w-full"
+    >
       <Group className="flex gap-2">
         <IconButton variant="subtle" className="shrink-0" slot="decrement">
           <ChevronUp size="16" strokeWidth="3" />
