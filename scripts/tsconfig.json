@@ -1,0 +1,13 @@
+{
+    "extends": "ts-config/base.json",
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+    },
+    "ts-node": {
+        "esm": true
+    },
+    "include": [
+        "src"
+    ]
+}
