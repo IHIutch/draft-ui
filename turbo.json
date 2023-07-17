@@ -4,6 +4,9 @@
     "**/.env.*local"
   ],
   "pipeline": {
+    "document:stories": {
+      "cache": false
+    },
     "build": {
       "outputs": [
         "storybook-static/**",

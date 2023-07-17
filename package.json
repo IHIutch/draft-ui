@@ -6,6 +6,7 @@
     "lint": "turbo run lint",
     "storybook": "turbo run storybook",
     "prepare": "husky install",
+    "document:stories": "turbo run document:stories",
     "copy-files": "cp packages/ui/src/* apps/docs/components/ui/"
   },
   "devDependencies": {

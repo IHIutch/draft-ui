@@ -1,0 +1,3 @@
+{
+  "Default": "const Default = {\n  argTypes: {},\n  args: {},\n  render: (props) => (\n    <Select {...props}>\n      <Label>Favorite Animal</Label>\n      <Button variant=\"outline\" className=\"flex items-center gap-2 font-normal\">\n        <SelectValue />\n        <ChevronDown size=\"16\" strokeWidth=\"3\" />\n      </Button>\n      <SelectContent>\n        <SelectItem textValue=\"Aardvark\">Aardvark</SelectItem>\n        <SelectItem textValue=\"Cat\">Cat</SelectItem>\n        <SelectItem textValue=\"Dog\">Dog</SelectItem>\n        <SelectItem textValue=\"Kangaroo\">Kangaroo</SelectItem>\n        <SelectItem textValue=\"Panda\">Panda</SelectItem>\n        <SelectItem textValue=\"Snake\">Snake</SelectItem>\n      </SelectContent>\n    </Select>\n  ),\n}"
+}
