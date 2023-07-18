@@ -1,3 +1,0 @@
-{
-  "Default": "const Default = {\n  argTypes: {\n    validationState: {\n      type: 'string',\n      control: 'radio',\n      options: ['valid', 'invalid'],\n    },\n    size: {\n      type: 'string',\n      control: 'select',\n      options: ['xs', 'sm', 'md', 'lg'],\n    },\n  },\n  args: {\n    validationState: 'valid',\n    size: 'md',\n  },\n  render: (props) => (\n    <DateField>\n      <DateInputGroup {...props}>\n        <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>\n      </DateInputGroup>\n    </DateField>\n  ),\n}"
-}

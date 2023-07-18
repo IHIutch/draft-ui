@@ -1,3 +1,0 @@
-{
-  "Default": "const Default = {\n  argTypes: {\n    size: {\n      type: 'string',\n      control: 'select',\n      options: ['xs', 'sm', 'md', 'lg', 'xl', 'full'],\n    },\n  },\n  args: {\n    size: 'md',\n  },\n  render: (props) => <ModalStory {...props} />,\n}"
-}

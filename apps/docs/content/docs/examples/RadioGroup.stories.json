@@ -1,3 +1,0 @@
-{
-  "Default": "const Default = {\n  argTypes: {\n    orientation: {\n      type: 'string',\n      control: 'radio',\n      options: ['vertical', 'horizontal'],\n    },\n  },\n  args: {\n    orientation: 'vertical',\n  },\n  render: (props) => (\n    <RadioGroup orientation={props.orientation}>\n      <Label>Favorite sports</Label>\n      <RadioGroupContent>\n        <Radio value=\"dogs\">Dog</Radio>\n        <Radio value=\"cats\">Cat</Radio>\n        <Radio value=\"dragon\">Dragon</Radio>\n      </RadioGroupContent>\n    </RadioGroup>\n  ),\n}"
-}

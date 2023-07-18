@@ -6,6 +6,7 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
       // "ui": [
       //   "./../../packages/ui/src" // Not sure why I need this but VSCode wont intellisense correctly without it in this project
@@ -15,6 +16,9 @@
       ],
       "@/*": [
         "./*"
+      ],
+      "contentlayer/generated": [
+        "./.contentlayer/generated"
       ]
     },
     "skipLibCheck": true,
@@ -29,6 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
+    ".contentlayer/generated"
   ],
   "exclude": [
     "node_modules"

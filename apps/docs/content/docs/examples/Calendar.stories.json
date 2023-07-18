@@ -1,3 +1,0 @@
-{
-  "Default": "const Default = {\n  argTypes: {},\n  args: {},\n  render: (props) => (\n    <Calendar {...props}>\n      <CalendarHeader>\n        <CalendarPrevButton />\n        <CalendarHeading />\n        <CalendarNextButton />\n      </CalendarHeader>\n      <CalendarGrid>\n        <CalendarGridHeader>\n          {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}\n        </CalendarGridHeader>\n        <CalendarGridBody>\n          {(date) => <CalendarCell date={date} />}\n        </CalendarGridBody>\n      </CalendarGrid>\n    </Calendar>\n  ),\n}"
-}

@@ -1,3 +1,0 @@
-{
-  "Default": "const Default = {\n  argTypes: {\n    orientation: {\n      type: 'string',\n      control: 'radio',\n      options: ['vertical', 'horizontal'],\n    },\n  },\n  args: {\n    orientation: 'horizontal',\n  },\n  render: (props) => (\n    <Slider defaultValue={30} orientation={props.orientation} className=\"h-32\">\n      <Label>Opacity</Label>\n      <SliderTrack>\n        {(state) => (\n          <>\n            <SliderFilledTrack\n              percentage={state.getValuePercent(state.values[0]) * 100}\n              orientation={state.orientation}\n            />\n            <SliderThumb />\n          </>\n        )}\n      </SliderTrack>\n    </Slider>\n  ),\n}"
-}

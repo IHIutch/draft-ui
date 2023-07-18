@@ -1,3 +1,0 @@
-{
-  "Default": "const Default = {\n  argTypes: {\n    variant: {\n      type: 'string',\n      control: 'select',\n      options: ['solid', 'destructive', 'outline', 'subtle', 'ghost', 'link'],\n    },\n    size: {\n      type: 'string',\n      control: 'select',\n      options: ['xs', 'sm', 'md', 'lg'],\n    },\n    isDisabled: { type: 'boolean' },\n  },\n  args: {\n    variant: undefined,\n    isDisabled: false,\n  },\n  render: (props) => (\n    <IconButton {...props} aria-label=\"alert\">\n      <AlertCircle size=\"1em\" />\n    </IconButton>\n  ),\n}"
-}

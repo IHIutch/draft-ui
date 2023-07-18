@@ -1,3 +1,0 @@
-{
-  "Default": "const Default = {\n  argTypes: {},\n  args: {},\n  render: () => (\n    <Breadcrumbs>\n      <BreadcrumbItem separator={<ChevronRight size=\"1em\" />}>\n        <a href=\"#\">Home</a>\n      </BreadcrumbItem>\n      <BreadcrumbItem separator={<ChevronRight size=\"1em\" />}>\n        <a href=\"#\">React Aria</a>\n      </BreadcrumbItem>\n      <BreadcrumbItem>useBreadcrumbs</BreadcrumbItem>\n    </Breadcrumbs>\n  ),\n}"
-}

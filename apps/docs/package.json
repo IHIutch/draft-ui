@@ -5,30 +5,34 @@
   "main": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {
-    "dev": "rm -rf .next && next dev",
-    "build": "next build",
+    "dev": "rm -rf .next && contentlayer build && next dev",
+    "build": "contentlayer build && next build",
     "start": "next start",
     "lint": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
     "@docsearch/react": "^3.4.0",
     "@markdoc/markdoc": "^0.3.0",
+    "@types/unist": "^3.0.0",
     "@vercel/analytics": "^1.0.1",
     "clsx": "^1.2.1",
+    "contentlayer": "0.3.1",
     "fathom-client": "^3.5.0",
+    "fs-extra": "11.1.1",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.259.0",
     "next": "13.4.2",
+    "next-contentlayer": "0.3.1",
     "next-themes": "^0.2.1",
     "prism-react-renderer": "^2.0.4",
     "react": "18.2.0",
     "react-aria-components": "1.0.0-alpha.5",
     "react-dom": "18.2.0",
     "react-stately": "^3.21.0",
-    "rehype-pretty-code": "^0.9.5",
     "tailwind-merge": "^1.13.2",
     "typescript": "4.9.5",
-    "ui": "workspace:*"
+    "ui": "workspace:*",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
@@ -42,6 +46,8 @@
     "postcss-config": "workspace:*",
     "tailwind-config": "workspace:*",
     "tailwindcss": "^3.3.2",
-    "ts-config": "workspace:*"
+    "ts-config": "workspace:*",
+    "ts-pattern": "5.0.3",
+    "unist-builder": "^4.0.0"
   }
 }

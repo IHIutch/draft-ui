@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation'
 
+import { allComponents } from '@/.contentlayer/generated'
+import Markdown from '@/components/docs/markdown'
 import { MarkdocContent } from '@/components/MarkdocContent'
 import PageToc from '@/components/PageToc'
 import { getDocContent, getDocsMetadata } from '@/lib/server'
@@ -25,7 +27,13 @@ export default async function DocPage({ params }: DocPageProps) {
   const slug = '/docs/' + params?.slug?.join('/')
   const doc = await getDocContent(slug)
 
-  if (!doc) {
+  const post = allComponents.find((post) => {
+    return (
+      post._raw.flattenedPath.replace('docs/', '') === params.slug.join('/')
+    )
+  })
+
+  if (!doc || !post) {
     notFound()
   }
 
@@ -37,7 +45,8 @@ export default async function DocPage({ params }: DocPageProps) {
         <div className="prose prose-slate dark:prose-invert mx-auto">
           <h1>{frontmatter.title}</h1>
           <p className="lead">{frontmatter.description}</p>
-          <MarkdocContent content={JSON.parse(JSON.stringify(content))} />
+          {/* <MarkdocContent content={JSON.parse(JSON.stringify(content))} /> */}
+          <Markdown doc={post} />
         </div>
       </article>
       <div className="hidden shrink-0 pl-4 md:pl-8 lg:w-1/4 xl:block">

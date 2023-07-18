@@ -1,3 +1,0 @@
-{
-  "Default": "const Default = {\n  argTypes: {\n    children: { type: 'string' },\n  },\n  args: {\n    children: 'Label',\n  },\n  render: (props) => <Label {...props} />,\n}"
-}

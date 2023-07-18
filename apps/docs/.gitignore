@@ -1,2 +1,5 @@
 .vscode
 .env
+
+# contentlayer
+.contentlayer

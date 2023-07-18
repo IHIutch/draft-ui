@@ -1,3 +1,0 @@
-{
-  "Default": "const Default = {\n  argTypes: {\n    children: { type: 'string' },\n    variant: {\n      type: 'string',\n      control: 'select',\n      options: ['solid', 'destructive', 'outline', 'subtle', 'ghost', 'link'],\n    },\n    size: {\n      type: 'string',\n      control: 'select',\n      options: ['xs', 'sm', 'md', 'lg'],\n    },\n    isDisabled: { type: 'boolean' },\n  },\n  args: {\n    children: 'Press Me',\n    variant: undefined,\n    isDisabled: false,\n  },\n  render: (props) => <Button {...props} />,\n}"
-}

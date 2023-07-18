@@ -1,3 +1,0 @@
-{
-  "Default": "const Default = {\n  argTypes: {\n    validationState: {\n      type: 'string',\n      control: 'radio',\n      options: ['valid', 'invalid'],\n    },\n    size: {\n      type: 'string',\n      control: 'select',\n      options: ['xs', 'sm', 'md', 'lg'],\n    },\n    placeholder: {\n      type: 'string',\n    },\n  },\n  args: {\n    validationState: 'valid',\n    size: 'md',\n    placeholder: 'Placeholder...',\n  },\n  render: (props) => <Input {...props} />,\n}"
-}

@@ -1,7 +1,8 @@
-import { ChevronRight } from 'lucide-react'
-import { BreadcrumbItem, Breadcrumbs } from 'ui'
+import { Breadcrumbs } from 'ui'
 
-import { type Meta, type StoryObj } from '@storybook/react'
+import { type Meta } from '@storybook/react'
+
+import Base from '../examples/default'
 
 const meta: Meta<typeof Breadcrumbs> = {
   title: 'Breadcrumbs',
@@ -10,18 +11,4 @@ const meta: Meta<typeof Breadcrumbs> = {
 
 export default meta
 
-export const Default: StoryObj<typeof Breadcrumbs> = {
-  argTypes: {},
-  args: {},
-  render: () => (
-    <Breadcrumbs>
-      <BreadcrumbItem separator={<ChevronRight size="1em" />}>
-        <a href="#">Home</a>
-      </BreadcrumbItem>
-      <BreadcrumbItem separator={<ChevronRight size="1em" />}>
-        <a href="#">React Aria</a>
-      </BreadcrumbItem>
-      <BreadcrumbItem>useBreadcrumbs</BreadcrumbItem>
-    </Breadcrumbs>
-  ),
-}
+export const Default = () => <Base />

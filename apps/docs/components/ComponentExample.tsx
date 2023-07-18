@@ -1,24 +1,48 @@
+'use client'
+
 import * as React from 'react'
 
 import { Highlight, themes } from 'prism-react-renderer'
 import { Tab, TabList, TabPanel, Tabs } from 'ui'
 
+import { Index } from '@/__registry__'
+// import { DynamicImport } from '@/generated/dynamic-import';
 import { cn } from '@/lib/utils'
+import { type ExamplesListItem } from '@/types'
 
 import CopyClipboardButton from './CopyClipboardButton'
 
-// chlidren contains raw code string injected from ComponentExample.markdoc.ts
 interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
+  // example: ExamplesListItem
   align?: 'center' | 'start' | 'end'
+  name: string
+  example: string
 }
 
 export default function ComponentExample({
-  children,
   align = 'center',
+  name,
+  example,
+  children,
 }: ComponentExampleProps) {
-  const [Example, Code] = React.Children.toArray(
-    children
-  ) as React.ReactElement[]
+  const [codeString] = React.Children.toArray(children) as React.ReactElement[]
+
+  const Example = React.useMemo(() => {
+    const Component = Index[name][example]?.component
+    if (!Component) {
+      return (
+        <p className="text-muted-foreground text-sm">
+          Component{' '}
+          <code className="bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm">
+            {name}
+          </code>{' '}
+          not found in registry.
+        </p>
+      )
+    }
+
+    return <Component />
+  }, [name, example])
 
   return (
     <div>
@@ -36,31 +60,25 @@ export default function ComponentExample({
                 'items-end': align === 'end',
               })}
             >
-              {Example}
+              {/* <DynamicImport name={example.name} variant={example.example} /> */}
+              <React.Suspense fallback={null}>{Example}</React.Suspense>
             </div>
           </div>
         </TabPanel>
         <TabPanel id="code" className="px-0">
           <div className="relative">
             <div className="absolute right-2 top-2 z-10">
-              <CopyClipboardButton text={String(Code)} />
+              <CopyClipboardButton text={String(codeString)} />
             </div>
             <Highlight
               theme={themes.nightOwl}
-              code={String(Code)}
+              code={String(codeString)}
               language="tsx"
             >
-              {({
-                // className,
-                style,
-                tokens,
-                getLineProps,
-                getTokenProps,
-              }) => (
+              {({ style, tokens, getLineProps, getTokenProps }) => (
                 <pre style={style} className="my-0">
                   {tokens.map((line, i) => (
                     <div key={i} {...getLineProps({ line })}>
-                      {/* <span>{i + 1}</span> */}
                       {line.map((token, key) => (
                         <span key={key} {...getTokenProps({ token })} />
                       ))}

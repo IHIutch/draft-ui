@@ -1,4 +1,4 @@
-import { type Node } from 'unist-builder'
+import { type Node } from 'unist'
 
 export interface UnistNode extends Node {
   type: string
@@ -8,6 +8,7 @@ export interface UnistNode extends Node {
   properties?: {
     __rawString__?: string
     __className__?: string
+    __event__?: string
     [key: string]: unknown
   } & NpmCommands
   attributes?: {
@@ -26,4 +27,11 @@ export interface NpmCommands {
   __npmCommand__?: string
   __yarnCommand__?: string
   __pnpmCommand__?: string
+}
+
+export interface ExamplesListItem {
+  name: string
+  variant: string
+  text: string
+  functionName: string
 }

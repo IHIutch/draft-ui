@@ -1,3 +1,0 @@
-{
-  "Default": "const Default = {\n  argTypes: {\n    size: {\n      type: 'string',\n      control: 'radio',\n      options: ['sm', 'md', 'lg'],\n    },\n    isDisabled: { type: 'boolean' },\n  },\n  args: {\n    size: 'md',\n    isDisabled: false,\n  },\n  render: (props) => (\n    <RadioGroup isDisabled={props.isDisabled}>\n      <Radio size={props.size} value=\"cat\">\n        Cat\n      </Radio>\n      <Radio size={props.size} value=\"dog\">\n        Dog\n      </Radio>\n    </RadioGroup>\n  ),\n}"
-}

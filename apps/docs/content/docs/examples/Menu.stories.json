@@ -1,3 +1,0 @@
-{
-  "Default": "const Default = {\n  argTypes: {\n    selectionMode: {\n      type: 'string',\n      control: 'radio',\n      options: ['none', 'single', 'multiple'],\n    },\n  },\n  args: {\n    selectionMode: 'none',\n  },\n  render: (props) => <MenuStory {...props} />,\n}"
-}
