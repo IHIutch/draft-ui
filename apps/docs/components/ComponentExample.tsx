@@ -6,9 +6,7 @@ import { Highlight, themes } from 'prism-react-renderer'
 import { Tab, TabList, TabPanel, Tabs } from 'ui'
 
 import { Index } from '@/__registry__'
-// import { DynamicImport } from '@/generated/dynamic-import';
 import { cn } from '@/lib/utils'
-import { type ExamplesListItem } from '@/types'
 
 import CopyClipboardButton from './CopyClipboardButton'
 
@@ -16,25 +14,25 @@ interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
   // example: ExamplesListItem
   align?: 'center' | 'start' | 'end'
   name: string
-  example: string
+  story: string
 }
 
 export default function ComponentExample({
   align = 'center',
   name,
-  example,
+  story,
   children,
 }: ComponentExampleProps) {
   const [codeString] = React.Children.toArray(children) as React.ReactElement[]
 
-  const Example = React.useMemo(() => {
-    const Component = Index[name][example]?.component
+  const Story = React.useMemo(() => {
+    const Component = Index[name]?.[story]?.component
     if (!Component) {
       return (
         <p className="text-muted-foreground text-sm">
-          Component{' '}
+          {name}{' '}
           <code className="bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm">
-            {name}
+            &quot;{story}&quot;
           </code>{' '}
           not found in registry.
         </p>
@@ -42,7 +40,7 @@ export default function ComponentExample({
     }
 
     return <Component />
-  }, [name, example])
+  }, [name, story])
 
   return (
     <div>
@@ -60,8 +58,7 @@ export default function ComponentExample({
                 'items-end': align === 'end',
               })}
             >
-              {/* <DynamicImport name={example.name} variant={example.example} /> */}
-              <React.Suspense fallback={null}>{Example}</React.Suspense>
+              <React.Suspense fallback={null}>{Story}</React.Suspense>
             </div>
           </div>
         </TabPanel>

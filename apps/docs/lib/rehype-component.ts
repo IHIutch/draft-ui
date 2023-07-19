@@ -20,7 +20,8 @@ export function rehypeComponent() {
         try {
           // Read the source file.
           const filePath = path.join(process.cwd(), src)
-          const source = fs.readFileSync(filePath, 'utf8')
+          let source = fs.readFileSync(filePath, 'utf8')
+          source = source.replaceAll('export default', 'export')
 
           node.children?.push(
             u('element', {
@@ -51,20 +52,21 @@ export function rehypeComponent() {
 
       if (node.name === 'ComponentExample') {
         const name = getNodeAttributeByName(node, 'name')?.value as string
-        const example = getNodeAttributeByName(node, 'example')?.value as string
+        const story = getNodeAttributeByName(node, 'story')?.value as string
 
-        if (!name || !example) {
-          console.log('❌ name or example prop not passed on ComponentExample')
+        if (!name || !story) {
+          console.log('❌ name or story prop not passed on ComponentExample')
           return null
         }
 
         try {
-          const component = Index[name][example]
+          const component = Index[name][story]
           const src = component.file
 
           // Read the source file.
           const filePath = path.join(process.cwd(), src)
-          const source = fs.readFileSync(filePath, 'utf8')
+          let source = fs.readFileSync(filePath, 'utf8')
+          source = source.replaceAll('export default', 'export')
 
           node.children?.push(
             u('element', {
