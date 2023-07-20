@@ -1,9 +1,12 @@
 /** @type { import('@storybook/react').Preview } */
-import { withThemeByDataAttribute } from '@storybook/addon-styling'
+import { withThemeByClassName } from '@storybook/addon-styling'
 
 import '../src/styles.css'
 
-const preview = {
+import { Preview } from '@storybook/react'
+import { themes } from '@storybook/theming'
+
+const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -16,13 +19,12 @@ const preview = {
 }
 
 export const decorators = [
-  withThemeByDataAttribute({
+  withThemeByClassName({
     themes: {
-      light: 'light',
-      dark: 'dark',
+      light: '',
+      dark: 'dark bg-slate-800',
     },
     defaultTheme: 'light',
-    attributeName: 'data-mode',
   }),
 ]
 
