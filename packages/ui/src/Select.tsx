@@ -59,7 +59,8 @@ const _SelectItem = ({ className, children, ...props }: ItemProps) => {
     <Item
       className={cn(
         'group',
-        'flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors cursor-pointer',
+        'flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors cursor-pointer text-black dark:text-white',
+        // Focused
         'data-[focused]:bg-slate-100 dark:data-[focused]:bg-slate-700',
         className
       )}
@@ -78,11 +79,7 @@ const _SelectItem = ({ className, children, ...props }: ItemProps) => {
 }
 
 const _SelectValue = <T extends object>(props: SelectValueProps<T>) => {
-  return (
-    <SelectValue {...props}>
-      {({ selectedText }) => (selectedText ? selectedText : 'Select an item')}
-    </SelectValue>
-  )
+  return <SelectValue {...props} />
 }
 
 export {

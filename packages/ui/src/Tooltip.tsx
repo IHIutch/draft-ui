@@ -25,14 +25,8 @@ const _TooltipContent = ({ className, children, ...props }: TooltipProps) => {
           'data-[entering]:animate-in data-[entering]:fade-in',
           // Exiting
           'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
-          // Top
-          'data-[placement=top]:slide-in-from-bottom-1',
-          // Right
-          'data-[placement=right]:slide-in-from-left-1',
-          // Bottom
-          'data-[placement=bottom]:slide-in-from-top-1',
-          // Left
-          'data-[placement=left]:slide-in-from-right-1',
+          // Placement
+          'data-[placement=top]:slide-in-from-bottom-1 data-[placement=right]:slide-in-from-left-1 data-[placement=bottom]:slide-in-from-top-1 data-[placement=left]:slide-in-from-right-1',
         ],
         className
       )}

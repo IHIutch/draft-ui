@@ -77,7 +77,9 @@ const _Radio = ({ className, size, children, ...props }: _RadioProps) => {
     >
       <>
         <div className={cn(radioInnerVariants({ size }))} />
-        <div className="group-[[data-disabled]]:opacity-40">{children}</div>
+        <div className="text-black group-[[data-disabled]]:opacity-40 dark:text-white">
+          {children}
+        </div>
       </>
     </Radio>
   )

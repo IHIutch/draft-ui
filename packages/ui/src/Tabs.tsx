@@ -54,7 +54,7 @@ const _Tab = ({ className, ...props }: TabProps) => {
         // Focus-visible
         'data-[focus-visible]:ring-2 data-[focus-visible]:ring-slate-400',
         // Disabled
-        'aria-[disabled]:opacity-40 aria-[disabled]:cursor-not-allowed',
+        'aria-disabled:opacity-40 aria-disabled:cursor-not-allowed',
         // Horizontal
         'group-[[data-orientation=horizontal]]/tabs:border-[width:var(--border-width)] group-[[data-orientation=horizontal]]/tabs:top-[2px]',
         // Vertical

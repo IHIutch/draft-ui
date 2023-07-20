@@ -8,7 +8,7 @@ const _Label = ({ className, ...props }: LabelProps) => {
   return (
     <Label
       className={cn(
-        'mb-2 mr-3 block font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
+        'mb-2 mr-3 block font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-40 text-black dark:text-white',
         className
       )}
       {...props}

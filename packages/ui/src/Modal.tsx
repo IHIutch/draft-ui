@@ -14,7 +14,7 @@ import {
 
 import { cn } from '@/lib/utils'
 
-const modalVariants = cva(
+export const modalVariants = cva(
   [
     'fill-mode-forwards',
     'mx-auto w-full rounded bg-white outline-none dark:bg-slate-800',
@@ -85,7 +85,9 @@ const _ModalOverlay = ({
       className={cn(
         'fill-mode-forwards h-[--visual-viewport-height]',
         'fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-sm transition-all',
+        // Entering
         'data-[entering]:animate-in data-[entering]:fade-in data-[entering]:duration-75',
+        // Exiting
         'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
         className
       )}
@@ -97,7 +99,10 @@ const _ModalOverlay = ({
 const _ModalHeader = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
   return (
     <header
-      className={cn('px-6 py-4 shrink-0 text-xl font-semibold', className)}
+      className={cn(
+        'px-6 py-4 shrink-0 text-xl font-semibold text-black dark:text-white',
+        className
+      )}
       {...props}
     />
   )

@@ -2,7 +2,7 @@ import { Switch, SwitchIndicator } from 'ui'
 
 export default function Default() {
   return (
-    <Switch>
+    <Switch isDisabled>
       <SwitchIndicator />
       Low power mode
     </Switch>

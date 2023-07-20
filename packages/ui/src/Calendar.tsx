@@ -78,7 +78,7 @@ const _CalendarHeaderCell = ({
   return (
     <CalendarHeaderCell
       className={cn(
-        'h-8 w-10 text-sm font-medium text-slate-500 dark:text-slate-400',
+        'h-10 w-10 text-sm font-medium text-slate-500 dark:text-slate-400',
         className
       )}
       {...props}
@@ -96,9 +96,9 @@ const _CalendarCell = ({ className, ...props }: CalendarCellProps) => {
   return (
     <CalendarCell
       className={cn(
-        'text-black dark:text-white relative flex h-10 w-10 items-center justify-center text-sm transition-all',
+        'text-black dark:text-white relative flex h-10 w-10 items-center justify-center text-sm transition-color',
         // Hover
-        'hover:bg-slate-100 dark:hover:bg-slate-600',
+        'hover:bg-slate-100 dark:hover:bg-slate-700',
         // Focus Visible
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900',
         // Date Outside Current Month
@@ -119,7 +119,15 @@ const _CalendarCell = ({ className, ...props }: CalendarCellProps) => {
 }
 
 const _CalendarHeading = ({ className, ...props }: HeadingProps) => {
-  return <Heading className={cn('text-sm font-medium', className)} {...props} />
+  return (
+    <Heading
+      className={cn(
+        'text-sm font-medium text-black dark:text-white',
+        className
+      )}
+      {...props}
+    />
+  )
 }
 
 const _CalendarHeader = ({

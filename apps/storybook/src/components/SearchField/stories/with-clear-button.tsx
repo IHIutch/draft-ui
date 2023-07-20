@@ -1,9 +1,15 @@
 import { Search } from 'lucide-react'
-import { SearchField, SearchFieldClearButton, SearchFieldInput } from 'ui'
+import {
+  Label,
+  SearchField,
+  SearchFieldClearButton,
+  SearchFieldInput,
+} from 'ui'
 
-export default function withClearButton() {
+export default function WithClearButton() {
   return (
     <SearchField>
+      <Label>Search</Label>
       <div className="relative">
         <div
           aria-hidden="true"

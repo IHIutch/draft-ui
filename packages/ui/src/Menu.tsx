@@ -64,7 +64,13 @@ const _MenuItem = ({ className, children, ...props }: ItemProps) => {
     <Item
       className={cn(
         'group',
-        'text-black dark:text-white cursor-pointer flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors hover:bg-slate-100 dark:hover:bg-slate-700 focus:bg-slate-100 dark:dark:focus:bg-slate-700',
+        'text-black dark:text-white cursor-pointer flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors',
+        // Hover
+        'hover:bg-slate-100 dark:hover:bg-slate-700',
+        // Focus
+        'focus:bg-slate-100 dark:focus:bg-slate-700',
+        // Disabled
+        'aria-disabled:cursor-not-allowed aria-disabled:opacity-40 aria-disabled:hover:bg-transparent dark:aria-disabled:hover:bg-transparent',
         className
       )}
       {...props}

@@ -11,7 +11,7 @@ const iconButtonVariants = cva(
     // Focused
     'focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 dark:focus:ring-offset-slate-900',
     // Disabled
-    'disabled:pointer-events-none disabled:opacity-50',
+    'disabled:pointer-events-none disabled:opacity-40',
   ],
   {
     variants: {

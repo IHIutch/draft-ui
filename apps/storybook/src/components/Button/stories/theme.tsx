@@ -2,7 +2,7 @@ import { Button } from 'ui'
 
 export default function Theme() {
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-4">
       <Button variant="solid">Solid</Button>
       <Button variant="outline">Outline</Button>
       <Button variant="subtle">Subtle</Button>

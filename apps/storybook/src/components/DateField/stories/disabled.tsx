@@ -1,10 +1,10 @@
 import { DateField, DateInput, DateInputGroup, DateSegment, Label } from 'ui'
 
-export default function Default() {
+export default function Disabled() {
   return (
-    <DateField validationState="invalid">
+    <DateField isDisabled>
       <Label>Date Label</Label>
-      <DateInputGroup validationState="invalid">
+      <DateInputGroup>
         <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
       </DateInputGroup>
     </DateField>

@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils'
 
 const checkboxVariants = cva(
   [
-    'group inline-flex cursor-pointer items-center gap-2',
+    'group flex cursor-pointer items-center gap-2',
     // Disabled
     'data-[disabled]:cursor-not-allowed',
   ],
@@ -85,7 +85,9 @@ const _Checkbox = ({ className, size, children, ...props }: _CheckboxProps) => {
             <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
           </svg>
         </div>
-        <div className="group-[[data-disabled]]:opacity-40">{children}</div>
+        <div className="text-black group-[[data-disabled]]:opacity-40 dark:text-white">
+          {children}
+        </div>
       </>
     </Checkbox>
   )

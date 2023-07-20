@@ -1,14 +1,16 @@
-import { DateInputGroup } from 'ui'
+import { DateInput } from 'ui'
 
 import { type Meta } from '@storybook/react'
 
 import DefaultStory from './stories/default'
+import SizesStory from './stories/sizes'
 
-const meta: Meta<typeof DateInputGroup> = {
+const meta: Meta<typeof DateInput> = {
   title: 'DateInput',
-  component: DateInputGroup,
+  component: DateInput,
 }
 
 export default meta
 
 export const Default = () => <DefaultStory />
+export const Sizes = () => <SizesStory />

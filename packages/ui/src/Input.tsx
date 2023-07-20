@@ -13,7 +13,7 @@ const inputVariants = cva(
     // Dark
     'dark:border-slate-700 dark:text-slate-50 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900',
     // Disabled
-    'disabled:cursor-not-allowed disabled:opacity-50',
+    'disabled:cursor-not-allowed disabled:opacity-40',
     // Invalid
     'aria-[invalid]:border-red-500',
   ],

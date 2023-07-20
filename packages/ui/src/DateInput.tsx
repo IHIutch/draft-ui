@@ -24,7 +24,7 @@ const dateInputGroupVariants = cva(
     // Focus-visible
     'data-[focus-visible]:ring-2 data-[focus-visible]:ring-slate-400 data-[focus-visible]:ring-offset-2 dark:data-[focus-visible]:ring-slate-400 dark:data-[focus-visible]:ring-offset-slate-900',
     // Disabled
-    'disabled:cursor-not-allowed disabled:opacity-50',
+    'disabled:cursor-not-allowed disabled:opacity-40',
   ],
   {
     variants: {
