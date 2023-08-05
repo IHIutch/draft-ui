@@ -2,7 +2,7 @@ import { Label, Slider, SliderFilledTrack, SliderThumb, SliderTrack } from 'ui'
 
 export default function Default() {
   return (
-    <Slider defaultValue={30} className="h-32">
+    <Slider defaultValue={30}>
       <Label>Opacity</Label>
       <SliderTrack>
         {(state) => (

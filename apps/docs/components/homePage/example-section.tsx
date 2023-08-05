@@ -2,16 +2,16 @@
 
 import React from 'react'
 
-import { BreadcrumbsDefault } from '../examples/breadcrumbs/default'
-import { CheckboxGroupDefault } from '../examples/checkboxGroup/default'
-import { ComboBoxDefault } from '../examples/comboBox/default'
-import { DatePickerDefault } from '../examples/datePicker/default'
-import { ModalDefault } from '../examples/modal/default'
-import { NumberInputMobile } from '../examples/numberInput/mobile'
-import { SelectDefault } from '../examples/select/default'
-import { SliderDefault } from '../examples/slider/default'
-import { SwitchDefault } from '../examples/switch/default'
-import { TabsDefault } from '../examples/tabs/default'
+import BreadcrumbsDefault from '@/registry/Breadcrumbs/default'
+import CheckboxGroupDefault from '@/registry/CheckboxGroup/default'
+import ComboBoxDefault from '@/registry/Combobox/default'
+import DatePickerDefault from '@/registry/DatePicker/default'
+import ModalDefault from '@/registry/Modal/default'
+import NumberInputMobile from '@/registry/NumberField/with-mobile-stepper'
+import SelectDefault from '@/registry/Select/default'
+import SliderDefault from '@/registry/Slider/default'
+import SwitchDefault from '@/registry/Switch/default'
+import TabsDefault from '@/registry/Tabs/default'
 
 export default function ExampleSection() {
   return (
