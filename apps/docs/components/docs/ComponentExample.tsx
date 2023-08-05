@@ -63,7 +63,7 @@ export default function ComponentExample({
           <div className="not-prose overflow-x-auto rounded-md border dark:border-slate-700 dark:bg-slate-800">
             <div
               className={cn(
-                'flex min-h-[350px] justify-center p-4 min-w-[max-content]',
+                'flex min-h-[350px] justify-center p-10 min-w-[max-content]',
                 {
                   'items-center': align === 'center',
                   'items-start': align === 'start',
