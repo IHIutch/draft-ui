@@ -3,7 +3,7 @@ import { IconButton } from 'ui'
 
 export default function Theme() {
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-wrap gap-4 justify-center">
       <IconButton aria-label="alert" variant="solid">
         <AlertCircle size="1em" />
       </IconButton>

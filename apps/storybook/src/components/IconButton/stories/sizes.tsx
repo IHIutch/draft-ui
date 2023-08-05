@@ -3,7 +3,7 @@ import { IconButton } from 'ui'
 
 export default function Sizes() {
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-wrap justify-center gap-4">
       <IconButton aria-label="alert" size="xs">
         <AlertCircle size="1em" />
       </IconButton>

@@ -2,7 +2,7 @@ import { Button } from 'ui'
 
 export default function Disabled() {
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-wrap justify-center gap-4">
       <Button variant="solid" isDisabled>
         Solid
       </Button>

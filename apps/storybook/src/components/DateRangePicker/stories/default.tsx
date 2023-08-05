@@ -23,7 +23,7 @@ export default function Default() {
   return (
     <DateRangePicker>
       <Label>Date Range</Label>
-      <DateInputGroup className="relative">
+      <DateInputGroup className="relative !pr-10">
         <DateInput slot="start">
           {(segment) => <DateSegment segment={segment} />}
         </DateInput>

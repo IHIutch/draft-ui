@@ -3,7 +3,7 @@ import { IconButton } from 'ui'
 
 export default function Disabled() {
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-wrap justify-center gap-4">
       <IconButton variant="solid" aria-label="alert" isDisabled>
         <AlertCircle size="1em" />
       </IconButton>

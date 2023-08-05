@@ -23,10 +23,8 @@ export default function Default() {
   return (
     <DatePicker>
       <Label>Date</Label>
-      <DateInputGroup className="relative">
-        <DateInput className="pr-1">
-          {(segment) => <DateSegment segment={segment} />}
-        </DateInput>
+      <DateInputGroup className="relative !pr-10">
+        <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
         <div className="absolute inset-y-0 right-0 flex items-center p-1">
           <IconButton size="sm" variant="subtle" className="ml-auto shrink-0">
             <ChevronDown size="16" strokeWidth="3" />

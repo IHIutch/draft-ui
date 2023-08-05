@@ -3,7 +3,7 @@ import { RadioGroup } from 'ui'
 import { type Meta } from '@storybook/react'
 
 import DefaultStory from './stories/default'
-import VerticalStory from './stories/vertical'
+import HorizontalStory from './stories/horizontal'
 
 const meta: Meta<typeof RadioGroup> = {
   title: 'RadioGroup',
@@ -13,4 +13,4 @@ const meta: Meta<typeof RadioGroup> = {
 export default meta
 
 export const Default = () => <DefaultStory />
-export const Vertical = () => <VerticalStory />
+export const Horizontal = () => <HorizontalStory />

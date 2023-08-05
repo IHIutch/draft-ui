@@ -60,20 +60,25 @@ export default function ComponentExample({
           <Tab id="code">Code</Tab>
         </TabList>
         <TabPanel id="example" className="px-0">
-          <div className="not-prose rounded-md border dark:border-slate-700 dark:bg-slate-800">
+          <div className="not-prose overflow-x-auto rounded-md border dark:border-slate-700 dark:bg-slate-800">
             <div
-              className={cn('flex min-h-[350px] justify-center p-10', {
-                'items-center': align === 'center',
-                'items-start': align === 'start',
-                'items-end': align === 'end',
-              })}
+              className={cn(
+                'flex min-h-[350px] justify-center p-4 min-w-[max-content]',
+                {
+                  'items-center': align === 'center',
+                  'items-start': align === 'start',
+                  'items-end': align === 'end',
+                }
+              )}
             >
+              {/* <div className="w-[max-content] px-4"> */}
               <React.Suspense fallback={null}>{Story}</React.Suspense>
+              {/* </div> */}
             </div>
           </div>
         </TabPanel>
         <TabPanel id="code" className="px-0">
-          <div className="relative">
+          <div className="relative [&_pre]:mt-0">
             <div className="absolute right-2 top-2 z-10">
               <CopyClipboardButton text={String(codeString)} />
             </div>
