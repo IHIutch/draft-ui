@@ -1,6 +1,6 @@
 'use client'
 
-import { type ReactNode } from 'react'
+import * as React from 'react'
 
 import { cva, type VariantProps } from 'class-variance-authority'
 import { Checkbox, type CheckboxProps } from 'react-aria-components'
@@ -58,7 +58,7 @@ export interface _CheckboxProps
     VariantProps<typeof checkboxVariants>,
     VariantProps<typeof checkboxInnerVariants> {
   className?: string
-  children?: ReactNode
+  children?: React.ReactNode
 }
 
 const _Checkbox = ({ className, size, children, ...props }: _CheckboxProps) => {

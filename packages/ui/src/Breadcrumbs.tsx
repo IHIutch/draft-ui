@@ -1,6 +1,6 @@
 'use client'
 
-import { type ReactNode } from 'react'
+import * as React from 'react'
 
 import {
   Breadcrumbs,
@@ -25,8 +25,8 @@ const _Breadcrumbs = <T extends object>({
 }
 
 export interface _BreadcrumbItemProps extends ItemProps {
-  separator?: ReactNode
-  children?: ReactNode
+  separator?: React.ReactNode
+  children?: React.ReactNode
 }
 
 const _BreadcrumbItem = ({

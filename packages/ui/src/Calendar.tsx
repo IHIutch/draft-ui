@@ -1,6 +1,6 @@
 'use client'
 
-import { type HTMLAttributes } from 'react'
+import * as React from 'react'
 
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import {
@@ -133,7 +133,7 @@ const _CalendarHeading = ({ className, ...props }: HeadingProps) => {
 const _CalendarHeader = ({
   className,
   ...props
-}: HTMLAttributes<HTMLDivElement>) => {
+}: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <header
       className={cn('flex h-full items-center justify-between', className)}
@@ -142,7 +142,7 @@ const _CalendarHeader = ({
   )
 }
 
-const _CalendarFooter = (props: HTMLAttributes<HTMLDivElement>) => {
+const _CalendarFooter = (props: React.HTMLAttributes<HTMLDivElement>) => {
   return <footer {...props} />
 }
 

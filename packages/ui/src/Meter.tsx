@@ -1,6 +1,6 @@
 'use client'
 
-import { type HTMLAttributes } from 'react'
+import * as React from 'react'
 
 import { Meter, type MeterProps } from 'react-aria-components'
 
@@ -14,7 +14,7 @@ const _MeterTrack = ({
   className,
   children,
   ...props
-}: HTMLAttributes<HTMLDivElement>) => {
+}: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
       className={cn(
@@ -28,7 +28,8 @@ const _MeterTrack = ({
   )
 }
 
-export interface _MeterFilledTrackProps extends HTMLAttributes<HTMLDivElement> {
+export interface _MeterFilledTrackProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   percentage: number
 }
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { type HTMLAttributes } from 'react'
+import * as React from 'react'
 
 import { Check, Circle } from 'lucide-react'
 import {
@@ -101,7 +101,10 @@ const _MenuSection = <T extends object>(props: SectionProps<T>) => {
   return <Section {...props} />
 }
 
-const _MenuHeader = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
+const _MenuHeader = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLElement>) => {
   return (
     <Header
       className={cn(

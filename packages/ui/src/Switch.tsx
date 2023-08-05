@@ -1,6 +1,6 @@
 'use client'
 
-import { type HTMLAttributes } from 'react'
+import * as React from 'react'
 
 import { cva, type VariantProps } from 'class-variance-authority'
 import { Switch, type SwitchProps } from 'react-aria-components'
@@ -71,7 +71,7 @@ const _Switch = ({ children, className, ...props }: _SwitchProps) => {
 }
 
 export interface _SwitchIndicatorProps
-  extends HTMLAttributes<HTMLDivElement>,
+  extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof switchIndicatorVariants> {
   className?: string
 }

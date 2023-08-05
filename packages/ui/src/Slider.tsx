@@ -1,6 +1,6 @@
 'use client'
 
-import { type HTMLAttributes } from 'react'
+import * as React from 'react'
 
 import {
   Slider,
@@ -46,7 +46,7 @@ const _SliderTrack = ({ className, ...props }: SliderTrackProps) => {
 }
 
 export interface _SliderFilledTrackProps
-  extends HTMLAttributes<HTMLDivElement> {
+  extends React.HTMLAttributes<HTMLDivElement> {
   percentage?: number
   orientation?: 'horizontal' | 'vertical'
   className?: string

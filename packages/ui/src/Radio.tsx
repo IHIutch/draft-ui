@@ -1,6 +1,6 @@
 'use client'
 
-import { type ReactNode } from 'react'
+import * as React from 'react'
 
 import { cva, type VariantProps } from 'class-variance-authority'
 import { Radio, type RadioProps } from 'react-aria-components'
@@ -61,7 +61,7 @@ export interface _RadioProps
     VariantProps<typeof radioVariants>,
     VariantProps<typeof radioInnerVariants> {
   className?: string
-  children?: ReactNode
+  children?: React.ReactNode
 }
 
 const _Radio = ({ className, size, children, ...props }: _RadioProps) => {

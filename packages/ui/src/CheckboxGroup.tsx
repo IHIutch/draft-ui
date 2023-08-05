@@ -1,6 +1,6 @@
 'use client'
 
-import { type HTMLAttributes } from 'react'
+import * as React from 'react'
 
 import { CheckboxGroup, type CheckboxGroupProps } from 'react-aria-components'
 
@@ -23,7 +23,7 @@ const _CheckboxGroup = ({
   )
 }
 
-const _CheckboxGroupContent = (props: HTMLAttributes<HTMLDivElement>) => {
+const _CheckboxGroupContent = (props: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
       className={cn(

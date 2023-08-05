@@ -1,6 +1,6 @@
 'use client'
 
-import { type HTMLAttributes } from 'react'
+import * as React from 'react'
 
 import { ProgressBar, type ProgressBarProps } from 'react-aria-components'
 
@@ -14,7 +14,7 @@ const _ProgressBarTrack = ({
   className,
   children,
   ...props
-}: HTMLAttributes<HTMLDivElement>) => {
+}: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
       className={cn(
@@ -29,7 +29,7 @@ const _ProgressBarTrack = ({
 }
 
 export interface _ProgressBarFilledTrackProps
-  extends HTMLAttributes<HTMLDivElement> {
+  extends React.HTMLAttributes<HTMLDivElement> {
   percentage?: number
 }
 

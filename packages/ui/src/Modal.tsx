@@ -1,6 +1,6 @@
 'use client'
 
-import { type HTMLAttributes, type ReactNode } from 'react'
+import * as React from 'react'
 
 import { cva, type VariantProps } from 'class-variance-authority'
 import {
@@ -48,7 +48,7 @@ export interface _ModalContentProps
   extends ModalOverlayProps,
     VariantProps<typeof modalVariants> {
   className?: string
-  children?: ReactNode
+  children?: React.ReactNode
 }
 
 const _ModalContent = ({
@@ -96,7 +96,10 @@ const _ModalOverlay = ({
   )
 }
 
-const _ModalHeader = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
+const _ModalHeader = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLElement>) => {
   return (
     <header
       className={cn(
@@ -111,11 +114,14 @@ const _ModalHeader = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
 const _ModalBody = ({
   className,
   ...props
-}: HTMLAttributes<HTMLDivElement>) => {
+}: React.HTMLAttributes<HTMLDivElement>) => {
   return <div className={cn('px-6 py-2 flex-1', className)} {...props} />
 }
 
-const _ModalFooter = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
+const _ModalFooter = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLElement>) => {
   return <footer className={cn('px-6 py-4', className)} {...props} />
 }
 

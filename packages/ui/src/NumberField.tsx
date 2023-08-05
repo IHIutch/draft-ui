@@ -1,6 +1,6 @@
 'use client'
 
-import { type HTMLAttributes } from 'react'
+import * as React from 'react'
 
 import {
   Button,
@@ -26,7 +26,7 @@ const _NumberInputGroup = (props: GroupProps) => {
 const _NumberInputStepper = ({
   className,
   ...props
-}: HTMLAttributes<HTMLElement>) => {
+}: React.HTMLAttributes<HTMLElement>) => {
   return (
     <div
       className={cn(

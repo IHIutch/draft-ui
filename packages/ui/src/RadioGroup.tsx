@@ -1,6 +1,6 @@
 'use client'
 
-import { type HTMLAttributes } from 'react'
+import * as React from 'react'
 
 import { RadioGroup, type RadioGroupProps } from 'react-aria-components'
 
@@ -10,7 +10,7 @@ const _RadioGroup = (props: RadioGroupProps) => {
   return <RadioGroup className="group" {...props} />
 }
 
-const _RadioGroupContent = (props: HTMLAttributes<HTMLDivElement>) => {
+const _RadioGroupContent = (props: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
       className={cn(
