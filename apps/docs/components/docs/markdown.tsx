@@ -3,8 +3,9 @@ import React from 'react'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 
 import { type DocumentTypes } from '@/.contentlayer/generated'
-import ComponentExample from '@/components/ComponentExample'
-import ComponentSource from '@/components/ComponentSource'
+import Callout from '@/components/docs/callout'
+import ComponentExample from '@/components/docs/ComponentExample'
+import ComponentSource from '@/components/docs/ComponentSource'
 
 type MarkdownProps = {
   doc: DocumentTypes
@@ -19,26 +20,7 @@ export default function Markdown(props: MarkdownProps) {
         components={{
           ComponentSource,
           ComponentExample,
-          //   ComponentExample: ({ name }: any) =>
-          //     match(doc)
-          //       .with(
-          //         {
-          //           type: 'Component',
-          //           examples: P.when((val: ExamplesListItem[]) =>
-          //             val.map((v) => v.variant).includes(name)
-          //           ),
-          //         },
-          //         ({ examples }) => (
-          //           <ComponentExample
-          //             example={examples.find((e: any) => e.variant === name)}
-          //           />
-          //         )
-          //       )
-          //       .otherwise(() => {
-          //         throw new Error(
-          //           `Example named "${name}" for the ${doc.title} component was not found. Ensure that you have added the story to the storybook of the component.`
-          //         )
-          //       }),
+          Callout,
         }}
       />
     </div>

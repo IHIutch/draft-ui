@@ -4,7 +4,7 @@ import * as React from 'react'
 
 import { Highlight, themes } from 'prism-react-renderer'
 
-import CopyClipboardButton from './CopyClipboardButton'
+import CopyClipboardButton from '../CopyClipboardButton'
 
 // chlidren is raw code string injected from ComponentSource.markdoc.ts
 export default function ComponentSource({ children }) {

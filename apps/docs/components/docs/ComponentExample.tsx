@@ -8,7 +8,7 @@ import { Tab, TabList, TabPanel, Tabs } from 'ui'
 import { Index } from '@/__registry__'
 import { cn } from '@/lib/utils'
 
-import CopyClipboardButton from './CopyClipboardButton'
+import CopyClipboardButton from '../CopyClipboardButton'
 
 interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
   // example: ExamplesListItem

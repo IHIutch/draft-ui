@@ -4,8 +4,8 @@ import * as React from 'react'
 
 import Markdoc, { type RenderableTreeNodes } from '@markdoc/markdoc'
 
-import ComponentExample from './ComponentExample'
-import ComponentSource from './ComponentSource'
+import ComponentExample from './docs/ComponentExample'
+import ComponentSource from './docs/ComponentSource'
 import { exampleComponents } from './examples'
 import Heading from './Heading'
 
