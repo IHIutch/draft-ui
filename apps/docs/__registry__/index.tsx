@@ -81,11 +81,11 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/CheckboxGroup/default")),
       file: "registry/CheckboxGroup/default.tsx"
     },
-    "vertical": {
-      name: "CheckboxGroup-vertical",
-      story: "vertical",
-      component: React.lazy(() => import("@/registry/CheckboxGroup/vertical")),
-      file: "registry/CheckboxGroup/vertical.tsx"
+    "horizontal": {
+      name: "CheckboxGroup-horizontal",
+      story: "horizontal",
+      component: React.lazy(() => import("@/registry/CheckboxGroup/horizontal")),
+      file: "registry/CheckboxGroup/horizontal.tsx"
     },
   },
   "Combobox": {
@@ -317,11 +317,11 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/RadioGroup/default")),
       file: "registry/RadioGroup/default.tsx"
     },
-    "vertical": {
-      name: "RadioGroup-vertical",
-      story: "vertical",
-      component: React.lazy(() => import("@/registry/RadioGroup/vertical")),
-      file: "registry/RadioGroup/vertical.tsx"
+    "horizontal": {
+      name: "RadioGroup-horizontal",
+      story: "horizontal",
+      component: React.lazy(() => import("@/registry/RadioGroup/horizontal")),
+      file: "registry/RadioGroup/horizontal.tsx"
     },
   },
   "RangeCalendar": {

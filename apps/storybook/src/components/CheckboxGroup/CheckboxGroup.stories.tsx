@@ -3,7 +3,7 @@ import { CheckboxGroup } from 'ui'
 import { type Meta } from '@storybook/react'
 
 import DefaultStory from './stories/default'
-import VerticalStory from './stories/vertical'
+import HorizontalStory from './stories/horizontal'
 
 const meta: Meta<typeof CheckboxGroup> = {
   title: 'CheckboxGroup',
@@ -13,4 +13,4 @@ const meta: Meta<typeof CheckboxGroup> = {
 export default meta
 
 export const Default = () => <DefaultStory />
-export const Vertical = () => <VerticalStory />
+export const Horizontal = () => <HorizontalStory />

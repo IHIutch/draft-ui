@@ -1,8 +1,8 @@
 import { Label, Radio, RadioGroup, RadioGroupContent } from 'ui'
 
-export default function Sizes() {
+export default function Horizontal() {
   return (
-    <RadioGroup orientation="vertical">
+    <RadioGroup orientation="horizontal">
       <Label>Favorite animal</Label>
       <RadioGroupContent>
         <Radio value="dog">Dog</Radio>
