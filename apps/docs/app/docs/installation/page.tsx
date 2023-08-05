@@ -53,10 +53,8 @@ export function cn(...inputs: ClassValue[]) {
             <h2>Install Required Dependencies</h2>
             <pre>
               <code>
-                <span className="flex">
-                  npm install react-aria-components class-variance-authority
-                  clsx tailwind-merge tailwindcss-animate
-                </span>
+                npm install react-aria-components class-variance-authority clsx
+                tailwind-merge tailwindcss-animate
               </code>
             </pre>
             <p>This project requires the following packages:</p>
@@ -134,18 +132,14 @@ export function cn(...inputs: ClassValue[]) {
             want to use a different alias, you&apos;ll need to update your
             components manually.
             <pre>
-              <code>
-                <span className="flex">{pathAliasConfig}</span>
-              </code>
+              <code>{pathAliasConfig}</code>
             </pre>
           </li>
           <li>
             <h2>Configure Tailwind</h2>
             Make sure to include the <code>tailwindcss-animate</code> plugin
             <pre>
-              <code>
-                <span className="flex">{tailwindConfig}</span>
-              </code>
+              <code>{tailwindConfig}</code>
             </pre>
           </li>
           <li>
@@ -160,9 +154,7 @@ export function cn(...inputs: ClassValue[]) {
               components.
             </p>
             <pre>
-              <code>
-                <span className="flex">{helperFunction}</span>
-              </code>
+              <code>{helperFunction}</code>
             </pre>
           </li>
           <li>

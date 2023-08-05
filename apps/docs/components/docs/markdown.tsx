@@ -7,6 +7,7 @@ import Callout from '@/components/docs/callout'
 import ComponentExample from '@/components/docs/ComponentExample'
 import ComponentSource from '@/components/docs/ComponentSource'
 import Heading from '@/components/docs/Heading'
+import { cn } from '@/lib/utils'
 
 type MarkdownProps = {
   doc: DocumentTypes
@@ -23,6 +24,18 @@ export default function Markdown(props: MarkdownProps) {
           ComponentExample,
           Callout,
           Heading,
+          code: ({
+            className,
+            ...props
+          }: React.HTMLAttributes<HTMLElement>) => (
+            <code
+              className={cn(
+                // 'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm',
+                className
+              )}
+              {...props}
+            />
+          ),
         }}
       />
     </div>
