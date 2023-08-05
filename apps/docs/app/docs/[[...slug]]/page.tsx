@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation'
 
 import { allComponents } from '@/.contentlayer/generated'
 import Markdown from '@/components/docs/markdown'
-import { MarkdocContent } from '@/components/MarkdocContent'
 import PageToc from '@/components/PageToc'
 import { getDocContent, getDocsMetadata } from '@/lib/server'
 
@@ -37,15 +36,12 @@ export default async function DocPage({ params }: DocPageProps) {
     notFound()
   }
 
-  const { content, frontmatter, headings } = doc
-
   return (
     <>
       <article className="my-12 w-full">
         <div className="prose prose-slate dark:prose-invert mx-auto">
-          <h1>{frontmatter.title}</h1>
-          <p className="lead">{frontmatter.description}</p>
-          {/* <MarkdocContent content={JSON.parse(JSON.stringify(content))} /> */}
+          <h1>{post.title}</h1>
+          <p className="lead">{post.description}</p>
           <Markdown doc={post} />
         </div>
       </article>
@@ -53,7 +49,7 @@ export default async function DocPage({ params }: DocPageProps) {
         <div className="fixed top-0 h-screen pt-16">
           <div className="h-full overflow-y-auto">
             <div className="my-12 pr-4">
-              <PageToc headings={headings} />
+              <PageToc headings={doc.headings} />
             </div>
           </div>
         </div>

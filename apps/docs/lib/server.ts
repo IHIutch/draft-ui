@@ -3,7 +3,6 @@ import path from 'path'
 
 import matter from 'gray-matter'
 
-import { exampleTags } from '@/components/examples'
 import heading from '@/markdoc/nodes/heading.markdoc'
 import ComponentExample from '@/markdoc/tags/ComponentExample.markdoc'
 import ComponentSource from '@/markdoc/tags/ComponentSource.markdoc'
@@ -22,7 +21,6 @@ export async function getDocContent(path: string) {
     tags: {
       ComponentExample,
       ComponentSource,
-      ...exampleTags,
     },
     nodes: {
       heading,
