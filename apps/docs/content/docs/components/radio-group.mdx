@@ -2,7 +2,6 @@
 title: Radio Group
 description: A radio group allows a user to select a single item from a list of mutually exclusive options.
 isComponent: true
-isWip: true
 ---
 
 ## Installation
@@ -21,30 +20,15 @@ Copy and paste the code examples below into your project.
 
 ### Default
 
-This is the default example
+The default **`RadioGroup`** uses orientation `horizontal`.
 
 <ComponentExample name="RadioGroup" story="default" />
 
----
+### Vertical
 
-### Disabled
+> **Note**
+> Unlike **`CheckboxGroup`**, **`RadioGroup`** does support `aria-orientation`. So that is used to style the layout.
 
-**Coming soon:** This is the disabled example
+Set the `orientation` prop to `vertical` to use a vertical **`RadioGroup`**.
 
-{/* TODO */}
-
----
-
-### With Label
-
-**Coming soon:** This is an example with a label
-
-{/* TODO */}
-
----
-
-### Horizontal
-
-**Coming soon:** This is a horizontal example
-
-{/* TODO */}
+<ComponentExample name="RadioGroup" story="vertical" />

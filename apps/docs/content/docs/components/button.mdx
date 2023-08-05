@@ -2,7 +2,6 @@
 title: Button
 description: A button allows a user to perform an action, with mouse, touch, and keyboard interactions.
 isComponent: true
-isWip: true
 ---
 
 ## Installation
@@ -21,14 +20,24 @@ Copy and paste the code examples below into your project.
 
 ### Default
 
-This is the default example
+The default **`Button`** uses variant `solid` and size `md`.
 
 <ComponentExample name="Button" story="default" />
 
----
+### Themes
+
+You can use the `variant` prop to alter the **`Button`** theme. Variants `solid`, `outline`, `subtle`, `ghost`, `destructive`, and `link` are included by default.
+
+<ComponentExample name="Button" story="theme" />
+
+### Sizes
+
+You can use the `size` prop to alter the **`Button`** size. Sizes `xs`, `sm`, `md`, and `lg` are included by default.
+
+<ComponentExample name="Button" story="sizes" />
 
 ### Disabled
 
-**Coming soon:** This is the disabled example
+Set the `isDisabled` prop to make a disabled **`Button`**.
 
-{/* TODO */}
+<ComponentExample name="Button" story="disabled" />

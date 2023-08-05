@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Switch, SwitchIndicator } from 'ui'
 
 export default function Default() {

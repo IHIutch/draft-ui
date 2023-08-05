@@ -2,7 +2,6 @@
 title: Modal
 description: A modal is an overlay element which blocks interaction with elements outside it.
 isComponent: true
-isWip: true
 ---
 
 ## Installation
@@ -21,20 +20,24 @@ Copy and paste the code examples below into your project.
 
 ### Default
 
-This is the default example
+The default **`Modal`** uses size `md`.
 
 <ComponentExample name="Modal" story="default" />
 
----
-
 ### Sizes
 
-**Coming soon:** This is an example with different modal sizes
+You can use the `size` prop to alter the button size. Sizes `xs`, `sm`, `md`, `lg`, `xl`, and `full` are included by default.
 
-{/* TODO */}
+<ComponentExample name="Modal" story="sizes" />
+
+### Set Autofocus
+
+You can manually control which element recieves focus when the **`Modal`** opens by setting `autoFocus` on a focusable element.
+
+<ComponentExample name="Modal" story="set-autofocus" />
 
 ### Dismissable
 
-**Coming soon:** This is an example showing how to use `isDismissable` prop
+Modals are dismissable by clicking outside by default or by pressing the <kdb>Esc</kdb> key. To prevent this, set `isDismissable` to `false` and/or `isKeyboardDismissDisabled` to `true`.
 
-{/* TODO */}
+<ComponentExample name="Modal" story="dismissable-false" />

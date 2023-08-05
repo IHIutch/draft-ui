@@ -2,7 +2,6 @@
 title: Slider
 description: A slider allows a user to select one or more values within a range.
 isComponent: true
-isWip: true
 ---
 
 ## Installation
@@ -21,14 +20,15 @@ Copy and paste the code examples below into your project.
 
 ### Default
 
-This is the default example
+The default **`Slider`** uses orientation `horizontal`.
 
 <ComponentExample name="Slider" story="default" />
 
----
-
 ### Vertical
 
-This is the vertical example
+Set the `orientation` prop to `vertical` to use a vertical **`Slider`**.
+
+> **Note**
+> You must also add `orientation="vertical"` to **`SliderFilledTrack`** and give **`SliderTrack`** a specific height.
 
 <ComponentExample name="Slider" story="vertical" />

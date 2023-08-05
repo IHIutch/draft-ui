@@ -1,8 +1,8 @@
 import { Checkbox, CheckboxGroup, CheckboxGroupContent, Label } from 'ui'
 
-export default function Default() {
+export default function Vertical() {
   return (
-    <CheckboxGroup>
+    <CheckboxGroup orientation="vertical">
       <Label>Favorite sports</Label>
       <CheckboxGroupContent>
         <Checkbox value="soccer">Soccer</Checkbox>

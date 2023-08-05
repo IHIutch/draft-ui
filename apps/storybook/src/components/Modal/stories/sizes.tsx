@@ -24,7 +24,7 @@ export default function Default() {
   }
   return (
     <>
-      <div className="flex gap-4">
+      <div className="grid grid-cols-3 gap-4">
         {sizes.map((size, idx) => (
           <Button onPress={() => handlePress(size, true)} key={idx}>
             Open {size}
@@ -53,11 +53,7 @@ export default function Default() {
             </p>
           </ModalBody>
           <ModalFooter className="flex">
-            <Button
-              autoFocus
-              className="ml-auto"
-              onPress={() => setIsOpen(false)}
-            >
+            <Button className="ml-auto" onPress={() => setIsOpen(false)}>
               Close
             </Button>
             <Button

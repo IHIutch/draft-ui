@@ -6,8 +6,7 @@
     "lint": "turbo run lint",
     "storybook": "turbo run storybook",
     "prepare": "husky install",
-    "build-registry": "turbo run build-registry",
-    "copy-files": "cp packages/ui/src/* apps/docs/components/ui/"
+    "build-registry": "turbo run build-registry"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",

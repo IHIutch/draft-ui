@@ -1,15 +1,5 @@
-import React from 'react'
-
 import { ChevronDown } from 'lucide-react'
-import {
-  Button,
-  Menu,
-  MenuContent,
-  MenuHeader,
-  MenuItem,
-  MenuSection,
-  MenuSeparator,
-} from 'ui'
+import { Button, Menu, MenuContent, MenuItem } from 'ui'
 
 export default function Default() {
   return (
@@ -19,19 +9,9 @@ export default function Default() {
         <ChevronDown size="16" strokeWidth="3" />
       </Button>
       <MenuContent>
-        <MenuSection>
-          <MenuHeader>Styles</MenuHeader>
-          <MenuItem id="foo1">Foo</MenuItem>
-          <MenuItem id="bar1">Bar</MenuItem>
-          <MenuItem id="baz1">Baz</MenuItem>
-        </MenuSection>
-        <MenuSeparator />
-        <MenuSection>
-          <MenuHeader>Align</MenuHeader>
-          <MenuItem id="foo2">Foo</MenuItem>
-          <MenuItem id="bar2">Bar</MenuItem>
-          <MenuItem id="baz2">Baz</MenuItem>
-        </MenuSection>
+        <MenuItem id="foo1">Foo</MenuItem>
+        <MenuItem id="bar1">Bar</MenuItem>
+        <MenuItem id="baz1">Baz</MenuItem>
       </MenuContent>
     </Menu>
   )

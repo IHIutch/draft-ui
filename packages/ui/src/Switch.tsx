@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils'
 const switchIndicatorVariants = cva(
   [
     'cursor-pointer rounded-full bg-gray-300 p-0.5 transition-colors dark:bg-slate-700',
-    // Focused
+    // Focus
     'group-[[data-focused]]:ring-2 group-[[data-focused]]:ring-slate-400 group-[[data-focused]]:ring-offset-2 dark:group-[[data-focused]]:ring-slate-400 dark:group-[[data-focused]]:ring-offset-slate-900',
     // Selected
     'group-[[data-selected]]:bg-black dark:group-[[data-selected]]:bg-slate-400',

@@ -35,7 +35,7 @@ const radioInnerVariants = cva(
     'group-[[data-selected=true]]:border-black group-[[data-selected=true]]:bg-black group-[[data-selected=true]]:text-white dark:group-[[data-selected=true]]:border-white dark:group-[[data-selected=true]]:bg-white dark:group-[[data-selected=true]]:text-black',
     // ::before Selected
     'group-[[data-selected=true]]:before:scale-100',
-    // Focused
+    // Focus
     'group-[[data-focused]]:ring-2 group-[[data-focused]]:ring-slate-400 group-[[data-focused]]:ring-offset-2 dark:group-[[data-focused]]:ring-slate-400 dark:group-[[data-focused]]:ring-offset-slate-900',
     // Disabled
     'group-[[data-disabled]]:border-slate-100',

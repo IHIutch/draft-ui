@@ -12,8 +12,11 @@ import {
 
 import { cn } from '@/lib/utils'
 
-const _DatePicker = <T extends DateValue>(props: DatePickerProps<T>) => {
-  return <DatePicker {...props} />
+const _DatePicker = <T extends DateValue>({
+  className,
+  ...props
+}: DatePickerProps<T>) => {
+  return <DatePicker className={cn('w-full', className)} {...props} />
 }
 
 export interface _DatePickerContentProps

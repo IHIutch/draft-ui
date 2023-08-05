@@ -17,7 +17,7 @@ import { cn } from '@/lib/utils'
 export const modalVariants = cva(
   [
     'fill-mode-forwards',
-    'mx-auto w-full rounded bg-white outline-none dark:bg-slate-800',
+    'mx-auto w-full flex-col rounded bg-white outline-none dark:bg-slate-800',
     // Entering
     'data-[entering]:animate-in data-[entering]:zoom-in-95',
     // Exiting
@@ -67,7 +67,7 @@ const _ModalContent = ({
       )}
       {...props}
     >
-      <Dialog className="relative flex flex-col outline-none">
+      <Dialog className="relative flex h-full flex-col outline-none">
         {children}
       </Dialog>
     </Modal>

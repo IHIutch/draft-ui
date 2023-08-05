@@ -15,8 +15,8 @@ import { cn } from '@/lib/utils'
 import { type _ButtonProps } from './Button'
 import { Input, type _InputProps } from './Input'
 
-const _NumberField = (props: NumberFieldProps) => {
-  return <NumberField {...props} />
+const _NumberField = ({ className, ...props }: NumberFieldProps) => {
+  return <NumberField className={cn('w-full', className)} {...props} />
 }
 
 const _NumberInputGroup = (props: GroupProps) => {
@@ -48,7 +48,7 @@ const _NumberIncrementStepper = ({ className, ...props }: _ButtonProps) => {
       slot="increment"
       className={cn(
         [
-          'text-black dark:text-white flex flex-1 select-none items-center justify-center border-l border-slate-300 dark:border-slate-700 leading-none transition-colors duration-100 rounded-tr-md',
+          'text-black dark:text-white flex flex-1 select-none items-center justify-center border-l dark:border-slate-700 leading-none transition-colors duration-100 rounded-tr-md',
           // Pressed
           'data-[pressed]:bg-slate-100 dark:data-[pressed]:bg-slate-700',
         ],
@@ -65,7 +65,7 @@ const _NumberDecrementStepper = ({ className, ...props }: _ButtonProps) => {
       slot="decrement"
       className={cn(
         [
-          'text-black dark:text-white flex flex-1 select-none items-center justify-center border-l border-slate-300 dark:border-slate-700 leading-none transition-colors duration-100 rounded-br-md border-t',
+          'text-black dark:text-white flex flex-1 select-none items-center justify-center border-l dark:border-slate-700 leading-none transition-colors duration-100 rounded-br-md border-t',
           // Pressed
           'data-[pressed]:bg-slate-100 dark:data-[pressed]:bg-slate-700',
         ],

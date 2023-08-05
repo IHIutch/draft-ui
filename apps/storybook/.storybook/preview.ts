@@ -4,7 +4,6 @@ import { withThemeByClassName } from '@storybook/addon-styling'
 import '../src/styles.css'
 
 import { Preview } from '@storybook/react'
-import { themes } from '@storybook/theming'
 
 const preview: Preview = {
   parameters: {

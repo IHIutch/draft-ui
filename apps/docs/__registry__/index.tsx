@@ -33,6 +33,24 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/Button/default")),
       file: "registry/Button/default.tsx"
     },
+    "disabled": {
+      name: "Button-disabled",
+      story: "disabled",
+      component: React.lazy(() => import("@/registry/Button/disabled")),
+      file: "registry/Button/disabled.tsx"
+    },
+    "sizes": {
+      name: "Button-sizes",
+      story: "sizes",
+      component: React.lazy(() => import("@/registry/Button/sizes")),
+      file: "registry/Button/sizes.tsx"
+    },
+    "theme": {
+      name: "Button-theme",
+      story: "theme",
+      component: React.lazy(() => import("@/registry/Button/theme")),
+      file: "registry/Button/theme.tsx"
+    },
   },
   "Calendar": {
     "default": {
@@ -49,6 +67,12 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/Checkbox/default")),
       file: "registry/Checkbox/default.tsx"
     },
+    "sizes": {
+      name: "Checkbox-sizes",
+      story: "sizes",
+      component: React.lazy(() => import("@/registry/Checkbox/sizes")),
+      file: "registry/Checkbox/sizes.tsx"
+    },
   },
   "CheckboxGroup": {
     "default": {
@@ -56,6 +80,12 @@ export const Index: ComponentRegistry = {
       story: "default",
       component: React.lazy(() => import("@/registry/CheckboxGroup/default")),
       file: "registry/CheckboxGroup/default.tsx"
+    },
+    "vertical": {
+      name: "CheckboxGroup-vertical",
+      story: "vertical",
+      component: React.lazy(() => import("@/registry/CheckboxGroup/vertical")),
+      file: "registry/CheckboxGroup/vertical.tsx"
     },
   },
   "Combobox": {
@@ -65,6 +95,12 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/Combobox/default")),
       file: "registry/Combobox/default.tsx"
     },
+    "with-button": {
+      name: "Combobox-with-button",
+      story: "with-button",
+      component: React.lazy(() => import("@/registry/Combobox/with-button")),
+      file: "registry/Combobox/with-button.tsx"
+    },
   },
   "DateField": {
     "default": {
@@ -73,6 +109,12 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/DateField/default")),
       file: "registry/DateField/default.tsx"
     },
+    "disabled": {
+      name: "DateField-disabled",
+      story: "disabled",
+      component: React.lazy(() => import("@/registry/DateField/disabled")),
+      file: "registry/DateField/disabled.tsx"
+    },
   },
   "DateInput": {
     "default": {
@@ -80,6 +122,12 @@ export const Index: ComponentRegistry = {
       story: "default",
       component: React.lazy(() => import("@/registry/DateInput/default")),
       file: "registry/DateInput/default.tsx"
+    },
+    "sizes": {
+      name: "DateInput-sizes",
+      story: "sizes",
+      component: React.lazy(() => import("@/registry/DateInput/sizes")),
+      file: "registry/DateInput/sizes.tsx"
     },
   },
   "DatePicker": {
@@ -113,6 +161,24 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/IconButton/default")),
       file: "registry/IconButton/default.tsx"
     },
+    "disabled": {
+      name: "IconButton-disabled",
+      story: "disabled",
+      component: React.lazy(() => import("@/registry/IconButton/disabled")),
+      file: "registry/IconButton/disabled.tsx"
+    },
+    "sizes": {
+      name: "IconButton-sizes",
+      story: "sizes",
+      component: React.lazy(() => import("@/registry/IconButton/sizes")),
+      file: "registry/IconButton/sizes.tsx"
+    },
+    "theme": {
+      name: "IconButton-theme",
+      story: "theme",
+      component: React.lazy(() => import("@/registry/IconButton/theme")),
+      file: "registry/IconButton/theme.tsx"
+    },
   },
   "Input": {
     "default": {
@@ -120,6 +186,12 @@ export const Index: ComponentRegistry = {
       story: "default",
       component: React.lazy(() => import("@/registry/Input/default")),
       file: "registry/Input/default.tsx"
+    },
+    "sizes": {
+      name: "Input-sizes",
+      story: "sizes",
+      component: React.lazy(() => import("@/registry/Input/sizes")),
+      file: "registry/Input/sizes.tsx"
     },
   },
   "Label": {
@@ -131,11 +203,35 @@ export const Index: ComponentRegistry = {
     },
   },
   "Menu": {
+    "as-checkbox": {
+      name: "Menu-as-checkbox",
+      story: "as-checkbox",
+      component: React.lazy(() => import("@/registry/Menu/as-checkbox")),
+      file: "registry/Menu/as-checkbox.tsx"
+    },
+    "as-radio": {
+      name: "Menu-as-radio",
+      story: "as-radio",
+      component: React.lazy(() => import("@/registry/Menu/as-radio")),
+      file: "registry/Menu/as-radio.tsx"
+    },
     "default": {
       name: "Menu-default",
       story: "default",
       component: React.lazy(() => import("@/registry/Menu/default")),
       file: "registry/Menu/default.tsx"
+    },
+    "disabled": {
+      name: "Menu-disabled",
+      story: "disabled",
+      component: React.lazy(() => import("@/registry/Menu/disabled")),
+      file: "registry/Menu/disabled.tsx"
+    },
+    "with-sections": {
+      name: "Menu-with-sections",
+      story: "with-sections",
+      component: React.lazy(() => import("@/registry/Menu/with-sections")),
+      file: "registry/Menu/with-sections.tsx"
     },
   },
   "Meter": {
@@ -153,6 +249,24 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/Modal/default")),
       file: "registry/Modal/default.tsx"
     },
+    "dismissable-false": {
+      name: "Modal-dismissable-false",
+      story: "dismissable-false",
+      component: React.lazy(() => import("@/registry/Modal/dismissable-false")),
+      file: "registry/Modal/dismissable-false.tsx"
+    },
+    "set-autofocus": {
+      name: "Modal-set-autofocus",
+      story: "set-autofocus",
+      component: React.lazy(() => import("@/registry/Modal/set-autofocus")),
+      file: "registry/Modal/set-autofocus.tsx"
+    },
+    "sizes": {
+      name: "Modal-sizes",
+      story: "sizes",
+      component: React.lazy(() => import("@/registry/Modal/sizes")),
+      file: "registry/Modal/sizes.tsx"
+    },
   },
   "NumberField": {
     "default": {
@@ -161,11 +275,17 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/NumberField/default")),
       file: "registry/NumberField/default.tsx"
     },
-    "mobile": {
-      name: "NumberField-mobile",
-      story: "mobile",
-      component: React.lazy(() => import("@/registry/NumberField/mobile")),
-      file: "registry/NumberField/mobile.tsx"
+    "with-mobile-stepper": {
+      name: "NumberField-with-mobile-stepper",
+      story: "with-mobile-stepper",
+      component: React.lazy(() => import("@/registry/NumberField/with-mobile-stepper")),
+      file: "registry/NumberField/with-mobile-stepper.tsx"
+    },
+    "with-stepper": {
+      name: "NumberField-with-stepper",
+      story: "with-stepper",
+      component: React.lazy(() => import("@/registry/NumberField/with-stepper")),
+      file: "registry/NumberField/with-stepper.tsx"
     },
   },
   "ProgressBar": {
@@ -183,6 +303,12 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/Radio/default")),
       file: "registry/Radio/default.tsx"
     },
+    "sizes": {
+      name: "Radio-sizes",
+      story: "sizes",
+      component: React.lazy(() => import("@/registry/Radio/sizes")),
+      file: "registry/Radio/sizes.tsx"
+    },
   },
   "RadioGroup": {
     "default": {
@@ -190,6 +316,12 @@ export const Index: ComponentRegistry = {
       story: "default",
       component: React.lazy(() => import("@/registry/RadioGroup/default")),
       file: "registry/RadioGroup/default.tsx"
+    },
+    "vertical": {
+      name: "RadioGroup-vertical",
+      story: "vertical",
+      component: React.lazy(() => import("@/registry/RadioGroup/vertical")),
+      file: "registry/RadioGroup/vertical.tsx"
     },
   },
   "RangeCalendar": {
@@ -212,12 +344,6 @@ export const Index: ComponentRegistry = {
       story: "with-clear-button",
       component: React.lazy(() => import("@/registry/SearchField/with-clear-button")),
       file: "registry/SearchField/with-clear-button.tsx"
-    },
-    "with-label": {
-      name: "SearchField-with-label",
-      story: "with-label",
-      component: React.lazy(() => import("@/registry/SearchField/with-label")),
-      file: "registry/SearchField/with-label.tsx"
     },
   },
   "Select": {
@@ -243,11 +369,29 @@ export const Index: ComponentRegistry = {
     },
   },
   "Switch": {
+    "alignment": {
+      name: "Switch-alignment",
+      story: "alignment",
+      component: React.lazy(() => import("@/registry/Switch/alignment")),
+      file: "registry/Switch/alignment.tsx"
+    },
     "default": {
       name: "Switch-default",
       story: "default",
       component: React.lazy(() => import("@/registry/Switch/default")),
       file: "registry/Switch/default.tsx"
+    },
+    "disabled": {
+      name: "Switch-disabled",
+      story: "disabled",
+      component: React.lazy(() => import("@/registry/Switch/disabled")),
+      file: "registry/Switch/disabled.tsx"
+    },
+    "sizes": {
+      name: "Switch-sizes",
+      story: "sizes",
+      component: React.lazy(() => import("@/registry/Switch/sizes")),
+      file: "registry/Switch/sizes.tsx"
     },
   },
   "Tabs": {
@@ -277,12 +421,6 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/TextField/with-error")),
       file: "registry/TextField/with-error.tsx"
     },
-    "with-label": {
-      name: "TextField-with-label",
-      story: "with-label",
-      component: React.lazy(() => import("@/registry/TextField/with-label")),
-      file: "registry/TextField/with-label.tsx"
-    },
   },
   "Tooltip": {
     "default": {
@@ -290,6 +428,12 @@ export const Index: ComponentRegistry = {
       story: "default",
       component: React.lazy(() => import("@/registry/Tooltip/default")),
       file: "registry/Tooltip/default.tsx"
+    },
+    "placement": {
+      name: "Tooltip-placement",
+      story: "placement",
+      component: React.lazy(() => import("@/registry/Tooltip/placement")),
+      file: "registry/Tooltip/placement.tsx"
     },
   },
 };

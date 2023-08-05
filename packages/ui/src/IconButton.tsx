@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils'
 const iconButtonVariants = cva(
   [
     'inline-flex items-center justify-center rounded-md font-semibold outline-none transition-colors',
-    // Focused
+    // Focus
     'focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 dark:focus:ring-offset-slate-900',
     // Disabled
     'disabled:pointer-events-none disabled:opacity-40',
@@ -22,7 +22,7 @@ const iconButtonVariants = cva(
           // Hover
           'hover:bg-slate-700 dark:hover:bg-slate-200',
           // Focus
-          '',
+          'focus:bg-slate-700 dark:focus:bg-slate-200',
           // Open
           'data-[state=open]:bg-slate-100 dark:data-[state=open]:bg-slate-800',
         ],
@@ -32,7 +32,7 @@ const iconButtonVariants = cva(
           // Hover
           'hover:bg-red-600 dark:hover:bg-red-600',
           // Focus
-          '',
+          'focus:bg-red-600 dark:focus:bg-red-600',
           // Open
           '',
         ],

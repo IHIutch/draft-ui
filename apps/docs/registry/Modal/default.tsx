@@ -1,7 +1,9 @@
 import * as React from 'react'
 
+import { X } from 'lucide-react'
 import {
   Button,
+  IconButton,
   ModalBody,
   ModalContent,
   ModalFooter,
@@ -14,11 +16,20 @@ export default function Default() {
   return (
     <>
       <Button onPress={() => setIsOpen(true)}>Open Modal</Button>
-      <ModalOverlay isDismissable isOpen={isOpen} onOpenChange={setIsOpen}>
+      <ModalOverlay isOpen={isOpen} onOpenChange={setIsOpen}>
         <ModalContent>
           <ModalHeader>Modal Title</ModalHeader>
+          <IconButton
+            className="absolute right-2 top-2"
+            size="sm"
+            variant="ghost"
+            aria-label="close"
+            onPress={() => setIsOpen(false)}
+          >
+            <X size="1em" />
+          </IconButton>
           <ModalBody>
-            <p>
+            <p className="text-black dark:text-white">
               Sit nulla est ex deserunt exercitation anim occaecat. Nostrud
               ullamco deserunt aute id consequat veniam incididunt duis in sint
               irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit
@@ -26,11 +37,7 @@ export default function Default() {
             </p>
           </ModalBody>
           <ModalFooter className="flex">
-            <Button
-              autoFocus
-              className="ml-auto"
-              onPress={() => setIsOpen(false)}
-            >
+            <Button className="ml-auto" onPress={() => setIsOpen(false)}>
               Close
             </Button>
             <Button

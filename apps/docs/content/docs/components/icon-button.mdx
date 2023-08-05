@@ -2,7 +2,6 @@
 title: Icon Button
 description: Displays a form input field or a component that looks like an input field.
 isComponent: true
-isWip: true
 ---
 
 ## Installation
@@ -21,14 +20,28 @@ Copy and paste the code examples below into your project.
 
 ### Default
 
-This is the default example
+The default **`IconButton`** uses variant `solid` and size `md`.
+
+> **Note**
+> When using an **`IconButton`** you should almost always use an `aria-label`.
+> In some components Aria React Components will automatically assign an `aria-label` to buttons.
 
 <ComponentExample name="IconButton" story="default" />
 
-{/* TODO: Add note about aria-label */}
+### Themes
 
----
+You can use the `variant` prop to alter the button theme. Variants `solid`, `outline`, `subtle`, `ghost`, `destructive`, and `link` are included by default.
+
+<ComponentExample name="IconButton" story="theme" />
+
+### Sizes
+
+You can use the `size` prop to alter the button size. Sizes `xs`, `sm`, `md`, and `lg` are included by default.
+
+<ComponentExample name="IconButton" story="sizes" />
 
 ### Disabled
 
-**Coming soon:** This is the disabled example
+Set the `isDisabled` prop to make a disabled **`IconButton`**.
+
+<ComponentExample name="IconButton" story="disabled" />

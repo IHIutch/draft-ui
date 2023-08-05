@@ -30,7 +30,7 @@ const checkboxVariants = cva(
 const checkboxInnerVariants = cva(
   [
     'flex items-center justify-center rounded border-2 border-slate-300 text-white transition-colors dark:border-slate-600 dark:text-black',
-    // Focused
+    // Focus
     'group-[[data-focused]]:ring-2 group-[[data-focused]]:ring-slate-400 group-[[data-focused]]:ring-offset-2 dark:group-[[data-focused]]:ring-slate-400 dark:group-[[data-focused]]:ring-offset-slate-900',
     // Selected
     'group-[[data-selected=true]]:border-black group-[[data-selected=true]]:bg-black dark:group-[[data-selected=true]]:border-white dark:group-[[data-selected=true]]:bg-white',

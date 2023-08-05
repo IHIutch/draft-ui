@@ -17,7 +17,7 @@ import {
 import { cn } from '@/lib/utils'
 
 const _Select = <T extends object>({ className, ...props }: SelectProps<T>) => {
-  return <Select className={className} {...props} />
+  return <Select className={cn('w-full', className)} {...props} />
 }
 
 export interface _SelectContentProps<T>
@@ -60,7 +60,7 @@ const _SelectItem = ({ className, children, ...props }: ItemProps) => {
       className={cn(
         'group',
         'flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors cursor-pointer text-black dark:text-white',
-        // Focused
+        // Focus
         'data-[focused]:bg-slate-100 dark:data-[focused]:bg-slate-700',
         className
       )}

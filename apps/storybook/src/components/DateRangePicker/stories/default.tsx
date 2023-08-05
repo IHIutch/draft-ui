@@ -23,7 +23,7 @@ export default function Default() {
   return (
     <DateRangePicker>
       <Label>Date Range</Label>
-      <DateInputGroup className="pr-1">
+      <DateInputGroup className="relative">
         <DateInput slot="start">
           {(segment) => <DateSegment segment={segment} />}
         </DateInput>
@@ -33,9 +33,11 @@ export default function Default() {
         <DateInput slot="end">
           {(segment) => <DateSegment segment={segment} />}
         </DateInput>
-        <IconButton size="sm" variant="subtle" className="ml-auto shrink-0">
-          <ChevronDown size="16" strokeWidth="3" />
-        </IconButton>
+        <div className="absolute inset-y-0 right-0 flex items-center p-1">
+          <IconButton size="sm" variant="subtle" className="ml-auto shrink-0">
+            <ChevronDown size="16" strokeWidth="3" />
+          </IconButton>
+        </div>
       </DateInputGroup>
       <DatePickerContent>
         <RangeCalendar>

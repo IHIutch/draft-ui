@@ -12,10 +12,11 @@ import {
 
 import { cn } from '@/lib/utils'
 
-const _DateRangePicker = <T extends DateValue>(
-  props: DateRangePickerProps<T>
-) => {
-  return <DateRangePicker {...props} />
+const _DateRangePicker = <T extends DateValue>({
+  className,
+  ...props
+}: DateRangePickerProps<T>) => {
+  return <DateRangePicker className={cn('w-full', className)} {...props} />
 }
 
 export interface _DateRangePickerContentProps

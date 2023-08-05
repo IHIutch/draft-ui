@@ -2,7 +2,6 @@
 title: Menu
 description: A menu displays a list of actions or options that a user can choose.
 isComponent: true
-isWip: true
 ---
 
 ## Installation
@@ -21,20 +20,34 @@ Copy and paste the code examples below into your project.
 
 ### Default
 
-<ComponentExample name="Menu" story="default" />
+This is the default **`Menu`** example.
 
----
+<ComponentExample name="Menu" story="default" />
 
 ### Disabled
 
-**Coming soon:** This is the disabled example
+Make specific **`MenuItem`**s disabled by adding their `id` to the **`MenuContent`**'s `disabledKeys` prop.
 
-{/* TODO */}
+<ComponentExample name="Menu" story="disabled" />
 
----
+### With Sections
 
-### Checkbox & Radio
+Add sections to the menu by using `MenuSection` and `MenuHeader`.
 
-**Coming soon:** This is an example with a single or multiple selection
+<ComponentExample name="Menu" story="with-sections" />
 
-{/* TODO */}
+### As Checkbox List
+
+**`MenuItem`** can act checkboxes by setting the **`MenuContent`**'s `selectionMode` prop to `multiple`.
+
+<ComponentExample name="Menu" story="as-checkbox" />
+
+### As Radio List
+
+**`MenuItem`** can act radios by setting the **`MenuContent`**'s `selectionMode` prop to `single`.
+
+<ComponentExample name="Menu" story="as-radio" />
+
+### Complex Menu Items
+
+**Coming Soon**: An example showing how to properly create **`MenuItem`**s with complex content.

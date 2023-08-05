@@ -14,14 +14,13 @@ import {
 
 import { cn } from '@/lib/utils'
 
-import { IconButton, type _IconButtonProps } from './IconButton'
 import { Input, type _InputProps } from './Input'
 
 const _ComboBox = <T extends object>({
   className,
   ...props
 }: ComboBoxProps<T>) => {
-  return <ComboBox className={cn('group', className)} {...props} />
+  return <ComboBox className={cn('group w-full', className)} {...props} />
 }
 
 const _ComboBoxInput = (props: _InputProps) => {
@@ -53,17 +52,6 @@ const _ComboBoxContent = <T extends object>({
   )
 }
 
-const _ComboBoxButton = ({ className, ...props }: _IconButtonProps) => {
-  return (
-    <div className="absolute inset-y-0 right-0 flex items-center p-1">
-      <IconButton
-        className={cn('group-[[data-empty]]:hidden', className)}
-        {...props}
-      />
-    </div>
-  )
-}
-
 const _ComboBoxItem = ({ className, children, ...props }: ItemProps) => {
   return (
     <Item
@@ -89,7 +77,6 @@ const _ComboBoxItem = ({ className, children, ...props }: ItemProps) => {
 
 export {
   _ComboBox as ComboBox,
-  _ComboBoxButton as ComboBoxButton,
   _ComboBoxContent as ComboBoxContent,
   _ComboBoxInput as ComboBoxInput,
   _ComboBoxItem as ComboBoxItem,

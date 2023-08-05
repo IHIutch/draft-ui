@@ -3,7 +3,8 @@ import { NumberField } from 'ui'
 import { type Meta } from '@storybook/react'
 
 import DefaultStory from './stories/default'
-import MobileStory from './stories/mobile'
+import MobileStepperStory from './stories/with-mobile-stepper'
+import StepperStory from './stories/with-stepper'
 
 const meta: Meta<typeof NumberField> = {
   title: 'NumberField',
@@ -13,5 +14,5 @@ const meta: Meta<typeof NumberField> = {
 export default meta
 
 export const Default = () => <DefaultStory />
-
-export const Mobile = () => <MobileStory />
+export const Stepper = () => <StepperStory />
+export const MobileStepper = () => <MobileStepperStory />

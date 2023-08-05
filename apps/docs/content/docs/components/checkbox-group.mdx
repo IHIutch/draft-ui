@@ -2,7 +2,6 @@
 title: Checkbox Group
 description: A checkbox group allows a user to select multiple items from a list of options.
 isComponent: true
-isWip: true
 ---
 
 ## Installation
@@ -21,30 +20,15 @@ Copy and paste the code examples below into your project.
 
 ### Default
 
-This is the default example
+The default **`CheckboxGroup`** uses orientation `horizontal`.
 
 <ComponentExample name="CheckboxGroup" story="default" />
 
----
+### Vertical
 
-### Disabled
+> **Note**
+> Unlike **`RadioGroup`**, **`CheckboxGroup`** does not support `aria-orientation`. So `data-orientation` is used to style the layout instead.
 
-**Coming soon:** This is the disabled example
+Set the `orientation` prop to `vertical` to use a vertical **`CheckboxGroup`**.
 
-{/* TODO */}
-
----
-
-### With Label
-
-**Coming soon:** This is an example with a label
-
-{/* TODO */}
-
----
-
-### Horizontal
-
-**Coming soon:** This is a horizontal example
-
-{/* TODO: Add note about `data-orientation` as opposed to `aria-orientation` */}
+<ComponentExample name="CheckboxGroup" story="vertical" />
