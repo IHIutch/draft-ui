@@ -25,24 +25,24 @@ export function rehypeComponent() {
 
           node.children?.push(
             u('element', {
-              // tagName: 'pre',
-              // properties: {
-              //   __src__: src,
-              // },
-              // children: [
-              //   u('element', {
-              //     tagName: 'code',
-              //     properties: {
-              //       className: ['language-tsx'],
-              //     },
-              //     children: [
-              // {
-              type: 'text',
-              value: source,
-              // },
-              //     ],
-              //   }),
-              // ],
+              tagName: 'pre',
+              properties: {
+                __src__: src,
+              },
+              children: [
+                u('element', {
+                  tagName: 'code',
+                  properties: {
+                    className: ['language-tsx'],
+                  },
+                  children: [
+                    {
+                      type: 'text',
+                      value: source,
+                    },
+                  ],
+                }),
+              ],
             })
           )
         } catch (error) {
@@ -70,24 +70,24 @@ export function rehypeComponent() {
 
           node.children?.push(
             u('element', {
-              // tagName: 'pre',
-              // properties: {
-              //   __src__: src,
-              // },
-              // children: [
-              //   u('element', {
-              //     tagName: 'code',
-              //     properties: {
-              //       className: ['language-tsx'],
-              //     },
-              //     children: [
-              //       {
-              type: 'text',
-              value: source,
-              //         },
-              //       ],
-              //     }),
-              //   ],
+              tagName: 'pre',
+              properties: {
+                __src__: src,
+              },
+              children: [
+                u('element', {
+                  tagName: 'code',
+                  properties: {
+                    className: ['language-tsx'],
+                  },
+                  children: [
+                    {
+                      type: 'text',
+                      value: source,
+                    },
+                  ],
+                }),
+              ],
             })
           )
         } catch (error) {

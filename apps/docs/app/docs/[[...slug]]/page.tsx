@@ -6,9 +6,6 @@ import PageToc from '@/components/PageToc'
 
 export async function generateStaticParams() {
   return allComponents.map((doc) => {
-    const test = doc.slug.replace('/docs/', '').split('/')
-    console.log({ test })
-
     return {
       slug: doc.slug.replace('/docs/', '').split('/'),
     }

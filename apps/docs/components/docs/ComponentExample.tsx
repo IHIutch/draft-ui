@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 
-import { Highlight, themes } from 'prism-react-renderer'
 import { Tab, TabList, TabPanel, Tabs } from 'ui'
 
 import { Index } from '@/__registry__'
@@ -11,7 +10,6 @@ import { cn } from '@/lib/utils'
 import CopyClipboardButton from '../CopyClipboardButton'
 
 interface ComponentExampleProps extends React.HTMLAttributes<HTMLDivElement> {
-  // example: ExamplesListItem
   align?: 'center' | 'start' | 'end'
   name: string
   story: string
@@ -23,7 +21,19 @@ export default function ComponentExample({
   story,
   children,
 }: ComponentExampleProps) {
-  const [codeString] = React.Children.toArray(children) as React.ReactElement[]
+  const [Code] = React.Children.toArray(children) as React.ReactElement[]
+
+  const codeString = React.useMemo(() => {
+    if (
+      typeof Code?.props['data-rehype-pretty-code-fragment'] !== 'undefined'
+    ) {
+      const [codeToCopy] = React.Children.toArray(
+        Code.props.children
+      ) as React.ReactElement[]
+
+      return codeToCopy?.props?.__rawString__ || null
+    }
+  }, [Code])
 
   const Story = React.useMemo(() => {
     const Component = Index[name]?.[story]?.component
@@ -67,23 +77,7 @@ export default function ComponentExample({
             <div className="absolute right-2 top-2 z-10">
               <CopyClipboardButton text={String(codeString)} />
             </div>
-            <Highlight
-              theme={themes.nightOwl}
-              code={String(codeString)}
-              language="tsx"
-            >
-              {({ style, tokens, getLineProps, getTokenProps }) => (
-                <pre style={style} className="my-0">
-                  {tokens.map((line, i) => (
-                    <div key={i} {...getLineProps({ line })}>
-                      {line.map((token, key) => (
-                        <span key={key} {...getTokenProps({ token })} />
-                      ))}
-                    </div>
-                  ))}
-                </pre>
-              )}
-            </Highlight>
+            {Code}
           </div>
         </TabPanel>
       </Tabs>

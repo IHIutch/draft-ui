@@ -2,39 +2,29 @@
 
 import * as React from 'react'
 
-import { Highlight, themes } from 'prism-react-renderer'
-
 import CopyClipboardButton from '../CopyClipboardButton'
 
-// chlidren is raw code string injected from ComponentSource.markdoc.ts
 export default function ComponentSource({ children }) {
-  const codeString = children
+  const [Code] = React.Children.toArray(children) as React.ReactElement[]
+
+  const codeString = React.useMemo(() => {
+    if (
+      typeof Code?.props['data-rehype-pretty-code-fragment'] !== 'undefined'
+    ) {
+      const [Button] = React.Children.toArray(
+        Code.props.children
+      ) as React.ReactElement[]
+
+      return Button?.props?.value || Button?.props?.__rawString__ || null
+    }
+  }, [Code])
 
   return (
-    <div>
-      <h2 className="font-bold">Component Source</h2>
-      <div className="relative">
-        <div className="absolute right-2 top-2 z-10">
-          <CopyClipboardButton text={String(codeString)} />
-        </div>
-        <Highlight
-          theme={themes.nightOwl}
-          code={String(codeString)}
-          language="tsx"
-        >
-          {({ style, tokens, getLineProps, getTokenProps }) => (
-            <pre style={style} className="relative">
-              {tokens.map((line, i) => (
-                <div key={i} {...getLineProps({ line })}>
-                  {line.map((token, key) => (
-                    <span key={key} {...getTokenProps({ token })} />
-                  ))}
-                </div>
-              ))}
-            </pre>
-          )}
-        </Highlight>
+    <div className="relative [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
+      <div className="absolute right-2 top-2 z-10">
+        <CopyClipboardButton text={String(codeString)} />
       </div>
+      {Code}
     </div>
   )
 }
