@@ -1,38 +1,32 @@
+import { allComponents } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 
-import { allComponents } from '@/.contentlayer/generated'
 import Markdown from '@/components/docs/markdown'
 import PageToc from '@/components/PageToc'
-import { getDocContent, getDocsMetadata } from '@/lib/server'
 
-interface DocPageProps {
-  params: {
-    slug: string[]
-  }
-}
+export async function generateStaticParams() {
+  return allComponents.map((doc) => {
+    const test = doc.slug.replace('/docs/', '').split('/')
+    console.log({ test })
 
-export async function generateStaticParams(): Promise<
-  DocPageProps['params'][]
-> {
-  const docs = await getDocsMetadata()
-  return docs.map((doc) => {
     return {
       slug: doc.slug.replace('/docs/', '').split('/'),
     }
   })
 }
 
-export default async function DocPage({ params }: DocPageProps) {
-  const slug = '/docs/' + params?.slug?.join('/')
-  const doc = await getDocContent(slug)
-
+export default async function DocPage({
+  params,
+}: {
+  params: { slug: string[] }
+}) {
   const post = allComponents.find((post) => {
     return (
       post._raw.flattenedPath.replace('docs/', '') === params.slug.join('/')
     )
   })
 
-  if (!doc || !post) {
+  if (!post) {
     notFound()
   }
 
@@ -49,7 +43,7 @@ export default async function DocPage({ params }: DocPageProps) {
         <div className="fixed top-0 h-screen pt-16">
           <div className="h-full overflow-y-auto">
             <div className="my-12 pr-4">
-              <PageToc headings={doc.headings} />
+              <PageToc headings={post.toc} />
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
+import { type Component } from 'contentlayer/generated'
 import { GithubIcon, MenuIcon, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -15,7 +16,6 @@ import {
   ModalOverlay,
 } from 'ui'
 
-import { type ComponentMetadataProps } from '@/lib/server'
 import { cn } from '@/lib/utils'
 
 import LinkList from './LinkList'
@@ -25,7 +25,7 @@ import SearchComponent from './SearchComponent'
 export default function Navigation({
   componentList,
 }: {
-  componentList: ComponentMetadataProps[]
+  componentList: Component[]
 }) {
   const pathname = usePathname()
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -37,19 +37,19 @@ export default function Navigation({
   const gettingStartedLinks = [
     {
       slug: '/docs/introduction',
-      label: 'Introduction',
+      title: 'Introduction',
     },
     {
       slug: '/docs/installation',
-      label: 'Installation',
+      title: 'Installation',
     },
     {
       slug: '/docs/about',
-      label: 'About',
+      title: 'About',
     },
     {
       slug: '/docs/changelog',
-      label: 'Changelog',
+      title: 'Changelog',
     },
   ]
 

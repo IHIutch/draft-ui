@@ -3,13 +3,10 @@
 import { useEffect, useState } from 'react'
 
 import { cn } from '@/lib/utils'
+import { type Toc } from '@/types'
 
-export default function PageToc({
-  headings,
-}: {
-  headings: { title: string; id: string; level: number }[]
-}) {
-  const activeHeading = useActiveHeading(headings.map((h) => h.id))
+export default function PageToc({ headings }: { headings?: Toc[] }) {
+  const activeHeading = useActiveHeading((headings || []).map((h) => h.slug))
 
   return (
     <div>
@@ -19,19 +16,19 @@ export default function PageToc({
         </span>
       </div>
       <ul>
-        {headings.map((h, idx) => (
+        {(headings || []).map((h, idx) => (
           <li key={idx}>
             <a
-              href={'#' + h.id}
+              href={'#' + h.slug}
               className={cn(
                 'inline-block no-underline transition text-sm py-1',
-                h.id === activeHeading
+                h.slug === activeHeading
                   ? 'text-slate-900 dark:text-white'
                   : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white',
-                h.level === 3 && 'pl-3'
+                h.lvl === 3 && 'pl-3'
               )}
             >
-              {h.title}
+              {h.content}
             </a>
           </li>
         ))}
@@ -41,7 +38,7 @@ export default function PageToc({
 }
 
 function useActiveHeading(itemIds: string[]) {
-  const [activeId, setActiveId] = useState(null)
+  const [activeId, setActiveId] = useState<null | string>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(

@@ -1,11 +1,15 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+// @ts-ignore
+import toc from 'markdown-toc'
+import remarkGfm from 'remark-gfm'
 
 import { rehypeComponent } from './lib/rehype-component'
-import { type ExamplesListItem } from './types'
+import { withTableOfContents } from './lib/remark/withTableOfContents'
+import { type Toc } from './types'
 
 export const Component = defineDocumentType(() => ({
   name: 'Component',
-  filePathPattern: 'docs/components/**/*.mdx',
+  filePathPattern: 'components/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
@@ -19,20 +23,10 @@ export const Component = defineDocumentType(() => ({
       type: 'string',
       resolve: (post) => `/docs/${post._raw.flattenedPath}`,
     },
-    // examples: {
-    //   type: 'json',
-    //   resolve: async (doc) => {
-    //     try {
-    //       const jsonPath = `./generated/examples-list.json`
-    //       const json: ExamplesListItem[] = fs.readJSONSync(jsonPath)
-    //       const items = json.filter((c) => c.name === doc.title)
-    //       return items
-    //     } catch (error) {
-    //       console.log("Couldn't find stories for", `${doc.title}`)
-    //       return {}
-    //     }
-    //   },
-    // },
+    toc: {
+      type: 'json',
+      resolve: (doc): Toc => toc(doc.body.raw, { maxdepth: 3 }).json,
+    },
   },
 }))
 
@@ -41,5 +35,6 @@ export default makeSource({
   documentTypes: [Component],
   mdx: {
     rehypePlugins: [rehypeComponent],
+    remarkPlugins: [remarkGfm, withTableOfContents],
   },
 })

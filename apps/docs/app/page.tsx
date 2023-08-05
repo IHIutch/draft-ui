@@ -1,17 +1,17 @@
+import { allComponents } from 'contentlayer/generated'
+
 import CtaSection from '@/components/homePage/cta-section'
 import ExampleSection from '@/components/homePage/example-section'
 import Navigation from '@/components/Navigation'
-import { getDocsMetadata } from '@/lib/server'
 
 export default async function Home() {
-  const docsMetadata = await getDocsMetadata()
-  const componentList = docsMetadata
-    .filter((doc) => doc.frontmatter.isComponent === true)
-    .sort((a, b) => a.frontmatter.title.localeCompare(b.frontmatter.title))
+  const sortedComponents = allComponents
+    .filter((doc) => doc.isComponent === true)
+    .sort((a, b) => a.title.localeCompare(b.title))
 
   return (
     <div className="pt-14">
-      <Navigation componentList={componentList} />
+      <Navigation componentList={sortedComponents} />
       <div className="container mx-auto px-4 pb-8 pt-20">
         <div className="mx-auto max-w-[1024px] text-center">
           <h1 className="text-5xl font-extrabold md:text-7xl">

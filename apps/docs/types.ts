@@ -35,3 +35,9 @@ export interface ExamplesListItem {
   text: string
   functionName: string
 }
+
+export interface Toc {
+  slug: string
+  content: string
+  lvl: number
+}

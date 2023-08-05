@@ -1,15 +1,15 @@
 'use client'
 
+import { type Component } from 'contentlayer/generated'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import { type ComponentMetadataProps } from '@/lib/server'
 import { cn } from '@/lib/utils'
 
-interface LinkListItemProps extends Partial<ComponentMetadataProps> {
-  label?: string
-  slug: string
-}
+type LinkListItemProps = Pick<
+  Component,
+  'title' | 'slug' | 'isWip' | 'isComing'
+>
 
 export default function LinkList({ list }: { list: LinkListItemProps[] }) {
   const pathname = usePathname()
@@ -20,32 +20,31 @@ export default function LinkList({ list }: { list: LinkListItemProps[] }) {
         <li key={idx}>
           <Link
             role="link"
-            aria-disabled={!!link?.frontmatter?.isComing}
+            aria-disabled={!!link?.isComing}
             aria-current={pathname === link.slug ? 'page' : undefined}
-            href={link?.frontmatter?.isComing ? '' : link.slug}
+            // @ts-ignore
+            href={link?.isComing ? '' : link.slug}
             onClick={(e) => {
-              if (!!link?.frontmatter?.isComing) {
+              if (!!link?.isComing) {
                 e.preventDefault()
               }
             }}
             className={cn(
               'flex items-center justify-between gap-2 py-1 text-sm transition ',
               pathname === link.slug
-                ? 'font-medium  dark:text-white text-slate-900'
+                ? 'font-medium dark:text-white text-slate-900'
                 : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white',
-              link?.frontmatter?.isComing &&
+              link?.isComing &&
                 'cursor-not-allowed text-slate-400 hover:text-slate-400 dark:text-slate-600 dark:hover:text-slate-600'
             )}
           >
-            <span className="truncate">
-              {link.label || link?.frontmatter?.title}
-            </span>
+            <span className="truncate">{link.title}</span>
 
-            {link?.frontmatter?.isComing ? (
+            {link?.isComing ? (
               <span className="rounded bg-black px-1 text-xs font-medium text-white dark:bg-slate-400 dark:text-slate-900">
                 Coming Soon
               </span>
-            ) : link?.frontmatter?.isWip ? (
+            ) : link?.isWip ? (
               <span className="rounded bg-slate-200 px-1 text-xs font-medium text-slate-700 dark:bg-slate-700 dark:text-white">
                 WIP
               </span>

@@ -1,39 +1,39 @@
+import { allComponents } from 'contentlayer/generated'
+
 import LinkList from '@/components/LinkList'
 import Navigation from '@/components/Navigation'
-import { getDocsMetadata } from '@/lib/server'
 
-interface DocsLayoutProps {
+export default async function DocsLayout({
+  children,
+}: {
   children: React.ReactNode
-}
-
-export default async function DocsLayout({ children }: DocsLayoutProps) {
-  const docsMetadata = await getDocsMetadata()
-  const componentList = docsMetadata
-    .filter((doc) => doc.frontmatter.isComponent === true)
-    .sort((a, b) => a.frontmatter.title.localeCompare(b.frontmatter.title))
+}) {
+  const sortedComponents = allComponents
+    .filter((doc) => doc.isComponent === true)
+    .sort((a, b) => a.title.localeCompare(b.title))
 
   const gettingStartedLinks = [
     {
       slug: '/docs/introduction',
-      label: 'Introduction',
+      title: 'Introduction',
     },
     {
       slug: '/docs/installation',
-      label: 'Installation',
+      title: 'Installation',
     },
     {
       slug: '/docs/about',
-      label: 'About',
+      title: 'About',
     },
     {
       slug: '/docs/changelog',
-      label: 'Changelog',
+      title: 'Changelog',
     },
   ]
 
   return (
     <div className="container mx-auto h-full px-4">
-      <Navigation componentList={componentList} />
+      <Navigation componentList={sortedComponents} />
       <aside className="fixed top-0 hidden h-full shrink-0 border-r pt-14 dark:border-slate-800 md:w-56 lg:block">
         <nav className="h-full overflow-y-auto py-10">
           <div className="mb-4">
@@ -49,7 +49,7 @@ export default async function DocsLayout({ children }: DocsLayoutProps) {
               Components
             </h4>
             <div className="mt-3 pr-3">
-              <LinkList list={componentList} />
+              <LinkList list={sortedComponents} />
             </div>
           </div>
         </nav>
