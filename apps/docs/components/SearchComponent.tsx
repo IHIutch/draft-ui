@@ -16,7 +16,7 @@ export default function SearchComponent() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div>
+    <>
       <Button
         size="sm"
         variant="outline"
@@ -79,7 +79,7 @@ export default function SearchComponent() {
           }}
         />
       ) : null}
-    </div>
+    </>
   )
 }
 

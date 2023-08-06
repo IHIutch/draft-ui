@@ -76,9 +76,7 @@ export default function Navigation({
           </div>
           <div className="ml-auto">
             <div className="flex gap-2">
-              <div>
-                <SearchComponent />
-              </div>
+              <SearchComponent />
               <div>
                 <a
                   className={cn(
@@ -99,7 +97,7 @@ export default function Navigation({
           </div>
         </div>
         {/* Mobile Nav */}
-        <div className="flex grow justify-end lg:hidden">
+        <div className="flex grow justify-end gap-1 lg:hidden">
           <div className="flex md:grow md:justify-center">
             <SearchComponent />
           </div>
