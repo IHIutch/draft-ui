@@ -1,7 +1,7 @@
 import { allComponents } from 'contentlayer/generated'
 
-import LinkList from '@/components/LinkList'
-import Navigation from '@/components/Navigation'
+import LinkList from '@/components/link-list'
+import Navigation from '@/components/navigation'
 
 export default async function DocsLayout({
   children,

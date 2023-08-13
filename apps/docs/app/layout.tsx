@@ -2,9 +2,9 @@ import '@/styles/globals.css'
 
 import { Inter } from 'next/font/google'
 
-import Analytics from '@/components/Analytics'
-import Fathom from '@/components/FathomAnalytics'
-import ThemeProvider from '@/components/ThemeProvider'
+import Analytics from '@/components/analytics'
+import Fathom from '@/components/fathom-analytics'
+import ThemeProvider from '@/components/theme-provider'
 
 interface DocsLayoutProps {
   children: React.ReactNode

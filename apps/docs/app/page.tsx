@@ -1,8 +1,8 @@
 import { allComponents } from 'contentlayer/generated'
 
-import CtaSection from '@/components/homePage/cta-section'
-import ExampleSection from '@/components/homePage/example-section'
-import Navigation from '@/components/Navigation'
+import CtaSection from '@/components/home-page/cta-section'
+import ExampleSection from '@/components/home-page/example-section'
+import Navigation from '@/components/navigation'
 
 export default async function Home() {
   const sortedComponents = allComponents

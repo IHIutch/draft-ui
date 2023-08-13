@@ -2,7 +2,7 @@ import { allComponents } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 
 import Markdown from '@/components/docs/markdown'
-import PageToc from '@/components/PageToc'
+import PageToc from '@/components/page-toc'
 
 export async function generateStaticParams() {
   return allComponents.map((doc) => {
@@ -30,7 +30,7 @@ export default async function DocPage({
   return (
     <>
       <article className="my-12 w-full">
-        <div className="prose prose-slate dark:prose-invert mx-auto">
+        <div className="prose prose-slate mx-auto dark:prose-invert">
           <h1>{post.title}</h1>
           <p className="lead">{post.description}</p>
           <Markdown doc={post} />

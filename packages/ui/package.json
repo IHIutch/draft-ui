@@ -5,7 +5,7 @@
   "types": "./src/index.tsx",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint --ignore-path .gitignore .",
+    "lint": "eslint --ignore-path .gitignore '**/*.{js,jsx,cjs,mjs,ts,tsx}'",
     "check-types": "tsc --noEmit"
   },
   "peerDependencies": {

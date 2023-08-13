@@ -3,7 +3,7 @@ import React from 'react'
 export default function Introduction() {
   return (
     <div className="my-12 w-full">
-      <div className="prose prose-slate dark:prose-invert mx-auto">
+      <div className="prose prose-slate mx-auto dark:prose-invert">
         <div>
           <h1 className="mb-4">Introduction</h1>
           <p className="lead mt-4">

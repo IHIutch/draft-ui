@@ -7,7 +7,7 @@ import { getHighlighter } from 'shiki'
 import { visit } from 'unist-util-visit'
 
 import { rehypeComponent } from './lib/rehype-component'
-import { withTableOfContents } from './lib/remark/withTableOfContents'
+import { withTableOfContents } from './lib/remark/with-table-of-contents'
 import { type Toc } from './types'
 
 export const Component = defineDocumentType(() => ({

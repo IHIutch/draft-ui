@@ -43,7 +43,7 @@ export function rehypeComponent() {
                   ],
                 }),
               ],
-            })
+            }),
           )
         } catch (error) {
           console.error(error)
@@ -88,7 +88,7 @@ export function rehypeComponent() {
                   ],
                 }),
               ],
-            })
+            }),
           )
         } catch (error) {
           console.error(error)

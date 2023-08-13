@@ -4,9 +4,9 @@ import { type DocumentTypes } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 
 import Callout from '@/components/docs/callout'
-import ComponentExample from '@/components/docs/ComponentExample'
-import ComponentSource from '@/components/docs/ComponentSource'
-import Heading from '@/components/docs/Heading'
+import ComponentExample from '@/components/docs/component-example'
+import ComponentSource from '@/components/docs/component-source'
+import Heading from '@/components/docs/heading'
 import { cn } from '@/lib/utils'
 
 type MarkdownProps = {
@@ -31,7 +31,7 @@ export default function Markdown(props: MarkdownProps) {
             <code
               className={cn(
                 // 'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm',
-                className
+                className,
               )}
               {...props}
             />

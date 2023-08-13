@@ -14,9 +14,6 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     {
       name: '@storybook/addon-styling',
-      options: {
-        postCss: true,
-      },
     },
   ],
   typescript: {
