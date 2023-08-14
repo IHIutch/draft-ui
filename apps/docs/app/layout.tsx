@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 
+import { type Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 import Analytics from '@/components/analytics'
@@ -14,6 +15,53 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
 })
+
+export function generateMetadata(): Metadata {
+  const siteName = 'Draft UI'
+  const siteUrl = 'https://draft-ui.vercel.app'
+  const description =
+    'A collection of simply designed React components focused on making web accessibility as easy as copy & paste.'
+  // const imageUrl = ''
+  // const imageAlt = ''
+  return {
+    metadataBase: new URL(siteUrl),
+    title: {
+      template: `%s · ${siteName}`,
+      default: siteName,
+    },
+    description,
+    openGraph: {
+      siteName,
+      title: {
+        template: `%s · ${siteName}`,
+        default: siteName,
+      },
+      description,
+      url: '/',
+      // images: {
+      //   url: imageUrl,
+      //   alt: imageAlt,
+      // },
+      type: 'website',
+      locale: 'US_en',
+    },
+    twitter: {
+      title: {
+        template: `%s · ${siteName}`,
+        default: siteName,
+      },
+      description,
+      // images: {
+      //   url: imageUrl,
+      //   alt: imageAlt,
+      // },
+      card: 'summary_large_image',
+    },
+    verification: {
+      google: 'hsAvKsU0gaaI6wN1wUtrHAEMVQORMU08rUqYQHMj1x0',
+    },
+  }
+}
 
 export default function DocsLayout({ children }: DocsLayoutProps) {
   return (
