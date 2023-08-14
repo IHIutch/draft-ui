@@ -39,14 +39,14 @@ export async function generateMetadata(
       siteName: parentMeta?.openGraph?.siteName,
       title: post.title || parentMeta?.openGraph?.title,
       description: post.description || parentMeta?.openGraph?.description,
-      // images: parentMeta?.openGraph?.images || [],
+      images: parentMeta?.openGraph?.images || [],
       url: post.slug,
       locale: parentMeta?.openGraph?.locale,
     },
     twitter: {
       title: post.title || parentMeta?.twitter?.title,
       description: post.description || parentMeta?.twitter?.description || '',
-      // images: parentMeta?.twitter?.images || [],
+      images: parentMeta?.twitter?.images || [],
       card: 'summary_large_image',
     },
   }

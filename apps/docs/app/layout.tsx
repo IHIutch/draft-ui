@@ -20,8 +20,9 @@ export function generateMetadata(): Metadata {
   const siteUrl = 'https://draft-ui.vercel.app'
   const description =
     'A collection of simply designed React components focused on making web accessibility as easy as copy & paste'
-  // const imageUrl = ''
-  // const imageAlt = ''
+  const imageUrl = '/meta.jpg'
+  const imageAlt =
+    'Draft UI is a collection of simply designed React components focused on making web accessibility as easy as copy & paste'
   return {
     metadataBase: new URL(siteUrl),
     title: {
@@ -37,10 +38,10 @@ export function generateMetadata(): Metadata {
       },
       description,
       url: '/',
-      // images: {
-      //   url: imageUrl,
-      //   alt: imageAlt,
-      // },
+      images: {
+        url: imageUrl,
+        alt: imageAlt,
+      },
       type: 'website',
       locale: 'US_en',
     },
@@ -50,10 +51,10 @@ export function generateMetadata(): Metadata {
         default: siteName,
       },
       description,
-      // images: {
-      //   url: imageUrl,
-      //   alt: imageAlt,
-      // },
+      images: {
+        url: imageUrl,
+        alt: imageAlt,
+      },
       card: 'summary_large_image',
     },
     verification: {
