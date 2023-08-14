@@ -1,11 +1,11 @@
-import { allComponents } from 'contentlayer/generated'
+import { allComponentDocuments } from 'contentlayer/generated'
 
 import CtaSection from '@/components/home-page/cta-section'
 import ExampleSection from '@/components/home-page/example-section'
 import Navigation from '@/components/navigation'
 
 export default async function Home() {
-  const sortedComponents = allComponents
+  const sortedComponents = allComponentDocuments
     .filter((doc) => doc.isComponent === true)
     .sort((a, b) => a.title.localeCompare(b.title))
 

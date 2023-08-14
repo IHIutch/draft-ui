@@ -10,16 +10,27 @@ import { rehypeComponent } from './lib/rehype-component'
 import { withTableOfContents } from './lib/remark/with-table-of-contents'
 import { type Toc } from './types'
 
-export const Component = defineDocumentType(() => ({
-  name: 'Component',
+export const ComponentDocument = defineDocumentType(() => ({
+  name: 'ComponentDocument',
   filePathPattern: 'components/**/*.mdx',
   contentType: 'mdx',
   fields: {
-    title: { type: 'string', required: true },
-    description: { type: 'string' },
-    isComponent: { type: 'boolean' },
-    isWip: { type: 'boolean' },
-    isComing: { type: 'boolean' },
+    title: {
+      type: 'string',
+      required: true,
+    },
+    description: {
+      type: 'string',
+    },
+    isComponent: {
+      type: 'boolean',
+    },
+    isWip: {
+      type: 'boolean',
+    },
+    isComing: {
+      type: 'boolean',
+    },
   },
   computedFields: {
     slug: {
@@ -33,9 +44,61 @@ export const Component = defineDocumentType(() => ({
   },
 }))
 
+export const GeneralDocument = defineDocumentType(() => ({
+  name: 'GeneralDocument',
+  filePathPattern: 'getting-started/**/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      required: true,
+    },
+    description: {
+      type: 'string',
+      required: true,
+    },
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (post) => `/getting-started/${post._raw.flattenedPath}`,
+    },
+    toc: {
+      type: 'json',
+      resolve: (doc): Toc => toc(doc.body.raw, { maxdepth: 3 }).json,
+    },
+  },
+}))
+
+export const ChangelogDocument = defineDocumentType(() => ({
+  name: 'ChangelogDocument',
+  filePathPattern: 'CHANGELOG.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      required: true,
+    },
+    description: {
+      type: 'string',
+      required: true,
+    },
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: () => '/changelog',
+    },
+    toc: {
+      type: 'json',
+      resolve: (doc): Toc => toc(doc.body.raw, { maxdepth: 2 }).json,
+    },
+  },
+}))
+
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Component],
+  documentTypes: [ComponentDocument, ChangelogDocument, GeneralDocument],
   mdx: {
     rehypePlugins: [
       rehypeComponent,
@@ -77,7 +140,7 @@ export default makeSource({
             }
           },
           onVisitHighlightedLine(node) {
-            node.properties.className.push('line--highlighted')
+            node.properties?.className?.push('line--highlighted')
           },
           onVisitHighlightedWord(node) {
             node.properties.className = ['word--highlighted']

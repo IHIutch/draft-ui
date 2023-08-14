@@ -11,15 +11,15 @@
       // "ui": [
       //   "./../../packages/ui/src" // Not sure why I need this but VSCode wont intellisense correctly without it in this project
       // ],
+      "contentlayer/generated": [
+        "./.contentlayer/generated",
+      ],
       "@/components/ui": [
         "./../../packages/ui/src" // Mock importing as local components
       ],
       "@/*": [
         "./*"
       ],
-      "contentlayer/generated": [
-        "./.contentlayer/generated",
-      ]
     },
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,

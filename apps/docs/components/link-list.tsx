@@ -1,13 +1,13 @@
 'use client'
 
-import { type Component } from 'contentlayer/generated'
+import { type ComponentDocument } from 'contentlayer/generated'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import { cn } from '@/lib/utils'
 
 type LinkListItemProps = Pick<
-  Component,
+  ComponentDocument,
   'title' | 'slug' | 'isWip' | 'isComing'
 >
 

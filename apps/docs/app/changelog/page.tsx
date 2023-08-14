@@ -1,27 +1,17 @@
-import { allComponentDocuments } from 'contentlayer/generated'
+import React from 'react'
+
+import { allChangelogDocuments } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 
 import Markdown from '@/components/docs/markdown'
 import PageToc from '@/components/page-toc'
 
 export async function generateStaticParams() {
-  return allComponentDocuments.map((doc) => {
-    return {
-      slug: doc.slug.replace('/docs/', '').split('/'),
-    }
-  })
+  return allChangelogDocuments
 }
 
-export default async function DocPage({
-  params,
-}: {
-  params: { slug: string[] }
-}) {
-  const post = allComponentDocuments.find((post) => {
-    return (
-      post._raw.flattenedPath.replace('docs/', '') === params.slug.join('/')
-    )
-  })
+export default async function ChangelogPage() {
+  const post = allChangelogDocuments[0]
 
   if (!post) {
     notFound()

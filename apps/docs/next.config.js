@@ -18,9 +18,30 @@ const nextConfig = {
         destination: '/docs/components/breadcrumbs',
         permanent: true,
       },
+      // Old Links
       {
         source: '/getting-started',
-        destination: '/docs/introduction',
+        destination: '/getting-started/introduction',
+        permanent: true,
+      },
+      {
+        source: '/docs/introduction',
+        destination: '/getting-started/introduction',
+        permanent: true,
+      },
+      {
+        source: '/docs/installation',
+        destination: '/getting-started/installation',
+        permanent: true,
+      },
+      {
+        source: '/docs/about',
+        destination: '/getting-started/about',
+        permanent: true,
+      },
+      {
+        source: '/docs/changelog',
+        destination: '/changelog',
         permanent: true,
       },
     ]

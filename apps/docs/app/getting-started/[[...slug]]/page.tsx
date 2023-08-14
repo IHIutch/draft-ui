@@ -1,25 +1,28 @@
-import { allComponentDocuments } from 'contentlayer/generated'
+import React from 'react'
+
+import { allGeneralDocuments } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 
 import Markdown from '@/components/docs/markdown'
 import PageToc from '@/components/page-toc'
 
 export async function generateStaticParams() {
-  return allComponentDocuments.map((doc) => {
+  return allGeneralDocuments.map((doc) => {
     return {
-      slug: doc.slug.replace('/docs/', '').split('/'),
+      slug: doc.slug.replace('/getting-started/', '').split('/'),
     }
   })
 }
 
-export default async function DocPage({
+export default async function GettingStartedPage({
   params,
 }: {
   params: { slug: string[] }
 }) {
-  const post = allComponentDocuments.find((post) => {
+  const post = allGeneralDocuments.find((post) => {
     return (
-      post._raw.flattenedPath.replace('docs/', '') === params.slug.join('/')
+      post._raw.flattenedPath.replace('getting-started/', '') ===
+      params.slug.join('/')
     )
   })
 

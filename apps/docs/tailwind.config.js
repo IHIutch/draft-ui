@@ -38,6 +38,22 @@ module.exports = {
                 fontWeight: 'bolder',
               },
             },
+            'li:not(pre)': {
+              code: {
+                color: theme('colors.slate.800'),
+                fontWeight: 'normal',
+                backgroundColor: theme('colors.slate.100'),
+                paddingTop: '2px',
+                paddingRight: theme('spacing.1'),
+                paddingBottom: '2px',
+                paddingLeft: theme('spacing.1'),
+                borderRadius: theme('spacing.1'),
+                letterSpacing: theme('letterSpacing.wide'),
+              },
+              'strong code': {
+                fontWeight: 'bolder',
+              },
+            },
           },
         },
         invert: {
