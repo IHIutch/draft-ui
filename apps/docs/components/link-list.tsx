@@ -30,7 +30,9 @@ export default function LinkList({ list }: { list: LinkListItemProps[] }) {
               }
             }}
             className={cn(
-              'flex items-center justify-between gap-2 py-1 text-sm transition ',
+              'flex items-center justify-between gap-2 py-1 text-sm transition rounded-sm',
+              // Focus
+              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900',
               pathname === link.slug
                 ? 'font-medium dark:text-white text-slate-900'
                 : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white',

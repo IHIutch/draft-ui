@@ -8,7 +8,7 @@ import { visit } from 'unist-util-visit'
 
 import { rehypeComponent } from './lib/rehype-component'
 import { withTableOfContents } from './lib/remark/with-table-of-contents'
-import { type Toc } from './types'
+import { type TocItemProps } from './types'
 
 export const ComponentDocument = defineDocumentType(() => ({
   name: 'ComponentDocument',
@@ -39,7 +39,7 @@ export const ComponentDocument = defineDocumentType(() => ({
     },
     toc: {
       type: 'json',
-      resolve: (doc): Toc => toc(doc.body.raw, { maxdepth: 3 }).json,
+      resolve: (doc): TocItemProps => toc(doc.body.raw, { maxdepth: 3 }).json,
     },
   },
 }))
@@ -65,7 +65,7 @@ export const GeneralDocument = defineDocumentType(() => ({
     },
     toc: {
       type: 'json',
-      resolve: (doc): Toc => toc(doc.body.raw, { maxdepth: 3 }).json,
+      resolve: (doc): TocItemProps => toc(doc.body.raw, { maxdepth: 3 }).json,
     },
   },
 }))
@@ -91,7 +91,7 @@ export const ChangelogDocument = defineDocumentType(() => ({
     },
     toc: {
       type: 'json',
-      resolve: (doc): Toc => toc(doc.body.raw, { maxdepth: 2 }).json,
+      resolve: (doc): TocItemProps => toc(doc.body.raw, { maxdepth: 2 }).json,
     },
   },
 }))

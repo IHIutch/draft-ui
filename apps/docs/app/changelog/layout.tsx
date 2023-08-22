@@ -1,5 +1,10 @@
-import { allComponentDocuments } from 'contentlayer/generated'
+import {
+  allChangelogDocuments,
+  allComponentDocuments,
+} from 'contentlayer/generated'
+import { notFound } from 'next/navigation'
 
+import JumpToContentMenu from '@/components/docs/jump-to-content-menu'
 import LinkList from '@/components/link-list'
 import Navigation from '@/components/navigation'
 
@@ -11,6 +16,12 @@ export default async function DocsLayout({
   const sortedComponents = allComponentDocuments
     .filter((doc) => doc.isComponent === true)
     .sort((a, b) => a.title.localeCompare(b.title))
+
+  const post = allChangelogDocuments[0]
+
+  if (!post) {
+    notFound()
+  }
 
   const gettingStartedLinks = [
     {
@@ -33,6 +44,7 @@ export default async function DocsLayout({
 
   return (
     <div className="container mx-auto h-full px-4">
+      <JumpToContentMenu toc={post.toc} />
       <Navigation componentList={sortedComponents} />
       <aside className="fixed top-0 hidden h-full shrink-0 border-r pt-14 dark:border-slate-800 md:w-56 lg:block">
         <nav className="h-full overflow-y-auto py-10">

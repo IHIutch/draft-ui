@@ -67,10 +67,16 @@ export default function Navigation({
         {/* Desktop Nav */}
         <div className="hidden grow items-center lg:flex">
           <div className="ml-14 flex items-center gap-8">
-            <Link href="/getting-started" className="text-sm font-medium">
+            <Link
+              href="/getting-started"
+              className="rounded-sm text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900"
+            >
               Getting Started
             </Link>
-            <Link href="/docs/components" className="text-sm font-medium">
+            <Link
+              href="/docs/components"
+              className="rounded-sm text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900"
+            >
               Components
             </Link>
           </div>

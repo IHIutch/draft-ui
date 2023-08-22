@@ -3,13 +3,17 @@
 import { useEffect, useState } from 'react'
 
 import { cn } from '@/lib/utils'
-import { type Toc } from '@/types'
+import { type TocItemProps } from '@/types'
 
-export default function PageToc({ headings }: { headings?: Toc[] }) {
+export default function PageToc({
+  headings,
+}: {
+  headings?: Array<TocItemProps>
+}) {
   const activeHeading = useActiveHeading((headings || []).map((h) => h.slug))
 
   return (
-    <div>
+    <nav id="page-navigation" tabIndex={-1}>
       <div className="mb-3">
         <span className="text-base font-semibold text-slate-900 dark:text-white">
           On This Page
@@ -17,15 +21,15 @@ export default function PageToc({ headings }: { headings?: Toc[] }) {
       </div>
       <ul>
         {(headings || []).map((h, idx) => (
-          <li key={idx}>
+          <li key={idx} className={cn(h.lvl === 3 && 'pl-3')}>
             <a
               href={'#' + h.slug}
               className={cn(
-                'inline-block no-underline transition text-sm py-1',
+                'block no-underline transition text-sm py-1 rounded-sm',
+                'focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 focus-visible:outline-none dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900',
                 h.slug === activeHeading
                   ? 'text-slate-900 dark:text-white'
                   : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white',
-                h.lvl === 3 && 'pl-3',
               )}
             >
               {h.content}
@@ -33,7 +37,7 @@ export default function PageToc({ headings }: { headings?: Toc[] }) {
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   )
 }
 
