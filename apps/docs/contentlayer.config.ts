@@ -61,7 +61,7 @@ export const GeneralDocument = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: 'string',
-      resolve: (post) => `/getting-started/${post._raw.flattenedPath}`,
+      resolve: (post) => `/${post._raw.flattenedPath}`,
     },
     toc: {
       type: 'json',

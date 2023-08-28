@@ -6,9 +6,9 @@ import Markdown from '@/components/docs/markdown'
 import PageToc from '@/components/page-toc'
 
 export async function generateStaticParams() {
-  return allComponentDocuments.map((doc) => {
+  return allComponentDocuments.map((post) => {
     return {
-      slug: doc.slug.replace('/docs/', '').split('/'),
+      slug: post._raw.flattenedPath.split('/'),
     }
   })
 }

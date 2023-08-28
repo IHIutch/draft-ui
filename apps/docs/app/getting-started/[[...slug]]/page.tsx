@@ -8,9 +8,9 @@ import Markdown from '@/components/docs/markdown'
 import PageToc from '@/components/page-toc'
 
 export async function generateStaticParams() {
-  return allGeneralDocuments.map((doc) => {
+  return allGeneralDocuments.map((post) => {
     return {
-      slug: doc.slug.replace('/getting-started/', '').split('/'),
+      slug: post._raw.flattenedPath.split('/'),
     }
   })
 }
@@ -21,7 +21,8 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const post = allGeneralDocuments.find((post) => {
     return (
-      post._raw.flattenedPath.replace('docs/', '') === params.slug.join('/')
+      post._raw.flattenedPath.replace('getting-started/', '') ===
+      params.slug.join('/')
     )
   })
 

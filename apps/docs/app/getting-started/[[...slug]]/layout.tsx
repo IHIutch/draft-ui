@@ -21,7 +21,8 @@ export default async function DocsLayout({
 
   const post = allGeneralDocuments.find((post) => {
     return (
-      post._raw.flattenedPath.replace('docs/', '') === params.slug.join('/')
+      post._raw.flattenedPath.replace('getting-started/', '') ===
+      params.slug.join('/')
     )
   })
 
