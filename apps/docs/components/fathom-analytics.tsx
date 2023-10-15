@@ -11,7 +11,7 @@ function TrackPageView() {
   const searchParams = useSearchParams()
   useEffect(() => {
     load('ERIJKXRN', {
-      includedDomains: ['draft-ui.vercel.app'],
+      includedDomains: ['draft-ui.com'],
       auto: false,
     })
   }, [])
