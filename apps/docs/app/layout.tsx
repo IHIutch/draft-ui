@@ -17,7 +17,7 @@ const inter = Inter({
 
 export function generateMetadata(): Metadata {
   const siteName = 'Draft UI'
-  const siteUrl = 'https://draft-ui.vercel.app'
+  const siteUrl = 'https://draft-ui.com'
   const description =
     'A collection of simply designed React components focused on making web accessibility as easy as copy & paste'
   const imageUrl = '/meta.jpg'
@@ -59,6 +59,9 @@ export function generateMetadata(): Metadata {
     },
     verification: {
       google: 'hsAvKsU0gaaI6wN1wUtrHAEMVQORMU08rUqYQHMj1x0',
+    },
+    alternates: {
+      canonical: '/',
     },
   }
 }
