@@ -54,7 +54,11 @@ export default async function DocsLayout({
       <JumpToContentMenu toc={post.toc} />
       <Navigation componentList={sortedComponents} />
       <aside className="fixed top-0 hidden h-full shrink-0 border-r pt-14 dark:border-slate-800 md:w-56 lg:block">
-        <nav className="h-full overflow-y-auto py-10">
+        <nav
+          className="h-full overflow-y-auto py-10"
+          id="site-navigation"
+          tabIndex={-1}
+        >
           <div className="mb-4">
             <h4 className="text-base font-semibold text-slate-900 dark:text-white">
               Getting Started
@@ -74,7 +78,7 @@ export default async function DocsLayout({
         </nav>
       </aside>
       <div className="pt-16 lg:ml-56">
-        <main className="flex">
+        <main className="flex" id="page-content" tabIndex={-1}>
           {children}
           {/* <Footer /> */}
         </main>

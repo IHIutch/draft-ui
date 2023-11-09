@@ -78,8 +78,8 @@ export default async function DocPage({
         </div>
       </div>
       <main
-        id="page-content"
         className="order-1 my-12 w-full scroll-mt-20"
+        id="page-content"
         tabIndex={-1}
       >
         <div className="prose prose-slate mx-auto dark:prose-invert">

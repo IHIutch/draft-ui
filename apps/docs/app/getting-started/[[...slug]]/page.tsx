@@ -76,7 +76,7 @@ export default async function GettingStartedPage({
         <div className="fixed top-0 h-screen pt-16">
           <div className="h-full overflow-y-auto">
             <div className="my-12 pr-4">
-              <PageToc headings={post.toc} />
+              {post.toc.length > 0 ? <PageToc headings={post.toc} /> : null}
             </div>
           </div>
         </div>
