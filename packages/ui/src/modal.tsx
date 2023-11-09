@@ -83,10 +83,10 @@ const _ModalOverlay = ({
     <ModalOverlay
       isDismissable={isDismissable}
       className={cn(
-        'fill-mode-forwards h-[--visual-viewport-height]',
+        'h-[--visual-viewport-height] fill-mode-forwards',
         'fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-sm transition-all',
         // Entering
-        'data-[entering]:animate-in data-[entering]:fade-in data-[entering]:duration-75',
+        'data-[entering]:duration-75 data-[entering]:animate-in data-[entering]:fade-in',
         // Exiting
         'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
         className,
@@ -103,7 +103,7 @@ const _ModalHeader = ({
   return (
     <header
       className={cn(
-        'px-6 py-4 shrink-0 text-xl font-semibold text-black dark:text-white',
+        'shrink-0 px-6 py-4 text-xl font-semibold text-black dark:text-white',
         className,
       )}
       {...props}
@@ -115,7 +115,7 @@ const _ModalBody = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
-  return <div className={cn('px-6 py-2 flex-1', className)} {...props} />
+  return <div className={cn('flex-1 px-6 py-2', className)} {...props} />
 }
 
 const _ModalFooter = ({

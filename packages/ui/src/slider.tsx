@@ -81,7 +81,7 @@ const _SliderThumb = ({ className, ...props }: SliderThumbProps) => {
   return (
     <SliderThumb
       className={cn(
-        'flex h-6 w-6 cursor-pointer items-center justify-center rounded-full bg-white text-xs border-2 border-black dark:border-white dark:bg-slate-900',
+        'flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border-2 border-black bg-white text-xs dark:border-white dark:bg-slate-900',
         // Dragging
         'data-[dragging]:outline-none data-[dragging]:ring-2 data-[dragging]:ring-slate-400 data-[dragging]:ring-offset-2 dark:data-[dragging]:ring-offset-slate-900',
         // Focus Visible

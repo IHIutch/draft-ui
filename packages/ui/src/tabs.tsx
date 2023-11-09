@@ -36,7 +36,7 @@ const _TabList = <T extends object>({
   return (
     <TabList
       className={cn(
-        'flex border-slate-200 dark:border-slate-700 border-[length:var(--border-width)]',
+        'flex border-[length:var(--border-width)] border-slate-200 dark:border-slate-700',
         // Vertical
         'group-[[data-orientation=vertical]]/tabs:flex-col',
         className,
@@ -50,17 +50,17 @@ const _Tab = ({ className, ...props }: TabProps) => {
   return (
     <Tab
       className={cn(
-        'transition-colors px-4 py-2 cursor-pointer border-transparent border-[length:var(--border-width)] relative text-slate-500 dark:text-slate-400 outline-none shrink-0',
+        'relative shrink-0 cursor-pointer border-[length:var(--border-width)] border-transparent px-4 py-2 text-slate-500 outline-none transition-colors dark:text-slate-400',
         // Focus-visible
         'data-[focus-visible]:ring-2 data-[focus-visible]:ring-slate-400',
         // Disabled
-        'aria-disabled:opacity-40 aria-disabled:cursor-not-allowed',
+        'aria-disabled:cursor-not-allowed aria-disabled:opacity-40',
         // Horizontal
         'group-[[data-orientation=horizontal]]/tabs:border-[width:var(--border-width)] group-[[data-orientation=horizontal]]/tabs:top-[2px]',
         // Vertical
-        'group-[[data-orientation=vertical]]/tabs:inline-flex group-[[data-orientation=vertical]]/tabs:border-[width:var(--border-width)] group-[[data-orientation=vertical]]/tabs:left-[2px]',
+        'group-[[data-orientation=vertical]]/tabs:border-[width:var(--border-width)] group-[[data-orientation=vertical]]/tabs:left-[2px] group-[[data-orientation=vertical]]/tabs:inline-flex',
         // Selected
-        'aria-[selected=true]:border-black aria-[selected=true]:text-black dark:aria-[selected=true]:border-white dark:aria-[selected=true]:text-white aria-[selected=true]:border-[length:var(--border-width)]',
+        'aria-[selected=true]:border-[length:var(--border-width)] aria-[selected=true]:border-black aria-[selected=true]:text-black dark:aria-[selected=true]:border-white dark:aria-[selected=true]:text-white',
         className,
       )}
       {...props}
@@ -69,7 +69,7 @@ const _Tab = ({ className, ...props }: TabProps) => {
 }
 
 const _TabPanel = ({ className, ...props }: TabPanelProps) => {
-  return <TabPanel className={cn('p-4 grow', className)} {...props} />
+  return <TabPanel className={cn('grow p-4', className)} {...props} />
 }
 
 export {

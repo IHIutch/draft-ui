@@ -39,5 +39,8 @@ module.exports = {
     react: {
       version: 'detect',
     },
+    tailwindcss: {
+      callees: ['cva', 'cn', 'clsx'],
+    },
   },
 }

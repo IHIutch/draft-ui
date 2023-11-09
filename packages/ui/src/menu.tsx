@@ -41,7 +41,7 @@ const _MenuContent = <T extends object>({
       className={cn(
         'fill-mode-forwards',
         // Base
-        'overflow-auto min-w-[150px] rounded-md border bg-white dark:bg-slate-800 dark:border-slate-700 p-1 shadow',
+        'min-w-[150px] overflow-auto rounded-md border bg-white p-1 shadow dark:border-slate-700 dark:bg-slate-800',
         // Entering
         'data-[entering]:animate-in data-[entering]:fade-in',
         // Exiting
@@ -64,7 +64,7 @@ const _MenuItem = ({ className, children, ...props }: ItemProps) => {
     <Item
       className={cn(
         'group',
-        'text-black dark:text-white cursor-pointer flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors',
+        'flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-black outline-none transition-colors dark:text-white',
         // Hover
         'hover:bg-slate-100 dark:hover:bg-slate-700',
         // Focus

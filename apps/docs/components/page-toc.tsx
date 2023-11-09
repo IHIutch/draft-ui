@@ -25,8 +25,8 @@ export default function PageToc({
             <a
               href={'#' + h.slug}
               className={cn(
-                'block no-underline transition text-sm py-1 rounded-sm',
-                'focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 focus-visible:outline-none dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900',
+                'block rounded-sm py-1 text-sm no-underline transition',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900',
                 h.slug === activeHeading
                   ? 'text-slate-900 dark:text-white'
                   : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white',

@@ -34,7 +34,7 @@ const _DatePickerContent = ({
     <Popover
       className={cn(
         'fill-mode-forwards',
-        'overflow-auto rounded-md border border-slate-200 dark:border-slate-700 dark:bg-slate-800 bg-white p-3 shadow-md',
+        'overflow-auto rounded-md border border-slate-200 bg-white p-3 shadow-md dark:border-slate-700 dark:bg-slate-800',
         // Entering
         'data-[entering]:animate-in data-[entering]:fade-in',
         // Exiting

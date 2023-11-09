@@ -30,11 +30,11 @@ export default function LinkList({ list }: { list: LinkListItemProps[] }) {
               }
             }}
             className={cn(
-              'flex items-center justify-between gap-2 py-1 text-sm transition rounded-sm',
+              'flex items-center justify-between gap-2 rounded-sm py-1 text-sm transition',
               // Focus
               'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900',
               pathname === link.slug
-                ? 'font-medium dark:text-white text-slate-900'
+                ? 'font-medium text-slate-900 dark:text-white'
                 : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white',
               link?.isComing &&
                 'cursor-not-allowed text-slate-400 hover:text-slate-400 dark:text-slate-600 dark:hover:text-slate-600',

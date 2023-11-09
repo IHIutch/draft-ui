@@ -34,7 +34,7 @@ const _Calendar = <T extends DateValue>({
   return (
     <Calendar
       className={cn(
-        'w-fit [&_td]:px-0 [&_td:not([aria-selected])+td[aria-selected]_div]:rounded',
+        'w-fit [&_td:not([aria-selected])+td[aria-selected]_div]:rounded [&_td]:px-0',
         '[&_td:not([aria-selected])+td[aria-selected]_div]:bg-black [&_td:not([aria-selected])+td[aria-selected]_div]:text-white',
         'dark:[&_td:not([aria-selected])+td[aria-selected]_div]:bg-white dark:[&_td:not([aria-selected])+td[aria-selected]_div]:text-black',
         className,
@@ -96,7 +96,7 @@ const _CalendarCell = ({ className, ...props }: CalendarCellProps) => {
   return (
     <CalendarCell
       className={cn(
-        'text-black dark:text-white relative flex h-10 w-10 items-center justify-center text-sm transition-color',
+        'transition-color relative flex h-10 w-10 items-center justify-center text-sm text-black dark:text-white',
         // Hover
         'hover:bg-slate-100 dark:hover:bg-slate-700',
         // Focus Visible
@@ -106,9 +106,9 @@ const _CalendarCell = ({ className, ...props }: CalendarCellProps) => {
         // Selected
         'data-[selected]:z-10 data-[selected]:bg-slate-100 dark:data-[selected]:bg-slate-700 [&:not([data-selected])]:rounded',
         // Selection Start
-        'data-[selected]:data-[selection-start]:rounded-s data-[selected]:data-[selection-start]:bg-black dark:data-[selected]:data-[selection-start]:bg-white data-[selection-start]:text-white dark:data-[selection-start]:text-black',
+        'data-[selected]:data-[selection-start]:rounded-s data-[selected]:data-[selection-start]:bg-black data-[selection-start]:text-white dark:data-[selected]:data-[selection-start]:bg-white dark:data-[selection-start]:text-black',
         // Selection End
-        'data-[selected]:data-[selection-end]:rounded-e data-[selected]:data-[selection-end]:bg-black dark:data-[selected]:data-[selection-end]:bg-white data-[selection-end]:text-white dark:data-[selection-end]:text-black',
+        'data-[selected]:data-[selection-end]:rounded-e data-[selected]:data-[selection-end]:bg-black data-[selection-end]:text-white dark:data-[selected]:data-[selection-end]:bg-white dark:data-[selection-end]:text-black',
         // Disabled
         'data-[disabled]:cursor-not-allowed data-[disabled]:hover:!bg-transparent',
         className,

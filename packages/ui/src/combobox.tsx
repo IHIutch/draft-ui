@@ -57,7 +57,7 @@ const _ComboBoxItem = ({ className, children, ...props }: ItemProps) => {
     <Item
       className={cn(
         'group',
-        'flex items-center gap-2 rounded-sm px-2 py-1.5 outline-none transition-colors cursor-pointer text-black dark:text-white',
+        'flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-black outline-none transition-colors dark:text-white',
         'data-[focused]:bg-slate-100 dark:data-[focused]:bg-slate-700',
         className,
       )}

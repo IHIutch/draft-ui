@@ -20,13 +20,13 @@ const _TooltipContent = ({ className, children, ...props }: TooltipProps) => {
       className={cn(
         [
           'fill-mode-forwards',
-          'rounded-sm bg-slate-700 dark:bg-slate-300 px-1 py-0.5 text-sm text-white dark:text-black',
+          'rounded-sm bg-slate-700 px-1 py-0.5 text-sm text-white dark:bg-slate-300 dark:text-black',
           // Entering
           'data-[entering]:animate-in data-[entering]:fade-in',
           // Exiting
           'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
           // Placement
-          'data-[placement=top]:slide-in-from-bottom-1 data-[placement=right]:slide-in-from-left-1 data-[placement=bottom]:slide-in-from-top-1 data-[placement=left]:slide-in-from-right-1',
+          'data-[placement=bottom]:slide-in-from-top-1 data-[placement=left]:slide-in-from-right-1 data-[placement=right]:slide-in-from-left-1 data-[placement=top]:slide-in-from-bottom-1',
         ],
         className,
       )}
