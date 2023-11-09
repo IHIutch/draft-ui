@@ -27,7 +27,7 @@ const iconButtonVariants = cva({
       ],
       destructive: [
         // Base
-        'bg-red-500 text-white',
+        'bg-red-600 text-white',
         // Hover
         'hover:bg-red-600 dark:hover:bg-red-600',
         // Focus

@@ -26,7 +26,7 @@ const dateInputGroupVariants = cva({
     // Disabled
     'disabled:cursor-not-allowed disabled:opacity-40',
     // Invalid
-    'invalid:border-red-500',
+    'invalid:border-red-600 dark:invalid:border-red-400',
   ],
   variants: {
     size: {

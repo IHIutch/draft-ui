@@ -32,7 +32,7 @@ const _TextFieldErrorMessage = ({ className, ...props }: TextProps) => {
     <Text
       elementType="div"
       slot="errorMessage"
-      className={cx('mt-2 text-sm text-red-500 dark:text-red-400', className)}
+      className={cx('mt-2 text-sm text-red-600 dark:text-red-400', className)}
       {...props}
     />
   )
