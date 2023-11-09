@@ -2,33 +2,31 @@
 
 import * as React from 'react'
 
-import { cva, type VariantProps } from 'class-variance-authority'
+import { cva, type VariantProps } from 'cva'
 import { Checkbox, type CheckboxProps } from 'react-aria-components'
 
 import { cn } from '@/lib/utils'
 
-const checkboxVariants = cva(
-  [
+const checkboxVariants = cva({
+  base: [
     'group flex cursor-pointer items-center gap-2',
     // Disabled
     'disabled:cursor-not-allowed',
   ],
-  {
-    variants: {
-      size: {
-        lg: 'text-lg',
-        md: 'text-base',
-        sm: 'text-sm',
-      },
-    },
-    defaultVariants: {
-      size: 'md',
+  variants: {
+    size: {
+      lg: 'text-lg',
+      md: 'text-base',
+      sm: 'text-sm',
     },
   },
-)
+  defaultVariants: {
+    size: 'md',
+  },
+})
 
-const checkboxInnerVariants = cva(
-  [
+const checkboxInnerVariants = cva({
+  base: [
     'flex items-center justify-center rounded border-2 border-slate-300 text-white transition-colors dark:border-slate-600 dark:text-black',
     // Focus
     'group-focus:ring-2 group-focus:ring-slate-400 group-focus:ring-offset-2 dark:group-focus:ring-slate-400 dark:group-focus:ring-offset-slate-900',
@@ -37,21 +35,19 @@ const checkboxInnerVariants = cva(
     // Disabled
     'group-disabled:cursor-not-allowed group-disabled:border-slate-100 group-disabled:bg-slate-100',
     // Selected & Disabled
-    'group-selected:disabled::border-slate-100 group-selected:disabled::bg-slate-100 group-selected:disabled::text-slate-400',
+    'group-selected:disabled:border-slate-100 group-selected:disabled:bg-slate-100 group-selected:disabled:text-slate-400',
   ],
-  {
-    variants: {
-      size: {
-        lg: 'h-5 w-5',
-        md: 'h-4 w-4',
-        sm: 'h-3 w-3',
-      },
-    },
-    defaultVariants: {
-      size: 'md',
+  variants: {
+    size: {
+      lg: 'h-5 w-5',
+      md: 'h-4 w-4',
+      sm: 'h-3 w-3',
     },
   },
-)
+  defaultVariants: {
+    size: 'md',
+  },
+})
 
 export interface _CheckboxProps
   extends CheckboxProps,

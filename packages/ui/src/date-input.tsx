@@ -1,6 +1,6 @@
 'use client'
 
-import { cva, type VariantProps } from 'class-variance-authority'
+import { cva, type VariantProps } from 'cva'
 import {
   DateField,
   DateInput,
@@ -15,8 +15,8 @@ import {
 
 import { cn } from '@/lib/utils'
 
-const dateInputGroupVariants = cva(
-  [
+const dateInputGroupVariants = cva({
+  base: [
     'inline-flex w-full', // Using .inline-flex here, as opposed to .flex appears to fix this issue https://github.com/adobe/react-spectrum/issues/3164
     'w-full items-center border bg-transparent placeholder:text-slate-400 dark:border-slate-700 dark:text-slate-50',
     // Focus
@@ -26,24 +26,22 @@ const dateInputGroupVariants = cva(
     // Disabled
     'disabled:cursor-not-allowed disabled:opacity-40',
   ],
-  {
-    variants: {
-      validationState: {
-        valid: 'border-slate-300',
-        invalid: 'border-red-500',
-      },
-      size: {
-        lg: 'h-12 rounded-lg px-3 py-2 text-lg',
-        md: 'h-10 rounded-md px-3 py-1 text-base',
-        sm: 'h-8 rounded px-2 py-1 text-sm',
-        xs: 'h-6 rounded px-1 py-0.5 text-xs',
-      },
+  variants: {
+    validationState: {
+      valid: 'border-slate-300',
+      invalid: 'border-red-500',
     },
-    defaultVariants: {
-      size: 'md',
+    size: {
+      lg: 'h-12 rounded-lg px-3 py-2 text-lg',
+      md: 'h-10 rounded-md px-3 py-1 text-base',
+      sm: 'h-8 rounded px-2 py-1 text-sm',
+      xs: 'h-6 rounded px-1 py-0.5 text-xs',
     },
   },
-)
+  defaultVariants: {
+    size: 'md',
+  },
+})
 
 export interface _DateInputGroupProps
   extends GroupProps,

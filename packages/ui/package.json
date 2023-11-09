@@ -12,8 +12,8 @@
     "react": "^18.2.0"
   },
   "dependencies": {
-    "class-variance-authority": "^0.6.1",
     "clsx": "^1.2.1",
+    "cva": "1.0.0-beta.1",
     "lucide-react": "^0.259.0",
     "react-aria-components": "1.0.0-beta.2",
     "tailwind-merge": "^1.13.2"
