@@ -13,7 +13,7 @@ const inputVariants = cva({
     // Disabled
     'disabled:cursor-not-allowed disabled:opacity-40',
     // Invalid
-    'aria-[invalid]:border-red-500',
+    'invalid:border-red-500',
   ],
   variants: {
     size: {
