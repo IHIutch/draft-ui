@@ -1,6 +1,5 @@
 'use client'
 
-import { cx } from 'cva'
 import { Check } from 'lucide-react'
 import {
   ComboBox,
@@ -12,6 +11,8 @@ import {
   type ListBoxProps,
   type PopoverProps,
 } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 import { Input, type _InputProps } from './input'
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { cva, cx, type VariantProps } from 'cva'
+import { type VariantProps } from 'cva'
 import {
   DateField,
   DateInput,
@@ -12,6 +12,8 @@ import {
   type DateValue,
   type GroupProps,
 } from 'react-aria-components'
+
+import { cva, cx } from '@/lib/cva.config'
 
 const dateInputGroupVariants = cva({
   base: [

@@ -1,12 +1,13 @@
 'use client'
 
-import { cx } from 'cva'
 import {
   Text,
   TextField,
   type TextFieldProps,
   type TextProps,
 } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 const _TextField = ({ className, ...props }: TextFieldProps) => {
   return <TextField className={cx('w-full', className)} {...props} />

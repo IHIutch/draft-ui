@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 
-import { cx } from 'cva'
 import {
   Button,
   Group,
@@ -10,6 +9,8 @@ import {
   type GroupProps,
   type NumberFieldProps,
 } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 import { type _ButtonProps } from './button'
 import { Input, type _InputProps } from './input'

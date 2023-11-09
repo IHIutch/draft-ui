@@ -2,8 +2,9 @@
 
 import * as React from 'react'
 
-import { cx } from 'cva'
 import { RadioGroup, type RadioGroupProps } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 const _RadioGroup = (props: RadioGroupProps) => {
   return <RadioGroup className="group" {...props} />

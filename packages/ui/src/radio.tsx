@@ -2,8 +2,10 @@
 
 import * as React from 'react'
 
-import { cva, cx, type VariantProps } from 'cva'
+import { type VariantProps } from 'cva'
 import { Radio, type RadioProps } from 'react-aria-components'
+
+import { cva, cx } from '@/lib/cva.config'
 
 const radioVariants = cva({
   base: [

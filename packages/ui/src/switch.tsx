@@ -2,8 +2,10 @@
 
 import * as React from 'react'
 
-import { cva, cx, type VariantProps } from 'cva'
+import { type VariantProps } from 'cva'
 import { Switch, type SwitchProps } from 'react-aria-components'
+
+import { cva, cx } from '@/lib/cva.config'
 
 const switchIndicatorVariants = cva({
   base: [

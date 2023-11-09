@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { cva, cx, type VariantProps } from 'cva'
+import { type VariantProps } from 'cva'
 import {
   Dialog,
   DialogTrigger,
@@ -12,6 +12,8 @@ import {
   type DialogTriggerProps,
   type ModalOverlayProps,
 } from 'react-aria-components'
+
+import { cva, cx } from '@/lib/cva.config'
 
 export const modalVariants = cva({
   base: [

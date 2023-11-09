@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 
 import { type Component } from 'contentlayer/generated'
-import { cx } from 'cva'
 import { GithubIcon, MenuIcon, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -16,6 +15,8 @@ import {
   ModalHeader,
   ModalOverlay,
 } from 'ui'
+
+import { cx } from '@/lib/cva.config'
 
 import LinkList from './link-list'
 import { ModeToggle } from './mode-toggle'

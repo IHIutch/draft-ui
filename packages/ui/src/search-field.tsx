@@ -1,8 +1,9 @@
 'use client'
 
-import { cx } from 'cva'
 import { X } from 'lucide-react'
 import { SearchField, type SearchFieldProps } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 import { type _ButtonProps } from './button'
 import { IconButton, type _IconButtonProps } from './icon-button'

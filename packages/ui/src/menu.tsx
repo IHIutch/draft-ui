@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 
-import { cx } from 'cva'
 import { Check, Circle } from 'lucide-react'
 import {
   Header,
@@ -19,6 +18,8 @@ import {
   type SectionProps,
   type SeparatorProps,
 } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 const _Menu = (props: MenuTriggerProps) => {
   return <MenuTrigger {...props} />

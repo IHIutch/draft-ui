@@ -1,7 +1,9 @@
 'use client'
 
-import { cva, cx, type VariantProps } from 'cva'
+import { type VariantProps } from 'cva'
 import { Input, type InputProps } from 'react-aria-components'
+
+import { cva, cx } from '@/lib/cva.config'
 
 const inputVariants = cva({
   base: [

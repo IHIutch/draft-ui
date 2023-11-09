@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 
-import { cx } from 'cva'
 import {
   Breadcrumb,
   Breadcrumbs,
@@ -10,6 +9,8 @@ import {
   type BreadcrumbProps,
   type BreadcrumbsProps,
 } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 const _Breadcrumbs = <T extends object>({
   className,

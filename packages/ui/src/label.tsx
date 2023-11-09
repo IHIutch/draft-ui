@@ -1,7 +1,8 @@
 'use client'
 
-import { cx } from 'cva'
 import { Label, type LabelProps } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 const _Label = ({ className, ...props }: LabelProps) => {
   return (

@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 
-import { cx } from 'cva'
 import {
   Slider,
   SliderOutput,
@@ -13,6 +12,8 @@ import {
   type SliderThumbProps,
   type SliderTrackProps,
 } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 const _Slider = ({ className, ...props }: SliderProps) => {
   return <Slider {...props} className={cx('group w-full', className)} />

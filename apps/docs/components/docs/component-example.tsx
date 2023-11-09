@@ -2,10 +2,10 @@
 
 import * as React from 'react'
 
-import { cx } from 'cva'
 import { Tab, TabList, TabPanel, Tabs } from 'ui'
 
 import { Index } from '@/__registry__'
+import { cx } from '@/lib/cva.config'
 
 import CopyClipboardButton from '../copy-clipboard-button'
 

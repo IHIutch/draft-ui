@@ -1,13 +1,13 @@
 import React from 'react'
 
 import { type DocumentTypes } from 'contentlayer/generated'
-import { cx } from 'cva'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 
 import Callout from '@/components/docs/callout'
 import ComponentExample from '@/components/docs/component-example'
 import ComponentSource from '@/components/docs/component-source'
 import Heading from '@/components/docs/heading'
+import { cx } from '@/lib/cva.config'
 
 type MarkdownProps = {
   doc: DocumentTypes

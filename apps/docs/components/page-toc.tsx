@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-import { cx } from 'cva'
-
+import { cx } from '@/lib/cva.config'
 import { type TocItemProps } from '@/types'
 
 export default function PageToc({

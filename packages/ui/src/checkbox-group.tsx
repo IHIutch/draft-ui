@@ -2,8 +2,9 @@
 
 import * as React from 'react'
 
-import { cx } from 'cva'
 import { CheckboxGroup, type CheckboxGroupProps } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 interface _CheckboxGroupProps extends CheckboxGroupProps {
   orientation?: 'horizontal' | 'vertical'

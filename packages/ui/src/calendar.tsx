@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 
-import { cx } from 'cva'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import {
   Calendar,
@@ -23,6 +22,8 @@ import {
   type HeadingProps,
   type RangeCalendarProps,
 } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 import { IconButton, type _IconButtonProps } from './icon-button'
 

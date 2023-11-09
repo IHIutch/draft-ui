@@ -1,6 +1,5 @@
 'use client'
 
-import { cx } from 'cva'
 import {
   DatePicker,
   Dialog,
@@ -10,6 +9,8 @@ import {
   type DialogProps,
   type PopoverProps,
 } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 const _DatePicker = <T extends DateValue>({
   className,

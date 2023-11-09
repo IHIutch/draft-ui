@@ -9,8 +9,9 @@ import { DocSearchModal } from '@docsearch/react'
 
 import '@docsearch/css/dist/style.css'
 
-import { cx } from 'cva'
 import { Button, IconButton } from 'ui'
+
+import { cx } from '@/lib/cva.config'
 
 export default function SearchComponent() {
   const [isOpen, setIsOpen] = useState(false)

@@ -1,12 +1,13 @@
 'use client'
 
-import { cx } from 'cva'
 import {
   GridList,
   GridListItem,
   type GridListItemProps,
   type GridListProps,
 } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 const _GridList = <T extends object>({
   className,

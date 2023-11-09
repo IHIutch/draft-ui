@@ -2,8 +2,9 @@
 
 import * as React from 'react'
 
-import { cx } from 'cva'
 import { ProgressBar, type ProgressBarProps } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 const _ProgressBar = ({ className, ...props }: ProgressBarProps) => {
   return <ProgressBar className={cx('w-full', className)} {...props} />

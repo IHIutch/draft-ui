@@ -1,6 +1,5 @@
 'use client'
 
-import { cx } from 'cva'
 import {
   Tab,
   TabList,
@@ -11,6 +10,8 @@ import {
   type TabProps,
   type TabsProps,
 } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 const _Tabs = ({ className, ...props }: TabsProps) => {
   return (

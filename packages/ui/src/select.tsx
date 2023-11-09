@@ -1,6 +1,5 @@
 'use client'
 
-import { cx } from 'cva'
 import { Check } from 'lucide-react'
 import {
   ListBox,
@@ -14,6 +13,8 @@ import {
   type SelectProps,
   type SelectValueProps,
 } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 const _Select = <T extends object>({ className, ...props }: SelectProps<T>) => {
   return <Select className={cx('w-full', className)} {...props} />

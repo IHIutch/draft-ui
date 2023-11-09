@@ -1,12 +1,13 @@
 'use client'
 
-import { cx } from 'cva'
 import {
   Tooltip,
   TooltipTrigger,
   type TooltipProps,
   type TooltipTriggerComponentProps,
 } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 const _Tooltip = (props: TooltipTriggerComponentProps) => {
   return <TooltipTrigger delay={0} closeDelay={0} {...props} />

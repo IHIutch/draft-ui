@@ -1,9 +1,10 @@
 'use client'
 
 import { type ComponentDocument } from 'contentlayer/generated'
-import { cx } from 'cva'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+
+import { cx } from '@/lib/cva.config'
 
 type LinkListItemProps = Pick<
   ComponentDocument,

@@ -2,8 +2,9 @@
 
 import * as React from 'react'
 
-import { cx } from 'cva'
 import { Meter, type MeterProps } from 'react-aria-components'
+
+import { cx } from '@/lib/cva.config'
 
 const _Meter = ({ className, ...props }: MeterProps) => {
   return <Meter className={cx('w-full', className)} {...props} />
