@@ -28,10 +28,7 @@ const _SearchFieldInput = ({ className, ...props }: _InputProps) => {
 
 const _SearchFieldClearButton = ({ className, ...props }: _IconButtonProps) => {
   return (
-    <IconButton
-      className={cn('group-[[data-empty]]:hidden', className)}
-      {...props}
-    >
+    <IconButton className={cn('group-empty:hidden', className)} {...props}>
       <X size="1em" />
     </IconButton>
   )

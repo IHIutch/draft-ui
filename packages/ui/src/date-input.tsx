@@ -22,7 +22,7 @@ const dateInputGroupVariants = cva(
     // Focus
     'focus:outline-none',
     // Focus-visible
-    'data-[focus-visible]:ring-2 data-[focus-visible]:ring-slate-400 data-[focus-visible]:ring-offset-2 dark:data-[focus-visible]:ring-slate-400 dark:data-[focus-visible]:ring-offset-slate-900',
+    'focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900',
     // Disabled
     'disabled:cursor-not-allowed disabled:opacity-40',
   ],
@@ -85,11 +85,11 @@ const _DateSegment = ({ className, ...props }: DateSegmentProps) => {
       className={cn(
         'flex items-center rounded px-1 focus:outline-none',
         // Placeholder
-        'data-[placeholder]:text-slate-500 data-[placeholder]:focus:text-black dark:data-[placeholder]:focus:text-white',
+        'placeholder-shown:text-slate-500 placeholder-shown:focus:text-black dark:placeholder-shown:focus:text-white',
         // Focus
         'focus:bg-slate-100 focus:text-black dark:focus:bg-slate-700 dark:focus:text-white',
         // Date Separator
-        'data-[type=literal]:px-0',
+        'type-literal:px-0',
         className,
       )}
       {...props}

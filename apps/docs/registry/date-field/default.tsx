@@ -2,9 +2,9 @@ import { DateField, DateInput, DateInputGroup, DateSegment, Label } from 'ui'
 
 export default function Default() {
   return (
-    <DateField validationState="invalid">
+    <DateField>
       <Label>Date Label</Label>
-      <DateInputGroup validationState="invalid">
+      <DateInputGroup>
         <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
       </DateInputGroup>
     </DateField>

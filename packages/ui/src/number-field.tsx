@@ -50,7 +50,7 @@ const _NumberIncrementStepper = ({ className, ...props }: _ButtonProps) => {
         [
           'flex flex-1 select-none items-center justify-center rounded-tr-md border-l leading-none text-black transition-colors duration-100 dark:border-slate-700 dark:text-white',
           // Pressed
-          'data-[pressed]:bg-slate-100 dark:data-[pressed]:bg-slate-700',
+          'pressed:bg-slate-100 dark:pressed:bg-slate-700',
         ],
         className,
       )}
@@ -67,7 +67,7 @@ const _NumberDecrementStepper = ({ className, ...props }: _ButtonProps) => {
         [
           'flex flex-1 select-none items-center justify-center rounded-br-md border-l border-t leading-none text-black transition-colors duration-100 dark:border-slate-700 dark:text-white',
           // Pressed
-          'data-[pressed]:bg-slate-100 dark:data-[pressed]:bg-slate-700',
+          'pressed:bg-slate-100 dark:pressed:bg-slate-700',
         ],
         className,
       )}

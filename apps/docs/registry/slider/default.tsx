@@ -2,10 +2,10 @@ import { Label, Slider, SliderFilledTrack, SliderThumb, SliderTrack } from 'ui'
 
 export default function Default() {
   return (
-    <Slider defaultValue={30}>
+    <Slider defaultValue={30} minValue={25} maxValue={200}>
       <Label>Opacity</Label>
       <SliderTrack>
-        {(state) => (
+        {({ state }) => (
           <>
             <SliderFilledTrack
               percentage={state.getValuePercent(state.values[0]) * 100}

@@ -41,7 +41,6 @@ const _ComboBoxContent = <T extends object>({
   return (
     <Popover
       className={cn(
-        'fill-mode-forwards',
         'min-w-[--trigger-width] overflow-auto rounded-md border border-slate-200 bg-white p-1 shadow-md dark:border-slate-700 dark:bg-slate-800',
         popoverClassName,
       )}
@@ -58,7 +57,7 @@ const _ComboBoxItem = ({ className, children, ...props }: ItemProps) => {
       className={cn(
         'group',
         'flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-black outline-none transition-colors dark:text-white',
-        'data-[focused]:bg-slate-100 dark:data-[focused]:bg-slate-700',
+        'focus:bg-slate-100 dark:focus:bg-slate-700',
         className,
       )}
       {...props}
@@ -67,7 +66,7 @@ const _ComboBoxItem = ({ className, children, ...props }: ItemProps) => {
         <Check
           aria-hidden="true"
           strokeWidth="3"
-          className="h-4 w-4 group-[[aria-selected=false]]:invisible"
+          className="invisible h-4 w-4 group-selected:visible"
         />
         {children}
       </>

@@ -33,17 +33,16 @@ const _DateRangePickerContent = ({
   return (
     <Popover
       className={cn(
-        'fill-mode-forwards',
         // Base
         'overflow-auto rounded-md border border-slate-200 bg-white p-3 shadow-md',
         // Entering
-        'data-[entering]:animate-in data-[entering]:fade-in',
+        'entering:animate-in entering:fade-in',
         // Exiting
-        'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
+        'exiting:animate-in exiting:fade-in exiting:direction-reverse',
         // Top
-        'data-[placement=top]:slide-in-from-bottom-2',
+        'placement-top:slide-in-from-bottom-2',
         // Bottom
-        'data-[placement=bottom]:slide-in-from-top-2',
+        'placement-bottom:slide-in-from-top-2',
         popoverClassName,
       )}
     >

@@ -27,7 +27,7 @@ export default function JumpToContentMenu({
     <Menu>
       <Button
         size="xs"
-        className="absolute -top-16 left-0 z-50 items-center gap-2 opacity-0 aria-expanded:top-0 aria-expanded:opacity-100 data-[focus-visible]:top-0 data-[focus-visible]:opacity-100"
+        className="absolute -top-16 left-0 z-50 items-center gap-2 opacity-0 aria-expanded:top-0 aria-expanded:opacity-100 focus-visible:top-0 focus-visible:opacity-100"
       >
         <span>Skip to Content</span>
         <ChevronDown aria-hidden size="16" strokeWidth="3" />

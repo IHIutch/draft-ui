@@ -24,7 +24,7 @@ const iconButtonVariants = cva(
           // Focus
           'focus:bg-slate-700 dark:focus:bg-slate-200',
           // Open
-          'data-[state=open]:bg-slate-100 dark:data-[state=open]:bg-slate-800',
+          'open:bg-slate-100 dark:open:bg-slate-800',
         ],
         destructive: [
           // Base
@@ -64,7 +64,7 @@ const iconButtonVariants = cva(
           // Focus
           'focus:bg-slate-100 dark:focus:bg-slate-800 dark:focus:text-slate-100',
           // Open
-          'data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent',
+          'open:bg-transparent dark:open:bg-transparent',
         ],
         link: [
           // Base

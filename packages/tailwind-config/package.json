@@ -2,6 +2,7 @@
   "name": "tailwind-config",
   "dependencies": {
     "tailwindcss": "^3.3.2",
-    "tailwindcss-animate": "^1.0.5"
+    "tailwindcss-animate": "^1.0.5",
+    "tailwindcss-react-aria-components": "1.0.0-beta.1"
   }
 }

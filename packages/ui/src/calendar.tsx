@@ -99,18 +99,18 @@ const _CalendarCell = ({ className, ...props }: CalendarCellProps) => {
         'transition-color relative flex h-10 w-10 items-center justify-center text-sm text-black dark:text-white',
         // Hover
         'hover:bg-slate-100 dark:hover:bg-slate-700',
-        // Focus Visible
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900',
+        // Focus
+        'focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900',
         // Date Outside Current Month
-        'data-[outside-month]:text-slate-300 dark:data-[outside-month]:text-slate-600',
+        'outside-month:text-slate-300 dark:outside-month:text-slate-600',
         // Selected
-        'data-[selected]:z-10 data-[selected]:bg-slate-100 dark:data-[selected]:bg-slate-700 [&:not([data-selected])]:rounded',
+        'selected:z-10 selected:bg-slate-100 dark:selected:bg-slate-700 [&:not([data-selected])]:rounded',
         // Selection Start
-        'data-[selected]:data-[selection-start]:rounded-s data-[selected]:data-[selection-start]:bg-black data-[selection-start]:text-white dark:data-[selected]:data-[selection-start]:bg-white dark:data-[selection-start]:text-black',
+        'selection-start:text-white selected:selection-start:rounded-s selected:selection-start:bg-black dark:selection-start:text-black dark:selected:selection-start:bg-white',
         // Selection End
-        'data-[selected]:data-[selection-end]:rounded-e data-[selected]:data-[selection-end]:bg-black data-[selection-end]:text-white dark:data-[selected]:data-[selection-end]:bg-white dark:data-[selection-end]:text-black',
+        'selection-end:text-white selected:selection-end:rounded-e selected:selection-end:bg-black dark:selection-end:text-black dark:selected:selection-end:bg-white',
         // Disabled
-        'data-[disabled]:cursor-not-allowed data-[disabled]:hover:!bg-transparent',
+        'disabled:cursor-not-allowed disabled:hover:!bg-transparent',
         className,
       )}
       {...props}

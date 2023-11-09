@@ -16,12 +16,11 @@ import { cn } from '@/lib/utils'
 
 export const modalVariants = cva(
   [
-    'fill-mode-forwards',
     'mx-auto w-full flex-col rounded bg-white outline-none dark:bg-slate-800',
     // Entering
-    'data-[entering]:animate-in data-[entering]:zoom-in-95',
+    'entering:animate-in entering:zoom-in-95',
     // Exiting
-    'data-[exiting]:animate-in data-[exiting]:zoom-in-95 data-[exiting]:direction-reverse',
+    'exiting:animate-in exiting:zoom-in-95 exiting:direction-reverse',
   ],
   {
     variants: {
@@ -83,12 +82,12 @@ const _ModalOverlay = ({
     <ModalOverlay
       isDismissable={isDismissable}
       className={cn(
-        'h-[--visual-viewport-height] fill-mode-forwards',
+        'h-[--visual-viewport-height]',
         'fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-sm transition-all',
         // Entering
-        'data-[entering]:duration-75 data-[entering]:animate-in data-[entering]:fade-in',
+        'entering:duration-75 entering:animate-in entering:fade-in',
         // Exiting
-        'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
+        'exiting:animate-in exiting:fade-in exiting:direction-reverse',
         className,
       )}
       {...props}

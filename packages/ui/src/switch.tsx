@@ -11,11 +11,11 @@ const switchIndicatorVariants = cva(
   [
     'cursor-pointer rounded-full bg-gray-300 p-0.5 transition-colors dark:bg-slate-700',
     // Focus
-    'group-[[data-focused]]:ring-2 group-[[data-focused]]:ring-slate-400 group-[[data-focused]]:ring-offset-2 dark:group-[[data-focused]]:ring-slate-400 dark:group-[[data-focused]]:ring-offset-slate-900',
+    'group-focus:ring-2 group-focus:ring-slate-400 group-focus:ring-offset-2 dark:group-focus:ring-slate-400 dark:group-focus:ring-offset-slate-900',
     // Selected
-    'group-[[data-selected]]:bg-black dark:group-[[data-selected]]:bg-slate-400',
+    'group-selected:bg-black dark:group-selected:bg-slate-400',
     // Disabled
-    'group-[[data-disabled]]:cursor-not-allowed group-[[data-disabled]]:opacity-40',
+    'group-disabled:cursor-not-allowed group-disabled:opacity-40',
   ],
   {
     variants: {
@@ -36,9 +36,9 @@ const switchIndicatorInnerVariants = cva(
   {
     variants: {
       size: {
-        lg: 'h-6 w-6 group-[[data-selected]]:translate-x-5',
-        md: 'h-4 w-4 group-[[data-selected]]:translate-x-3',
-        sm: 'h-3 w-3 group-[[data-selected]]:translate-x-2',
+        lg: 'h-6 w-6 group-selected:translate-x-5',
+        md: 'h-4 w-4 group-selected:translate-x-3',
+        sm: 'h-3 w-3 group-selected:translate-x-2',
       },
     },
     defaultVariants: {

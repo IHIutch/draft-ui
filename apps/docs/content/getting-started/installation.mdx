@@ -11,16 +11,17 @@ Check out [their installation page](https://tailwindcss.com/docs/installation/fr
 ## Install Required Dependencies
 
 ```bash
-npm install react-aria-components class-variance-authority clsx tailwind-merge tailwindcss-animate
+npm install react-aria-components@1.0.0-beta.2 class-variance-authority clsx tailwind-merge tailwindcss-animate tailwindcss-react-aria-components@1.0.0-beta.1
 ```
 
 This project requires the following packages:
 
-- [React Aria Components](https://github.com/adobe/react-spectrum/tree/main/packages/react-aria-components)
-- [Class Variance Authority](https://github.com/joe-bell/cva)
+- [react-aria-components@1.0.0-beta.2](https://github.com/adobe/react-spectrum/tree/main/packages/react-aria-components)
+- [class-variance-authority](https://github.com/joe-bell/cva)
 - [clsx](https://github.com/lukeed/clsx)
 - [tailwind-merge](https://github.com/dcastil/tailwind-merge)
 - [tailwindcss-animate](https://github.com/jamiebuilds/tailwindcss-animate)
+- [tailwindcss-react-aria-components@1.0.0-beta.1](https://github.com/adobe/react-spectrum/tree/main/packages/tailwindcss-react-aria-components)
 
 ## Install Icons
 
@@ -59,7 +60,10 @@ Make sure to include the <code>tailwindcss-animate</code> plugin
 module.exports = {
   darkMode: ['class'],
   content: ['app/**/*.{ts,tsx}', 'components/**/*.{ts,tsx}'],
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('tailwindcss-react-aria-components'),
+  ],
 }
 ```
 

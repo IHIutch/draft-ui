@@ -17,10 +17,7 @@ const _Breadcrumbs = <T extends object>({
   ...props
 }: BreadcrumbsProps<T>) => {
   return (
-    <Breadcrumbs
-      className={cn('[&_ol]:flex [&_ol]:flex-wrap [&_ol]:gap-1', className)}
-      {...props}
-    />
+    <Breadcrumbs className={cn('flex flex-wrap gap-1', className)} {...props} />
   )
 }
 
@@ -36,7 +33,7 @@ const _BreadcrumbItem = ({
 }: _BreadcrumbItemProps) => {
   return (
     <Item className="flex items-center gap-1" {...props}>
-      <Link className="text-slate-500 aria-[current=page]:text-black dark:text-slate-300 dark:aria-[current=page]:text-white [&:not([aria-current=page])]:hover:underline">
+      <Link className="text-slate-500 current:text-black dark:text-slate-300 dark:current:text-white">
         {children}
       </Link>
       {separator ? (

@@ -17,11 +17,11 @@ const _Tabs = ({ className, ...props }: TabsProps) => {
   return (
     <Tabs
       className={cn(
-        'group/tabs flex',
+        'flex',
         // Horizontal
-        'data-[orientation=horizontal]:flex-col data-[orientation=horizontal]:[--border-width:0_0_2px_0]',
+        'orientation-horizontal:flex-col orientation-horizontal:[--border-width:0_0_2px_0]',
         // Vertical
-        'data-[orientation=vertical]:[--border-width:0_2px_0_0]',
+        'orientation-vertical:[--border-width:0_2px_0_0]',
         className,
       )}
       {...props}
@@ -36,9 +36,10 @@ const _TabList = <T extends object>({
   return (
     <TabList
       className={cn(
+        'group',
         'flex border-[length:var(--border-width)] border-slate-200 dark:border-slate-700',
         // Vertical
-        'group-[[data-orientation=vertical]]/tabs:flex-col',
+        'orientation-vertical:flex-col',
         className,
       )}
       {...props}
@@ -52,13 +53,13 @@ const _Tab = ({ className, ...props }: TabProps) => {
       className={cn(
         'relative shrink-0 cursor-pointer border-[length:var(--border-width)] border-transparent px-4 py-2 text-slate-500 outline-none transition-colors dark:text-slate-400',
         // Focus-visible
-        'data-[focus-visible]:ring-2 data-[focus-visible]:ring-slate-400',
+        'focus-visible:ring-2 focus-visible:ring-slate-400',
         // Disabled
         'aria-disabled:cursor-not-allowed aria-disabled:opacity-40',
         // Horizontal
-        'group-[[data-orientation=horizontal]]/tabs:border-[width:var(--border-width)] group-[[data-orientation=horizontal]]/tabs:top-[2px]',
+        'group-orientation-horizontal:border-[width:var(--border-width)] group-orientation-horizontal:top-[2px]',
         // Vertical
-        'group-[[data-orientation=vertical]]/tabs:border-[width:var(--border-width)] group-[[data-orientation=vertical]]/tabs:left-[2px] group-[[data-orientation=vertical]]/tabs:inline-flex',
+        'group-orientation-vertical:border-[width:var(--border-width)] group-orientation-vertical:left-[2px] group-orientation-vertical:inline-flex',
         // Selected
         'aria-[selected=true]:border-[length:var(--border-width)] aria-[selected=true]:border-black aria-[selected=true]:text-black dark:aria-[selected=true]:border-white dark:aria-[selected=true]:text-white',
         className,

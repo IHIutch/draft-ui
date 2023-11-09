@@ -28,8 +28,8 @@ const _CheckboxGroupContent = (props: React.HTMLAttributes<HTMLDivElement>) => {
     <div
       className={cn(
         'flex flex-wrap gap-x-6 gap-y-2',
-        'group-[[data-orientation=horizontal]]:flex-row',
-        'group-[[data-orientation=vertical]]:flex-col',
+        'group-orientation-horizontal:flex-row',
+        'group-orientation-vertical:flex-col',
       )}
       {...props}
     />

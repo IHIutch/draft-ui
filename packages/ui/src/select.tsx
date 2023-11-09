@@ -35,16 +35,15 @@ const _SelectContent = <T extends object>({
   return (
     <Popover
       className={cn(
-        'fill-mode-forwards',
         'min-w-[--trigger-width] overflow-auto rounded-md border border-slate-200 bg-white p-1 shadow-md dark:border-slate-700 dark:bg-slate-800',
         // Entering
-        'data-[entering]:animate-in data-[entering]:fade-in',
+        'entering:animate-in entering:fade-in',
         // Exiting
-        'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
+        'exiting:animate-in exiting:fade-in exiting:direction-reverse',
         // Top
-        'data-[placement=top]:slide-in-from-bottom-2',
+        'placement-top:slide-in-from-bottom-2',
         // Bottom
-        'data-[placement=bottom]:slide-in-from-top-2',
+        'placement-bottom:slide-in-from-top-2',
         popoverClassName,
       )}
       {...props}
@@ -61,7 +60,7 @@ const _SelectItem = ({ className, children, ...props }: ItemProps) => {
         'group',
         'flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-black outline-none transition-colors dark:text-white',
         // Focus
-        'data-[focused]:bg-slate-100 dark:data-[focused]:bg-slate-700',
+        'focus:bg-slate-100 dark:focus:bg-slate-700',
         className,
       )}
       {...props}
@@ -70,7 +69,7 @@ const _SelectItem = ({ className, children, ...props }: ItemProps) => {
         <Check
           aria-hidden="true"
           strokeWidth="3"
-          className="h-4 w-4 group-[[aria-selected=false]]:invisible"
+          className="invisible h-4 w-4 group-selected:visible"
         />
         {children}
       </>

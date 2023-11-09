@@ -11,7 +11,7 @@ const checkboxVariants = cva(
   [
     'group flex cursor-pointer items-center gap-2',
     // Disabled
-    'data-[disabled]:cursor-not-allowed',
+    'disabled:cursor-not-allowed',
   ],
   {
     variants: {
@@ -31,13 +31,13 @@ const checkboxInnerVariants = cva(
   [
     'flex items-center justify-center rounded border-2 border-slate-300 text-white transition-colors dark:border-slate-600 dark:text-black',
     // Focus
-    'group-[[data-focused]]:ring-2 group-[[data-focused]]:ring-slate-400 group-[[data-focused]]:ring-offset-2 dark:group-[[data-focused]]:ring-slate-400 dark:group-[[data-focused]]:ring-offset-slate-900',
+    'group-focus:ring-2 group-focus:ring-slate-400 group-focus:ring-offset-2 dark:group-focus:ring-slate-400 dark:group-focus:ring-offset-slate-900',
     // Selected
-    'group-[[data-selected=true]]:border-black group-[[data-selected=true]]:bg-black dark:group-[[data-selected=true]]:border-white dark:group-[[data-selected=true]]:bg-white',
+    'group-selected:border-black group-selected:bg-black dark:group-selected:border-white dark:group-selected:bg-white',
     // Disabled
-    'group-[[data-disabled]]:cursor-not-allowed group-[[data-disabled]]:border-slate-100 group-[[data-disabled]]:bg-slate-100',
+    'group-disabled:cursor-not-allowed group-disabled:border-slate-100 group-disabled:bg-slate-100',
     // Selected & Disabled
-    'group-[[data-selected=true][data-disabled]]:border-slate-100 group-[[data-selected=true][data-disabled]]:bg-slate-100 group-[[data-selected=true][data-disabled]]:text-slate-400',
+    'group-selected:disabled::border-slate-100 group-selected:disabled::bg-slate-100 group-selected:disabled::text-slate-400',
   ],
   {
     variants: {
@@ -78,14 +78,14 @@ const _Checkbox = ({ className, size, children, ...props }: _CheckboxProps) => {
             viewBox="0 0 12 10"
             className={cn(
               'fill-none stroke-current stroke-2 transition-all duration-300',
-              'group-[[data-selected]]:block',
-              '[stroke-dasharray:22] [stroke-dashoffset:66] group-[[data-selected]]:[stroke-dasharray:28]',
+              'group-selected:block',
+              '[stroke-dasharray:22] [stroke-dashoffset:66] group-selected:[stroke-dasharray:28]',
             )}
           >
             <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
           </svg>
         </div>
-        <div className="text-black group-[[data-disabled]]:opacity-40 dark:text-white">
+        <div className="text-black group-disabled:opacity-40 dark:text-white">
           {children}
         </div>
       </>

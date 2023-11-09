@@ -16,7 +16,7 @@ import {
 import { cn } from '@/lib/utils'
 
 const _Slider = ({ className, ...props }: SliderProps) => {
-  return <Slider {...props} className={cn('group/slider w-full', className)} />
+  return <Slider {...props} className={cn('group w-full', className)} />
 }
 
 const _SliderOutput = (props: SliderOutputProps) => {
@@ -30,15 +30,15 @@ const _SliderTrack = ({ className, ...props }: SliderTrackProps) => {
       className={cn(
         'relative cursor-pointer',
         // Vertical
-        'group-[[data-orientation=vertical]]/slider:w-6',
+        'group-orientation-vertical:w-6',
         // Horizontal
-        'group-[[data-orientation=horizontal]]/slider:h-6 group-[[data-orientation=horizontal]]/slider:w-full',
+        'group-orientation-horizontal:h-6 group-orientation-horizontal:w-full',
         // ::before
         'before:absolute before:block before:rounded-full before:bg-slate-200 dark:before:bg-slate-700',
         // ::before Vertical
-        'group-[[data-orientation=vertical]]/slider:before:left-1/2 group-[[data-orientation=vertical]]/slider:before:h-full group-[[data-orientation=vertical]]/slider:before:w-2 group-[[data-orientation=vertical]]/slider:before:-translate-x-1/2',
+        'group-orientation-vertical:before:left-1/2 group-orientation-vertical:before:h-full group-orientation-vertical:before:w-2 group-orientation-vertical:before:-translate-x-1/2',
         // ::before Horizontal
-        'group-[[data-orientation=horizontal]]/slider:before:top-1/2 group-[[data-orientation=horizontal]]/slider:before:h-2 group-[[data-orientation=horizontal]]/slider:before:w-full group-[[data-orientation=horizontal]]/slider:before:-translate-y-1/2',
+        'group-orientation-horizontal:before:top-1/2 group-orientation-horizontal:before:h-2 group-orientation-horizontal:before:w-full group-orientation-horizontal:before:-translate-y-1/2',
         className,
       )}
     />
@@ -64,9 +64,9 @@ const _SliderFilledTrack = ({
       className={cn(
         'absolute h-2 rounded-full bg-black dark:bg-white',
         // Vertical
-        'group-[[data-orientation=vertical]]/slider:bottom-0 group-[[data-orientation=vertical]]/slider:left-1/2 group-[[data-orientation=vertical]]/slider:h-full group-[[data-orientation=vertical]]/slider:w-2 group-[[data-orientation=vertical]]/slider:-translate-x-1/2',
+        'group-orientation-vertical:bottom-0 group-orientation-vertical:left-1/2 group-orientation-vertical:h-full group-orientation-vertical:w-2 group-orientation-vertical:-translate-x-1/2',
         // Horizontal
-        'group-[[data-orientation=horizontal]]/slider:left-0 group-[[data-orientation=horizontal]]/slider:top-1/2 group-[[data-orientation=horizontal]]/slider:h-2 group-[[data-orientation=horizontal]]/slider:w-full group-[[data-orientation=horizontal]]/slider:-translate-y-1/2',
+        'group-orientation-horizontal:left-0 group-orientation-horizontal:top-1/2 group-orientation-horizontal:h-2 group-orientation-horizontal:w-full group-orientation-horizontal:-translate-y-1/2',
         className,
       )}
       style={{
@@ -83,13 +83,13 @@ const _SliderThumb = ({ className, ...props }: SliderThumbProps) => {
       className={cn(
         'flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border-2 border-black bg-white text-xs dark:border-white dark:bg-slate-900',
         // Dragging
-        'data-[dragging]:outline-none data-[dragging]:ring-2 data-[dragging]:ring-slate-400 data-[dragging]:ring-offset-2 dark:data-[dragging]:ring-offset-slate-900',
+        'dragging:outline-none dragging:ring-2 dragging:ring-slate-400 dragging:ring-offset-2 dark:dragging:ring-offset-slate-900',
         // Focus Visible
-        'data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-slate-400 data-[focus-visible]:ring-offset-2 dark:data-[focus-visible]:ring-offset-slate-900',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900',
         // Vertical
-        'group-[[data-orientation=vertical]]/slider:left-1/2',
+        'group-orientation-vertical:left-1/2',
         // Horizontal
-        'group-[[data-orientation=horizontal]]/slider:top-1/2',
+        'group-orientation-horizontal:top-1/2',
         className,
       )}
       {...props}

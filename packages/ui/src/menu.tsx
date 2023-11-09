@@ -39,17 +39,16 @@ const _MenuContent = <T extends object>({
   return (
     <Popover
       className={cn(
-        'fill-mode-forwards',
         // Base
         'min-w-[150px] overflow-auto rounded-md border bg-white p-1 shadow dark:border-slate-700 dark:bg-slate-800',
         // Entering
-        'data-[entering]:animate-in data-[entering]:fade-in',
+        'entering:animate-in entering:fade-in',
         // Exiting
-        'data-[exiting]:animate-in data-[exiting]:fade-in data-[exiting]:direction-reverse',
+        'exiting:animate-in exiting:fade-in exiting:direction-reverse',
         // Top
-        'data-[placement=top]:slide-in-from-bottom-2',
+        'placement-top:slide-in-from-bottom-2',
         // Bottom
-        'data-[placement=bottom]:slide-in-from-top-2',
+        'placement-bottom:slide-in-from-top-2',
         popoverClassName,
       )}
       {...props}
@@ -81,13 +80,13 @@ const _MenuItem = ({ className, children, ...props }: ItemProps) => {
             <Circle
               aria-hidden="true"
               strokeWidth="3"
-              className="h-2 w-2 fill-current group-[[aria-checked=false]]:invisible"
+              className="invisible h-2 w-2 fill-current group-selected:visible"
             />
           ) : selectionMode === 'multiple' ? (
             <Check
               aria-hidden="true"
               strokeWidth="3"
-              className="h-4 w-4 group-[[aria-checked=false]]:invisible"
+              className="invisible h-4 w-4 group-selected:visible"
             />
           ) : null}
           {children}

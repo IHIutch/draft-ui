@@ -5,7 +5,7 @@ export default function Vertical() {
     <Slider orientation="vertical" defaultValue={30}>
       <Label>Vertical Slider</Label>
       <SliderTrack className="h-72">
-        {(state) => (
+        {({ state }) => (
           <>
             <SliderFilledTrack
               orientation="vertical"

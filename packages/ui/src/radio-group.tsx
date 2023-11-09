@@ -15,8 +15,8 @@ const _RadioGroupContent = (props: React.HTMLAttributes<HTMLDivElement>) => {
     <div
       className={cn(
         'flex flex-wrap gap-x-6 gap-y-2',
-        'group-[[aria-orientation=horizontal]]:flex-row',
-        'group-[[aria-orientation=vertical]]:flex-col',
+        'group-orientation-horizontal:flex-row',
+        'group-orientation-vertical:flex-col',
       )}
       {...props}
     />
