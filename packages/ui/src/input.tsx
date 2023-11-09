@@ -1,9 +1,7 @@
 'use client'
 
-import { cva, type VariantProps } from 'cva'
+import { cva, cx, type VariantProps } from 'cva'
 import { Input, type InputProps } from 'react-aria-components'
-
-import { cn } from '@/lib/utils'
 
 const inputVariants = cva({
   base: [
@@ -39,7 +37,7 @@ export interface _InputProps
 const _Input = ({ className, size, ...props }: _InputProps) => {
   return (
     <Input
-      className={cn(
+      className={cx(
         inputVariants({
           size,
           className,

@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { cva, type VariantProps } from 'cva'
+import { cva, cx, type VariantProps } from 'cva'
 import {
   Dialog,
   DialogTrigger,
@@ -11,8 +11,6 @@ import {
   type DialogTriggerProps,
   type ModalOverlayProps,
 } from 'react-aria-components'
-
-import { cn } from '@/lib/utils'
 
 export const modalVariants = cva(
   [
@@ -58,7 +56,7 @@ const _ModalContent = ({
 }: _ModalContentProps) => {
   return (
     <Modal
-      className={cn(
+      className={cx(
         modalVariants({
           size,
           className,
@@ -81,7 +79,7 @@ const _ModalOverlay = ({
   return (
     <ModalOverlay
       isDismissable={isDismissable}
-      className={cn(
+      className={cx(
         'h-[--visual-viewport-height]',
         'fixed inset-x-0 top-0 z-50 bg-black/60 backdrop-blur-sm transition-all',
         // Entering
@@ -101,7 +99,7 @@ const _ModalHeader = ({
 }: React.HTMLAttributes<HTMLElement>) => {
   return (
     <header
-      className={cn(
+      className={cx(
         'shrink-0 px-6 py-4 text-xl font-semibold text-black dark:text-white',
         className,
       )}
@@ -114,14 +112,14 @@ const _ModalBody = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
-  return <div className={cn('flex-1 px-6 py-2', className)} {...props} />
+  return <div className={cx('flex-1 px-6 py-2', className)} {...props} />
 }
 
 const _ModalFooter = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) => {
-  return <footer className={cn('px-6 py-4', className)} {...props} />
+  return <footer className={cx('px-6 py-4', className)} {...props} />
 }
 
 export {

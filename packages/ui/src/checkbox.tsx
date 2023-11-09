@@ -2,10 +2,8 @@
 
 import * as React from 'react'
 
-import { cva, type VariantProps } from 'cva'
+import { cva, cx, type VariantProps } from 'cva'
 import { Checkbox, type CheckboxProps } from 'react-aria-components'
-
-import { cn } from '@/lib/utils'
 
 const checkboxVariants = cva({
   base: [
@@ -60,7 +58,7 @@ export interface _CheckboxProps
 const _Checkbox = ({ className, size, children, ...props }: _CheckboxProps) => {
   return (
     <Checkbox
-      className={cn(
+      className={cx(
         checkboxVariants({
           size,
           className,
@@ -69,13 +67,13 @@ const _Checkbox = ({ className, size, children, ...props }: _CheckboxProps) => {
       {...props}
     >
       <>
-        <div className={cn(checkboxInnerVariants({ size }))}>
+        <div className={cx(checkboxInnerVariants({ size }))}>
           <svg
             viewBox="0 0 12 10"
-            className={cn(
+            className={cx(
               'fill-none stroke-current stroke-2 transition-all duration-300',
               'group-selected:block',
-              '[stroke-dasharray:22] [stroke-dashoffset:66] group-selected:[stroke-dasharray:28]',
+              'group-selected:[stroke-dasharray:28] [stroke-dasharray:22] [stroke-dashoffset:66]',
             )}
           >
             <polyline points="1.5 6 4.5 9 10.5 1"></polyline>

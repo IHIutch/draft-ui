@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 
+import { cx } from 'cva'
 import {
   Slider,
   SliderOutput,
@@ -13,10 +14,8 @@ import {
   type SliderTrackProps,
 } from 'react-aria-components'
 
-import { cn } from '@/lib/utils'
-
 const _Slider = ({ className, ...props }: SliderProps) => {
-  return <Slider {...props} className={cn('group w-full', className)} />
+  return <Slider {...props} className={cx('group w-full', className)} />
 }
 
 const _SliderOutput = (props: SliderOutputProps) => {
@@ -27,7 +26,7 @@ const _SliderTrack = ({ className, ...props }: SliderTrackProps) => {
   return (
     <SliderTrack
       {...props}
-      className={cn(
+      className={cx(
         'relative cursor-pointer',
         // Vertical
         'group-orientation-vertical:w-6',
@@ -61,7 +60,7 @@ const _SliderFilledTrack = ({
   const dir = orientation === 'vertical' ? 'height' : 'width'
   return (
     <div
-      className={cn(
+      className={cx(
         'absolute h-2 rounded-full bg-black dark:bg-white',
         // Vertical
         'group-orientation-vertical:bottom-0 group-orientation-vertical:left-1/2 group-orientation-vertical:h-full group-orientation-vertical:w-2 group-orientation-vertical:-translate-x-1/2',
@@ -80,7 +79,7 @@ const _SliderFilledTrack = ({
 const _SliderThumb = ({ className, ...props }: SliderThumbProps) => {
   return (
     <SliderThumb
-      className={cn(
+      className={cx(
         'flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border-2 border-black bg-white text-xs dark:border-white dark:bg-slate-900',
         // Dragging
         'dragging:outline-none dragging:ring-2 dragging:ring-slate-400 dragging:ring-offset-2 dark:dragging:ring-offset-slate-900',

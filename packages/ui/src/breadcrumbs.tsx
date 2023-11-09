@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 
+import { cx } from 'cva'
 import {
   Breadcrumbs,
   Item,
@@ -10,14 +11,12 @@ import {
   type ItemProps,
 } from 'react-aria-components'
 
-import { cn } from '@/lib/utils'
-
 const _Breadcrumbs = <T extends object>({
   className,
   ...props
 }: BreadcrumbsProps<T>) => {
   return (
-    <Breadcrumbs className={cn('flex flex-wrap gap-1', className)} {...props} />
+    <Breadcrumbs className={cx('flex flex-wrap gap-1', className)} {...props} />
   )
 }
 

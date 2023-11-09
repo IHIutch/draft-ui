@@ -1,9 +1,7 @@
 'use client'
 
-import { cva, type VariantProps } from 'cva'
+import { cva, cx, type VariantProps } from 'cva'
 import { Button, type ButtonProps } from 'react-aria-components'
-
-import { cn } from '@/lib/utils'
 
 const iconButtonVariants = cva({
   base: [
@@ -104,7 +102,7 @@ const _IconButton = ({
 }: _IconButtonProps) => {
   return (
     <Button
-      className={cn(
+      className={cx(
         iconButtonVariants({
           variant,
           size,

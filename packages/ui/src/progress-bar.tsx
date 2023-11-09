@@ -2,12 +2,11 @@
 
 import * as React from 'react'
 
+import { cx } from 'cva'
 import { ProgressBar, type ProgressBarProps } from 'react-aria-components'
 
-import { cn } from '@/lib/utils'
-
 const _ProgressBar = ({ className, ...props }: ProgressBarProps) => {
-  return <ProgressBar className={cn('w-full', className)} {...props} />
+  return <ProgressBar className={cx('w-full', className)} {...props} />
 }
 
 const _ProgressBarTrack = ({
@@ -17,7 +16,7 @@ const _ProgressBarTrack = ({
 }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className={cn(
+      className={cx(
         'h-2 w-full overflow-hidden rounded bg-slate-200 dark:bg-slate-700',
         className,
       )}
@@ -40,7 +39,7 @@ const _ProgressBarFilledTrack = ({
 }: _ProgressBarFilledTrackProps) => {
   return (
     <div
-      className={cn('h-full bg-black dark:bg-white', className)}
+      className={cx('h-full bg-black dark:bg-white', className)}
       style={{ width: percentage + '%' }}
       {...props}
     />

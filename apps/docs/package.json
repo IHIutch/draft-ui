@@ -13,7 +13,6 @@
   "dependencies": {
     "@docsearch/react": "^3.4.0",
     "@vercel/analytics": "^1.0.1",
-    "clsx": "^1.2.1",
     "contentlayer": "0.3.1",
     "fathom-client": "^3.5.0",
     "fs-extra": "11.1.1",

@@ -2,10 +2,10 @@
 
 import * as React from 'react'
 
+import { cx } from 'cva'
 import { Tab, TabList, TabPanel, Tabs } from 'ui'
 
 import { Index } from '@/__registry__'
-import { cn } from '@/lib/utils'
 
 import CopyClipboardButton from '../copy-clipboard-button'
 
@@ -62,7 +62,7 @@ export default function ComponentExample({
         <TabPanel id="example" className="px-0">
           <div className="not-prose overflow-x-auto rounded-md border dark:border-slate-700 dark:bg-slate-800">
             <div
-              className={cn(
+              className={cx(
                 'flex min-h-[350px] min-w-[max-content] justify-center p-10',
                 {
                   'items-center': align === 'center',

@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 
-import clsx from 'clsx'
 import { Search } from 'lucide-react'
 import Link from 'next/link'
 
@@ -10,6 +9,7 @@ import { DocSearchModal } from '@docsearch/react'
 
 import '@docsearch/css/dist/style.css'
 
+import { cx } from 'cva'
 import { Button, IconButton } from 'ui'
 
 export default function SearchComponent() {
@@ -87,7 +87,7 @@ const Hit = ({ hit, children }) => {
   return (
     <Link
       href={hit.url}
-      className={clsx({
+      className={cx({
         'DocSearch-Hit--Result': hit.__is_result?.(),
         // 'DocSearch-Hit--Parent': hit.__is_parent?.(),
         // 'DocSearch-Hit--Child': hit.__is_child?.(),

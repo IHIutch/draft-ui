@@ -1,13 +1,12 @@
 'use client'
 
+import { cx } from 'cva'
 import { Label, type LabelProps } from 'react-aria-components'
-
-import { cn } from '@/lib/utils'
 
 const _Label = ({ className, ...props }: LabelProps) => {
   return (
     <Label
-      className={cn(
+      className={cx(
         'mb-2 mr-3 block font-medium text-black peer-disabled:cursor-not-allowed peer-disabled:opacity-40 dark:text-white',
         className,
       )}

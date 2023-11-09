@@ -2,10 +2,8 @@
 
 import * as React from 'react'
 
-import { cva, type VariantProps } from 'cva'
+import { cva, cx, type VariantProps } from 'cva'
 import { Radio, type RadioProps } from 'react-aria-components'
-
-import { cn } from '@/lib/utils'
 
 const radioVariants = cva({
   base: [
@@ -64,7 +62,7 @@ export interface _RadioProps
 const _Radio = ({ className, size, children, ...props }: _RadioProps) => {
   return (
     <Radio
-      className={cn(
+      className={cx(
         radioVariants({
           size,
           className,
@@ -73,7 +71,7 @@ const _Radio = ({ className, size, children, ...props }: _RadioProps) => {
       {...props}
     >
       <>
-        <div className={cn(radioInnerVariants({ size }))} />
+        <div className={cx(radioInnerVariants({ size }))} />
         <div className="text-black group-disabled:opacity-40 dark:text-white">
           {children}
         </div>

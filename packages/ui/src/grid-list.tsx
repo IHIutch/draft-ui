@@ -1,5 +1,6 @@
 'use client'
 
+import { cx } from 'cva'
 import {
   GridList,
   Item,
@@ -7,14 +8,12 @@ import {
   type ItemProps,
 } from 'react-aria-components'
 
-import { cn } from '@/lib/utils'
-
 const _GridList = <T extends object>({
   className,
   ...props
 }: GridListProps<T>) => {
   return (
-    <GridList className={cn('flex flex-col gap-2', className)} {...props} />
+    <GridList className={cx('flex flex-col gap-2', className)} {...props} />
   )
 }
 

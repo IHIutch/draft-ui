@@ -1,5 +1,6 @@
 'use client'
 
+import { cx } from 'cva'
 import { Check } from 'lucide-react'
 import {
   Item,
@@ -14,10 +15,8 @@ import {
   type SelectValueProps,
 } from 'react-aria-components'
 
-import { cn } from '@/lib/utils'
-
 const _Select = <T extends object>({ className, ...props }: SelectProps<T>) => {
-  return <Select className={cn('w-full', className)} {...props} />
+  return <Select className={cx('w-full', className)} {...props} />
 }
 
 export interface _SelectContentProps<T>
@@ -34,7 +33,7 @@ const _SelectContent = <T extends object>({
 }: _SelectContentProps<T>) => {
   return (
     <Popover
-      className={cn(
+      className={cx(
         'min-w-[--trigger-width] overflow-auto rounded-md border border-slate-200 bg-white p-1 shadow-md dark:border-slate-700 dark:bg-slate-800',
         // Entering
         'entering:animate-in entering:fade-in',
@@ -48,7 +47,7 @@ const _SelectContent = <T extends object>({
       )}
       {...props}
     >
-      <ListBox className={cn('outline-none', className)} {...props} />
+      <ListBox className={cx('outline-none', className)} {...props} />
     </Popover>
   )
 }
@@ -56,7 +55,7 @@ const _SelectContent = <T extends object>({
 const _SelectItem = ({ className, children, ...props }: ItemProps) => {
   return (
     <Item
-      className={cn(
+      className={cx(
         'group',
         'flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-black outline-none transition-colors dark:text-white',
         // Focus

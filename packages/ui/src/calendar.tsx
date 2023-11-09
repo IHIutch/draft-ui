@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 
+import { cx } from 'cva'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import {
   Calendar,
@@ -23,8 +24,6 @@ import {
   type RangeCalendarProps,
 } from 'react-aria-components'
 
-import { cn } from '@/lib/utils'
-
 import { IconButton, type _IconButtonProps } from './icon-button'
 
 const _Calendar = <T extends DateValue>({
@@ -33,7 +32,7 @@ const _Calendar = <T extends DateValue>({
 }: CalendarProps<T>) => {
   return (
     <Calendar
-      className={cn(
+      className={cx(
         'w-fit [&_td:not([aria-selected])+td[aria-selected]_div]:rounded [&_td]:px-0',
         '[&_td:not([aria-selected])+td[aria-selected]_div]:bg-black [&_td:not([aria-selected])+td[aria-selected]_div]:text-white',
         'dark:[&_td:not([aria-selected])+td[aria-selected]_div]:bg-white dark:[&_td:not([aria-selected])+td[aria-selected]_div]:text-black',
@@ -50,7 +49,7 @@ const _RangeCalendar = <T extends DateValue>({
 }: RangeCalendarProps<T>) => {
   return (
     <RangeCalendar
-      className={cn(
+      className={cx(
         'w-fit [&_td]:px-0',
         // First date of week
         '[&_td[aria-selected]:first-of-type_div]:rounded-s',
@@ -64,7 +63,7 @@ const _RangeCalendar = <T extends DateValue>({
 }
 
 const _CalendarGrid = ({ className, ...props }: CalendarGridProps) => {
-  return <CalendarGrid className={cn('mt-3', className)} {...props} />
+  return <CalendarGrid className={cx('mt-3', className)} {...props} />
 }
 
 const _CalendarGridHeader = (props: CalendarGridHeaderProps) => {
@@ -77,7 +76,7 @@ const _CalendarHeaderCell = ({
 }: CalendarHeaderCellProps) => {
   return (
     <CalendarHeaderCell
-      className={cn(
+      className={cx(
         'h-10 w-10 text-sm font-medium text-slate-500 dark:text-slate-400',
         className,
       )}
@@ -88,14 +87,14 @@ const _CalendarHeaderCell = ({
 
 const _CalendarGridBody = ({ className, ...props }: CalendarGridBodyProps) => {
   return (
-    <CalendarGridBody className={cn('relative pt-4', className)} {...props} />
+    <CalendarGridBody className={cx('relative pt-4', className)} {...props} />
   )
 }
 
 const _CalendarCell = ({ className, ...props }: CalendarCellProps) => {
   return (
     <CalendarCell
-      className={cn(
+      className={cx(
         'transition-color relative flex h-10 w-10 items-center justify-center text-sm text-black dark:text-white',
         // Hover
         'hover:bg-slate-100 dark:hover:bg-slate-700',
@@ -121,7 +120,7 @@ const _CalendarCell = ({ className, ...props }: CalendarCellProps) => {
 const _CalendarHeading = ({ className, ...props }: HeadingProps) => {
   return (
     <Heading
-      className={cn(
+      className={cx(
         'text-sm font-medium text-black dark:text-white',
         className,
       )}
@@ -136,7 +135,7 @@ const _CalendarHeader = ({
 }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <header
-      className={cn('flex h-full items-center justify-between', className)}
+      className={cx('flex h-full items-center justify-between', className)}
       {...props}
     />
   )

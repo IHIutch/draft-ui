@@ -1,5 +1,6 @@
 'use client'
 
+import { cx } from 'cva'
 import {
   DatePicker,
   Dialog,
@@ -10,13 +11,11 @@ import {
   type PopoverProps,
 } from 'react-aria-components'
 
-import { cn } from '@/lib/utils'
-
 const _DatePicker = <T extends DateValue>({
   className,
   ...props
 }: DatePickerProps<T>) => {
-  return <DatePicker className={cn('w-full', className)} {...props} />
+  return <DatePicker className={cx('w-full', className)} {...props} />
 }
 
 export interface _DatePickerContentProps
@@ -32,7 +31,7 @@ const _DatePickerContent = ({
 }: _DatePickerContentProps) => {
   return (
     <Popover
-      className={cn(
+      className={cx(
         'overflow-auto rounded-md border border-slate-200 bg-white p-3 shadow-md dark:border-slate-700 dark:bg-slate-800',
         // Entering
         'entering:animate-in entering:fade-in',

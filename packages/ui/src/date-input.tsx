@@ -1,6 +1,6 @@
 'use client'
 
-import { cva, type VariantProps } from 'cva'
+import { cva, cx, type VariantProps } from 'cva'
 import {
   DateField,
   DateInput,
@@ -12,8 +12,6 @@ import {
   type DateValue,
   type GroupProps,
 } from 'react-aria-components'
-
-import { cn } from '@/lib/utils'
 
 const dateInputGroupVariants = cva({
   base: [
@@ -57,7 +55,7 @@ const _DateInputGroup = ({
 }: _DateInputGroupProps) => {
   return (
     <Group
-      className={cn(
+      className={cx(
         dateInputGroupVariants({
           size,
           validationState,
@@ -74,13 +72,13 @@ const _DateField = <T extends DateValue>(props: DateFieldProps<T>) => {
 }
 
 const _DateInput = ({ className, ...props }: DateInputProps) => {
-  return <DateInput className={cn('flex gap-1', className)} {...props} />
+  return <DateInput className={cx('flex gap-1', className)} {...props} />
 }
 
 const _DateSegment = ({ className, ...props }: DateSegmentProps) => {
   return (
     <DateSegment
-      className={cn(
+      className={cx(
         'flex items-center rounded px-1 focus:outline-none',
         // Placeholder
         'placeholder-shown:text-slate-500 placeholder-shown:focus:text-black dark:placeholder-shown:focus:text-white',

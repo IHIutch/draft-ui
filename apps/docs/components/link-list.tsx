@@ -1,10 +1,9 @@
 'use client'
 
 import { type ComponentDocument } from 'contentlayer/generated'
+import { cx } from 'cva'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-
-import { cn } from '@/lib/utils'
 
 type LinkListItemProps = Pick<
   ComponentDocument,
@@ -29,7 +28,7 @@ export default function LinkList({ list }: { list: LinkListItemProps[] }) {
                 e.preventDefault()
               }
             }}
-            className={cn(
+            className={cx(
               'flex items-center justify-between gap-2 rounded-sm py-1 text-sm transition',
               // Focus
               'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900',

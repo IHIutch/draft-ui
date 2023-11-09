@@ -2,9 +2,8 @@
 
 import * as React from 'react'
 
+import { cx } from 'cva'
 import { RadioGroup, type RadioGroupProps } from 'react-aria-components'
-
-import { cn } from '@/lib/utils'
 
 const _RadioGroup = (props: RadioGroupProps) => {
   return <RadioGroup className="group" {...props} />
@@ -13,7 +12,7 @@ const _RadioGroup = (props: RadioGroupProps) => {
 const _RadioGroupContent = (props: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className={cn(
+      className={cx(
         'flex flex-wrap gap-x-6 gap-y-2',
         'group-orientation-horizontal:flex-row',
         'group-orientation-vertical:flex-col',

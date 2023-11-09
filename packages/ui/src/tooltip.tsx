@@ -1,13 +1,12 @@
 'use client'
 
+import { cx } from 'cva'
 import {
   Tooltip,
   TooltipTrigger,
   type TooltipProps,
   type TooltipTriggerComponentProps,
 } from 'react-aria-components'
-
-import { cn } from '@/lib/utils'
 
 const _Tooltip = (props: TooltipTriggerComponentProps) => {
   return <TooltipTrigger delay={0} closeDelay={0} {...props} />
@@ -17,7 +16,7 @@ const _TooltipContent = ({ className, children, ...props }: TooltipProps) => {
   return (
     <Tooltip
       offset={6}
-      className={cn(
+      className={cx(
         [
           'rounded-sm bg-slate-700 px-1 py-0.5 text-sm text-white dark:bg-slate-300 dark:text-black',
           // Entering

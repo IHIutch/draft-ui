@@ -2,9 +2,8 @@
 
 import * as React from 'react'
 
+import { cx } from 'cva'
 import { CheckboxGroup, type CheckboxGroupProps } from 'react-aria-components'
-
-import { cn } from '@/lib/utils'
 
 interface _CheckboxGroupProps extends CheckboxGroupProps {
   orientation?: 'horizontal' | 'vertical'
@@ -26,7 +25,7 @@ const _CheckboxGroup = ({
 const _CheckboxGroupContent = (props: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className={cn(
+      className={cx(
         'flex flex-wrap gap-x-6 gap-y-2',
         'group-orientation-horizontal:flex-row',
         'group-orientation-vertical:flex-col',

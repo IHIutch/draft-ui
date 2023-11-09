@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 
 import { type Component } from 'contentlayer/generated'
+import { cx } from 'cva'
 import { GithubIcon, MenuIcon, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -15,8 +16,6 @@ import {
   ModalHeader,
   ModalOverlay,
 } from 'ui'
-
-import { cn } from '@/lib/utils'
 
 import LinkList from './link-list'
 import { ModeToggle } from './mode-toggle'
@@ -85,7 +84,7 @@ export default function Navigation({
               <SearchComponent />
               <div>
                 <a
-                  className={cn(
+                  className={cx(
                     iconButtonVariants({ size: 'sm', variant: 'ghost' }),
                   )}
                   href="https://github.com/IHIutch/draft-ui"
@@ -110,7 +109,7 @@ export default function Navigation({
           <div className="flex items-center gap-1">
             <div>
               <a
-                className={cn(
+                className={cx(
                   iconButtonVariants({ size: 'sm', variant: 'ghost' }),
                 )}
                 href="https://github.com/IHIutch/draft-ui"

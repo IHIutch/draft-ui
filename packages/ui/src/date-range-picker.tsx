@@ -1,5 +1,6 @@
 'use client'
 
+import { cx } from 'cva'
 import {
   DateRangePicker,
   Dialog,
@@ -10,13 +11,11 @@ import {
   type PopoverProps,
 } from 'react-aria-components'
 
-import { cn } from '@/lib/utils'
-
 const _DateRangePicker = <T extends DateValue>({
   className,
   ...props
 }: DateRangePickerProps<T>) => {
-  return <DateRangePicker className={cn('w-full', className)} {...props} />
+  return <DateRangePicker className={cx('w-full', className)} {...props} />
 }
 
 export interface _DateRangePickerContentProps
@@ -32,7 +31,7 @@ const _DateRangePickerContent = ({
 }: _DateRangePickerContentProps) => {
   return (
     <Popover
-      className={cn(
+      className={cx(
         // Base
         'overflow-auto rounded-md border border-slate-200 bg-white p-3 shadow-md',
         // Entering

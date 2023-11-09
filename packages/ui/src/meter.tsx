@@ -2,12 +2,11 @@
 
 import * as React from 'react'
 
+import { cx } from 'cva'
 import { Meter, type MeterProps } from 'react-aria-components'
 
-import { cn } from '@/lib/utils'
-
 const _Meter = ({ className, ...props }: MeterProps) => {
-  return <Meter className={cn('w-full', className)} {...props} />
+  return <Meter className={cx('w-full', className)} {...props} />
 }
 
 const _MeterTrack = ({
@@ -17,7 +16,7 @@ const _MeterTrack = ({
 }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className={cn(
+      className={cx(
         'h-2 w-full overflow-hidden rounded bg-slate-200 dark:bg-slate-700',
         className,
       )}
@@ -40,7 +39,7 @@ const _MeterFilledTrack = ({
 }: _MeterFilledTrackProps) => {
   return (
     <div
-      className={cn('h-full bg-black dark:bg-white', className)}
+      className={cx('h-full bg-black dark:bg-white', className)}
       style={{ width: percentage + '%' }}
       {...props}
     />

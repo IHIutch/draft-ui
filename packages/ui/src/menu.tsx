@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 
+import { cx } from 'cva'
 import { Check, Circle } from 'lucide-react'
 import {
   Header,
@@ -18,8 +19,6 @@ import {
   type SectionProps,
   type SeparatorProps,
 } from 'react-aria-components'
-
-import { cn } from '@/lib/utils'
 
 const _Menu = (props: MenuTriggerProps) => {
   return <MenuTrigger {...props} />
@@ -38,7 +37,7 @@ const _MenuContent = <T extends object>({
 }: _MenuContentProps<T>) => {
   return (
     <Popover
-      className={cn(
+      className={cx(
         // Base
         'min-w-[150px] overflow-auto rounded-md border bg-white p-1 shadow dark:border-slate-700 dark:bg-slate-800',
         // Entering
@@ -53,7 +52,7 @@ const _MenuContent = <T extends object>({
       )}
       {...props}
     >
-      <Menu className={cn('outline-none', className)} {...props} />
+      <Menu className={cx('outline-none', className)} {...props} />
     </Popover>
   )
 }
@@ -61,7 +60,7 @@ const _MenuContent = <T extends object>({
 const _MenuItem = ({ className, children, ...props }: ItemProps) => {
   return (
     <Item
-      className={cn(
+      className={cx(
         'group',
         'flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-black outline-none transition-colors dark:text-white',
         // Hover
@@ -106,7 +105,7 @@ const _MenuHeader = ({
 }: React.HTMLAttributes<HTMLElement>) => {
   return (
     <Header
-      className={cn(
+      className={cx(
         'px-2 py-1 text-sm font-medium text-slate-500 dark:text-slate-400',
         className,
       )}
@@ -118,7 +117,7 @@ const _MenuHeader = ({
 const _MenuSeparator = ({ className, ...props }: SeparatorProps) => {
   return (
     <Separator
-      className={cn('-mx-1 my-1 border-t dark:border-slate-700', className)}
+      className={cx('-mx-1 my-1 border-t dark:border-slate-700', className)}
       {...props}
     />
   )

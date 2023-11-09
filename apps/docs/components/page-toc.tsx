@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react'
 
-import { cn } from '@/lib/utils'
+import { cx } from 'cva'
+
 import { type TocItemProps } from '@/types'
 
 export default function PageToc({
@@ -21,10 +22,10 @@ export default function PageToc({
       </div>
       <ul>
         {(headings || []).map((h, idx) => (
-          <li key={idx} className={cn(h.lvl === 3 && 'pl-3')}>
+          <li key={idx} className={cx(h.lvl === 3 && 'pl-3')}>
             <a
               href={'#' + h.slug}
-              className={cn(
+              className={cx(
                 'block rounded-sm py-1 text-sm no-underline transition',
                 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900',
                 h.slug === activeHeading

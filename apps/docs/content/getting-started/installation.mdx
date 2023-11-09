@@ -11,14 +11,13 @@ Check out [their installation page](https://tailwindcss.com/docs/installation/fr
 ## Install Required Dependencies
 
 ```bash
-npm install react-aria-components@1.0.0-beta.2 class-variance-authority clsx tailwind-merge tailwindcss-animate tailwindcss-react-aria-components@1.0.0-beta.1
+npm install react-aria-components@1.0.0-beta.2 cva@beta tailwind-merge tailwindcss-animate tailwindcss-react-aria-components@1.0.0-beta.1
 ```
 
 This project requires the following packages:
 
 - [react-aria-components@1.0.0-beta.2](https://github.com/adobe/react-spectrum/tree/main/packages/react-aria-components)
-- [class-variance-authority](https://github.com/joe-bell/cva)
-- [clsx](https://github.com/lukeed/clsx)
+- [cva@beta](https://github.com/joe-bell/cva)
 - [tailwind-merge](https://github.com/dcastil/tailwind-merge)
 - [tailwindcss-animate](https://github.com/jamiebuilds/tailwindcss-animate)
 - [tailwindcss-react-aria-components@1.0.0-beta.1](https://github.com/adobe/react-spectrum/tree/main/packages/tailwindcss-react-aria-components)
@@ -67,19 +66,19 @@ module.exports = {
 }
 ```
 
-## Add a `cn` helper function
+## Add `twMerge` to CVA config
 
-Developed by [shadcn](https://ui.shadcn.com), this function combines two useful libraries that makes working
-with Tailwind much easier. It is used heavily with the Draft UI
-components.
+By adding **`twMerge`** to our `cva.config.ts`, anytime we use the `cx(...)` function, any conflicting Tailwind classes will be gracefully resolved
 
-```ts title="lib/utils.ts"
-import { clsx, type ClassValue } from 'clsx'
+```ts title="cva.config.ts"
+import { defineConfig } from 'cva'
 import { twMerge } from 'tailwind-merge'
 
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
+export const { cva, cx, compose } = defineConfig({
+  hooks: {
+    onComplete: (className) => twMerge(className),
+  },
+})
 ```
 
 ## All Done!

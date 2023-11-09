@@ -2,10 +2,8 @@
 
 import * as React from 'react'
 
-import { cva, type VariantProps } from 'cva'
+import { cva, cx, type VariantProps } from 'cva'
 import { Switch, type SwitchProps } from 'react-aria-components'
-
-import { cn } from '@/lib/utils'
 
 const switchIndicatorVariants = cva({
   base: [
@@ -52,7 +50,7 @@ export interface _SwitchProps
 const _Switch = ({ children, className, ...props }: _SwitchProps) => {
   return (
     <Switch
-      className={cn(
+      className={cx(
         [
           'group',
           'flex items-center gap-2 font-medium text-black dark:text-white',
@@ -79,10 +77,10 @@ const _SwitchIndicator = ({
 }: _SwitchIndicatorProps) => {
   return (
     <div
-      className={cn(switchIndicatorVariants({ size, className }))}
+      className={cx(switchIndicatorVariants({ size, className }))}
       {...props}
     >
-      <div className={cn(switchIndicatorInnerVariants({ size }))} />
+      <div className={cx(switchIndicatorInnerVariants({ size }))} />
     </div>
   )
 }
