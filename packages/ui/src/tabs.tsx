@@ -60,7 +60,7 @@ const _Tab = ({ className, ...props }: TabProps) => {
         // Vertical
         'group-orientation-vertical:border-[width:var(--border-width)] group-orientation-vertical:left-[2px] group-orientation-vertical:inline-flex',
         // Selected
-        'aria-[selected=true]:border-[length:var(--border-width)] aria-[selected=true]:border-black aria-[selected=true]:text-black dark:aria-[selected=true]:border-white dark:aria-[selected=true]:text-white',
+        'aria-selected:border-[length:var(--border-width)] aria-selected:border-black aria-selected:text-black dark:aria-selected:border-white dark:aria-selected:text-white',
         className,
       )}
       {...props}
