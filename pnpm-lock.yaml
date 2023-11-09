@@ -35,9 +35,6 @@ importers:
       '@vercel/analytics':
         specifier: ^1.0.1
         version: 1.0.1
-      clsx:
-        specifier: ^1.2.1
-        version: 1.2.1
       contentlayer:
         specifier: 0.3.1
         version: 0.3.1(esbuild@0.19.5)
@@ -189,9 +186,6 @@ importers:
       autoprefixer:
         specifier: ^10.4.14
         version: 10.4.14(postcss@8.4.21)
-      clsx:
-        specifier: ^1.2.1
-        version: 1.2.1
       lucide-react:
         specifier: ^0.259.0
         version: 0.259.0(react@18.2.0)
@@ -324,12 +318,6 @@ importers:
 
   packages/ui:
     dependencies:
-      class-variance-authority:
-        specifier: ^0.6.1
-        version: 0.6.1
-      clsx:
-        specifier: ^1.2.1
-        version: 1.2.1
       cva:
         specifier: 1.0.0-beta.1
         version: 1.0.0-beta.1(typescript@4.9.5)
@@ -9731,12 +9719,6 @@ packages:
   /ci-info@3.8.0:
     resolution: {integrity: sha512-eXTggHWSooYhq49F2opQhuHWgzucfF2YgODK4e1566GQs5BIfP30B0oenwBJHfWxAs2fyPB1s7Mg949zLf61Yw==}
     engines: {node: '>=8'}
-    dev: false
-
-  /class-variance-authority@0.6.1:
-    resolution: {integrity: sha512-eurOEGc7YVx3majOrOb099PNKgO3KnKSApOprXI4BTq6bcfbqbQXPN2u+rPPmIJ2di23bMwhk0SxCCthBmszEQ==}
-    dependencies:
-      clsx: 1.2.1
     dev: false
 
   /clean-stack@2.2.0:
