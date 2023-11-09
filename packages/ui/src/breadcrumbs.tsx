@@ -4,11 +4,11 @@ import * as React from 'react'
 
 import { cx } from 'cva'
 import {
+  Breadcrumb,
   Breadcrumbs,
-  Item,
   Link,
+  type BreadcrumbProps,
   type BreadcrumbsProps,
-  type ItemProps,
 } from 'react-aria-components'
 
 const _Breadcrumbs = <T extends object>({
@@ -20,9 +20,8 @@ const _Breadcrumbs = <T extends object>({
   )
 }
 
-export interface _BreadcrumbItemProps extends ItemProps {
+export interface _BreadcrumbItemProps extends BreadcrumbProps {
   separator?: React.ReactNode
-  children?: React.ReactNode
 }
 
 const _BreadcrumbItem = ({
@@ -31,8 +30,8 @@ const _BreadcrumbItem = ({
   ...props
 }: _BreadcrumbItemProps) => {
   return (
-    <Item className="flex items-center gap-1" {...props}>
-      <Link className="text-slate-500 current:text-black dark:text-slate-300 dark:current:text-white">
+    <Breadcrumb className="flex items-center gap-1" {...props}>
+      <Link className="text-slate-500 hover:underline current:text-black current:hover:no-underline dark:text-slate-300 dark:current:text-white">
         {children}
       </Link>
       {separator ? (
@@ -40,7 +39,7 @@ const _BreadcrumbItem = ({
           {separator}
         </div>
       ) : null}
-    </Item>
+    </Breadcrumb>
   )
 }
 
