@@ -6,13 +6,13 @@ import { cx } from 'cva'
 import { Check, Circle } from 'lucide-react'
 import {
   Header,
-  Item,
   Menu,
+  MenuItem,
   MenuTrigger,
   Popover,
   Section,
   Separator,
-  type ItemProps,
+  type MenuItemProps,
   type MenuProps,
   type MenuTriggerProps,
   type PopoverProps,
@@ -57,9 +57,9 @@ const _MenuContent = <T extends object>({
   )
 }
 
-const _MenuItem = ({ className, children, ...props }: ItemProps) => {
+const _MenuItem = ({ className, children, ...props }: MenuItemProps) => {
   return (
-    <Item
+    <MenuItem
       className={cx(
         'group',
         'flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-black outline-none transition-colors dark:text-white',
@@ -91,7 +91,7 @@ const _MenuItem = ({ className, children, ...props }: ItemProps) => {
           {children}
         </>
       )}
-    </Item>
+    </MenuItem>
   )
 }
 

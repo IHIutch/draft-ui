@@ -69,8 +69,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0
       react-aria-components:
-        specifier: 1.0.0-beta.2
-        version: 1.0.0-beta.2(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.0.0-rc.0
+        version: 1.0.0-rc.0(react-dom@18.2.0)(react@18.2.0)
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
@@ -199,8 +199,8 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0
       react-aria-components:
-        specifier: 1.0.0-beta.2
-        version: 1.0.0-beta.2(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.0.0-rc.0
+        version: 1.0.0-rc.0(react-dom@18.2.0)(react@18.2.0)
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
@@ -325,8 +325,8 @@ importers:
         specifier: ^0.259.0
         version: 0.259.0(react@18.2.0)
       react-aria-components:
-        specifier: 1.0.0-beta.2
-        version: 1.0.0-beta.2(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.0.0-rc.0
+        version: 1.0.0-rc.0(react-dom@18.2.0)(react@18.2.0)
       tailwind-merge:
         specifier: ^1.13.2
         version: 1.13.2
@@ -5918,6 +5918,19 @@ packages:
       react: 18.2.0
     dev: false
 
+  /@react-aria/toolbar@3.0.0-beta.0(react@18.2.0):
+    resolution: {integrity: sha512-5DCnasHCKxpzm2g7NkFggZF4A65snLL7Nz+0dhqvFTHVLYPEzgKnx7nJ4tFO9z7i9BL8+HrNmaur/eE+OVKVJg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
+      '@react-aria/focus': 3.15.0(react@18.2.0)
+      '@react-aria/i18n': 3.9.0(react@18.2.0)
+      '@react-aria/utils': 3.22.0(react@18.2.0)
+      '@react-types/shared': 3.22.0(react@18.2.0)
+      '@swc/helpers': 0.5.3
+      react: 18.2.0
+    dev: false
+
   /@react-aria/tooltip@3.6.5(react@18.2.0):
     resolution: {integrity: sha512-hXw4Z8nYLOWz3QOQ807wWZdvDwR3gofsmZhAehg2HPRwdRfCQK+1cjVKeUd9cKCAxs0Cay7dV0oUdilLbCQ2Gg==}
     peerDependencies:
@@ -6681,6 +6694,15 @@ packages:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
     dependencies:
       '@react-types/overlays': 3.8.4(react@18.2.0)
+      '@react-types/shared': 3.22.0(react@18.2.0)
+      react: 18.2.0
+    dev: false
+
+  /@react-types/form@3.6.0(react@18.2.0):
+    resolution: {integrity: sha512-+k6IpjQE+sVi/xoK5lnRGyeISkOQ+CKfuH8IeGcYVHr2voDxSJC5WZsp+L5zeoxuSorKokeEPKGOX2HFj9BG/A==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+    dependencies:
       '@react-types/shared': 3.22.0(react@18.2.0)
       react: 18.2.0
     dev: false
@@ -15045,8 +15067,8 @@ packages:
       unpipe: 1.0.0
     dev: false
 
-  /react-aria-components@1.0.0-beta.2(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-XiLpbcOzZlurgsM5B+bdQ77JTgZ50HBmvEr25taicBsv/DiCCqFL9G+J0TDOVqetxAYL8TvZXcm076pxDL7uCQ==}
+  /react-aria-components@1.0.0-rc.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-N8fE1iMd8dBxKOmN3XEk+RloHGOcOMEJyeabZCJRDY2F4M2GWYpZ4vCYad1jDD+UByumGW4JZInnDh1FlXdDZw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
@@ -15054,9 +15076,10 @@ packages:
       '@internationalized/date': 3.5.0
       '@react-aria/focus': 3.15.0(react@18.2.0)
       '@react-aria/interactions': 3.20.0(react@18.2.0)
+      '@react-aria/toolbar': 3.0.0-beta.0(react@18.2.0)
       '@react-aria/utils': 3.22.0(react@18.2.0)
       '@react-stately/table': 3.11.3(react@18.2.0)
-      '@react-types/calendar': 3.4.2(react@18.2.0)
+      '@react-types/form': 3.6.0(react@18.2.0)
       '@react-types/grid': 3.2.3(react@18.2.0)
       '@react-types/shared': 3.22.0(react@18.2.0)
       '@react-types/table': 3.9.1(react@18.2.0)

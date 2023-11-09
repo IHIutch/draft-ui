@@ -4,11 +4,11 @@ import { cx } from 'cva'
 import { Check } from 'lucide-react'
 import {
   ComboBox,
-  Item,
   ListBox,
+  ListBoxItem,
   Popover,
   type ComboBoxProps,
-  type ItemProps,
+  type ListBoxItemProps,
   type ListBoxProps,
   type PopoverProps,
 } from 'react-aria-components'
@@ -50,9 +50,9 @@ const _ComboBoxContent = <T extends object>({
   )
 }
 
-const _ComboBoxItem = ({ className, children, ...props }: ItemProps) => {
+const _ComboBoxItem = ({ className, children, ...props }: ListBoxItemProps) => {
   return (
-    <Item
+    <ListBoxItem
       className={cx(
         'group',
         'flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-black outline-none transition-colors dark:text-white',
@@ -69,7 +69,7 @@ const _ComboBoxItem = ({ className, children, ...props }: ItemProps) => {
         />
         {children}
       </>
-    </Item>
+    </ListBoxItem>
   )
 }
 

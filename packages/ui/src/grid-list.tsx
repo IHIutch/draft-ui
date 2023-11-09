@@ -3,9 +3,9 @@
 import { cx } from 'cva'
 import {
   GridList,
-  Item,
+  GridListItem,
+  type GridListItemProps,
   type GridListProps,
-  type ItemProps,
 } from 'react-aria-components'
 
 const _GridList = <T extends object>({
@@ -17,8 +17,8 @@ const _GridList = <T extends object>({
   )
 }
 
-const _GridListItem = (props: ItemProps) => {
-  return <Item {...props} />
+const _GridListItem = (props: GridListItemProps) => {
+  return <GridListItem {...props} />
 }
 
 export { _GridList as GridList, _GridListItem as GridListItem }

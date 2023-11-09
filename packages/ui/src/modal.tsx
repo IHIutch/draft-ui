@@ -6,36 +6,35 @@ import { cva, cx, type VariantProps } from 'cva'
 import {
   Dialog,
   DialogTrigger,
+  Heading,
   Modal,
   ModalOverlay,
   type DialogTriggerProps,
   type ModalOverlayProps,
 } from 'react-aria-components'
 
-export const modalVariants = cva(
-  [
+export const modalVariants = cva({
+  base: [
     'mx-auto w-full flex-col rounded bg-white outline-none dark:bg-slate-800',
     // Entering
     'entering:animate-in entering:zoom-in-95',
     // Exiting
     'exiting:animate-in exiting:zoom-in-95 exiting:direction-reverse',
   ],
-  {
-    variants: {
-      size: {
-        full: 'h-full',
-        xl: 'my-16 max-w-[36rem]',
-        lg: 'my-16 max-w-[32rem]',
-        md: 'my-16 max-w-[28rem]',
-        sm: 'my-16 max-w-[24rem]',
-        xs: 'my-16 max-w-[20rem]',
-      },
-    },
-    defaultVariants: {
-      size: 'md',
+  variants: {
+    size: {
+      full: 'h-full',
+      xl: 'my-16 max-w-[36rem]',
+      lg: 'my-16 max-w-[32rem]',
+      md: 'my-16 max-w-[28rem]',
+      sm: 'my-16 max-w-[24rem]',
+      xs: 'my-16 max-w-[20rem]',
     },
   },
-)
+  defaultVariants: {
+    size: 'md',
+  },
+})
 
 const _Modal = (props: DialogTriggerProps) => {
   return <DialogTrigger {...props} />
@@ -98,7 +97,8 @@ const _ModalHeader = ({
   ...props
 }: React.HTMLAttributes<HTMLElement>) => {
   return (
-    <header
+    <Heading
+      slot="title"
       className={cx(
         'shrink-0 px-6 py-4 text-xl font-semibold text-black dark:text-white',
         className,

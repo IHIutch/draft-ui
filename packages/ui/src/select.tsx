@@ -3,12 +3,12 @@
 import { cx } from 'cva'
 import { Check } from 'lucide-react'
 import {
-  Item,
   ListBox,
+  ListBoxItem,
   Popover,
   Select,
   SelectValue,
-  type ItemProps,
+  type ListBoxItemProps,
   type ListBoxProps,
   type PopoverProps,
   type SelectProps,
@@ -52,9 +52,9 @@ const _SelectContent = <T extends object>({
   )
 }
 
-const _SelectItem = ({ className, children, ...props }: ItemProps) => {
+const _SelectItem = ({ className, children, ...props }: ListBoxItemProps) => {
   return (
-    <Item
+    <ListBoxItem
       className={cx(
         'group',
         'flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-black outline-none transition-colors dark:text-white',
@@ -72,7 +72,7 @@ const _SelectItem = ({ className, children, ...props }: ItemProps) => {
         />
         {children}
       </>
-    </Item>
+    </ListBoxItem>
   )
 }
 

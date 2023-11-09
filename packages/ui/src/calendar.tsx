@@ -120,6 +120,7 @@ const _CalendarCell = ({ className, ...props }: CalendarCellProps) => {
 const _CalendarHeading = ({ className, ...props }: HeadingProps) => {
   return (
     <Heading
+      slot="title"
       className={cx(
         'text-sm font-medium text-black dark:text-white',
         className,
