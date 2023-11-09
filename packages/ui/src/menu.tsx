@@ -68,7 +68,7 @@ const _MenuItem = ({ className, children, ...props }: MenuItemProps) => {
         // Focus
         'focus:bg-slate-100 dark:focus:bg-slate-700',
         // Disabled
-        'aria-disabled:cursor-not-allowed aria-disabled:opacity-40 aria-disabled:hover:bg-transparent dark:aria-disabled:hover:bg-transparent',
+        'disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent dark:disabled:hover:bg-transparent',
         className,
       )}
       {...props}

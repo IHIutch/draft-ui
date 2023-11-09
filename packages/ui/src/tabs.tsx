@@ -54,13 +54,13 @@ const _Tab = ({ className, ...props }: TabProps) => {
         // Focus-visible
         'focus-visible:ring-2 focus-visible:ring-slate-400',
         // Disabled
-        'aria-disabled:cursor-not-allowed aria-disabled:opacity-40',
+        'disabled:cursor-not-allowed disabled:opacity-40',
         // Horizontal
         'group-orientation-horizontal:border-[width:var(--border-width)] group-orientation-horizontal:top-[2px]',
         // Vertical
         'group-orientation-vertical:border-[width:var(--border-width)] group-orientation-vertical:left-[2px] group-orientation-vertical:inline-flex',
         // Selected
-        'aria-selected:border-[length:var(--border-width)] aria-selected:border-black aria-selected:text-black dark:aria-selected:border-white dark:aria-selected:text-white',
+        'selected:border-[length:var(--border-width)] selected:border-black selected:text-black dark:selected:border-white dark:aria-selected:text-white',
         className,
       )}
       {...props}
