@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 
 import { type Component } from 'contentlayer/generated'
-import { GithubIcon, MenuIcon, XIcon } from 'lucide-react'
+import { GithubIcon, MenuIcon, TwitterIcon, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -65,8 +65,8 @@ export default function Navigation({
           <span>Draft UI</span>
         </Link>
         {/* Desktop Nav */}
-        <div className="hidden grow items-center lg:flex">
-          <div className="ml-14 flex items-center gap-8">
+        <div className="flex grow items-center">
+          <div className="ml-14 hidden items-center gap-8 lg:flex">
             <Link
               href="/getting-started"
               className="rounded-sm text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900"
@@ -80,34 +80,61 @@ export default function Navigation({
               Components
             </Link>
           </div>
-          <div className="ml-auto">
+          <div className="mx-auto flex lg:mx-0 lg:ml-auto">
             <div className="flex gap-2">
-              <SearchComponent />
-              <div>
-                <a
-                  className={cx(
-                    iconButtonVariants({ size: 'sm', variant: 'ghost' }),
-                  )}
-                  href="https://github.com/IHIutch/draft-ui"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Link to GitHub repository"
-                >
-                  <GithubIcon size="20" aria-hidden="true" />
-                </a>
+              <div className="hidden pr-2 md:block lg:pr-0">
+                <SearchComponent />
               </div>
-              <div>
-                <ModeToggle />
+              <div className="hidden gap-2 lg:flex">
+                <div>
+                  <a
+                    className={cx(
+                      iconButtonVariants({ size: 'sm', variant: 'ghost' }),
+                    )}
+                    href="https://twitter.com/draft__ui"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Link to our Twitter account"
+                  >
+                    <TwitterIcon size="20" aria-hidden="true" />
+                  </a>
+                </div>
+                <div>
+                  <a
+                    className={cx(
+                      iconButtonVariants({ size: 'sm', variant: 'ghost' }),
+                    )}
+                    href="https://github.com/IHIutch/draft-ui"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Link to GitHub repository"
+                  >
+                    <GithubIcon size="20" aria-hidden="true" />
+                  </a>
+                </div>
+                <div>
+                  <ModeToggle />
+                </div>
               </div>
             </div>
           </div>
         </div>
         {/* Mobile Nav */}
-        <div className="flex grow justify-end gap-1 lg:hidden">
-          <div className="flex md:grow md:justify-center">
-            <SearchComponent />
-          </div>
-          <div className="flex items-center gap-1">
+        <div className="ml-auto flex lg:hidden">
+          <div className="flex items-center gap-2">
+            <div>
+              <a
+                className={cx(
+                  iconButtonVariants({ size: 'sm', variant: 'ghost' }),
+                )}
+                href="https://twitter.com/draft__ui"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Link to our Twitter account"
+              >
+                <TwitterIcon size="20" aria-hidden="true" />
+              </a>
+            </div>
             <div>
               <a
                 className={cx(
@@ -123,6 +150,10 @@ export default function Navigation({
             </div>
             <div>
               <ModeToggle />
+            </div>
+            <div className="h-6 border-l border-gray-300" />
+            <div className="md:hidden">
+              <SearchComponent />
             </div>
             <div>
               <IconButton
