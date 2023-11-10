@@ -32,12 +32,14 @@ const checkboxInnerVariants = cva({
     'group-focus:ring-2 group-focus:ring-slate-400 group-focus:ring-offset-2 dark:group-focus:ring-slate-400 dark:group-focus:ring-offset-slate-900',
     // Selected
     'group-selected:border-black group-selected:bg-black dark:group-selected:border-white dark:group-selected:bg-white',
+    // Disabled
+    'group-disabled:border-slate-100 group-disabled:bg-slate-100',
     // Selected
     'group-indeterminate:border-black group-indeterminate:bg-black dark:group-indeterminate:border-white dark:group-indeterminate:bg-white',
-    // Disabled
-    'group-disabled:cursor-not-allowed group-disabled:border-slate-100 group-disabled:bg-slate-100',
     // Selected & Disabled
     'group-[[data-selected][data-disabled]]:border-slate-100 group-[[data-selected][data-disabled]]:bg-slate-100 group-[[data-selected][data-disabled]]:text-slate-400',
+    // Indeterminate & Disabled
+    'group-[[data-indeterminate][data-disabled]]:border-slate-100 group-[[data-indeterminate][data-disabled]]:bg-slate-100 group-[[data-indeterminate][data-disabled]]:text-slate-400',
   ],
   variants: {
     size: {
