@@ -9,9 +9,9 @@ import {
   Label,
 } from 'ui'
 
-export default function WithButton() {
+export default function DisabledKeys() {
   return (
-    <ComboBox>
+    <ComboBox disabledKeys={['cat', 'kangaroo']}>
       <Label>Favorite Animal</Label>
       <div className="relative">
         <ComboBoxInput />
@@ -28,12 +28,24 @@ export default function WithButton() {
         </div>
       </div>
       <ComboBoxContent>
-        <ComboBoxItem textValue="Aardvark">Aardvark</ComboBoxItem>
-        <ComboBoxItem textValue="Cat">Cat</ComboBoxItem>
-        <ComboBoxItem textValue="Dog">Dog</ComboBoxItem>
-        <ComboBoxItem textValue="Kangaroo">Kangaroo</ComboBoxItem>
-        <ComboBoxItem textValue="Panda">Panda</ComboBoxItem>
-        <ComboBoxItem textValue="Snake">Snake</ComboBoxItem>
+        <ComboBoxItem id="aardvark" textValue="Aardvark">
+          Aardvark
+        </ComboBoxItem>
+        <ComboBoxItem id="cat" textValue="Cat">
+          Cat
+        </ComboBoxItem>
+        <ComboBoxItem id="dog" textValue="Dog">
+          Dog
+        </ComboBoxItem>
+        <ComboBoxItem id="kangaroo" textValue="Kangaroo">
+          Kangaroo
+        </ComboBoxItem>
+        <ComboBoxItem id="panda" textValue="Panda">
+          Panda
+        </ComboBoxItem>
+        <ComboBoxItem id="snake" textValue="Snake">
+          Snake
+        </ComboBoxItem>
       </ComboBoxContent>
     </ComboBox>
   )

@@ -9,9 +9,9 @@ import {
   Label,
 } from 'ui'
 
-export default function WithButton() {
+export default function Disabled() {
   return (
-    <ComboBox>
+    <ComboBox isDisabled>
       <Label>Favorite Animal</Label>
       <div className="relative">
         <ComboBoxInput />

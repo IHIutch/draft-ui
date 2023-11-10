@@ -2,7 +2,6 @@
 title: Combo Box
 description: A combo box combines a text input with a listbox, allowing users to filter a list of options to items matching a query.
 isComponent: true
-isWip: true
 ---
 
 ## Installation
@@ -21,12 +20,18 @@ This is the default **`ComboBox`**
 
 ### With Button
 
-This is an example using an **`IconButton`**. Any button placed inside **`ComboBox`**, will automatically toggle the appearance of **`ComboBoxContent`** when pressed.
+Any React Aria Component **`Button`** placed inside **`ComboBox`**, will automatically toggle the appearance of **`ComboBoxContent`** when pressed.
 
 <ComponentExample name="combobox" story="with-button" />
 
+### Disabled Keys
+
+To disable specific **`ComboBoxItem`**'s, add an array of `disabledKey`'s to **`ComboBox`**. Ensure the **`ComboBoxItem`**'s have appropriate, corresponding `id`'s for this to work.
+
+<ComponentExample name="combobox" story="disabled-keys" />
+
 ### Disabled
 
-{/* TODO */}
+Set the `isDisabled` prop to disable the **`ComboxInput`** altogether.
 
-**Coming soon:** An example showing a disabled **`ComboBox`**
+<ComponentExample name="combobox" story="disabled" />

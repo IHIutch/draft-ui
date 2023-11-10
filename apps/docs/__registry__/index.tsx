@@ -107,6 +107,18 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/combobox/default")),
       file: "registry/combobox/default.tsx"
     },
+    "disabled-keys": {
+      name: "combobox-disabled-keys",
+      story: "disabled-keys",
+      component: React.lazy(() => import("@/registry/combobox/disabled-keys")),
+      file: "registry/combobox/disabled-keys.tsx"
+    },
+    "disabled": {
+      name: "combobox-disabled",
+      story: "disabled",
+      component: React.lazy(() => import("@/registry/combobox/disabled")),
+      file: "registry/combobox/disabled.tsx"
+    },
     "with-button": {
       name: "combobox-with-button",
       story: "with-button",

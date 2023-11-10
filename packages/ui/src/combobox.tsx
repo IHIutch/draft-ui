@@ -2,6 +2,7 @@
 
 import { Check } from 'lucide-react'
 import {
+  Button,
   ComboBox,
   ListBox,
   ListBoxItem,
@@ -14,6 +15,7 @@ import {
 
 import { cx } from '@/lib/cva.config'
 
+import { type _ButtonProps } from './button'
 import { Input, type _InputProps } from './input'
 
 const _ComboBox = <T extends object>({
@@ -51,13 +53,24 @@ const _ComboBoxContent = <T extends object>({
   )
 }
 
-const _ComboBoxItem = ({ className, children, ...props }: ListBoxItemProps) => {
+export interface _ListBoxItemProps extends ListBoxItemProps {
+  textValue: string
+}
+
+const _ComboBoxItem = ({
+  className,
+  children,
+  ...props
+}: _ListBoxItemProps) => {
   return (
     <ListBoxItem
       className={cx(
         'group',
         'flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-black outline-none transition-colors dark:text-white',
+        // Focus
         'focus:bg-slate-100 dark:focus:bg-slate-700',
+        // Disabled
+        'disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent dark:disabled:hover:bg-transparent',
         className,
       )}
       {...props}
@@ -74,9 +87,14 @@ const _ComboBoxItem = ({ className, children, ...props }: ListBoxItemProps) => {
   )
 }
 
+const _ComboBoxButton = ({ className, ...props }: _ButtonProps) => {
+  return <Button className={cx(className)} {...props} />
+}
+
 export {
   _ComboBox as ComboBox,
   _ComboBoxContent as ComboBoxContent,
   _ComboBoxInput as ComboBoxInput,
   _ComboBoxItem as ComboBoxItem,
+  _ComboBoxButton as ComboBoxButton,
 }

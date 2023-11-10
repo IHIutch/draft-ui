@@ -1,10 +1,11 @@
 import { ChevronDown } from 'lucide-react'
 import {
   ComboBox,
+  ComboBoxButton,
   ComboBoxContent,
   ComboBoxInput,
   ComboBoxItem,
-  IconButton,
+  iconButtonVariants,
   Label,
 } from 'ui'
 
@@ -15,9 +16,15 @@ export default function WithButton() {
       <div className="relative">
         <ComboBoxInput />
         <div className="absolute inset-y-0 right-0 flex items-center p-1">
-          <IconButton size="sm" variant="subtle" className="ml-auto shrink-0">
+          <ComboBoxButton
+            className={iconButtonVariants({
+              variant: 'subtle',
+              size: 'sm',
+              className: 'ml-auto shrink-0',
+            })}
+          >
             <ChevronDown size="16" strokeWidth="3" />
-          </IconButton>
+          </ComboBoxButton>
         </div>
       </div>
       <ComboBoxContent>

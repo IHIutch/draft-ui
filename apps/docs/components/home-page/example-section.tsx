@@ -4,7 +4,7 @@ import React from 'react'
 
 import BreadcrumbsDefault from '@/registry/breadcrumbs/default'
 import CheckboxGroupDefault from '@/registry/checkbox-group/default'
-import ComboBoxDefault from '@/registry/combobox/default'
+import ComboBoxWithButton from '@/registry/combobox/with-button'
 import DatePickerDefault from '@/registry/date-picker/default'
 import ModalDefault from '@/registry/modal/default'
 import NumberInputMobile from '@/registry/number-field/with-mobile-stepper'
@@ -41,7 +41,7 @@ export default function ExampleSection() {
         <SliderDefault />
       </div>
       <div className="flex items-center justify-center rounded-md border bg-white p-4 dark:border-slate-700 dark:bg-slate-800 md:col-span-1">
-        <ComboBoxDefault />
+        <ComboBoxWithButton />
       </div>
       <div className="flex items-center justify-center rounded-md border bg-white p-4 dark:border-slate-700 dark:bg-slate-800 md:col-span-1">
         <NumberInputMobile />
