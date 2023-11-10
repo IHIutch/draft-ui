@@ -32,10 +32,12 @@ const checkboxInnerVariants = cva({
     'group-focus:ring-2 group-focus:ring-slate-400 group-focus:ring-offset-2 dark:group-focus:ring-slate-400 dark:group-focus:ring-offset-slate-900',
     // Selected
     'group-selected:border-black group-selected:bg-black dark:group-selected:border-white dark:group-selected:bg-white',
+    // Selected
+    'group-indeterminate:border-black group-indeterminate:bg-black dark:group-indeterminate:border-white dark:group-indeterminate:bg-white',
     // Disabled
     'group-disabled:cursor-not-allowed group-disabled:border-slate-100 group-disabled:bg-slate-100',
     // Selected & Disabled
-    'group-selected:disabled:border-slate-100 group-selected:disabled:bg-slate-100 group-selected:disabled:text-slate-400',
+    'group-[[data-selected][data-disabled]]:border-slate-100 group-[[data-selected][data-disabled]]:bg-slate-100 group-[[data-selected][data-disabled]]:text-slate-400',
   ],
   variants: {
     size: {
@@ -73,12 +75,17 @@ const _Checkbox = ({ className, size, children, ...props }: _CheckboxProps) => {
           <svg
             viewBox="0 0 12 10"
             className={cx(
-              'fill-none stroke-current stroke-2 transition-all duration-300',
-              'group-selected:block',
-              'group-selected:[stroke-dasharray:28] [stroke-dasharray:22] [stroke-dashoffset:66]',
+              'fill-none stroke-current stroke-2 transition-all duration-300 group-indeterminate:hidden',
+              'group-selected:block group-selected:[stroke-dasharray:28] [stroke-dasharray:22] [stroke-dashoffset:66]',
             )}
           >
-            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+            <polyline points="1.5 6 4.5 9 10.5 1" />
+          </svg>
+          <svg
+            viewBox="0 0 24 24"
+            className="hidden stroke-current stroke-[4] group-indeterminate:block"
+          >
+            <line x1="21" x2="3" y1="12" y2="12" />
           </svg>
         </div>
         <div className="text-black group-disabled:opacity-40 dark:text-white">

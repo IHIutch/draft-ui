@@ -67,6 +67,12 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/checkbox/default")),
       file: "registry/checkbox/default.tsx"
     },
+    "disabled": {
+      name: "checkbox-disabled",
+      story: "disabled",
+      component: React.lazy(() => import("@/registry/checkbox/disabled")),
+      file: "registry/checkbox/disabled.tsx"
+    },
     "sizes": {
       name: "checkbox-sizes",
       story: "sizes",

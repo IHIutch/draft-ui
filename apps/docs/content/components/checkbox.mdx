@@ -2,7 +2,6 @@
 title: Checkbox
 description: A checkbox allows a user to select multiple items from a list of individual items, or to mark one individual item as selected.
 isComponent: true
-isWip: true
 ---
 
 ## Installation
@@ -12,12 +11,6 @@ To install, copy the code below and paste into your project.
 <ComponentSource src="../../packages/ui/src/checkbox.tsx" />
 
 ## Examples
-
-<Callout type="important">
-  **`Checkbox`** is a primitive component, it is not meant to be used on it's
-  own. It should always be be wrapped in a **`CheckboxGroup`** and accompanied
-  by a **`Label`**.
-</Callout>
 
 ### Default
 
@@ -33,6 +26,6 @@ You can use the `size` prop to alter the **`Checkbox`** size. Sizes `sm`, `md`, 
 
 ### Disabled
 
-{/* TODO */}
+**`Checkbox`**'s can be disabled using the `isDisabled` prop.
 
-**Coming soon:** An example showing a disabled **`Checkbox`**
+<ComponentExample name="checkbox" story="disabled" />
