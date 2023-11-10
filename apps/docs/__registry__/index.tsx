@@ -161,6 +161,12 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/date-picker/default")),
       file: "registry/date-picker/default.tsx"
     },
+    "disabled": {
+      name: "date-picker-disabled",
+      story: "disabled",
+      component: React.lazy(() => import("@/registry/date-picker/disabled")),
+      file: "registry/date-picker/disabled.tsx"
+    },
   },
   "date-range-picker": {
     "default": {
@@ -168,6 +174,12 @@ export const Index: ComponentRegistry = {
       story: "default",
       component: React.lazy(() => import("@/registry/date-range-picker/default")),
       file: "registry/date-range-picker/default.tsx"
+    },
+    "disabled": {
+      name: "date-range-picker-disabled",
+      story: "disabled",
+      component: React.lazy(() => import("@/registry/date-range-picker/disabled")),
+      file: "registry/date-range-picker/disabled.tsx"
     },
   },
   "grid-list": {
@@ -210,6 +222,12 @@ export const Index: ComponentRegistry = {
       story: "default",
       component: React.lazy(() => import("@/registry/input/default")),
       file: "registry/input/default.tsx"
+    },
+    "disabled": {
+      name: "input-disabled",
+      story: "disabled",
+      component: React.lazy(() => import("@/registry/input/disabled")),
+      file: "registry/input/disabled.tsx"
     },
     "sizes": {
       name: "input-sizes",
@@ -438,6 +456,12 @@ export const Index: ComponentRegistry = {
       story: "default",
       component: React.lazy(() => import("@/registry/text-field/default")),
       file: "registry/text-field/default.tsx"
+    },
+    "disabled": {
+      name: "text-field-disabled",
+      story: "disabled",
+      component: React.lazy(() => import("@/registry/text-field/disabled")),
+      file: "registry/text-field/disabled.tsx"
     },
     "with-error": {
       name: "text-field-with-error",

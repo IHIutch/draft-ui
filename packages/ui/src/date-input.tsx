@@ -93,7 +93,7 @@ const _DateSegment = ({ className, ...props }: DateSegmentProps) => {
 
 export {
   _DateField as DateField,
-  _DateInputGroup as DateInputGroup,
   _DateInput as DateInput,
+  _DateInputGroup as DateInputGroup,
   _DateSegment as DateSegment,
 }

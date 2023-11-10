@@ -1,4 +1,4 @@
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react'
 import {
   Calendar,
   CalendarCell,
@@ -13,9 +13,10 @@ import {
   DateInput,
   DateInputGroup,
   DatePicker,
+  DatePickerButton,
   DatePickerContent,
   DateSegment,
-  IconButton,
+  iconButtonVariants,
   Label,
 } from 'ui'
 
@@ -23,20 +24,40 @@ export default function Default() {
   return (
     <DatePicker>
       <Label>Date</Label>
-      <DateInputGroup className="relative !pr-10">
+      <DateInputGroup className="relative pr-10">
         <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
         <div className="absolute inset-y-0 right-0 flex items-center p-1">
-          <IconButton size="sm" variant="subtle" className="ml-auto shrink-0">
+          <DatePickerButton
+            className={iconButtonVariants({
+              variant: 'subtle',
+              size: 'sm',
+              className: 'ml-auto shrink-0',
+            })}
+          >
             <ChevronDown size="16" strokeWidth="3" />
-          </IconButton>
+          </DatePickerButton>
         </div>
       </DateInputGroup>
       <DatePickerContent>
         <Calendar>
           <CalendarHeader>
-            <CalendarPrevButton />
+            <CalendarPrevButton
+              className={iconButtonVariants({
+                variant: 'outline',
+                size: 'sm',
+              })}
+            >
+              <ChevronLeft size="16" strokeWidth="3" />
+            </CalendarPrevButton>
             <CalendarHeading />
-            <CalendarNextButton />
+            <CalendarNextButton
+              className={iconButtonVariants({
+                variant: 'outline',
+                size: 'sm',
+              })}
+            >
+              <ChevronRight size="16" strokeWidth="3" />
+            </CalendarNextButton>
           </CalendarHeader>
           <CalendarGrid>
             <CalendarGridHeader>

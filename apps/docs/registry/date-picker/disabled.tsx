@@ -1,5 +1,6 @@
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react'
 import {
+  Calendar,
   CalendarCell,
   CalendarGrid,
   CalendarGridBody,
@@ -11,29 +12,20 @@ import {
   CalendarPrevButton,
   DateInput,
   DateInputGroup,
+  DatePicker,
   DatePickerButton,
   DatePickerContent,
-  DateRangePicker,
   DateSegment,
   iconButtonVariants,
   Label,
-  RangeCalendar,
 } from 'ui'
 
 export default function Default() {
   return (
-    <DateRangePicker>
-      <Label>Date Range</Label>
+    <DatePicker isDisabled>
+      <Label>Date</Label>
       <DateInputGroup className="relative pr-10">
-        <DateInput slot="start">
-          {(segment) => <DateSegment segment={segment} />}
-        </DateInput>
-        <span aria-hidden="true" className="px-2">
-          –
-        </span>
-        <DateInput slot="end">
-          {(segment) => <DateSegment segment={segment} />}
-        </DateInput>
+        <DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
         <div className="absolute inset-y-0 right-0 flex items-center p-1">
           <DatePickerButton
             className={iconButtonVariants({
@@ -47,11 +39,25 @@ export default function Default() {
         </div>
       </DateInputGroup>
       <DatePickerContent>
-        <RangeCalendar>
+        <Calendar>
           <CalendarHeader>
-            <CalendarPrevButton />
+            <CalendarPrevButton
+              className={iconButtonVariants({
+                variant: 'outline',
+                size: 'sm',
+              })}
+            >
+              <ChevronLeft size="16" strokeWidth="3" />
+            </CalendarPrevButton>
             <CalendarHeading />
-            <CalendarNextButton />
+            <CalendarNextButton
+              className={iconButtonVariants({
+                variant: 'outline',
+                size: 'sm',
+              })}
+            >
+              <ChevronRight size="16" strokeWidth="3" />
+            </CalendarNextButton>
           </CalendarHeader>
           <CalendarGrid>
             <CalendarGridHeader>
@@ -61,8 +67,8 @@ export default function Default() {
               {(date) => <CalendarCell date={date} />}
             </CalendarGridBody>
           </CalendarGrid>
-        </RangeCalendar>
+        </Calendar>
       </DatePickerContent>
-    </DateRangePicker>
+    </DatePicker>
   )
 }

@@ -22,7 +22,7 @@ import {
 
 export default function Default() {
   return (
-    <DateRangePicker>
+    <DateRangePicker isDisabled>
       <Label>Date Range</Label>
       <DateInputGroup className="relative pr-10">
         <DateInput slot="start">

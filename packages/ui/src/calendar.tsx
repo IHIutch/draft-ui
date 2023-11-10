@@ -2,8 +2,8 @@
 
 import * as React from 'react'
 
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 import {
+  Button,
   Calendar,
   CalendarCell,
   CalendarGrid,
@@ -12,6 +12,7 @@ import {
   CalendarHeaderCell,
   Heading,
   RangeCalendar,
+  type ButtonProps,
   type CalendarCellProps,
   type CalendarGridBodyProps,
   type CalendarGridHeaderProps,
@@ -24,8 +25,6 @@ import {
 } from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
-
-import { IconButton, type _IconButtonProps } from './icon-button'
 
 const _Calendar = <T extends DateValue>({
   className,
@@ -143,24 +142,19 @@ const _CalendarHeader = ({
   )
 }
 
-const _CalendarFooter = (props: React.HTMLAttributes<HTMLDivElement>) => {
-  return <footer {...props} />
+const _CalendarFooter = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => {
+  return <footer className={cx(className)} {...props} />
 }
 
-const _CalendarNextButton = (props: _IconButtonProps) => {
-  return (
-    <IconButton variant="outline" size="sm" slot="next" {...props}>
-      <ChevronRight size="16" strokeWidth="3" />
-    </IconButton>
-  )
+const _CalendarNextButton = ({ className, ...props }: ButtonProps) => {
+  return <Button className={cx(className)} {...props} slot="next" />
 }
 
-const _CalendarPrevButton = (props: _IconButtonProps) => {
-  return (
-    <IconButton variant="outline" size="sm" slot="previous" {...props}>
-      <ChevronLeft size="16" strokeWidth="3" />
-    </IconButton>
-  )
+const _CalendarPrevButton = ({ className, ...props }: ButtonProps) => {
+  return <Button className={cx(className)} {...props} slot="previous" />
 }
 
 export {

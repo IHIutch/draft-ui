@@ -7,7 +7,7 @@ import { cva, cx } from '@/lib/cva.config'
 
 const inputVariants = cva({
   base: [
-    'flex w-full border bg-transparent placeholder:text-slate-400',
+    'flex w-full border border-slate-300 bg-transparent placeholder:text-slate-400',
     // Focus
     'focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2',
     // Dark

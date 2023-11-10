@@ -1,9 +1,11 @@
 'use client'
 
 import {
+  Button,
   DatePicker,
   Dialog,
   Popover,
+  type ButtonProps,
   type DatePickerProps,
   type DateValue,
   type DialogProps,
@@ -50,4 +52,12 @@ const _DatePickerContent = ({
   )
 }
 
-export { _DatePicker as DatePicker, _DatePickerContent as DatePickerContent }
+const _DatePickerButton = ({ className, ...props }: ButtonProps) => {
+  return <Button className={cx(className)} {...props} />
+}
+
+export {
+  _DatePicker as DatePicker,
+  _DatePickerContent as DatePickerContent,
+  _DatePickerButton as DatePickerButton,
+}

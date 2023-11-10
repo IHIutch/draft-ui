@@ -7,6 +7,7 @@ import {
   ListBox,
   ListBoxItem,
   Popover,
+  type ButtonProps,
   type ComboBoxProps,
   type ListBoxItemProps,
   type ListBoxProps,
@@ -87,7 +88,7 @@ const _ComboBoxItem = ({
   )
 }
 
-const _ComboBoxButton = ({ className, ...props }: _ButtonProps) => {
+const _ComboBoxButton = ({ className, ...props }: ButtonProps) => {
   return <Button className={cx(className)} {...props} />
 }
 
