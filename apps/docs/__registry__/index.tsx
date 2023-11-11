@@ -317,6 +317,12 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/number-field/default")),
       file: "registry/number-field/default.tsx"
     },
+    "disabled": {
+      name: "number-field-disabled",
+      story: "disabled",
+      component: React.lazy(() => import("@/registry/number-field/disabled")),
+      file: "registry/number-field/disabled.tsx"
+    },
     "with-mobile-stepper": {
       name: "number-field-with-mobile-stepper",
       story: "with-mobile-stepper",
