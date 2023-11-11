@@ -54,7 +54,7 @@ export default function ComponentExample({
 
   return (
     <div>
-      <Tabs disabledKeys={['Emp']}>
+      <Tabs>
         <TabList aria-label="History of Ancient Rome">
           <Tab id="example">Example</Tab>
           <Tab id="code">Code</Tab>
