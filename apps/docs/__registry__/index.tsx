@@ -351,6 +351,12 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/radio/default")),
       file: "registry/radio/default.tsx"
     },
+    "disabled": {
+      name: "radio-disabled",
+      story: "disabled",
+      component: React.lazy(() => import("@/registry/radio/disabled")),
+      file: "registry/radio/disabled.tsx"
+    },
     "sizes": {
       name: "radio-sizes",
       story: "sizes",
@@ -364,6 +370,12 @@ export const Index: ComponentRegistry = {
       story: "default",
       component: React.lazy(() => import("@/registry/radio-group/default")),
       file: "registry/radio-group/default.tsx"
+    },
+    "disabled": {
+      name: "radio-group-disabled",
+      story: "disabled",
+      component: React.lazy(() => import("@/registry/radio-group/disabled")),
+      file: "registry/radio-group/disabled.tsx"
     },
     "horizontal": {
       name: "radio-group-horizontal",

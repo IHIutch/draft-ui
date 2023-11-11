@@ -2,28 +2,28 @@ import { Radio, RadioGroup } from 'ui'
 
 export default function Sizes() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="space-y-4">
       <RadioGroup>
-        <Radio size="sm" value="cat">
+        <Radio size="sm" value="sm-cat">
           Small Cat
         </Radio>
-        <Radio size="sm" value="dog">
+        <Radio size="sm" value="sm-dog">
           Small Dog
         </Radio>
       </RadioGroup>
       <RadioGroup>
-        <Radio size="md" value="cat">
+        <Radio size="md" value="md-cat">
           Medium Cat
         </Radio>
-        <Radio size="md" value="dog">
+        <Radio size="md" value="md-dog">
           Medium Dog
         </Radio>
       </RadioGroup>
       <RadioGroup>
-        <Radio size="lg" value="cat">
+        <Radio size="lg" value="lg-cat">
           Large Cat
         </Radio>
-        <Radio size="lg" value="dog">
+        <Radio size="lg" value="lg-dog">
           Large Dog
         </Radio>
       </RadioGroup>

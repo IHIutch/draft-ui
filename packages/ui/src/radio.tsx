@@ -39,7 +39,7 @@ const radioInnerVariants = cva({
     // Disabled
     'group-disabled:border-slate-100',
     // Selected & Disabled
-    'group-selected:disabled:border-slate-100 group-selected:disabled:bg-slate-100 group-selected:disabled:before:bg-slate-400',
+    'group-[[data-selected][data-disabled]]:border-slate-100 group-[[data-selected][data-disabled]]:bg-slate-100 group-[[data-selected][data-disabled]]:before:bg-slate-400',
   ],
   variants: {
     size: {

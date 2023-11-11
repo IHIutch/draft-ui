@@ -2,7 +2,6 @@
 title: Radio
 description: Displays a form input field or a component that looks like an input field.
 isComponent: true
-isWip: true
 ---
 
 ## Installation
@@ -14,9 +13,7 @@ To install, copy the code below and paste into your project.
 ## Examples
 
 <Callout type="warning">
-  **`Radio`** is a primitive component, it is not meant to be used on it's own.
-  It should always be be wrapped in a **`RadioGroup`** and accompanied by a
-  **`Label`**.
+  **`Radio`** is a primitive component, it cannot meant to be used on it's own. It must be wrapped in a **`RadioGroup`**.
 </Callout>
 
 ### Default
@@ -33,6 +30,6 @@ You can use the `size` prop to alter the **`Radio`** size. Sizes `sm`, `md`, and
 
 ### Disabled
 
-{/* TODO */}
+Use the `isDisabled` prop to make an individual **`Radio`** disabled.
 
-**Coming soon:** An example showing a disabled **`Radio`**
+<ComponentExample name="radio" story="disabled" />
