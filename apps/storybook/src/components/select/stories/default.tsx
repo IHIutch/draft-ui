@@ -2,9 +2,9 @@ import * as React from 'react'
 
 import { ChevronDown } from 'lucide-react'
 import {
-  Button,
   Label,
   Select,
+  SelectButton,
   SelectContent,
   SelectItem,
   SelectValue,
@@ -15,17 +15,14 @@ export default function Default() {
     <>
       <Select>
         <Label>Favorite Animal</Label>
-        <Button
-          variant="outline"
-          className="flex w-full items-center justify-between font-normal"
-        >
+        <SelectButton variant="outline">
           <SelectValue>
             {({ selectedText }) => (
               <span>{selectedText || 'Select an item'}</span>
             )}
           </SelectValue>
           <ChevronDown size="16" strokeWidth="3" />
-        </Button>
+        </SelectButton>
         <SelectContent>
           <SelectItem textValue="Aardvark">Aardvark</SelectItem>
           <SelectItem textValue="Cat">Cat</SelectItem>

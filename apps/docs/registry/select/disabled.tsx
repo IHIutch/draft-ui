@@ -10,10 +10,10 @@ import {
   SelectValue,
 } from 'ui'
 
-export default function Default() {
+export default function Disabled() {
   return (
     <>
-      <Select>
+      <Select isDisabled>
         <Label>Favorite Animal</Label>
         <SelectButton variant="outline">
           <SelectValue>

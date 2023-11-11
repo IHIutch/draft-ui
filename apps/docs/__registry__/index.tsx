@@ -413,6 +413,12 @@ export const Index: ComponentRegistry = {
       component: React.lazy(() => import("@/registry/select/default")),
       file: "registry/select/default.tsx"
     },
+    "disabled": {
+      name: "select-disabled",
+      story: "disabled",
+      component: React.lazy(() => import("@/registry/select/disabled")),
+      file: "registry/select/disabled.tsx"
+    },
   },
   "slider": {
     "default": {

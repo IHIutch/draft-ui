@@ -16,6 +16,8 @@ import {
 
 import { cx } from '@/lib/cva.config'
 
+import { Button, type _ButtonProps } from './button'
+
 const _Select = <T extends object>({ className, ...props }: SelectProps<T>) => {
   return <Select className={cx('w-full', className)} {...props} />
 }
@@ -81,9 +83,26 @@ const _SelectValue = <T extends object>(props: SelectValueProps<T>) => {
   return <SelectValue {...props} />
 }
 
+const _SelectButton = ({ className, ...props }: _ButtonProps) => {
+  return (
+    <Button
+      className={cx(
+        [
+          'flex w-full items-center justify-between font-normal',
+          // Disabled
+          'disabled:cursor-not-allowed disabled:pointer-events-auto',
+        ],
+        className,
+      )}
+      {...props}
+    />
+  )
+}
+
 export {
   _Select as Select,
   _SelectContent as SelectContent,
   _SelectItem as SelectItem,
   _SelectValue as SelectValue,
+  _SelectButton as SelectButton,
 }
