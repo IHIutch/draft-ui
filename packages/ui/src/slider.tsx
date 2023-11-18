@@ -30,7 +30,7 @@ const _SliderTrack = ({ className, ...props }: SliderTrackProps) => {
       className={cx(
         'relative cursor-pointer',
         // Vertical
-        'group-orientation-vertical:w-6',
+        'group-orientation-vertical:w-6 group-orientation-vertical:h-full',
         // Horizontal
         'group-orientation-horizontal:h-6 group-orientation-horizontal:w-full',
         // ::before
