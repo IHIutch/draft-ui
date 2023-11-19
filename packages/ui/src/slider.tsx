@@ -30,7 +30,7 @@ const _SliderTrack = ({ className, ...props }: SliderTrackProps) => {
       className={cx(
         'relative cursor-pointer',
         // Vertical
-        'group-orientation-vertical:w-6 group-orientation-vertical:h-full',
+        'group-orientation-vertical:w-6',
         // Horizontal
         'group-orientation-horizontal:h-6 group-orientation-horizontal:w-full',
         // ::before
@@ -48,13 +48,13 @@ const _SliderTrack = ({ className, ...props }: SliderTrackProps) => {
 export interface _SliderFilledTrackProps
   extends React.HTMLAttributes<HTMLDivElement> {
   percentage?: number
-  orientation?: 'horizontal' | 'vertical'
+  orientation: 'horizontal' | 'vertical'
   className?: string
 }
 
 const _SliderFilledTrack = ({
   percentage = 0,
-  orientation = 'horizontal',
+  orientation,
   className,
   ...props
 }: _SliderFilledTrackProps) => {

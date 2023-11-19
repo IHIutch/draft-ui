@@ -2,9 +2,9 @@ import { Label, Slider, SliderFilledTrack, SliderThumb, SliderTrack } from 'ui'
 
 export default function Vertical() {
   return (
-    <Slider orientation="vertical" defaultValue={30} className="h-52">
+    <Slider orientation="vertical" defaultValue={30}>
       <Label>Vertical Slider</Label>
-      <SliderTrack>
+      <SliderTrack className="h-72">
         {({ state }) => (
           <>
             <SliderFilledTrack
