@@ -8,8 +8,8 @@ export default function Vertical() {
         {({ state }) => (
           <>
             <SliderFilledTrack
-              orientation="vertical"
-              percentage={state.getThumbValue(0) * 100}
+              percentage={state.getThumbPercent(0) * 100}
+              orientation={state.orientation}
             />
             <SliderThumb />
           </>

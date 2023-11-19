@@ -48,13 +48,13 @@ const _SliderTrack = ({ className, ...props }: SliderTrackProps) => {
 export interface _SliderFilledTrackProps
   extends React.HTMLAttributes<HTMLDivElement> {
   percentage?: number
-  orientation?: 'horizontal' | 'vertical'
+  orientation: 'horizontal' | 'vertical'
   className?: string
 }
 
 const _SliderFilledTrack = ({
   percentage = 0,
-  orientation = 'horizontal',
+  orientation,
   className,
   ...props
 }: _SliderFilledTrackProps) => {
