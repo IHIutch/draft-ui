@@ -8,7 +8,7 @@ import { buttonVariants } from '@/components/ui'
 
 export default function CtaSection() {
   return (
-    <div className="mt-12 flex justify-center gap-4">
+    <div className="mt-12 flex justify-center gap-4 max-sm:flex-col">
       <Link
         href="/getting-started"
         className={buttonVariants({

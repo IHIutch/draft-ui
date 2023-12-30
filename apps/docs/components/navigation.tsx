@@ -121,7 +121,7 @@ export default function Navigation({
         </div>
         {/* Mobile Nav */}
         <div className="ml-auto flex lg:hidden">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 md:gap-2">
             <div>
               <a
                 className={cx(
