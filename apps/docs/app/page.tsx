@@ -14,7 +14,7 @@ export default async function Home() {
       <Navigation componentList={sortedComponents} />
       <div className="container mx-auto px-4 pb-8 pt-20">
         <div className="mx-auto max-w-[1024px] text-center">
-          <h1 className="text-5xl font-extrabold md:text-7xl">
+          <h1 className="text-4xl font-extrabold md:text-7xl">
             Accessibility doesn&apos;t <br className="hidden lg:inline" /> have
             to be hard
           </h1>
