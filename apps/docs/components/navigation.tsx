@@ -61,7 +61,13 @@ export default function Navigation({
           aria-label="Home"
           className="flex items-center gap-2 font-semibold"
         >
-          <Image src="/draft_ui.svg" alt="" width={30} height={30} />
+          <Image
+            className="dark:invert"
+            src="/draft_ui.svg"
+            alt=""
+            width={30}
+            height={30}
+          />
           <span>Draft UI</span>
         </Link>
         {/* Desktop Nav */}
