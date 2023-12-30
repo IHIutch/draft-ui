@@ -7,11 +7,11 @@ export default function Mobile() {
       <Label>Width</Label>
       <NumberInputGroup className="flex gap-1">
         <IconButton className="shrink-0" slot="decrement">
-          <ChevronUp size="16" strokeWidth="3" />
+          <ChevronDown size="16" strokeWidth="3" />
         </IconButton>
         <Input />
         <IconButton className="shrink-0" slot="increment">
-          <ChevronDown size="16" strokeWidth="3" />
+          <ChevronUp size="16" strokeWidth="3" />
         </IconButton>
       </NumberInputGroup>
     </NumberField>
