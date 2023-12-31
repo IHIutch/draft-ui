@@ -48,7 +48,7 @@ export default async function DocsLayout({
       <Navigation componentList={sortedComponents} />
       <aside className="fixed top-0 hidden h-full shrink-0 border-r pt-14 dark:border-slate-800 md:w-56 lg:block">
         <nav
-          className="h-full overflow-y-auto py-10"
+          className="-ml-3 h-full overflow-y-auto py-10 pl-3"
           id="site-navigation"
           tabIndex={-1}
         >
