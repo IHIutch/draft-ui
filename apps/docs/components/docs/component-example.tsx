@@ -55,7 +55,7 @@ export default function ComponentExample({
   return (
     <div>
       <Tabs>
-        <TabList aria-label="History of Ancient Rome">
+        <TabList aria-label="Preview and Code Tabs">
           <Tab id="example">Example</Tab>
           <Tab id="code">Code</Tab>
         </TabList>
