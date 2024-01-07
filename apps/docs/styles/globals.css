@@ -20,5 +20,18 @@
     border-top-left-radius: theme('borderRadius.none');
     border-top-right-radius: theme('borderRadius.none');
     margin-top: theme('spacing.0');
+    padding-left: theme('spacing.0');
+    padding-right: theme('spacing.0');
+  }
+
+  figcaption[data-rehype-pretty-code-title] + pre > code {
+    padding-left: theme('spacing.0');
+    padding-right: theme('spacing.0');
+    background-color: theme('colors.transparent')
+  }
+
+  figcaption[data-rehype-pretty-code-title] + pre > code > [data-line] {
+    padding-left: theme('spacing.4');
+    padding-right: theme('spacing.4');
   }
 }

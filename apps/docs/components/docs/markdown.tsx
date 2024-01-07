@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import * as React from 'react'
 
 import { type DocumentTypes } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
@@ -14,6 +14,7 @@ import { cx } from '@/lib/cva.config'
 import { type NpmCommands } from '@/types'
 
 import CopyClipboardButton from '../copy-clipboard-button'
+import { ListStep, ListStepper } from './list-stepper'
 
 type MarkdownProps = {
   doc: DocumentTypes
@@ -34,17 +35,14 @@ export default function Markdown(props: MarkdownProps) {
           TabList,
           Tab,
           TabPanel,
+          ListStepper,
+          ListStep,
+          //
           code: ({
             className,
             ...props
           }: React.HTMLAttributes<HTMLElement>) => (
-            <code
-              className={cx(
-                // 'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm',
-                className,
-              )}
-              {...props}
-            />
+            <code className={cx(className)} {...props} />
           ),
           figure: ({
             className,
