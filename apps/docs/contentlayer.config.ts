@@ -3,7 +3,6 @@ import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 import toc from 'markdown-toc'
 import rehypePrettyCode from 'rehype-pretty-code'
 import remarkGfm from 'remark-gfm'
-import { getHighlighter } from 'shiki'
 import { visit } from 'unist-util-visit'
 
 import { rehypeComponent } from './lib/rehype-component'
@@ -129,9 +128,7 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          getHighlighter: async () => {
-            return await getHighlighter({ theme: 'dracula' })
-          },
+          theme: 'dracula',
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
@@ -149,30 +146,47 @@ export default makeSource({
       ],
       () => (tree) => {
         visit(tree, (node) => {
-          if (node?.type === 'element' && node?.tagName === 'div') {
-            if (!('data-rehype-pretty-code-fragment' in node.properties)) {
+          if (node?.type === 'element' && node?.tagName === 'figure') {
+            if (!('data-rehype-pretty-code-figure' in node.properties)) {
               return
             }
 
-            const preElement = node.children.at(-1)
-            if (preElement.tagName !== 'pre') {
-              return
+            // Pass code snippet to figure wrapper
+            if (node.__rawString__) {
+              node.properties['__rawString__'] = node.__rawString__
             }
 
-            preElement.properties['__withMeta__'] =
-              node.children.at(0).tagName === 'div'
-            preElement.properties['__rawString__'] = node.__rawString__
-
-            if (node.__src__) {
-              preElement.properties['__src__'] = node.__src__
+            // npm install
+            if (node.__rawString__?.startsWith('npm install')) {
+              const npmCommand = node.__rawString__
+              node.properties['__npmCommand__'] = npmCommand
+              node.properties['__yarnCommand__'] = npmCommand.replace(
+                'npm install',
+                'yarn add',
+              )
+              node.properties['__pnpmCommand__'] = npmCommand.replace(
+                'npm install',
+                'pnpm add',
+              )
+              node.properties['__niCommand__'] = npmCommand.replace(
+                'npm install',
+                'ni',
+              )
             }
 
-            if (node.__event__) {
-              preElement.properties['__event__'] = node.__event__
-            }
-
-            if (node.__style__) {
-              preElement.properties['__style__'] = node.__style__
+            // npx
+            if (node.__rawString__?.startsWith('npx')) {
+              const npmCommand = node.__rawString__
+              node.properties['__npmCommand__'] = npmCommand
+              node.properties['__yarnCommand__'] = npmCommand
+              node.properties['__pnpmCommand__'] = npmCommand.replace(
+                'npx',
+                'pnpm dlx',
+              )
+              node.properties['__niCommand__'] = npmCommand.replace(
+                'npx',
+                'nlx',
+              )
             }
           }
         })
