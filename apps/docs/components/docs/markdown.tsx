@@ -1,7 +1,10 @@
+'use client'
+
 import React from 'react'
 
 import { type DocumentTypes } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
+import { Tab, TabList, TabPanel, Tabs } from 'ui'
 
 import Callout from '@/components/docs/callout'
 import ComponentExample from '@/components/docs/component-example'
@@ -24,6 +27,10 @@ export default function Markdown(props: MarkdownProps) {
           ComponentExample,
           Callout,
           Heading,
+          Tabs,
+          TabList,
+          Tab,
+          TabPanel,
           code: ({
             className,
             ...props

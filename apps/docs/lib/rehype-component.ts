@@ -94,6 +94,10 @@ export function rehypeComponent() {
           console.error(error)
         }
       }
+
+      if (node.tagName === 'pre') {
+        console.log({ node })
+      }
     })
   }
 }

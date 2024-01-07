@@ -6,9 +6,20 @@ isComponent: true
 
 ## Installation
 
-To install, copy the code below and paste into your project.
-
-<ComponentSource src="../../packages/ui/src/modal.tsx" />
+<Tabs>
+  <TabList aria-label="Preview and Code Tabs">
+      <Tab id="cli-install">CLI</Tab>
+      <Tab id="manual-install">Copy & Paste</Tab>
+  </TabList>
+  <TabPanel id="cli-install" className="px-0 [&_pre]:mt-0">
+    ```bash
+    npx @sly-cli/sly add draft-ui modal
+    ```
+  </TabPanel>
+  <TabPanel id="manual-install" className="px-0">
+    <ComponentSource src="../../packages/ui/src/modal.tsx" />
+  </TabPanel>
+</Tabs>
 
 ## Examples
 
