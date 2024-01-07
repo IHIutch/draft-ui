@@ -71,9 +71,7 @@ export default function ComponentExample({
                 },
               )}
             >
-              {/* <div className="w-[max-content] px-4"> */}
               <React.Suspense fallback={null}>{Story}</React.Suspense>
-              {/* </div> */}
             </div>
           </div>
         </TabPanel>
