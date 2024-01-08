@@ -27,6 +27,7 @@ export interface NpmCommands {
   __npmCommand__?: string
   __yarnCommand__?: string
   __pnpmCommand__?: string
+  __niCommand__?: string
 }
 
 export interface ExamplesListItem {

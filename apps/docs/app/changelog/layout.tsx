@@ -1,6 +1,7 @@
 import {
   allChangelogDocuments,
   allComponentDocuments,
+  allGeneralDocuments,
 } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 
@@ -17,35 +18,24 @@ export default async function DocsLayout({
     .filter((doc) => doc.isComponent === true)
     .sort((a, b) => a.title.localeCompare(b.title))
 
+  const sortedDocuments = [
+    ...allGeneralDocuments,
+    ...allChangelogDocuments,
+  ].sort((a, b) => a.order - b.order)
+
   const post = allChangelogDocuments[0]
 
   if (!post) {
     notFound()
   }
 
-  const gettingStartedLinks = [
-    {
-      slug: '/getting-started/introduction',
-      title: 'Introduction',
-    },
-    {
-      slug: '/getting-started/installation',
-      title: 'Installation',
-    },
-    {
-      slug: '/getting-started/about',
-      title: 'About',
-    },
-    {
-      slug: '/changelog',
-      title: 'Changelog',
-    },
-  ]
-
   return (
     <div className="container mx-auto h-full px-4">
       <JumpToContentMenu toc={post.toc} />
-      <Navigation componentList={sortedComponents} />
+      <Navigation
+        gettingStartedList={sortedDocuments}
+        componentList={sortedComponents}
+      />
       <aside className="fixed top-0 hidden h-full shrink-0 border-r pt-14 dark:border-slate-800 md:w-56 lg:block">
         <nav
           className="-ml-3 h-full overflow-y-auto py-10 pl-3"
@@ -57,7 +47,7 @@ export default async function DocsLayout({
               Getting Started
             </h4>
             <div className="mt-3 pr-3">
-              <LinkList list={gettingStartedLinks} />
+              <LinkList list={sortedDocuments} />
             </div>
           </div>
           <div>

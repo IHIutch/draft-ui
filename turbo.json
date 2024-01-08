@@ -1,18 +1,12 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": [
-    "**/.env.*local"
-  ],
+  "globalDependencies": ["**/.env.*local"],
   "pipeline": {
     "build-registry": {
       "cache": false
     },
     "build": {
-      "outputs": [
-        "storybook-static/**",
-        ".next/**",
-        "!.next/cache/**"
-      ]
+      "outputs": ["storybook-static/**", ".next/**", "!.next/cache/**"]
     },
     "storybook": {},
     "lint": {},

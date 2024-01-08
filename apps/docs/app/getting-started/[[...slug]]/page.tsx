@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 
 import { allGeneralDocuments } from 'contentlayer/generated'
 import { type Metadata, type ResolvingMetadata } from 'next'

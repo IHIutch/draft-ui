@@ -1,0 +1,67 @@
+---
+title: CLI
+description: Get started using Draft UI faster than ever by installing components right from the command line
+isNew: true
+order: 3
+---
+
+## Install Sly CLI
+
+You're able to install Draft UI components from the command line thanks for an awesome project by [Jacob Paris](https://twitter.com/jacobmparis), [`@sly-cli/sly`](https://sly-cli.fly.dev/).
+
+Run the following code to add Draft UI to your project. **`sly`** will show you a list of components available to download.
+
+```bash title="bash"
+npx @sly-cli/sly add draft-ui
+```
+
+## Configuration
+
+**`@sly-cli/sly`** let's you configure some specific settings about how you want to install components from the CLI. Assuming you've followed the initial Draft UI installation instructions, this is what your `sly.json` should look like.
+
+```json title="sly.json"
+{
+  "$schema": "https://sly-cli.fly.dev/registry/config.json",
+  "libraries": [
+    {
+      "name": "draft-ui",
+      "directory": "./components",
+      "transformers": ["transform-sly-install.ts"], // optional, otherwise leave empty
+      "postinstall": [],
+    }
+  ]
+}
+```
+
+Of course, if you've made your own customizations, you should update your `sly.json` to match those changes.
+
+## Transformers
+
+**`sly`** also allows you to manipulate how you install your components via transformers.
+
+In order to use transformers, you'll need to install **`sly`** into your project:
+```bash title="bash"
+npm install -D @sly-cli/sly
+```
+
+For example, if you're not using React Server Components, your can safely remove the `use client` directive. In the snippet below, you would do this by setting **`usesServerComponents`** to `false`.
+
+```ts title="transform-sly-install.ts"
+const usesServerComponents = true // set to `false` if you're using a framework like Remix or vanilla React
+const cvaConfig = '@/lib/cva.config'
+
+/**
+ * @type {import('@sly-cli/sly/dist').Transformer}
+ */
+export default async function transformSlyInstall(input: string) {
+  if (!usesServerComponents) {
+    input = input.replace(/'use client'.*/g, "")
+  }
+
+  input = input.replace('@/lib/cva.config', cvaConfig)
+
+  return input
+}
+```
+
+For additional information on tranformers, go to the [`@sly-cli/sly` repo](https://github.com/jacobparis-insiders/sly/blob/main/cli/README.md#transformers).

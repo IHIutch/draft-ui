@@ -12,5 +12,12 @@ module.exports = {
       config: path.join(__dirname, './tailwind.config.js'),
     },
   },
+  overrides: [
+    // MDX
+    {
+      files: ['*.md', '*.mdx'],
+      extends: ['plugin:mdx/recommended'],
+    },
+  ],
   ignorePatterns: ['registry/**/*.tsx'],
 }

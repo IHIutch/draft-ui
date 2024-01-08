@@ -20,7 +20,7 @@ export default function ComponentSource({ children }) {
   }, [Code])
 
   return (
-    <div className="relative [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
+    <div className="relative [&_figure]:my-0 [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
       <div className="absolute right-2 top-2 z-10">
         <CopyClipboardButton text={String(codeString)} />
       </div>
