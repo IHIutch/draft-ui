@@ -41,7 +41,7 @@ export default function Navigation({
   }, [pathname])
 
   return (
-    <div className="light:shadow-sm fixed inset-x-0 top-0 z-10 h-14 border-b bg-white dark:border-b dark:border-slate-800 dark:bg-slate-900">
+    <div className="light:shadow-sm fixed inset-x-0 top-0 z-50 h-14 border-b bg-white dark:border-b dark:border-slate-800 dark:bg-slate-900">
       <div className="mx-auto flex h-full w-full items-center px-4">
         <Link
           href="/"
