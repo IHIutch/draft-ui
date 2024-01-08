@@ -57,7 +57,7 @@ export default function Markdown(props: MarkdownProps) {
           } & NpmCommands) => (
             <>
               {/* TODO: Introduce buttons that let you choose package manager */}
-              <div className="relative [&_figure]:my-0 [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
+              <div className="relative [&_figure]:mt-0 [&_pre]:mt-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
                 <div className="absolute right-2 top-2 z-10">
                   <CopyClipboardButton text={__rawString__ || ''} />
                 </div>

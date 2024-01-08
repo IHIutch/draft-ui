@@ -1,6 +1,7 @@
 ---
 title: Installation
 description: Here's everything you need to get started
+order: 2
 ---
 
 <ListStepper>
@@ -44,7 +45,7 @@ npm install lucide-react
 
 Draft UI uses the path alias <code>@/\*</code> by default. If you
 want to use a different alias, you&apos;ll need to update your
-components manually.
+components.
 
 ```json {3-6} title="tsconfig.json"
 // ...
@@ -79,7 +80,7 @@ module.exports = {
 </ListStep>
 
 <ListStep>
-## Create CVA Config
+## Configure CVA
 
 Add **`twMerge`** to your `cva.config.ts`. This way, anytime you use the `cx(...)` function any conflicting Tailwind classes will be gracefully resolved.
 
@@ -93,6 +94,14 @@ export const { cva, cx, compose } = defineConfig({
   },
 })
 ```
+</ListStep>
+
+<ListStep>
+## Configure @sly-cli/sly (optional)
+
+If your installation varies from any of the configs described above (like if your components are in a different location) you'll want to update your `sly.json` to make sure your CLI installs work correctly.
+
+Head over to the [CLI page](/getting-started/cli) to learn more.
 </ListStep>
 
 <ListStep>

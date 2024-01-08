@@ -56,6 +56,13 @@ export const GeneralDocument = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
+    isNew: {
+      type: 'boolean',
+    },
+    order: {
+      type: 'number',
+      required: true,
+    },
   },
   computedFields: {
     slug: {
@@ -80,6 +87,10 @@ export const ChangelogDocument = defineDocumentType(() => ({
     },
     description: {
       type: 'string',
+      required: true,
+    },
+    order: {
+      type: 'number',
       required: true,
     },
   },

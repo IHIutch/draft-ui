@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from 'react'
 
-import { type Component } from 'contentlayer/generated'
+import {
+  type ChangelogDocument,
+  type ComponentDocument,
+  type GeneralDocument,
+} from 'contentlayer/generated'
 import { GithubIcon, MenuIcon, TwitterIcon, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -23,9 +27,11 @@ import { ModeToggle } from './mode-toggle'
 import SearchComponent from './search-component'
 
 export default function Navigation({
+  gettingStartedList,
   componentList,
 }: {
-  componentList: Component[]
+  gettingStartedList: (GeneralDocument | ChangelogDocument)[]
+  componentList: ComponentDocument[]
 }) {
   const pathname = usePathname()
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -33,25 +39,6 @@ export default function Navigation({
   useEffect(() => {
     setIsModalOpen(false)
   }, [pathname])
-
-  const gettingStartedLinks = [
-    {
-      slug: '/docs/introduction',
-      title: 'Introduction',
-    },
-    {
-      slug: '/docs/installation',
-      title: 'Installation',
-    },
-    {
-      slug: '/docs/about',
-      title: 'About',
-    },
-    {
-      slug: '/docs/changelog',
-      title: 'Changelog',
-    },
-  ]
 
   return (
     <div className="light:shadow-sm fixed inset-x-0 top-0 z-10 h-14 border-b bg-white dark:border-b dark:border-slate-800 dark:bg-slate-900">
@@ -193,7 +180,7 @@ export default function Navigation({
                         Getting Started
                       </h4>
                       <div className="mt-3 pr-3">
-                        <LinkList list={gettingStartedLinks} />
+                        <LinkList list={gettingStartedList} />
                       </div>
                     </div>
                     <div>
