@@ -1,39 +1,31 @@
 import { Check } from 'lucide-react'
-import {
-  ListBox,
-  ListBoxItem,
-  Popover,
-  Select,
-  SelectValue,
-  type ListBoxItemProps,
-  type ListBoxProps,
-  type PopoverProps,
-  type SelectProps,
-  type SelectValueProps,
-} from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
 
-import { Button, type _ButtonProps } from './button'
+import { Button, type ButtonProps } from './button'
 
-const _Select = <T extends object>({ className, ...props }: SelectProps<T>) => {
-  return <Select className={cx('w-full', className)} {...props} />
+export const Select = <T extends object>({
+  className,
+  ...props
+}: ReactAria.SelectProps<T>) => {
+  return <ReactAria.Select className={cx('w-full', className)} {...props} />
 }
 
-export interface _SelectContentProps<T>
-  extends Omit<PopoverProps, 'children' | 'style'>,
-    Omit<ListBoxProps<T>, 'style'> {
+export interface SelectContentProps<T>
+  extends Omit<ReactAria.PopoverProps, 'children' | 'style'>,
+    Omit<ReactAria.ListBoxProps<T>, 'style'> {
   className?: string
   popoverClassName?: string
 }
 
-const _SelectContent = <T extends object>({
+export const SelectContent = <T extends object>({
   className,
   popoverClassName,
   ...props
-}: _SelectContentProps<T>) => {
+}: SelectContentProps<T>) => {
   return (
-    <Popover
+    <ReactAria.Popover
       className={cx(
         'min-w-[--trigger-width] overflow-auto rounded-md border border-slate-200 bg-white p-1 shadow-md dark:border-slate-700 dark:bg-slate-800',
         // Entering
@@ -48,14 +40,18 @@ const _SelectContent = <T extends object>({
       )}
       {...props}
     >
-      <ListBox className={cx('outline-none', className)} {...props} />
-    </Popover>
+      <ReactAria.ListBox className={cx('outline-none', className)} {...props} />
+    </ReactAria.Popover>
   )
 }
 
-const _SelectItem = ({ className, children, ...props }: ListBoxItemProps) => {
+export const SelectItem = ({
+  className,
+  children,
+  ...props
+}: ReactAria.ListBoxItemProps) => {
   return (
-    <ListBoxItem
+    <ReactAria.ListBoxItem
       className={cx(
         'group',
         'flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-black outline-none transition-colors dark:text-white',
@@ -73,15 +69,17 @@ const _SelectItem = ({ className, children, ...props }: ListBoxItemProps) => {
         />
         {children}
       </>
-    </ListBoxItem>
+    </ReactAria.ListBoxItem>
   )
 }
 
-const _SelectValue = <T extends object>(props: SelectValueProps<T>) => {
-  return <SelectValue {...props} />
+export const SelectValue = <T extends object>(
+  props: ReactAria.SelectValueProps<T>,
+) => {
+  return <ReactAria.SelectValue {...props} />
 }
 
-const _SelectButton = ({ className, ...props }: _ButtonProps) => {
+export const SelectButton = ({ className, ...props }: ButtonProps) => {
   return (
     <Button
       className={cx(
@@ -95,12 +93,4 @@ const _SelectButton = ({ className, ...props }: _ButtonProps) => {
       {...props}
     />
   )
-}
-
-export {
-  _Select as Select,
-  _SelectContent as SelectContent,
-  _SelectItem as SelectItem,
-  _SelectValue as SelectValue,
-  _SelectButton as SelectButton,
 }

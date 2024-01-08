@@ -1,35 +1,15 @@
 import * as React from 'react'
 
-import {
-  Button,
-  Calendar,
-  CalendarCell,
-  CalendarGrid,
-  CalendarGridBody,
-  CalendarGridHeader,
-  CalendarHeaderCell,
-  Heading,
-  RangeCalendar,
-  type ButtonProps,
-  type CalendarCellProps,
-  type CalendarGridBodyProps,
-  type CalendarGridHeaderProps,
-  type CalendarGridProps,
-  type CalendarHeaderCellProps,
-  type CalendarProps,
-  type DateValue,
-  type HeadingProps,
-  type RangeCalendarProps,
-} from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
 
-const _Calendar = <T extends DateValue>({
+export const Calendar = <T extends ReactAria.DateValue>({
   className,
   ...props
-}: CalendarProps<T>) => {
+}: ReactAria.CalendarProps<T>) => {
   return (
-    <Calendar
+    <ReactAria.Calendar
       className={cx(
         'w-fit [&_td:not([aria-selected])+td[aria-selected]_div]:rounded [&_td]:px-0',
         '[&_td:not([aria-selected])+td[aria-selected]_div]:bg-black [&_td:not([aria-selected])+td[aria-selected]_div]:text-white',
@@ -41,12 +21,12 @@ const _Calendar = <T extends DateValue>({
   )
 }
 
-const _RangeCalendar = <T extends DateValue>({
+export const RangeCalendar = <T extends ReactAria.DateValue>({
   className,
   ...props
-}: RangeCalendarProps<T>) => {
+}: ReactAria.RangeCalendarProps<T>) => {
   return (
-    <RangeCalendar
+    <ReactAria.RangeCalendar
       className={cx(
         'w-fit [&_td]:px-0',
         // First date of week
@@ -60,20 +40,25 @@ const _RangeCalendar = <T extends DateValue>({
   )
 }
 
-const _CalendarGrid = ({ className, ...props }: CalendarGridProps) => {
-  return <CalendarGrid className={cx('mt-3', className)} {...props} />
-}
-
-const _CalendarGridHeader = (props: CalendarGridHeaderProps) => {
-  return <CalendarGridHeader {...props} />
-}
-
-const _CalendarHeaderCell = ({
+export const CalendarGrid = ({
   className,
   ...props
-}: CalendarHeaderCellProps) => {
+}: ReactAria.CalendarGridProps) => {
+  return <ReactAria.CalendarGrid className={cx('mt-3', className)} {...props} />
+}
+
+export const CalendarGridHeader = (
+  props: ReactAria.CalendarGridHeaderProps,
+) => {
+  return <ReactAria.CalendarGridHeader {...props} />
+}
+
+export const CalendarHeaderCell = ({
+  className,
+  ...props
+}: ReactAria.CalendarHeaderCellProps) => {
   return (
-    <CalendarHeaderCell
+    <ReactAria.CalendarHeaderCell
       className={cx(
         'h-10 w-10 text-sm font-medium text-slate-500 dark:text-slate-400',
         className,
@@ -83,15 +68,24 @@ const _CalendarHeaderCell = ({
   )
 }
 
-const _CalendarGridBody = ({ className, ...props }: CalendarGridBodyProps) => {
+export const CalendarGridBody = ({
+  className,
+  ...props
+}: ReactAria.CalendarGridBodyProps) => {
   return (
-    <CalendarGridBody className={cx('relative pt-4', className)} {...props} />
+    <ReactAria.CalendarGridBody
+      className={cx('relative pt-4', className)}
+      {...props}
+    />
   )
 }
 
-const _CalendarCell = ({ className, ...props }: CalendarCellProps) => {
+export const CalendarCell = ({
+  className,
+  ...props
+}: ReactAria.CalendarCellProps) => {
   return (
-    <CalendarCell
+    <ReactAria.CalendarCell
       className={cx(
         'transition-color relative flex h-10 w-10 items-center justify-center text-sm text-black dark:text-white',
         // Hover
@@ -115,9 +109,12 @@ const _CalendarCell = ({ className, ...props }: CalendarCellProps) => {
   )
 }
 
-const _CalendarHeading = ({ className, ...props }: HeadingProps) => {
+export const CalendarHeading = ({
+  className,
+  ...props
+}: ReactAria.HeadingProps) => {
   return (
-    <Heading
+    <ReactAria.Heading
       slot="title"
       className={cx(
         'text-sm font-medium text-black dark:text-white',
@@ -128,7 +125,7 @@ const _CalendarHeading = ({ className, ...props }: HeadingProps) => {
   )
 }
 
-const _CalendarHeader = ({
+export const CalendarHeader = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
@@ -140,32 +137,25 @@ const _CalendarHeader = ({
   )
 }
 
-const _CalendarFooter = ({
+export const CalendarFooter = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
   return <footer className={cx(className)} {...props} />
 }
 
-const _CalendarNextButton = ({ className, ...props }: ButtonProps) => {
-  return <Button className={cx(className)} {...props} slot="next" />
+export const CalendarNextButton = ({
+  className,
+  ...props
+}: ReactAria.ButtonProps) => {
+  return <ReactAria.Button className={cx(className)} {...props} slot="next" />
 }
 
-const _CalendarPrevButton = ({ className, ...props }: ButtonProps) => {
-  return <Button className={cx(className)} {...props} slot="previous" />
-}
-
-export {
-  _Calendar as Calendar,
-  _RangeCalendar as RangeCalendar,
-  _CalendarGrid as CalendarGrid,
-  _CalendarCell as CalendarCell,
-  _CalendarHeading as CalendarHeading,
-  _CalendarHeader as CalendarHeader,
-  _CalendarFooter as CalendarFooter,
-  _CalendarNextButton as CalendarNextButton,
-  _CalendarPrevButton as CalendarPrevButton,
-  _CalendarGridHeader as CalendarGridHeader,
-  _CalendarGridBody as CalendarGridBody,
-  _CalendarHeaderCell as CalendarHeaderCell,
+export const CalendarPrevButton = ({
+  className,
+  ...props
+}: ReactAria.ButtonProps) => {
+  return (
+    <ReactAria.Button className={cx(className)} {...props} slot="previous" />
+  )
 }

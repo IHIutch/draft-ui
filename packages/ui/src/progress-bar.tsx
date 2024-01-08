@@ -1,14 +1,19 @@
 import * as React from 'react'
 
-import { ProgressBar, type ProgressBarProps } from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
 
-const _ProgressBar = ({ className, ...props }: ProgressBarProps) => {
-  return <ProgressBar className={cx('w-full', className)} {...props} />
+export const ProgressBar = ({
+  className,
+  ...props
+}: ReactAria.ProgressBarProps) => {
+  return (
+    <ReactAria.ProgressBar className={cx('w-full', className)} {...props} />
+  )
 }
 
-const _ProgressBarTrack = ({
+export const ProgressBarTrack = ({
   className,
   children,
   ...props
@@ -26,16 +31,16 @@ const _ProgressBarTrack = ({
   )
 }
 
-export interface _ProgressBarFilledTrackProps
+export interface ProgressBarFilledTrackProps
   extends React.HTMLAttributes<HTMLDivElement> {
   percentage?: number
 }
 
-const _ProgressBarFilledTrack = ({
+export const ProgressBarFilledTrack = ({
   className,
   percentage = 0,
   ...props
-}: _ProgressBarFilledTrackProps) => {
+}: ProgressBarFilledTrackProps) => {
   return (
     <div
       className={cx('h-full bg-black dark:bg-white', className)}
@@ -43,10 +48,4 @@ const _ProgressBarFilledTrack = ({
       {...props}
     />
   )
-}
-
-export {
-  _ProgressBar as ProgressBar,
-  _ProgressBarTrack as ProgressBarTrack,
-  _ProgressBarFilledTrack as ProgressBarFilledTrack,
 }

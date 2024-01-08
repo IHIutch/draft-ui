@@ -1,14 +1,16 @@
 import * as React from 'react'
 
-import { RadioGroup, type RadioGroupProps } from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
 
-const _RadioGroup = (props: RadioGroupProps) => {
-  return <RadioGroup className="group" {...props} />
+export const RadioGroup = (props: ReactAria.RadioGroupProps) => {
+  return <ReactAria.RadioGroup className="group" {...props} />
 }
 
-const _RadioGroupContent = (props: React.HTMLAttributes<HTMLDivElement>) => {
+export const RadioGroupContent = (
+  props: React.HTMLAttributes<HTMLDivElement>,
+) => {
   return (
     <div
       className={cx(
@@ -20,5 +22,3 @@ const _RadioGroupContent = (props: React.HTMLAttributes<HTMLDivElement>) => {
     />
   )
 }
-
-export { _RadioGroup as RadioGroup, _RadioGroupContent as RadioGroupContent }

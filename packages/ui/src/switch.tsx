@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { type VariantProps } from 'cva'
-import { Switch, type SwitchProps } from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cva, cx } from '@/lib/cva.config'
 
@@ -41,15 +41,15 @@ const switchIndicatorInnerVariants = cva({
   },
 })
 
-export interface _SwitchProps
-  extends SwitchProps,
+export interface SwitchProps
+  extends ReactAria.SwitchProps,
     VariantProps<typeof switchIndicatorVariants> {
   className?: string
 }
 
-const _Switch = ({ children, className, ...props }: _SwitchProps) => {
+export const Switch = ({ children, className, ...props }: SwitchProps) => {
   return (
-    <Switch
+    <ReactAria.Switch
       className={cx(
         [
           'group',
@@ -60,21 +60,21 @@ const _Switch = ({ children, className, ...props }: _SwitchProps) => {
       {...props}
     >
       {children}
-    </Switch>
+    </ReactAria.Switch>
   )
 }
 
-export interface _SwitchIndicatorProps
+export interface SwitchIndicatorProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof switchIndicatorVariants> {
   className?: string
 }
 
-const _SwitchIndicator = ({
+export const SwitchIndicator = ({
   size,
   className,
   ...props
-}: _SwitchIndicatorProps) => {
+}: SwitchIndicatorProps) => {
   return (
     <div
       className={cx(switchIndicatorVariants({ size, className }))}
@@ -84,5 +84,3 @@ const _SwitchIndicator = ({
     </div>
   )
 }
-
-export { _Switch as Switch, _SwitchIndicator as SwitchIndicator }

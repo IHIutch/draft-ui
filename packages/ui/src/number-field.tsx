@@ -1,27 +1,26 @@
 import * as React from 'react'
 
-import {
-  Button,
-  Group,
-  NumberField,
-  type GroupProps,
-  type NumberFieldProps,
-} from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
 
-import { type _ButtonProps } from './button'
-import { Input, type _InputProps } from './input'
+import { type ButtonProps } from './button'
+import { Input, type InputProps } from './input'
 
-const _NumberField = ({ className, ...props }: NumberFieldProps) => {
-  return <NumberField className={cx('w-full', className)} {...props} />
+export const NumberField = ({
+  className,
+  ...props
+}: ReactAria.NumberFieldProps) => {
+  return (
+    <ReactAria.NumberField className={cx('w-full', className)} {...props} />
+  )
 }
 
-const _NumberInputGroup = (props: GroupProps) => {
-  return <Group {...props} />
+export const NumberInputGroup = (props: ReactAria.GroupProps) => {
+  return <ReactAria.Group {...props} />
 }
 
-const _NumberInputStepper = ({
+export const NumberInputStepper = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) => {
@@ -36,13 +35,16 @@ const _NumberInputStepper = ({
   )
 }
 
-const _NumberInput = ({ className, ...props }: _InputProps) => {
+export const NumberInput = ({ className, ...props }: InputProps) => {
   return <Input className={cx('pr-6', className)} {...props} />
 }
 
-const _NumberIncrementStepper = ({ className, ...props }: _ButtonProps) => {
+export const NumberIncrementStepper = ({
+  className,
+  ...props
+}: ButtonProps) => {
   return (
-    <Button
+    <ReactAria.Button
       slot="increment"
       className={cx(
         [
@@ -59,9 +61,12 @@ const _NumberIncrementStepper = ({ className, ...props }: _ButtonProps) => {
   )
 }
 
-const _NumberDecrementStepper = ({ className, ...props }: _ButtonProps) => {
+export const NumberDecrementStepper = ({
+  className,
+  ...props
+}: ButtonProps) => {
   return (
-    <Button
+    <ReactAria.Button
       slot="decrement"
       className={cx(
         [
@@ -76,13 +81,4 @@ const _NumberDecrementStepper = ({ className, ...props }: _ButtonProps) => {
       {...props}
     />
   )
-}
-
-export {
-  _NumberField as NumberField,
-  _NumberInput as NumberInput,
-  _NumberInputGroup as NumberInputGroup,
-  _NumberInputStepper as NumberInputStepper,
-  _NumberIncrementStepper as NumberIncrementStepper,
-  _NumberDecrementStepper as NumberDecrementStepper,
 }

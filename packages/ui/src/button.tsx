@@ -1,9 +1,9 @@
 import { type VariantProps } from 'cva'
-import { Button, type ButtonProps } from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cva, cx } from '@/lib/cva.config'
 
-const buttonVariants = cva({
+export const buttonVariants = cva({
   base: [
     'inline-flex items-center justify-center rounded-md font-semibold outline-none transition-colors',
     // Focus
@@ -38,15 +38,15 @@ const buttonVariants = cva({
   },
 })
 
-export interface _ButtonProps
-  extends ButtonProps,
+export interface ButtonProps
+  extends ReactAria.ButtonProps,
     VariantProps<typeof buttonVariants> {
   className?: string
 }
 
-const _Button = ({ className, variant, size, ...props }: _ButtonProps) => {
+export const Button = ({ className, variant, size, ...props }: ButtonProps) => {
   return (
-    <Button
+    <ReactAria.Button
       className={cx(
         buttonVariants({
           variant,
@@ -58,5 +58,3 @@ const _Button = ({ className, variant, size, ...props }: _ButtonProps) => {
     />
   )
 }
-
-export { _Button as Button, buttonVariants }

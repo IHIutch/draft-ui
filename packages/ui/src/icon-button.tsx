@@ -1,9 +1,9 @@
 import { type VariantProps } from 'cva'
-import { Button, type ButtonProps } from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cva, cx } from '@/lib/cva.config'
 
-const iconButtonVariants = cva({
+export const iconButtonVariants = cva({
   base: [
     'inline-flex items-center justify-center rounded-md font-semibold outline-none transition-colors',
     // Focus
@@ -87,21 +87,21 @@ const iconButtonVariants = cva({
   },
 })
 
-export interface _IconButtonProps
-  extends ButtonProps,
+export interface IconButtonProps
+  extends ReactAria.ButtonProps,
     VariantProps<typeof iconButtonVariants> {
   className?: string
   'aria-label': string
 }
 
-const _IconButton = ({
+export const IconButton = ({
   className,
   variant,
   size,
   ...props
-}: _IconButtonProps) => {
+}: IconButtonProps) => {
   return (
-    <Button
+    <ReactAria.Button
       className={cx(
         iconButtonVariants({
           variant,
@@ -113,5 +113,3 @@ const _IconButton = ({
     />
   )
 }
-
-export { _IconButton as IconButton, iconButtonVariants }

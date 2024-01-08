@@ -1,19 +1,19 @@
 import * as React from 'react'
 
-import { CheckboxGroup, type CheckboxGroupProps } from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
 
-interface _CheckboxGroupProps extends CheckboxGroupProps {
+interface CheckboxGroupProps extends ReactAria.CheckboxGroupProps {
   orientation?: 'horizontal' | 'vertical'
 }
 
-const _CheckboxGroup = ({
+export const CheckboxGroup = ({
   orientation = 'vertical',
   ...props
-}: _CheckboxGroupProps) => {
+}: CheckboxGroupProps) => {
   return (
-    <CheckboxGroup
+    <ReactAria.CheckboxGroup
       data-orientation={orientation}
       className="group"
       {...props}
@@ -21,7 +21,9 @@ const _CheckboxGroup = ({
   )
 }
 
-const _CheckboxGroupContent = (props: React.HTMLAttributes<HTMLDivElement>) => {
+export const CheckboxGroupContent = (
+  props: React.HTMLAttributes<HTMLDivElement>,
+) => {
   return (
     <div
       className={cx(
@@ -32,9 +34,4 @@ const _CheckboxGroupContent = (props: React.HTMLAttributes<HTMLDivElement>) => {
       {...props}
     />
   )
-}
-
-export {
-  _CheckboxGroup as CheckboxGroup,
-  _CheckboxGroupContent as CheckboxGroupContent,
 }

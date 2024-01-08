@@ -1,68 +1,59 @@
 import { Check } from 'lucide-react'
-import {
-  Button,
-  ComboBox,
-  ListBox,
-  ListBoxItem,
-  Popover,
-  type ButtonProps,
-  type ComboBoxProps,
-  type ListBoxItemProps,
-  type ListBoxProps,
-  type PopoverProps,
-} from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
 
-import { type _ButtonProps } from './button'
-import { Input, type _InputProps } from './input'
+import { type ButtonProps } from './button'
+import { Input, type InputProps } from './input'
 
-const _ComboBox = <T extends object>({
+export const ComboBox = <T extends object>({
   className,
   ...props
-}: ComboBoxProps<T>) => {
-  return <ComboBox className={cx('group w-full', className)} {...props} />
+}: ReactAria.ComboBoxProps<T>) => {
+  return (
+    <ReactAria.ComboBox className={cx('group w-full', className)} {...props} />
+  )
 }
 
-const _ComboBoxInput = (props: _InputProps) => {
+export const ComboBoxInput = (props: InputProps) => {
   return <Input {...props} />
 }
 
-export interface _ComboBoxContentProps<T>
-  extends Omit<PopoverProps, 'children' | 'style' | 'className'>,
-    Omit<ListBoxProps<T>, 'style'> {
+export interface ComboBoxContentProps<T>
+  extends Omit<ReactAria.PopoverProps, 'children' | 'style' | 'className'>,
+    Omit<ReactAria.ListBoxProps<T>, 'style'> {
   popoverClassName?: string
 }
 
-const _ComboBoxContent = <T extends object>({
+export const ComboBoxContent = <T extends object>({
   className,
   popoverClassName,
   ...props
-}: _ComboBoxContentProps<T>) => {
+}: ComboBoxContentProps<T>) => {
   return (
-    <Popover
+    <ReactAria.Popover
       className={cx(
         'min-w-[--trigger-width] overflow-auto rounded-md border border-slate-200 bg-white p-1 shadow-md dark:border-slate-700 dark:bg-slate-800',
         popoverClassName,
       )}
       {...props}
     >
-      <ListBox className={cx('outline-none', className)} {...props} />
-    </Popover>
+      <ReactAria.ListBox className={cx('outline-none', className)} {...props} />
+    </ReactAria.Popover>
   )
 }
 
-export interface _ListBoxItemProps extends ListBoxItemProps {
+export interface ListBoxItemProps extends ReactAria.ListBoxItemProps {
   textValue: string
 }
 
-const _ComboBoxItem = ({
+export const ComboBoxItem = ({
   className,
   children,
   ...props
-}: _ListBoxItemProps) => {
+}: ListBoxItemProps) => {
   return (
-    <ListBoxItem
+    <ReactAria.ListBoxItem
       className={cx(
         'group',
         'flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-black outline-none transition-colors dark:text-white',
@@ -82,18 +73,10 @@ const _ComboBoxItem = ({
         />
         {children}
       </>
-    </ListBoxItem>
+    </ReactAria.ListBoxItem>
   )
 }
 
-const _ComboBoxButton = ({ className, ...props }: ButtonProps) => {
-  return <Button className={cx(className)} {...props} />
-}
-
-export {
-  _ComboBox as ComboBox,
-  _ComboBoxContent as ComboBoxContent,
-  _ComboBoxInput as ComboBoxInput,
-  _ComboBoxItem as ComboBoxItem,
-  _ComboBoxButton as ComboBoxButton,
+export const ComboBoxButton = ({ className, ...props }: ButtonProps) => {
+  return <ReactAria.Button className={cx(className)} {...props} />
 }

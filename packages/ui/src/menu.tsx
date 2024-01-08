@@ -1,41 +1,27 @@
 import * as React from 'react'
 
 import { Check, Circle } from 'lucide-react'
-import {
-  Header,
-  Menu,
-  MenuItem,
-  MenuTrigger,
-  Popover,
-  Section,
-  Separator,
-  type MenuItemProps,
-  type MenuProps,
-  type MenuTriggerProps,
-  type PopoverProps,
-  type SectionProps,
-  type SeparatorProps,
-} from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
 
-const _Menu = (props: MenuTriggerProps) => {
-  return <MenuTrigger {...props} />
+export const Menu = (props: ReactAria.MenuTriggerProps) => {
+  return <ReactAria.MenuTrigger {...props} />
 }
-export interface _MenuContentProps<T>
-  extends Omit<PopoverProps, 'children' | 'style'>,
-    MenuProps<T> {
+export interface MenuContentProps<T>
+  extends Omit<ReactAria.PopoverProps, 'children' | 'style'>,
+    ReactAria.MenuProps<T> {
   className?: string
   popoverClassName?: string
 }
 
-const _MenuContent = <T extends object>({
+export const MenuContent = <T extends object>({
   className,
   popoverClassName,
   ...props
-}: _MenuContentProps<T>) => {
+}: MenuContentProps<T>) => {
   return (
-    <Popover
+    <ReactAria.Popover
       className={cx(
         // Base
         'min-w-[150px] overflow-auto rounded-md border bg-white p-1 shadow dark:border-slate-700 dark:bg-slate-800',
@@ -51,14 +37,18 @@ const _MenuContent = <T extends object>({
       )}
       {...props}
     >
-      <Menu className={cx('outline-none', className)} {...props} />
-    </Popover>
+      <ReactAria.Menu className={cx('outline-none', className)} {...props} />
+    </ReactAria.Popover>
   )
 }
 
-const _MenuItem = ({ className, children, ...props }: MenuItemProps) => {
+export const MenuItem = ({
+  className,
+  children,
+  ...props
+}: ReactAria.MenuItemProps) => {
   return (
-    <MenuItem
+    <ReactAria.MenuItem
       className={cx(
         'group',
         'flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-black outline-none transition-colors dark:text-white',
@@ -90,20 +80,22 @@ const _MenuItem = ({ className, children, ...props }: MenuItemProps) => {
           {children}
         </>
       )}
-    </MenuItem>
+    </ReactAria.MenuItem>
   )
 }
 
-const _MenuSection = <T extends object>(props: SectionProps<T>) => {
-  return <Section {...props} />
+export const MenuSection = <T extends object>(
+  props: ReactAria.SectionProps<T>,
+) => {
+  return <ReactAria.Section {...props} />
 }
 
-const _MenuHeader = ({
+export const MenuHeader = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) => {
   return (
-    <Header
+    <ReactAria.Header
       className={cx(
         'px-2 py-1 text-sm font-medium text-slate-500 dark:text-slate-400',
         className,
@@ -113,20 +105,14 @@ const _MenuHeader = ({
   )
 }
 
-const _MenuSeparator = ({ className, ...props }: SeparatorProps) => {
+export const MenuSeparator = ({
+  className,
+  ...props
+}: ReactAria.SeparatorProps) => {
   return (
-    <Separator
+    <ReactAria.Separator
       className={cx('-mx-1 my-1 border-t dark:border-slate-700', className)}
       {...props}
     />
   )
-}
-
-export {
-  _Menu as Menu,
-  _MenuContent as MenuContent,
-  _MenuSection as MenuSection,
-  _MenuHeader as MenuHeader,
-  _MenuItem as MenuItem,
-  _MenuSeparator as MenuSeparator,
 }

@@ -1,14 +1,14 @@
 import * as React from 'react'
 
-import { Meter, type MeterProps } from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
 
-const _Meter = ({ className, ...props }: MeterProps) => {
-  return <Meter className={cx('w-full', className)} {...props} />
+export const Meter = ({ className, ...props }: ReactAria.MeterProps) => {
+  return <ReactAria.Meter className={cx('w-full', className)} {...props} />
 }
 
-const _MeterTrack = ({
+export const MeterTrack = ({
   className,
   children,
   ...props
@@ -26,16 +26,16 @@ const _MeterTrack = ({
   )
 }
 
-export interface _MeterFilledTrackProps
+export interface MeterFilledTrackProps
   extends React.HTMLAttributes<HTMLDivElement> {
   percentage: number
 }
 
-const _MeterFilledTrack = ({
+export const MeterFilledTrack = ({
   className,
   percentage,
   ...props
-}: _MeterFilledTrackProps) => {
+}: MeterFilledTrackProps) => {
   return (
     <div
       className={cx('h-full bg-black dark:bg-white', className)}
@@ -43,10 +43,4 @@ const _MeterFilledTrack = ({
       {...props}
     />
   )
-}
-
-export {
-  _Meter as Meter,
-  _MeterTrack as MeterTrack,
-  _MeterFilledTrack as MeterFilledTrack,
 }
