@@ -1,4 +1,8 @@
-import { allComponentDocuments } from 'contentlayer/generated'
+import {
+  allChangelogDocuments,
+  allComponentDocuments,
+  allGeneralDocuments,
+} from 'contentlayer/generated'
 
 import CtaSection from '@/components/home-page/cta-section'
 import ExampleSection from '@/components/home-page/example-section'
@@ -9,9 +13,17 @@ export default async function Home() {
     .filter((doc) => doc.isComponent === true)
     .sort((a, b) => a.title.localeCompare(b.title))
 
+  const sortedDocuments = [
+    ...allGeneralDocuments,
+    ...allChangelogDocuments,
+  ].sort((a, b) => a.order - b.order)
+
   return (
     <div className="pt-14">
-      <Navigation componentList={sortedComponents} />
+      <Navigation
+        gettingStartedList={sortedDocuments}
+        componentList={sortedComponents}
+      />
       <div className="container mx-auto px-4 pb-8 pt-20">
         <div className="mx-auto max-w-[1024px] text-center">
           <h1 className="text-4xl font-extrabold md:text-7xl">
