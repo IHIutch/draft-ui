@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react'
 
 import { ProgressBar, type ProgressBarProps } from 'react-aria-components'

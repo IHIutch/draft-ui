@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react'
 
 import { Meter, type MeterProps } from 'react-aria-components'

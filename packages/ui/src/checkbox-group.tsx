@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react'
 
 import { CheckboxGroup, type CheckboxGroupProps } from 'react-aria-components'

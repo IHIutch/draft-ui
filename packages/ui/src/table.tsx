@@ -1,4 +1,3 @@
-'use client'
 // TODO: Table
 
 const _Table = () => {

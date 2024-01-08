@@ -1,5 +1,3 @@
-'use client'
-
 import { type VariantProps } from 'cva'
 import { Input, type InputProps } from 'react-aria-components'
 

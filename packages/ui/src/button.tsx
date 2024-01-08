@@ -1,5 +1,3 @@
-'use client'
-
 import { type VariantProps } from 'cva'
 import { Button, type ButtonProps } from 'react-aria-components'
 
@@ -16,7 +14,7 @@ const buttonVariants = cva({
   variants: {
     variant: {
       solid:
-        'bg-slate-900 text-white hover:bg-slate-700 open:bg-slate-100 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-200 dark:open:bg-slate-800',
+        'bg-slate-900 text-white open:bg-slate-100 hover:bg-slate-700 dark:bg-slate-50 dark:text-slate-900 dark:open:bg-slate-800 dark:hover:bg-slate-200',
       destructive:
         'bg-red-600 text-white hover:bg-red-700 dark:hover:bg-red-700',
       outline:
@@ -24,7 +22,7 @@ const buttonVariants = cva({
       subtle:
         'bg-slate-100 text-slate-900 hover:bg-slate-200 focus:bg-slate-200 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-700 dark:focus:bg-slate-700',
       ghost:
-        'bg-transparent hover:bg-slate-100 focus:bg-slate-100 open:bg-transparent dark:text-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100 dark:focus:bg-slate-800 dark:focus:text-slate-100 dark:open:bg-transparent',
+        'bg-transparent open:bg-transparent hover:bg-slate-100 focus:bg-slate-100 dark:text-slate-100 dark:open:bg-transparent dark:hover:bg-slate-800 dark:hover:text-slate-100 dark:focus:bg-slate-800 dark:focus:text-slate-100',
       link: 'bg-transparent text-slate-900 underline-offset-4 hover:bg-transparent hover:underline focus:bg-transparent focus:underline dark:bg-transparent dark:text-slate-100 dark:hover:bg-transparent dark:focus:bg-transparent',
     },
     size: {

@@ -1,5 +1,3 @@
-'use client'
-
 import { type VariantProps } from 'cva'
 import { Button, type ButtonProps } from 'react-aria-components'
 

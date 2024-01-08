@@ -1,5 +1,3 @@
-'use client'
-
 import { Label, type LabelProps } from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'

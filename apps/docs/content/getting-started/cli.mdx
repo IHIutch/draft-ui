@@ -44,20 +44,15 @@ In order to use transformers, you'll need to install **`sly`** into your project
 npm install -D @sly-cli/sly
 ```
 
-For example, if you're not using React Server Components, your can safely remove the `use client` directive. In the snippet below, you would do this by setting **`usesServerComponents`** to `false`.
+For example, if you're using a different path alias for your directories, overwrite the default values automatically.
 
 ```ts title="transform-sly-install.ts"
-const usesServerComponents = true // set to `false` if you're using a framework like Remix or vanilla React
 const cvaConfig = '@/lib/cva.config'
 
 /**
  * @type {import('@sly-cli/sly/dist').Transformer}
  */
 export default async function transformSlyInstall(input: string) {
-  if (!usesServerComponents) {
-    input = input.replace(/'use client'.*/g, "")
-  }
-
   input = input.replace('@/lib/cva.config', cvaConfig)
 
   return input

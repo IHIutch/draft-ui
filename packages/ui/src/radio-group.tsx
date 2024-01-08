@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react'
 
 import { RadioGroup, type RadioGroupProps } from 'react-aria-components'
