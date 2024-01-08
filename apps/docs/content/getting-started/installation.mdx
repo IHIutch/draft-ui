@@ -111,12 +111,13 @@ In order for these links to work as expected with whichever framework you're usi
   </TabList>
   <TabPanel id="nextjs-app" className="px-0">
   ```tsx title="app/provider.tsx"
+  'use client'
 
   import { useRouter } from 'next/navigation'
   import { RouterProvider } from 'react-aria-components'
 
   export function ClientProviders({ children }) {
-    let router = useRouter()
+    const router = useRouter()
 
     return (
       <RouterProvider navigate={router.push}>
