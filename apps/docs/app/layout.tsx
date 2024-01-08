@@ -93,7 +93,9 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
       />
       <link rel="manifest" href="/site.webmanifest" />
       <head />
-      <body className={`h-full dark:bg-slate-900 ${inter.className}`}>
+      <body
+        className={`h-full dark:bg-slate-900 dark:antialiased ${inter.className}`}
+      >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>

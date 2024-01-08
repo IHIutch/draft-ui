@@ -54,11 +54,48 @@ module.exports = {
                 fontWeight: 'bolder',
               },
             },
+            '[data-rehype-pretty-code-title]': {
+              backgroundColor: '#282a36',
+              borderTopLeftRadius: theme('borderRadius.md'),
+              borderTopRightRadius: theme('borderRadius.md'),
+              paddingLeft: theme('spacing.4'),
+              paddingRight: theme('spacing.4'),
+              paddingTop: theme('spacing.3'),
+              marginTop: theme('spacing.0'),
+              paddingBottom: theme('spacing.1'),
+              color: theme('colors.gray.400'),
+              userSelect: 'none',
+              '+ pre': {
+                borderTopLeftRadius: theme('borderRadius.none'),
+                borderTopRightRadius: theme('borderRadius.none'),
+                marginTop: theme('spacing.0'),
+              },
+            },
+            '[data-rehype-pretty-code-figure]': {
+              '> pre': {
+                paddingLeft: theme('spacing.0'),
+                paddingRight: theme('spacing.0'),
+                code: {
+                  paddingLeft: theme('spacing.0'),
+                  paddingRight: theme('spacing.0'),
+                  '[data-line]': {
+                    paddingLeft: theme('spacing.4'),
+                    paddingRight: theme('spacing.4'),
+                  },
+                },
+              },
+            },
           },
         },
         invert: {
           css: {
             'p:not(pre)': {
+              code: {
+                color: theme('colors.white'),
+                backgroundColor: theme('colors.slate.800'),
+              },
+            },
+            'li:not(pre)': {
               code: {
                 color: theme('colors.white'),
                 backgroundColor: theme('colors.slate.800'),
