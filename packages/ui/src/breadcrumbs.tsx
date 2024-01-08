@@ -43,10 +43,13 @@ const _BreadcrumbItem = ({
   )
 }
 
-const _BreadcrumbLink = ({ children, ...props }: LinkProps) => {
+const _BreadcrumbLink = ({ children, className, ...props }: LinkProps) => {
   return (
     <Link
-      className="text-slate-500 hover:underline current:text-black current:hover:no-underline dark:text-slate-300 dark:current:text-white"
+      className={cx(
+        'text-slate-500 hover:underline current:text-black current:hover:no-underline dark:text-slate-300 dark:current:text-white',
+        className,
+      )}
       {...props}
     >
       {children}
