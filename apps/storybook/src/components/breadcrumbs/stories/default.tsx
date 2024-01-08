@@ -10,7 +10,9 @@ export default function Default() {
       <BreadcrumbItem separator={<ChevronRight size="1em" />}>
         <BreadcrumbLink href="#">React Aria</BreadcrumbLink>
       </BreadcrumbItem>
-      <BreadcrumbItem>useBreadcrumbs</BreadcrumbItem>
+      <BreadcrumbItem>
+        <BreadcrumbLink>useBreadcrumbs</BreadcrumbLink>
+      </BreadcrumbItem>
     </Breadcrumbs>
   )
 }
