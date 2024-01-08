@@ -3,8 +3,7 @@ const path = require('path')
 
 module.exports = {
   root: true,
-  extends: ['custom'],
-  plugins: ['eslint-plugin-storybook'],
+  extends: ['custom', 'plugin:storybook/recommended'],
   settings: {
     tailwindcss: {
       config: path.join(__dirname, './tailwind.config.js'),

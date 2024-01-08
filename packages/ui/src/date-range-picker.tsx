@@ -1,37 +1,29 @@
-'use client'
-
-import {
-  DateRangePicker,
-  Dialog,
-  Popover,
-  type DateRangePickerProps,
-  type DateValue,
-  type DialogProps,
-  type PopoverProps,
-} from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
 
-const _DateRangePicker = <T extends DateValue>({
+export const DateRangePicker = <T extends ReactAria.DateValue>({
   className,
   ...props
-}: DateRangePickerProps<T>) => {
-  return <DateRangePicker className={cx('w-full', className)} {...props} />
+}: ReactAria.DateRangePickerProps<T>) => {
+  return (
+    <ReactAria.DateRangePicker className={cx('w-full', className)} {...props} />
+  )
 }
 
-export interface _DateRangePickerContentProps
-  extends Omit<PopoverProps, 'children' | 'style'>,
-    DialogProps {
+export interface DateRangePickerContentProps
+  extends Omit<ReactAria.PopoverProps, 'children' | 'style'>,
+    ReactAria.DialogProps {
   className?: string
   popoverClassName?: string
 }
 
-const _DateRangePickerContent = ({
+export const DateRangePickerContent = ({
   popoverClassName,
   ...props
-}: _DateRangePickerContentProps) => {
+}: DateRangePickerContentProps) => {
   return (
-    <Popover
+    <ReactAria.Popover
       className={cx(
         // Base
         'overflow-auto rounded-md border border-slate-200 bg-white p-3 shadow-md',
@@ -46,12 +38,7 @@ const _DateRangePickerContent = ({
         popoverClassName,
       )}
     >
-      <Dialog {...props} />
-    </Popover>
+      <ReactAria.Dialog {...props} />
+    </ReactAria.Popover>
   )
-}
-
-export {
-  _DateRangePicker as DateRangePicker,
-  _DateRangePickerContent as DateRangePickerContent,
 }

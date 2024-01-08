@@ -1,44 +1,54 @@
 ---
 title: Installation
 description: Here's everything you need to get started
+order: 2
 ---
 
+<ListStepper>
+
+<ListStep>
 ## Install TailwindCSS
 
 Depending on your project, steps to install Tailwind may vary.
 Check out [their installation page](https://tailwindcss.com/docs/installation/framework-guides) for guidance.
+</ListStep>
 
+<ListStep>
 ## Install Required Dependencies
 
-```bash
-npm install react-aria-components@1.0.0-rc.0 cva@beta tailwind-merge tailwindcss-animate tailwindcss-react-aria-components@1.0.0-beta.1
+```bash title="bash"
+npm install react-aria-components@1.0.0 cva@beta tailwind-merge tailwindcss-animate tailwindcss-react-aria-components@1.0.0
 ```
 
 This project requires the following packages:
 
-- [react-aria-components@1.0.0-rc.0](https://github.com/adobe/react-spectrum/tree/main/packages/react-aria-components)
+- [react-aria-components@1.0.0](https://github.com/adobe/react-spectrum/tree/main/packages/react-aria-components)
 - [cva@beta](https://github.com/joe-bell/cva)
 - [tailwind-merge](https://github.com/dcastil/tailwind-merge)
 - [tailwindcss-animate](https://github.com/jamiebuilds/tailwindcss-animate)
-- [tailwindcss-react-aria-components@1.0.0-beta.1](https://github.com/adobe/react-spectrum/tree/main/packages/tailwindcss-react-aria-components)
+- [tailwindcss-react-aria-components@1.0.0](https://github.com/adobe/react-spectrum/tree/main/packages/tailwindcss-react-aria-components)
+</ListStep>
 
+<ListStep>
 ## Install Icons
 
 Draft UI uses [Lucide Icons](https://lucide.dev/guide/packages/lucide-react) by default. You can use whichever library you prefer, but
 you'll need to replace the default icons manually.
 
-```bash
+```bash title="bash"
 npm install lucide-react
 ```
+</ListStep>
 
+<ListStep>
 ## Configure Path Aliases
 
 Draft UI uses the path alias <code>@/\*</code> by default. If you
 want to use a different alias, you&apos;ll need to update your
-components manually.
+components.
 
 ```json {3-6} title="tsconfig.json"
-...
+// ...
 {
   "compilerOptions": {
     "baseUrl": ".",
@@ -47,9 +57,11 @@ components manually.
     }
   }
 }
-...
+// ...
 ```
+</ListStep>
 
+<ListStep>
 ## Configure Tailwind
 
 Make sure to include the `tailwindcss-animate` plugin.
@@ -65,10 +77,12 @@ module.exports = {
   ],
 }
 ```
+</ListStep>
 
-## Add `twMerge` to CVA config
+<ListStep>
+## Configure CVA
 
-By adding **`twMerge`** to your `cva.config.ts`, anytime you use the `cx(...)` function, any conflicting Tailwind classes will be gracefully resolved.
+Add **`twMerge`** to your `cva.config.ts`. This way, anytime you use the `cx(...)` function any conflicting Tailwind classes will be gracefully resolved.
 
 ```ts title="cva.config.ts"
 import { defineConfig } from 'cva'
@@ -80,7 +94,137 @@ export const { cva, cx, compose } = defineConfig({
   },
 })
 ```
+</ListStep>
 
+<ListStep>
+## Configure Routing (recommended)
+Many components use built-in **`Link`** components to handle navigation. By default, these links perform native browser navigation when they are interacted with.
+
+In order for these links to work as expected with whichever framework you're using, wrap your application using React Aria's `RouterProvider` component.
+
+<Tabs>
+  <TabList>
+    <Tab id="nextjs-app">Next.js App</Tab>
+    <Tab id="nextjs-pages">Next.js Pages</Tab>
+    <Tab id="remix">Remix</Tab>
+    <Tab id="react-router">React Router</Tab>
+  </TabList>
+  <TabPanel id="nextjs-app" className="px-0">
+  ```tsx title="app/provider.tsx"
+  'use client'
+
+  import { useRouter } from 'next/navigation'
+  import { RouterProvider } from 'react-aria-components'
+
+  export function ClientProviders({ children }) {
+    const router = useRouter()
+
+    return (
+      <RouterProvider navigate={router.push}>
+        {children}
+      </RouterProvider>
+    )
+  }
+  ```
+
+  ```tsx title="app/layout.tsx"
+  import { ClientProviders } from './provider';
+
+  export default function RootLayout({ children }) {
+    return (
+      <html>
+        <body>
+          <ClientProviders>{children}</ClientProviders>
+        </body>
+      </html>
+    );
+  }
+  ```
+  </TabPanel>
+  <TabPanel id="nextjs-pages" className="px-0">
+  ```tsx title="pages/_app.tsx"
+  import type { AppProps } from 'next/app'
+  import { useRouter } from 'next/router'
+  import { RouterProvider } from 'react-aria-components'
+
+  export default function MyApp({ Component, pageProps }: AppProps) {
+    let router = useRouter()
+
+    return (
+      <RouterProvider navigate={router.push}>
+        <Component {...pageProps} />
+      </RouterProvider>
+    )
+  }
+  ```
+  </TabPanel>
+  <TabPanel id="remix" className="px-0">
+  ```tsx title="app/root.tsx"
+  import { useNavigate, Outlet } from '@remix-run/react'
+  import { RouterProvider } from 'react-aria-components'
+
+  export default function App() {
+    let navigate = useNavigate()
+
+    return (
+      <html lang="en">
+        <head>
+          {/* ... */}
+        </head>
+        <body>
+          <RouterProvider navigate={navigate}>
+            <Outlet />
+          </RouterProvider>
+          {/* ... */}
+        </body>
+      </html>
+    )
+  }
+  ```
+  </TabPanel>
+  <TabPanel id="react-router" className="px-0">
+    ```tsx
+    import { BrowserRouter, useNavigate } from 'react-router-dom'
+    import { RouterProvider } from 'react-aria-components'
+
+    function App() {
+      let navigate = useNavigate()
+
+      return (
+        <RouterProvider navigate={navigate}>
+          {/* Your app here... */}
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            {/* ... */}
+          </Routes>
+        </RouterProvider>
+      )
+    }
+
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+    ```
+  </TabPanel>
+</Tabs>
+
+For more information, go to the React Aria [Client Side Routing](https://react-spectrum.adobe.com/react-aria/routing.html).
+
+</ListStep>
+
+
+<ListStep>
+## Configure @sly-cli/sly (optional)
+
+If your installation varies from any of the configs described above (like if your components are in a different location) you'll want to update your `sly.json` to make sure your CLI installs work correctly.
+
+Go to the <Link href="/getting-started/cli">CLI page</Link> to learn more.
+</ListStep>
+
+<ListStep>
 ## All Done!
 
 Now you're ready to start building your application!
+</ListStep>
+
+</ListStepper>

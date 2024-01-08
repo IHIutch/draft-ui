@@ -4,13 +4,29 @@ description: Breadcrumbs display a hierarchy of links to the current page or res
 isComponent: true
 ---
 
+<Callout type="important">
+  By default, **`BreadcrumbLink`** uses a React Aria Component **`Link`**. To ensure this navigation works as expected with your framework, be sure to follow the <Link className="underline" href="/getting-started/installation#configure-routing">Configure Routing</Link> step of the Draft UI installation.
+</Callout>
+
 ## Installation
 
-To install, copy the code below and paste into your project.
-
-<ComponentSource src="../../packages/ui/src/breadcrumbs.tsx" />
+<Tabs>
+  <TabList aria-label="Preview and Code Tabs">
+      <Tab id="cli-install">CLI</Tab>
+      <Tab id="manual-install">Copy & Paste</Tab>
+  </TabList>
+  <TabPanel id="cli-install" className="px-0 [&_pre]:my-0 [&_figure]:my-0">
+    ```bash title="bash"
+    npx @sly-cli/sly add draft-ui breadcrumbs
+    ```
+  </TabPanel>
+  <TabPanel id="manual-install" className="px-0">
+    <ComponentSource src="../../packages/ui/src/breadcrumbs.tsx" />
+  </TabPanel>
+</Tabs>
 
 ## Examples
+
 
 ### Default
 

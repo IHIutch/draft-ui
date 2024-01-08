@@ -19,7 +19,7 @@
     "yaml"
   ],
   "files.associations": {
-    "*.mdx": "markdown"
+    "*.mdx": "mdx"
   },
   "tailwindCSS.experimental.classRegex": [
     [

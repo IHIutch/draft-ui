@@ -1,17 +1,7 @@
-'use client'
-
 import * as React from 'react'
 
 import { type VariantProps } from 'cva'
-import {
-  Dialog,
-  DialogTrigger,
-  Heading,
-  Modal,
-  ModalOverlay,
-  type DialogTriggerProps,
-  type ModalOverlayProps,
-} from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cva, cx } from '@/lib/cva.config'
 
@@ -38,25 +28,25 @@ export const modalVariants = cva({
   },
 })
 
-const _Modal = (props: DialogTriggerProps) => {
-  return <DialogTrigger {...props} />
+export const Modal = (props: ReactAria.DialogTriggerProps) => {
+  return <ReactAria.DialogTrigger {...props} />
 }
 
-export interface _ModalContentProps
-  extends ModalOverlayProps,
+export interface ModalContentProps
+  extends ReactAria.ModalOverlayProps,
     VariantProps<typeof modalVariants> {
   className?: string
   children?: React.ReactNode
 }
 
-const _ModalContent = ({
+export const ModalContent = ({
   className,
   size,
   children,
   ...props
-}: _ModalContentProps) => {
+}: ModalContentProps) => {
   return (
-    <Modal
+    <ReactAria.Modal
       className={cx(
         modalVariants({
           size,
@@ -65,20 +55,20 @@ const _ModalContent = ({
       )}
       {...props}
     >
-      <Dialog className="relative flex h-full flex-col outline-none">
+      <ReactAria.Dialog className="relative flex h-full flex-col outline-none">
         {children}
-      </Dialog>
-    </Modal>
+      </ReactAria.Dialog>
+    </ReactAria.Modal>
   )
 }
 
-const _ModalOverlay = ({
+export const ModalOverlay = ({
   isDismissable = true,
   className,
   ...props
-}: ModalOverlayProps) => {
+}: ReactAria.ModalOverlayProps) => {
   return (
-    <ModalOverlay
+    <ReactAria.ModalOverlay
       isDismissable={isDismissable}
       className={cx(
         'h-[--visual-viewport-height]',
@@ -94,12 +84,12 @@ const _ModalOverlay = ({
   )
 }
 
-const _ModalHeader = ({
+export const ModalHeader = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) => {
   return (
-    <Heading
+    <ReactAria.Heading
       slot="title"
       className={cx(
         'shrink-0 px-6 py-4 text-xl font-semibold text-black dark:text-white',
@@ -110,25 +100,16 @@ const _ModalHeader = ({
   )
 }
 
-const _ModalBody = ({
+export const ModalBody = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
   return <div className={cx('flex-1 px-6 py-2', className)} {...props} />
 }
 
-const _ModalFooter = ({
+export const ModalFooter = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) => {
   return <footer className={cx('px-6 py-4', className)} {...props} />
-}
-
-export {
-  _Modal as Modal,
-  _ModalContent as ModalContent,
-  _ModalOverlay as ModalOverlay,
-  _ModalHeader as ModalHeader,
-  _ModalBody as ModalBody,
-  _ModalFooter as ModalFooter,
 }

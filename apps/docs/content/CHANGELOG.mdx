@@ -1,12 +1,32 @@
 ---
 title: Changelog
 description: Stay up to date on the latest changes and updates
+order: 5
 ---
+
+## January 2024
+
+- We have a **CLI** tool!
+  - Thanks to [@jolbol1](https://github.com/jolbol1) and [@jacobparis](https://github.com/jacobparis) for getting this set up. And to [@kentcdodds](https://github.com/kentcdodds) for kicking this off and suggesting this approach.
+  - Docs and installation have been updated to show how to install components with [`@sly-cli/sly`](https://github.com/jacobparis-insiders/sly/blob/main/cli/README.md)
+- Update **React Aria Components** to `1.0.0`
+  - Breadcrumb now exposes `BreadcrumbLink` to correctly handle React Aria **`Link`** within components [@Littletonconnor](https://github.com/Littletonconnor) - [#20](https://github.com/IHIutch/draft-ui/pull/20)
+  - Updates to installation to show how to integrate React Aria **`Link`** with various frameworks using [`RouterProvider`](https://react-spectrum.adobe.com/react-aria/routing.html).
+  - No more `'use client'` needed. React Aria handles this automatically, behind the scenes.
+- Docs and code samples were tidied up significantly
+  - You can now copy directly from `bash` snippets
+  - Thanks to [@itsMapleLeaf's](https://github.com/itsMapleLeaf) [suggestion](https://twitter.com/heyImMapleLeaf/status/1723216226833346848), we're now using namespaced imports from React Aria Components. This has significantly increased readability and helps keep things simple.
+- Update Tailwind to `3.4.1`
+  - While there were several exciting updates in this release, we've not yet integrated things like `:has()` and `size-*`. Since this change is still fairly fresh, we're going hold off on introducing those features because, well, not changing them won't break anything.
+- Several spelling and text fixes:
+  - [@henrikvtcodes](https://github.com/henrikvtcodes) - [#3](https://github.com/IHIutch/draft-ui/pull/3),
+  - [@Littletonconnor](https://github.com/Littletonconnor) - [#6](https://github.com/IHIutch/draft-ui/pull/6),
+  - [@Littletonconnor](https://github.com/Littletonconnor) - [#8](https://github.com/IHIutch/draft-ui/pull/18)
 
 ## November 2023
 
 - Update **React Aria Components** to RC (`1.0.0-rc.0`)!
-  - Breadcrumb **`<Item />`** becomes **`<Breadcrumb />`**
+  - Breadcrumb **`Item`** becomes **`Breadcrumb`**
   - ListBox **`Item`** becomes **`ListBoxItem`**
   - Menu **`Item`** becomes **`MenuItem`**
   - GridList **`Item`** becomes **`GridListItem`**

@@ -1,21 +1,10 @@
-'use client'
-
-import {
-  Tab,
-  TabList,
-  TabPanel,
-  Tabs,
-  type TabListProps,
-  type TabPanelProps,
-  type TabProps,
-  type TabsProps,
-} from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
 
-const _Tabs = ({ className, ...props }: TabsProps) => {
+export const Tabs = ({ className, ...props }: ReactAria.TabsProps) => {
   return (
-    <Tabs
+    <ReactAria.Tabs
       className={cx(
         'flex',
         // Horizontal
@@ -29,12 +18,12 @@ const _Tabs = ({ className, ...props }: TabsProps) => {
   )
 }
 
-const _TabList = <T extends object>({
+export const TabList = <T extends object>({
   className,
   ...props
-}: TabListProps<T>) => {
+}: ReactAria.TabListProps<T>) => {
   return (
-    <TabList
+    <ReactAria.TabList
       className={cx(
         'group',
         'flex border-[length:var(--border-width)] border-slate-200 dark:border-slate-700',
@@ -47,9 +36,9 @@ const _TabList = <T extends object>({
   )
 }
 
-const _Tab = ({ className, ...props }: TabProps) => {
+export const Tab = ({ className, ...props }: ReactAria.TabProps) => {
   return (
-    <Tab
+    <ReactAria.Tab
       className={cx(
         'relative shrink-0 cursor-pointer border-[length:var(--border-width)] border-transparent px-4 py-2 text-slate-500 outline-none transition-colors dark:text-slate-400',
         // Focus-visible
@@ -69,13 +58,6 @@ const _Tab = ({ className, ...props }: TabProps) => {
   )
 }
 
-const _TabPanel = ({ className, ...props }: TabPanelProps) => {
-  return <TabPanel className={cx('grow p-4', className)} {...props} />
-}
-
-export {
-  _Tabs as Tabs,
-  _TabList as TabList,
-  _Tab as Tab,
-  _TabPanel as TabPanel,
+export const TabPanel = ({ className, ...props }: ReactAria.TabPanelProps) => {
+  return <ReactAria.TabPanel className={cx('grow p-4', className)} {...props} />
 }

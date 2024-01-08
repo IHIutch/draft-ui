@@ -1,21 +1,9 @@
-'use client'
-
 import { type VariantProps } from 'cva'
-import {
-  DateField,
-  DateInput,
-  DateSegment,
-  Group,
-  type DateFieldProps,
-  type DateInputProps,
-  type DateSegmentProps,
-  type DateValue,
-  type GroupProps,
-} from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cva, cx } from '@/lib/cva.config'
 
-const dateInputGroupVariants = cva({
+export const dateInputGroupVariants = cva({
   base: [
     'inline-flex w-full', // Using .inline-flex here, as opposed to .flex appears to fix this issue https://github.com/adobe/react-spectrum/issues/3164
     'w-full items-center border border-slate-300 bg-transparent placeholder:text-slate-400 dark:border-slate-700 dark:text-slate-50',
@@ -41,19 +29,19 @@ const dateInputGroupVariants = cva({
   },
 })
 
-export interface _DateInputGroupProps
-  extends GroupProps,
+export interface DateInputGroupProps
+  extends ReactAria.GroupProps,
     VariantProps<typeof dateInputGroupVariants> {
   className?: string
 }
 
-const _DateInputGroup = ({
+export const DateInputGroup = ({
   className,
   size,
   ...props
-}: _DateInputGroupProps) => {
+}: DateInputGroupProps) => {
   return (
-    <Group
+    <ReactAria.Group
       className={cx(
         dateInputGroupVariants({
           size,
@@ -65,17 +53,27 @@ const _DateInputGroup = ({
   )
 }
 
-const _DateField = <T extends DateValue>(props: DateFieldProps<T>) => {
-  return <DateField {...props} />
+export const DateField = <T extends ReactAria.DateValue>(
+  props: ReactAria.DateFieldProps<T>,
+) => {
+  return <ReactAria.DateField {...props} />
 }
 
-const _DateInput = ({ className, ...props }: DateInputProps) => {
-  return <DateInput className={cx('flex gap-1', className)} {...props} />
-}
-
-const _DateSegment = ({ className, ...props }: DateSegmentProps) => {
+export const DateInput = ({
+  className,
+  ...props
+}: ReactAria.DateInputProps) => {
   return (
-    <DateSegment
+    <ReactAria.DateInput className={cx('flex gap-1', className)} {...props} />
+  )
+}
+
+export const DateSegment = ({
+  className,
+  ...props
+}: ReactAria.DateSegmentProps) => {
+  return (
+    <ReactAria.DateSegment
       className={cx(
         'flex items-center rounded px-1 focus:outline-none',
         // Placeholder
@@ -89,11 +87,4 @@ const _DateSegment = ({ className, ...props }: DateSegmentProps) => {
       {...props}
     />
   )
-}
-
-export {
-  _DateField as DateField,
-  _DateInput as DateInput,
-  _DateInputGroup as DateInputGroup,
-  _DateSegment as DateSegment,
 }

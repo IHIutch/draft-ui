@@ -1,21 +1,18 @@
-'use client'
-
-import {
-  Tooltip,
-  TooltipTrigger,
-  type TooltipProps,
-  type TooltipTriggerComponentProps,
-} from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
 
-const _Tooltip = (props: TooltipTriggerComponentProps) => {
-  return <TooltipTrigger delay={0} closeDelay={0} {...props} />
+export const Tooltip = (props: ReactAria.TooltipTriggerComponentProps) => {
+  return <ReactAria.TooltipTrigger delay={0} closeDelay={0} {...props} />
 }
 
-const _TooltipContent = ({ className, children, ...props }: TooltipProps) => {
+export const TooltipContent = ({
+  className,
+  children,
+  ...props
+}: ReactAria.TooltipProps) => {
   return (
-    <Tooltip
+    <ReactAria.Tooltip
       offset={6}
       className={cx(
         [
@@ -32,8 +29,6 @@ const _TooltipContent = ({ className, children, ...props }: TooltipProps) => {
       {...props}
     >
       {children}
-    </Tooltip>
+    </ReactAria.Tooltip>
   )
 }
-
-export { _Tooltip as Tooltip, _TooltipContent as TooltipContent }

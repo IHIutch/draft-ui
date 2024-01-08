@@ -1,31 +1,25 @@
-'use client'
-
 import * as React from 'react'
 
-import {
-  Slider,
-  SliderOutput,
-  SliderThumb,
-  SliderTrack,
-  type SliderOutputProps,
-  type SliderProps,
-  type SliderThumbProps,
-  type SliderTrackProps,
-} from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
 
-const _Slider = ({ className, ...props }: SliderProps) => {
-  return <Slider {...props} className={cx('group w-full', className)} />
-}
-
-const _SliderOutput = (props: SliderOutputProps) => {
-  return <SliderOutput {...props} />
-}
-
-const _SliderTrack = ({ className, ...props }: SliderTrackProps) => {
+export const Slider = ({ className, ...props }: ReactAria.SliderProps) => {
   return (
-    <SliderTrack
+    <ReactAria.Slider {...props} className={cx('group w-full', className)} />
+  )
+}
+
+export const SliderOutput = (props: ReactAria.SliderOutputProps) => {
+  return <ReactAria.SliderOutput {...props} />
+}
+
+export const SliderTrack = ({
+  className,
+  ...props
+}: ReactAria.SliderTrackProps) => {
+  return (
+    <ReactAria.SliderTrack
       {...props}
       className={cx(
         'relative cursor-pointer',
@@ -45,19 +39,19 @@ const _SliderTrack = ({ className, ...props }: SliderTrackProps) => {
   )
 }
 
-export interface _SliderFilledTrackProps
+export interface SliderFilledTrackProps
   extends React.HTMLAttributes<HTMLDivElement> {
   percentage?: number
   orientation: 'horizontal' | 'vertical'
   className?: string
 }
 
-const _SliderFilledTrack = ({
+export const SliderFilledTrack = ({
   percentage = 0,
   orientation,
   className,
   ...props
-}: _SliderFilledTrackProps) => {
+}: SliderFilledTrackProps) => {
   const dir = orientation === 'vertical' ? 'height' : 'width'
   return (
     <div
@@ -77,9 +71,12 @@ const _SliderFilledTrack = ({
   )
 }
 
-const _SliderThumb = ({ className, ...props }: SliderThumbProps) => {
+export const SliderThumb = ({
+  className,
+  ...props
+}: ReactAria.SliderThumbProps) => {
   return (
-    <SliderThumb
+    <ReactAria.SliderThumb
       className={cx(
         'flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border-2 border-black bg-white text-xs dark:border-white dark:bg-slate-900',
         // Dragging
@@ -95,12 +92,4 @@ const _SliderThumb = ({ className, ...props }: SliderThumbProps) => {
       {...props}
     />
   )
-}
-
-export {
-  _Slider as Slider,
-  _SliderOutput as SliderOutput,
-  _SliderTrack as SliderTrack,
-  _SliderFilledTrack as SliderFilledTrack,
-  _SliderThumb as SliderThumb,
 }

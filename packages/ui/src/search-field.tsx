@@ -1,19 +1,24 @@
-'use client'
-
 import { X } from 'lucide-react'
-import { SearchField, type SearchFieldProps } from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
 
-import { type _ButtonProps } from './button'
-import { IconButton, type _IconButtonProps } from './icon-button'
-import { Input, type _InputProps } from './input'
+import { IconButton, type IconButtonProps } from './icon-button'
+import { Input, type InputProps } from './input'
 
-const _SearchField = ({ className, ...props }: SearchFieldProps) => {
-  return <SearchField className={cx('group w-full', className)} {...props} />
+export const SearchField = ({
+  className,
+  ...props
+}: ReactAria.SearchFieldProps) => {
+  return (
+    <ReactAria.SearchField
+      className={cx('group w-full', className)}
+      {...props}
+    />
+  )
 }
 
-const _SearchFieldInput = ({ className, ...props }: _InputProps) => {
+export const SearchFieldInput = ({ className, ...props }: InputProps) => {
   return (
     <Input
       className={cx(
@@ -26,16 +31,13 @@ const _SearchFieldInput = ({ className, ...props }: _InputProps) => {
   )
 }
 
-const _SearchFieldClearButton = ({ className, ...props }: _IconButtonProps) => {
+export const SearchFieldClearButton = ({
+  className,
+  ...props
+}: IconButtonProps) => {
   return (
     <IconButton className={cx('group-empty:hidden', className)} {...props}>
       <X size="1em" />
     </IconButton>
   )
-}
-
-export {
-  _SearchField as SearchField,
-  _SearchFieldInput as SearchFieldInput,
-  _SearchFieldClearButton as SearchFieldClearButton,
 }

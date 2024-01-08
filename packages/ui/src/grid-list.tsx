@@ -1,25 +1,19 @@
-'use client'
-
-import {
-  GridList,
-  GridListItem,
-  type GridListItemProps,
-  type GridListProps,
-} from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cx } from '@/lib/cva.config'
 
-const _GridList = <T extends object>({
+export const GridList = <T extends object>({
   className,
   ...props
-}: GridListProps<T>) => {
+}: ReactAria.GridListProps<T>) => {
   return (
-    <GridList className={cx('flex flex-col gap-2', className)} {...props} />
+    <ReactAria.GridList
+      className={cx('flex flex-col gap-2', className)}
+      {...props}
+    />
   )
 }
 
-const _GridListItem = (props: GridListItemProps) => {
-  return <GridListItem {...props} />
+export const GridListItem = (props: ReactAria.GridListItemProps) => {
+  return <ReactAria.GridListItem {...props} />
 }
-
-export { _GridList as GridList, _GridListItem as GridListItem }

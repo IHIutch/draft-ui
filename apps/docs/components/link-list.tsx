@@ -1,21 +1,23 @@
 'use client'
 
-import { type ComponentDocument } from 'contentlayer/generated'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import { cx } from '@/lib/cva.config'
 
-type LinkListItemProps = Pick<
-  ComponentDocument,
-  'title' | 'slug' | 'isWip' | 'isComing'
->
+type LinkListItemProps = {
+  isComing?: boolean
+  isWip?: boolean
+  isNew?: boolean
+  slug: string
+  title: string
+}
 
 export default function LinkList({ list }: { list: LinkListItemProps[] }) {
   const pathname = usePathname()
 
   return (
-    <ul role="list">
+    <ul>
       {list.map((link, idx) => (
         <li key={idx}>
           <Link
@@ -43,8 +45,12 @@ export default function LinkList({ list }: { list: LinkListItemProps[] }) {
             <span className="truncate">{link.title}</span>
 
             {link?.isComing ? (
-              <span className="rounded bg-black px-1 text-xs font-medium text-white dark:bg-slate-400 dark:text-slate-900">
+              <span className="rounded bg-slate-500 px-1 text-xs font-medium text-white dark:bg-slate-400 dark:text-slate-900">
                 Coming Soon
+              </span>
+            ) : link?.isNew ? (
+              <span className="rounded bg-black px-1 text-xs font-medium text-white dark:bg-slate-100 dark:text-black">
+                New!
               </span>
             ) : link?.isWip ? (
               <span className="rounded bg-slate-200 px-1 text-xs font-medium text-slate-700 dark:bg-slate-700 dark:text-white">

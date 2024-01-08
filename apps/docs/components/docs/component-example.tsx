@@ -71,14 +71,12 @@ export default function ComponentExample({
                 },
               )}
             >
-              {/* <div className="w-[max-content] px-4"> */}
               <React.Suspense fallback={null}>{Story}</React.Suspense>
-              {/* </div> */}
             </div>
           </div>
         </TabPanel>
         <TabPanel id="code" className="px-0">
-          <div className="relative [&_pre]:mt-0">
+          <div className="relative [&_figure]:mt-0 [&_pre]:mt-0">
             <div className="absolute right-2 top-2 z-10">
               <CopyClipboardButton text={String(codeString)} />
             </div>

@@ -2,9 +2,13 @@ import '@/styles/globals.css'
 
 import { type Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { useRouter } from 'next/navigation'
+import { RouterProvider } from 'react-aria-components'
 
 import Analytics from '@/components/analytics'
 import ThemeProvider from '@/components/theme-provider'
+
+import { ClientProviders } from './provider'
 
 interface DocsLayoutProps {
   children: React.ReactNode
@@ -93,9 +97,11 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
       />
       <link rel="manifest" href="/site.webmanifest" />
       <head />
-      <body className={`h-full dark:bg-slate-900 ${inter.className}`}>
+      <body
+        className={`h-full dark:bg-slate-900 dark:antialiased ${inter.className}`}
+      >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <ClientProviders>{children}</ClientProviders>
         </ThemeProvider>
         <Analytics />
       </body>

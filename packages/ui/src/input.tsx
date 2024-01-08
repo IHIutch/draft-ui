@@ -1,7 +1,5 @@
-'use client'
-
 import { type VariantProps } from 'cva'
-import { Input, type InputProps } from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cva, cx } from '@/lib/cva.config'
 
@@ -30,15 +28,15 @@ const inputVariants = cva({
   },
 })
 
-export interface _InputProps
-  extends Omit<InputProps, 'size'>,
+export interface InputProps
+  extends Omit<ReactAria.InputProps, 'size'>,
     VariantProps<typeof inputVariants> {
   className?: string
 }
 
-const _Input = ({ className, size, ...props }: _InputProps) => {
+export const Input = ({ className, size, ...props }: InputProps) => {
   return (
-    <Input
+    <ReactAria.Input
       className={cx(
         inputVariants({
           size,
@@ -49,5 +47,3 @@ const _Input = ({ className, size, ...props }: _InputProps) => {
     />
   )
 }
-
-export { _Input as Input }

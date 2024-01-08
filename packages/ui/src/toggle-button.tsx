@@ -1,9 +1,5 @@
-'use client'
-
 // TODO: ToggleButton
 
-const _ToggleButton = () => {
+export const ToggleButton = () => {
   return <div />
 }
-
-export { _ToggleButton as ToggleButton }

@@ -1,8 +1,5 @@
-'use client'
 // TODO: Table
 
-const _Table = () => {
+export const Table = () => {
   return <div />
 }
-
-export { _Table as Table }

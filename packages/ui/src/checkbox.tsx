@@ -1,9 +1,7 @@
-'use client'
-
 import * as React from 'react'
 
 import { type VariantProps } from 'cva'
-import { Checkbox, type CheckboxProps } from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cva, cx } from '@/lib/cva.config'
 
@@ -53,17 +51,22 @@ const checkboxInnerVariants = cva({
   },
 })
 
-export interface _CheckboxProps
-  extends CheckboxProps,
+export interface CheckboxProps
+  extends ReactAria.CheckboxProps,
     VariantProps<typeof checkboxVariants>,
     VariantProps<typeof checkboxInnerVariants> {
   className?: string
   children?: React.ReactNode
 }
 
-const _Checkbox = ({ className, size, children, ...props }: _CheckboxProps) => {
+export const Checkbox = ({
+  className,
+  size,
+  children,
+  ...props
+}: CheckboxProps) => {
   return (
-    <Checkbox
+    <ReactAria.Checkbox
       className={cx(
         checkboxVariants({
           size,
@@ -94,8 +97,6 @@ const _Checkbox = ({ className, size, children, ...props }: _CheckboxProps) => {
           {children}
         </div>
       </>
-    </Checkbox>
+    </ReactAria.Checkbox>
   )
 }
-
-export { _Checkbox as Checkbox }

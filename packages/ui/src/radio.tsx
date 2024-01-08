@@ -1,9 +1,7 @@
-'use client'
-
 import * as React from 'react'
 
 import { type VariantProps } from 'cva'
-import { Radio, type RadioProps } from 'react-aria-components'
+import * as ReactAria from 'react-aria-components'
 
 import { cva, cx } from '@/lib/cva.config'
 
@@ -53,17 +51,17 @@ const radioInnerVariants = cva({
   },
 })
 
-export interface _RadioProps
-  extends RadioProps,
+export interface RadioProps
+  extends ReactAria.RadioProps,
     VariantProps<typeof radioVariants>,
     VariantProps<typeof radioInnerVariants> {
   className?: string
   children?: React.ReactNode
 }
 
-const _Radio = ({ className, size, children, ...props }: _RadioProps) => {
+export const Radio = ({ className, size, children, ...props }: RadioProps) => {
   return (
-    <Radio
+    <ReactAria.Radio
       className={cx(
         radioVariants({
           size,
@@ -78,8 +76,6 @@ const _Radio = ({ className, size, children, ...props }: _RadioProps) => {
           {children}
         </div>
       </>
-    </Radio>
+    </ReactAria.Radio>
   )
 }
-
-export { _Radio as Radio }
