@@ -4,6 +4,10 @@ description: Breadcrumbs display a hierarchy of links to the current page or res
 isComponent: true
 ---
 
+<Callout type="important">
+  By default, **`BreadcrumbLink`** uses a React Aria Component **`Link`**. To ensure this navigation works as expected with your framework, be sure to follow the <Link className="underline" href="/getting-started/installation#configure-routing">Configure Routing</Link> step of the Draft UI installation.
+</Callout>
+
 ## Installation
 
 <Tabs>
@@ -23,12 +27,6 @@ isComponent: true
 
 ## Examples
 
-<Callout type="important">
-    By default, links perform native browser navigation when they are interacted with.
-    However, many apps and frameworks use client side routers to avoid a full page reload when navigating between pages.
-    React Aria components provide a `<RouterProvider>` so you can hook into your routing framework of choice.
-    Read more about it in the <a className="underline" href="https://react-spectrum.adobe.com/react-aria/routing.html" target="__blank">Client side Routing</a> section.
-</Callout>
 
 ### Default
 
