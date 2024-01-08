@@ -4,6 +4,7 @@ import * as React from 'react'
 
 import { type DocumentTypes } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
+import Link from 'next/link'
 import { Tab, TabList, TabPanel, Tabs } from 'ui'
 
 import Callout from '@/components/docs/callout'
@@ -37,6 +38,8 @@ export default function Markdown(props: MarkdownProps) {
           TabPanel,
           ListStepper,
           ListStep,
+          //
+          Link,
           //
           code: ({
             className,
