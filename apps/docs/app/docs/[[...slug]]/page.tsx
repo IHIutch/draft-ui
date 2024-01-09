@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation'
 import Markdown from '@/components/docs/markdown'
 import PageToc from '@/components/page-toc'
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return allComponentDocuments.map((post) => {
     return {
       slug: post._raw.flattenedPath.split('/'),
@@ -51,7 +51,7 @@ export async function generateMetadata(
   }
 }
 
-export default async function DocPage({
+export default function DocPage({
   params,
 }: {
   params: { slug: Array<string> }

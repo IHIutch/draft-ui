@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation'
 import Markdown from '@/components/docs/markdown'
 import PageToc from '@/components/page-toc'
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return allChangelogDocuments
 }
 
@@ -45,7 +45,7 @@ export async function generateMetadata(
   }
 }
 
-export default async function ChangelogPage() {
+export default function ChangelogPage() {
   const post = allChangelogDocuments[0]
 
   if (!post) {
