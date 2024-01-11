@@ -70,7 +70,7 @@ export default async function GettingStartedPage({
   if (!post) {
     notFound()
   }
-
+  post._raw.sourceFilePath
   return (
     <>
       <div className="order-2 hidden shrink-0 lg:w-1/4 xl:block">
@@ -78,7 +78,10 @@ export default async function GettingStartedPage({
           <div className="h-full overflow-y-auto">
             <div className="my-12 px-4 md:pl-8">
               {post.toc.length > 0 ? <PageToc headings={post.toc} /> : null}
-              <EditFeedbackLinks post={post} />
+              <EditFeedbackLinks
+                contentPath={post._raw.sourceFilePath}
+                post={post}
+              />
             </div>
           </div>
         </div>

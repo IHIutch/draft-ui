@@ -74,7 +74,10 @@ export default async function DocPage({
           <div className="h-full overflow-y-auto">
             <div className="my-12 px-4 md:pl-8">
               <PageToc headings={post.toc} />
-              <EditFeedbackLinks post={post} />
+              <EditFeedbackLinks
+                post={post}
+                contentPath={post._raw.sourceFilePath}
+              />
             </div>
           </div>
         </div>

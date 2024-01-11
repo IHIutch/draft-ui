@@ -5,10 +5,11 @@ type MinimalPost = {
 
 type Props = {
   post: MinimalPost
+  contentPath: string
 }
 
-export default function EditFeedbackLinks({ post }: Props) {
-  const pageEditUrl = `https://github.com/IHIutch/draft-ui/tree/main/apps${post.slug}`
+export default function EditFeedbackLinks({ post, contentPath }: Props) {
+  const pageEditUrl = `https://github.com/IHIutch/draft-ui/tree/main/apps/docs/content/${contentPath}`
   const pageFeedbackUrl = new URL(
     `https://github.com/IHIutch/draft-ui/issues/new`,
   )
