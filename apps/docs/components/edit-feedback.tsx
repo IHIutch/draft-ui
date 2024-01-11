@@ -17,9 +17,9 @@ export default function EditFeedbackLinks({ post }: Props) {
   pageFeedbackUrl.searchParams.set('labels', 'documentation')
 
   return (
-    <span className="flex flex-col space-y-2">
+    <span className="flex flex-col space-y-2 pt-6">
       <a
-        className="mt-6 text-xs text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+        className="text-xs text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
         href={pageEditUrl}
       >
         Edit this page
