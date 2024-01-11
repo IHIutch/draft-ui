@@ -3,6 +3,7 @@ import { type Metadata, type ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import Markdown from '@/components/docs/markdown'
+import EditFeedbackLinks from '@/components/edit-feedback'
 import PageToc from '@/components/page-toc'
 
 export async function generateStaticParams() {
@@ -73,6 +74,8 @@ export default async function DocPage({
           <div className="h-full overflow-y-auto">
             <div className="my-12 px-4 md:pl-8">
               <PageToc headings={post.toc} />
+              {/* TODO: Fix the spacing on this to separate it from the TOC above */}
+              <EditFeedbackLinks post={post} />
             </div>
           </div>
         </div>
