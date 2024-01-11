@@ -5,6 +5,7 @@ import { type Metadata, type ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import Markdown from '@/components/docs/markdown'
+import EditFeedbackLinks from '@/components/edit-feedback'
 import PageToc from '@/components/page-toc'
 
 export async function generateStaticParams() {
@@ -77,6 +78,7 @@ export default async function GettingStartedPage({
           <div className="h-full overflow-y-auto">
             <div className="my-12 px-4 md:pl-8">
               {post.toc.length > 0 ? <PageToc headings={post.toc} /> : null}
+              <EditFeedbackLinks post={post} />
             </div>
           </div>
         </div>
