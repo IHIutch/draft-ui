@@ -1,19 +1,14 @@
-type MinimalPost = {
-  title: string
-  slug: string
-}
-
 type Props = {
-  post: MinimalPost
+  title: string
   contentPath: string
 }
 
-export default function EditFeedbackLinks({ post, contentPath }: Props) {
+export default function EditFeedbackLinks({ title, contentPath }: Props) {
   const pageEditUrl = `https://github.com/IHIutch/draft-ui/tree/main/apps/docs/content/${contentPath}`
   const pageFeedbackUrl = new URL(
     `https://github.com/IHIutch/draft-ui/issues/new`,
   )
-  pageFeedbackUrl.searchParams.set('title', `Feedback for “${post.title}”`)
+  pageFeedbackUrl.searchParams.set('title', `Feedback for “${title}”`)
   // Is this the right label to set? Do we need to make a new label for this?
   pageFeedbackUrl.searchParams.set('labels', 'documentation')
 
