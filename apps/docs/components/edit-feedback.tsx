@@ -13,20 +13,24 @@ export default function EditFeedbackLinks({ title, contentPath }: Props) {
   pageFeedbackUrl.searchParams.set('labels', 'documentation')
 
   return (
-    <span className="flex flex-col space-y-2 pt-6">
-      <a
-        className="text-xs text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-        href={pageEditUrl}
-      >
-        Edit this page
-      </a>
-      <a
-        className="mt-6 text-xs text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-        href={pageFeedbackUrl.toString()}
-        target="_blank"
-      >
-        Give us feedback
-      </a>
-    </span>
+    <ul className="mt-3">
+      <li className="py-1">
+        <a
+          className="text-xs text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+          href={pageEditUrl}
+        >
+          Edit this page
+        </a>
+      </li>
+      <li className="py-1">
+        <a
+          className="text-xs text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+          href={pageFeedbackUrl.toString()}
+          target="_blank"
+        >
+          Give us feedback
+        </a>
+      </li>
+    </ul>
   )
 }
