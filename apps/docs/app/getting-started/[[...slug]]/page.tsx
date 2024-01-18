@@ -35,6 +35,7 @@ export async function generateMetadata(
 
   return {
     title: post.title,
+    description: post.description || parentMeta?.openGraph?.description,
     openGraph: {
       siteName: parentMeta?.openGraph?.siteName,
       title: post.title || parentMeta?.openGraph?.title,
@@ -47,7 +48,7 @@ export async function generateMetadata(
       title: post.title || parentMeta?.twitter?.title,
       description: post.description || parentMeta?.twitter?.description || '',
       images: parentMeta?.twitter?.images || [],
-      card: 'summary_large_image',
+      card: parentMeta?.twitter?.card,
     },
     alternates: {
       canonical: post.slug,
