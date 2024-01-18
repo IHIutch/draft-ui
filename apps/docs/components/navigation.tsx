@@ -26,12 +26,20 @@ import LinkList from './link-list'
 import { ModeToggle } from './mode-toggle'
 import SearchComponent from './search-component'
 
+type LinkListItemProps = {
+  isComing?: boolean
+  isWip?: boolean
+  isNew?: boolean
+  slug: string
+  title: string
+}
+
 export default function Navigation({
   gettingStartedList,
   componentList,
 }: {
-  gettingStartedList: (GeneralDocument | ChangelogDocument)[]
-  componentList: ComponentDocument[]
+  gettingStartedList: LinkListItemProps[]
+  componentList: LinkListItemProps[]
 }) {
   const pathname = usePathname()
   const [isModalOpen, setIsModalOpen] = useState(false)

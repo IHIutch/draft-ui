@@ -9,20 +9,29 @@ import JumpToContentMenu from '@/components/docs/jump-to-content-menu'
 import LinkList from '@/components/link-list'
 import Navigation from '@/components/navigation'
 
+const sortedComponents = allComponentDocuments
+  .filter((doc) => doc.isComponent === true)
+  .sort((a, b) => a.title.localeCompare(b.title))
+  .map((doc) => ({
+    isComing: doc?.isComing || false,
+    isWip: doc?.isWip || false,
+    slug: doc.slug,
+    title: doc.title,
+  }))
+
+const sortedDocuments = [...allGeneralDocuments, ...allChangelogDocuments]
+  .sort((a, b) => a.order - b.order)
+  .map((doc) => ({
+    isNew: doc.isNew || false,
+    slug: doc.slug,
+    title: doc.title,
+  }))
+
 export default async function DocsLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const sortedComponents = allComponentDocuments
-    .filter((doc) => doc.isComponent === true)
-    .sort((a, b) => a.title.localeCompare(b.title))
-
-  const sortedDocuments = [
-    ...allGeneralDocuments,
-    ...allChangelogDocuments,
-  ].sort((a, b) => a.order - b.order)
-
   const post = allChangelogDocuments[0]
 
   if (!post) {
