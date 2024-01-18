@@ -27,7 +27,7 @@ const LinkItem = ({
   href: string
   children?: React.ReactNode
 }) => (
-  <li className="">
+  <li>
     <a
       className={`block rounded-sm py-1 text-sm text-slate-600 no-underline transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 dark:text-slate-400 dark:hover:text-white dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900`}
       href={href}
