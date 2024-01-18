@@ -14,23 +14,25 @@ export default function EditFeedbackLinks({ title, contentPath }: Props) {
 
   return (
     <ul className="mt-3">
-      <li className="py-1">
-        <a
-          className="text-xs text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-          href={pageEditUrl}
-        >
-          Edit this page
-        </a>
-      </li>
-      <li className="py-1">
-        <a
-          className="text-xs text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-          href={pageFeedbackUrl.toString()}
-          target="_blank"
-        >
-          Give us feedback
-        </a>
-      </li>
+      <LinkItem href={pageEditUrl}>Edit this page</LinkItem>
+      <LinkItem href={pageFeedbackUrl.toString()}>Give us feedback</LinkItem>
     </ul>
   )
 }
+
+const LinkItem = ({
+  href,
+  children,
+}: {
+  href: string
+  children?: React.ReactNode
+}) => (
+  <li className="">
+    <a
+      className={`block rounded-sm py-1 text-sm text-slate-600 no-underline transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 dark:text-slate-400 dark:hover:text-white dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900`}
+      href={href}
+    >
+      {children}
+    </a>
+  </li>
+)
