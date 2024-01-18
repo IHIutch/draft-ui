@@ -21,10 +21,10 @@ export function generateMetadata(): Metadata {
   const siteName = 'Draft UI'
   const siteUrl = 'https://draft-ui.com'
   const description =
-    'A collection of simply designed React components focused on making web accessibility as easy as copy & paste'
+    'A collection of simply designed React components focused on making web accessibility easier than ever. Built with React Aria and Tailwind CSS.'
   const imageUrl = '/meta.jpg'
   const imageAlt =
-    'Draft UI is a collection of simply designed React components focused on making web accessibility as easy as copy & paste'
+    'The Draft UI name and logo overlaying a whisp of wofting smoke'
   return {
     metadataBase: new URL(siteUrl),
     title: {
