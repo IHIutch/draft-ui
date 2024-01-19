@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore '**/*.{js,jsx,cjs,mjs,ts,tsx}'",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit --pretty"
   },
   "peerDependencies": {
     "react": "^18.2.0"

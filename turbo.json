@@ -10,9 +10,15 @@
     },
     "storybook": {},
     "lint": {},
+    "check-types": {
+      "dependsOn": ["^topo"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "topo": {
+      "dependsOn": ["^topo"]
     }
   }
 }

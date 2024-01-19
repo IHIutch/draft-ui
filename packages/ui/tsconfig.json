@@ -8,11 +8,4 @@
     "build",
     "node_modules"
   ],
-  "compilerOptions": {
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    },
-  }
 }

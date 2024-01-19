@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import * as ReactAria from 'react-aria-components'
 
-import { cx } from '@/lib/cva.config'
+import { cx } from '../lib/cva.config'
 
 export const Breadcrumbs = <T extends object>({
   className,

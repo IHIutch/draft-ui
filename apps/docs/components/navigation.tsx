@@ -20,7 +20,7 @@ import {
   ModalOverlay,
 } from 'ui'
 
-import { cx } from '@/lib/cva.config'
+import { cx } from '../lib/cva.config'
 
 import LinkList from './link-list'
 import { ModeToggle } from './mode-toggle'

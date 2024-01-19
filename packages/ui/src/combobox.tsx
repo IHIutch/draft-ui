@@ -1,8 +1,7 @@
 import { Check } from 'lucide-react'
 import * as ReactAria from 'react-aria-components'
 
-import { cx } from '@/lib/cva.config'
-
+import { cx } from '../lib/cva.config'
 import { type ButtonProps } from './button'
 import { Input, type InputProps } from './input'
 
@@ -69,7 +68,7 @@ export const ComboBoxItem = ({
         <Check
           aria-hidden="true"
           strokeWidth="3"
-          className="invisible h-4 w-4 group-selected:visible"
+          className="group-selected:visible invisible h-4 w-4"
         />
         {children}
       </>
