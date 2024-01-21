@@ -21,7 +21,6 @@ import {
 } from 'ui'
 
 import { cx } from '../lib/cva.config'
-
 import LinkList from './link-list'
 import { ModeToggle } from './mode-toggle'
 import SearchComponent from './search-component'

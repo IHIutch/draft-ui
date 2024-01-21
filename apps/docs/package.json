@@ -9,7 +9,7 @@
     "build": "contentlayer build && next build",
     "start": "next start",
     "lint": "eslint --ignore-path .gitignore '**/*.{js,jsx,cjs,mjs,ts,tsx}'",
-    "check-types": "tsc --noEmit --pretty"
+    "typecheck": "tsc --noEmit --pretty"
   },
   "dependencies": {
     "@docsearch/react": "^3.4.0",

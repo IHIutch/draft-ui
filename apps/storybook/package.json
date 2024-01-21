@@ -9,7 +9,7 @@
     "storybook": "storybook dev -p 6006",
     "build": "storybook build",
     "upgrade": "pnpm dlx sb@latest upgrade",
-    "check-types": "tsc --noEmit --pretty"
+    "typecheck": "tsc --noEmit --pretty"
   },
   "dependencies": {
     "@babel/preset-env": "^7.23.7",

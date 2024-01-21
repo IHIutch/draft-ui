@@ -10,7 +10,7 @@
     },
     "storybook": {},
     "lint": {},
-    "check-types": {
+    "typecheck": {
       "dependsOn": ["^topo"]
     },
     "dev": {

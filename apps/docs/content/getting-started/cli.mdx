@@ -47,13 +47,13 @@ npm install -D @sly-cli/sly
 For example, if you're using a different path alias for your directories, overwrite the default values automatically.
 
 ```ts title="transform-sly-install.ts"
-const cvaConfig = '../lib/cva.config'
+const cvaConfig = '@/lib/cva.config'
 
 /**
  * @type {import('@sly-cli/sly/dist').Transformer}
  */
 export default async function transformSlyInstall(input: string) {
-  input = input.replace('../lib/cva.config', cvaConfig)
+  input = input.replace('@/lib/cva.config', cvaConfig)
 
   return input
 }

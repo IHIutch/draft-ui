@@ -64,7 +64,7 @@ export const SelectItem = ({
         <Check
           aria-hidden="true"
           strokeWidth="3"
-          className="group-selected:visible invisible h-4 w-4"
+          className="invisible h-4 w-4 group-selected:visible"
         />
         {children}
       </>
