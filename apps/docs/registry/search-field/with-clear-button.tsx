@@ -19,7 +19,11 @@ export default function WithClearButton() {
         </div>
         <SearchFieldInput className="px-10" />
         <div className="absolute inset-y-0 right-0 flex items-center p-1">
-          <SearchFieldClearButton variant="subtle" size="sm" />
+          <SearchFieldClearButton
+            variant="subtle"
+            size="sm"
+            aria-label="Clear search"
+          />
         </div>
       </div>
     </SearchField>
