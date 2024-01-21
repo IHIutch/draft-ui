@@ -14,7 +14,14 @@
     "eslint": "^8.56.0",
     "eslint-config-custom": "workspace:*",
     "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
     "prettier": "^2.8.8",
+    "ts-config": "workspace:*",
     "turbo": "^1.11.3"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,cjs,mjs,ts,tsx,json}": [
+      "eslint --fix"
+    ]
   }
 }
