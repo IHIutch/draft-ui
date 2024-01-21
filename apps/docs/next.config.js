@@ -8,9 +8,6 @@ const nextConfig = {
   },
   reactStrictMode: true,
   transpilePackages: ['ui'],
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   redirects() {
     return [
       {
@@ -46,12 +43,6 @@ const nextConfig = {
       },
     ]
   },
-  // webpack: (config) => {
-  //   config.resolve.fallback = {
-  //     fs: false,
-  //   }
-  //   return config
-  // },
 }
 
 module.exports = withContentlayer(nextConfig)
