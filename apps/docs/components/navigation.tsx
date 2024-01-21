@@ -2,11 +2,6 @@
 
 import { useEffect, useState } from 'react'
 
-import {
-  type ChangelogDocument,
-  type ComponentDocument,
-  type GeneralDocument,
-} from 'contentlayer/generated'
 import { GithubIcon, MenuIcon, TwitterIcon, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -20,7 +15,8 @@ import {
   ModalOverlay,
 } from 'ui'
 
-import { cx } from '../lib/cva.config'
+import { cx } from '@/lib/cva.config'
+
 import LinkList from './link-list'
 import { ModeToggle } from './mode-toggle'
 import SearchComponent from './search-component'

@@ -11,10 +11,10 @@ import Callout from '@/components/docs/callout'
 import ComponentExample from '@/components/docs/component-example'
 import ComponentSource from '@/components/docs/component-source'
 import Heading from '@/components/docs/heading'
+import { cx } from '@/lib/cva.config'
 import { type NpmCommands } from '@/types'
 
 import CopyClipboardButton from '../copy-clipboard-button'
-import { cx } from '../lib/cva.config'
 import { ListStep, ListStepper } from './list-stepper'
 
 type MarkdownProps = {

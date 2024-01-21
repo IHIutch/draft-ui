@@ -11,7 +11,7 @@ import '@docsearch/css/dist/style.css'
 
 import { Button, IconButton } from 'ui'
 
-import { cx } from '../lib/cva.config'
+import { cx } from '@/lib/cva.config'
 
 export default function SearchComponent() {
   const [isOpen, setIsOpen] = useState(false)

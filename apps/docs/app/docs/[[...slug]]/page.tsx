@@ -16,7 +16,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata(
   { params }: { params: { slug: string[] } },
-  parent?: ResolvingMetadata,
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const post = allComponentDocuments.find((post) => {
     return (
@@ -76,7 +76,7 @@ export default function DocPage({
             <div className="my-12 px-4 md:pl-8">
               <PageToc headings={post.toc} />
               <EditFeedbackLinks
-                post={post}
+                title={post.title}
                 contentPath={post._raw.sourceFilePath}
               />
             </div>

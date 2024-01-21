@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import { cx } from '../lib/cva.config'
+import { cx } from '@/lib/cva.config'
 
 type LinkListItemProps = {
   isComing?: boolean
