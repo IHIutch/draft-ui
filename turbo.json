@@ -2,23 +2,18 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
   "pipeline": {
-    "build-registry": {
-      "cache": false
-    },
     "build": {
       "outputs": ["storybook-static/**", ".next/**", "!.next/cache/**"]
     },
-    "storybook": {},
-    "lint": {},
-    "typecheck": {
-      "dependsOn": ["^topo"]
+    "build-registry": {
+      "cache": false
     },
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "topo": {
-      "dependsOn": ["^topo"]
-    }
+    "lint": {},
+    "storybook": {},
+    "typecheck": {}
   }
 }
