@@ -22,7 +22,7 @@ const sortedComponents = allComponentDocuments
 const sortedDocuments = [...allGeneralDocuments, ...allChangelogDocuments]
   .sort((a, b) => a.order - b.order)
   .map((doc) => ({
-    isNew: doc.isNew || false,
+    isNew: 'isNew' in doc ? doc.isNew : false,
     slug: doc.slug,
     title: doc.title,
   }))

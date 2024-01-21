@@ -1,7 +1,7 @@
 import { type VariantProps } from 'cva'
 import * as ReactAria from 'react-aria-components'
 
-import { cva, cx } from '@/lib/cva.config'
+import { cva, cx } from '../lib/cva.config'
 
 const inputVariants = cva({
   base: [

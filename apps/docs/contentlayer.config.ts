@@ -137,6 +137,7 @@ export default makeSource({
         })
       },
       [
+        // @ts-expect-error related: https://github.com/atomiks/rehype-pretty-code/issues/145
         rehypePrettyCode,
         {
           theme: 'dracula',

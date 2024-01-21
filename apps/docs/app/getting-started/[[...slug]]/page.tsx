@@ -18,7 +18,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata(
   { params }: { params: { slug: string[] } },
-  parent?: ResolvingMetadata,
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const post = allGeneralDocuments.find((post) => {
     return (

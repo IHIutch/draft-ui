@@ -8,7 +8,8 @@
     "dev": "rm -rf .next & rm -rf .contentlayer && contentlayer build && next dev",
     "build": "contentlayer build && next build",
     "start": "next start",
-    "lint": "eslint --ignore-path .gitignore '**/*.{js,jsx,cjs,mjs,ts,tsx}'"
+    "lint": "eslint --ignore-path .gitignore '**/*.{js,jsx,cjs,mjs,ts,tsx,json}'",
+    "typecheck": "tsc --noEmit --pretty"
   },
   "dependencies": {
     "@docsearch/react": "^3.4.0",
@@ -31,18 +32,17 @@
     "remark-gfm": "^3.0.1",
     "shikiji": "^0.9.0",
     "tailwind-merge": "^1.13.2",
-    "typescript": "4.9.5",
     "ui": "workspace:*",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
-    "@types/node": "18.16.3",
-    "@types/react": "18.2.0",
-    "@types/react-dom": "18.2.1",
+    "@types/node": "18.16.19",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
     "@types/unist": "^3.0.2",
     "autoprefixer": "^10.4.14",
-    "eslint": "8.56.0",
+    "eslint": "^8.56.0",
     "eslint-config-custom": "workspace:*",
     "eslint-plugin-mdx": "^2.3.2",
     "postcss": "^8.4.23",
@@ -50,7 +50,8 @@
     "tailwind-config": "workspace:*",
     "tailwindcss": "^3.4.1",
     "ts-config": "workspace:*",
-    "ts-pattern": "5.0.3",
+    "ts-pattern": "^5.0.6",
+    "typescript": "^5.1.6",
     "unist-builder": "^4.0.0"
   }
 }

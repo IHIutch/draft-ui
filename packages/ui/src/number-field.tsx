@@ -2,8 +2,7 @@ import * as React from 'react'
 
 import * as ReactAria from 'react-aria-components'
 
-import { cx } from '@/lib/cva.config'
-
+import { cx } from '../lib/cva.config'
 import { type ButtonProps } from './button'
 import { Input, type InputProps } from './input'
 

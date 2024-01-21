@@ -5,8 +5,8 @@
   "types": "./src/index.tsx",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint --ignore-path .gitignore '**/*.{js,jsx,cjs,mjs,ts,tsx}'",
-    "check-types": "tsc --noEmit"
+    "lint": "eslint --ignore-path .gitignore '**/*.{js,jsx,cjs,mjs,ts,tsx,json}'",
+    "typecheck": "tsc --noEmit --pretty"
   },
   "peerDependencies": {
     "react": "^18.2.0"
@@ -26,6 +26,6 @@
     "react": "^18.2.0",
     "tailwind-config": "workspace:*",
     "ts-config": "workspace:*",
-    "typescript": "4.9.5"
+    "typescript": "^5.1.6"
   }
 }

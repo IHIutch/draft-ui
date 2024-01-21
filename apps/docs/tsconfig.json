@@ -3,39 +3,33 @@
   "compilerOptions": {
     "plugins": [
       {
-        "name": "next"
-      }
+        "name": "next",
+      },
     ],
     "baseUrl": ".",
     "paths": {
       // "ui": [
       //   "./../../packages/ui/src" // Not sure why I need this but VSCode wont intellisense correctly without it in this project
       // ],
-      "contentlayer/generated": [
-        "./.contentlayer/generated",
-      ],
+      "contentlayer/generated": ["./.contentlayer/generated"],
       "@/components/ui": [
-        "./../../packages/ui/src" // Mock importing as local components
+        "./../../packages/ui/src", // Mock importing as local components
       ],
-      "@/*": [
-        "./*"
-      ],
+      "@/*": ["./*"],
     },
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
     "isolatedModules": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".contentlayer/generated"
+    ".contentlayer/generated",
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"],
 }

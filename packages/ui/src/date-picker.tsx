@@ -1,6 +1,6 @@
 import * as ReactAria from 'react-aria-components'
 
-import { cx } from '@/lib/cva.config'
+import { cx } from '../lib/cva.config'
 
 export const DatePicker = <T extends ReactAria.DateValue>({
   className,

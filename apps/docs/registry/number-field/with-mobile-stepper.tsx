@@ -6,11 +6,11 @@ export default function Mobile() {
     <NumberField defaultValue={50}>
       <Label>Width</Label>
       <NumberInputGroup className="flex gap-1">
-        <IconButton className="shrink-0" slot="decrement">
+        <IconButton className="shrink-0" slot="decrement" aria-label="Decrease">
           <ChevronDown size="16" strokeWidth="3" />
         </IconButton>
         <Input />
-        <IconButton className="shrink-0" slot="increment">
+        <IconButton className="shrink-0" slot="increment" aria-label="Increase">
           <ChevronUp size="16" strokeWidth="3" />
         </IconButton>
       </NumberInputGroup>

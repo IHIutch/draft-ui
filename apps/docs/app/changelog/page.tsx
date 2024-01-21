@@ -13,7 +13,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata(
   _,
-  parent?: ResolvingMetadata,
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const post = allChangelogDocuments[0]
 

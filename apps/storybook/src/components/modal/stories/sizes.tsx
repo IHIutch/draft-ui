@@ -9,10 +9,10 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  type _ModalContentProps,
+  type ModalContentProps,
 } from 'ui'
 
-type Size = Pick<_ModalContentProps, 'size'>['size']
+type Size = Pick<ModalContentProps, 'size'>['size']
 export default function Default() {
   const [isOpen, setIsOpen] = React.useState(false)
   const [modalSize, setModalSize] = React.useState<Size>('md')

@@ -2,11 +2,6 @@
 
 import { useEffect, useState } from 'react'
 
-import {
-  type ChangelogDocument,
-  type ComponentDocument,
-  type GeneralDocument,
-} from 'contentlayer/generated'
 import { GithubIcon, MenuIcon, TwitterIcon, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'

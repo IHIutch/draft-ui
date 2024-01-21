@@ -123,11 +123,12 @@ const copyDemoComponents = async () => {
         return
       }
 
-      const fileContents = file.getText()
+      let fileContents = file.getText()
+      fileContents = fileContents.replace(/\n$/, '').replace('../lib', '@/lib')
       const newPath = join(registryDir, `${component}`, `${variant}.tsx`)
 
-      await outputFile(newPath, fileContents.replace(/\n$/, ''))
-    })
+      await outputFile(newPath, fileContents)
+    }),
   )
 }
 

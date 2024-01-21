@@ -1,6 +1,6 @@
 import * as ReactAria from 'react-aria-components'
 
-import { cx } from '@/lib/cva.config'
+import { cx } from '../lib/cva.config'
 
 export const Label = ({ className, ...props }: ReactAria.LabelProps) => {
   return (
